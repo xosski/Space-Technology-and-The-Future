@@ -90,3 +90,24 @@ The CryoHalo cools. The Eden Initiative grows. Together they embody the twin man
 
 One repairs the world.
 The other replants paradise.
+         [Eden Initiative Concept]
+
+                                 ||     ||
+                                 ||     ||        ← Photonic Conduits (Light + Heat)
+                                 ||     ||
+                              //           \\
+                             //             \\
+                            //               \\
+                       === [  Tower A ]   [ Tower B ] ===      ← Vertical Grow Towers
+                          |   🌱🌿🌱     🌿🌱🌿   |
+                          |   🌿🌱🌿     🌱🌿🌱   |
+                          |   🌱🌿🌱     🌿🌱🌿   |
+                          |   🌿🌱🌿     🌱🌿🌱   |
+                             \             /
+                              \           /
+                                \       /         ← Light Flow from Reactor Core
+                                 |     |
+                                 |     |
+                             [ GHOSTCORE ]
+                             [ REACTOR CORE ]      ← Energy + Photonic Source
+                              (⚡ Pulsing Core ⚡)
