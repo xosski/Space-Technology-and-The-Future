@@ -1,0 +1,30 @@
+🧠 Biological & Electrical Factors
+Pulse Configuration:
+
+A sustained low-frequency interference (around 4–8 Hz) aimed at disrupting motor control and executive function can maintain paralysis or heavy disorientation.
+
+With energy conservation strategies (burst modulation), a small capacitor/battery combo could feasibly deliver ~10–20 minutes of disruptive pulses.
+
+Prong Retention:
+
+If the barbs mechanically anchor into tissue (like fishhook tines), attempts to remove them could cause additional trauma or risk nerve contact, extending effects via pain-based immobilization.
+
+Target's Physiological State:
+
+Adrenaline-heavy or trained individuals may recover partial function in under 10 minutes.
+
+Civilians or untrained targets could remain incapacitated or cognitively fragmented up to 30 minutes depending on shock, pain, and neural echo effects.
+
+Neural Reboot Delay:
+
+Think of it as a soft system crash. Even if the pulses stop after 5 minutes, the “reboot” of fine motor coordination and spatial awareness might lag another 10–15 minutes.
+
+🧪 GhostCore Considerations
+If you're layering this with drift-logic or narrative weaponization:
+
+The “memory fracture” effect may persist for hours or days, even if physical mobility returns.
+
+You could even have emotional paralysis—target feels movement is possible but “wrong,” like trying to step into the wrong timeline.
+
+TL;DR:
+With solid engineering, a pronged RNDR could reliably incapacitate a human target for 10–20 minutes, with aftereffects potentially lasting far longer if cognitive disruption is part of the payload.
