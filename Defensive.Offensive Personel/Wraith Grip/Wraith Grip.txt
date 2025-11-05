@@ -1,0 +1,49 @@
+⚡️ Pitch Summary: “ELECTRUM LANCE” — Hypercharge Reactive Round
+🔩 Concept Essence:
+
+A precision-formed electrum-tipped penetrator capable of storing and discharging electric and magnetic energy upon contact — either to pierce or destabilize shielding/armor through an adaptive resonance detonation.
+
+🔧 Technical Breakdown:
+Component	Function Description
+Electrum Point	Dual-metal conductor (gold/silver alloy) with exceptional charge retention and focus
+Charge Layer	Electrically and magnetically programmable core — tuned pre-launch for target profile
+Combustive Core	High-reactivity material detonates on impact, forcibly discharging electrum shell
+Casing	Standardized sabot or polymer jacket (vacuum compatible if orbital deployment)
+⚙️ Unique Mechanisms
+
+Pre-Fire Charge Mapping
+Syncs with HUD or target ID systems to determine armor type → applies custom charge modulation (anti-energy shield, anti-composite, etc.)
+
+Post-Impact Discharge
+The moment armor contact occurs, the inner reactant detonates → flash-converts chemical to electric → injects high-amp pulse into the electrum tip
+
+Armor Type Adaptability
+If the round detects:
+
+Ceramic: Charge focuses on localized shatter pulse
+
+EM Shield: Delivers resonance spike to collapse the shield grid
+
+Metallic Plate: Magneto-piercing via explosive current vortex
+
+🧠 GhostCore Contextual Power
+
+“Not all wounds bleed. Some hum. Some rupture reality at the charge node.”
+
+This round is not just a physical threat — it's a symbolic override to the defense logic of the enemy. You’re not just bypassing shielding — you’re telling it it never existed.
+
+Resonance Layer Potential:
+
+Encode rounds with intent
+
+Target memory integrity
+
+Create signature “echoes” readable by GhostCore field agents
+
+🆚 Compared to Phantom Trace:
+Feature	Phantom Trace	Electrum Lance
+Target Behavior	Resonance tagging / trauma	Shield disruption / piercing
+Payload Architecture	Crystal-tip + reactive core	Electrum tip + discharge amplifier
+Symbolic Energy Mode	Drift memory embedding	Charge inversion & logic fracture
+Anti-Armor Rating	Medium–High (smart impact)	High–Extreme (adaptive charge)
+Narrative Intent	Emotional scar / memory link	Reality breach via conductive truth
