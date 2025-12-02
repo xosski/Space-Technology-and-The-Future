@@ -1,0 +1,80 @@
+Prismatic Munitions Overlay
+⚔️ Prismatic Munition System (PMS) — GhostCore Weapon POC
+
+Title: Dual-State, High-Velocity Combat Munitions
+Class: Multi-Mode Plasma-Enhanced Ballistic Rounds
+Design Author: Quellaran Deluxethue Messat
+Cycle Tier: Echo-Trauma Combat Standard | DriftEra P5
+
+📌 Core Design Concepts (From Your Images)
+⚙ Round Composition:
+
+Dual-Prism Charge Stack: Two prismatic elements spin or align to split a Thallium-based plasma/electrical charge across different geometries
+
+Selective Discharge Pathing: One path delivers solid piercing force, the other disperses for area saturation or personnel neutralization
+
+Split-Charge Cartridge: The round internally shifts the charge vector — like splitting a beam or electrical arc
+
+💡 Functional Munition Modes
+Mode I – Piercing Core (Anti-Armor)
+
+Uses a solid penetrator with magnetic or plasma acceleration
+
+Prism directs charge to reinforce kinetic tip
+
+Goal: breach high-density shielding or hull layers (Revenant-class plating, etc.)
+
+Mode II – Fracture Core (Anti-Personnel)
+
+Internal matrix fractures on impact or timed detonation
+
+Plasma/electricity release upon burst
+
+Shrapnel is ionically charged for enhanced tissue disruption / EM flash effects
+
+↺ Mid-Combat Hot-Swap Capable
+
+Ammunition feeds from dual-bay, synced to suit/weapon input
+
+Switch round function instantly (physical or magnetic selector)
+
+Ideal for boarding, zero-G, and multi-target environments
+
+🔋 Prism Charge Mechanics
+
+Your sketch and text describe using prism elements inside the cartridge, similar to what we now use in shield nodes.
+
+This is brilliant and possible if designed as a micro spin-gate emitter within each shell.
+The Thallium Charge becomes the energy medium.
+
+Advantages of Prism Charge in Ammo:
+
+Electrically polarizable projectile envelope
+
+Can be charged mid-flight by coil or field rail systems
+
+Plasma shockwave trails or EM stinger effects (like tracer rounds but hotter)
+
+🔨 Ammunition Shell Architecture (Class Names)
+
+| Name | Role | Notes |
+|--------------------------|------|-------|\n| PRAEFECTUS RND-01 | Armor-piercing plasma kinetic round | “Prefect” of destruction, spear of judgment\n| PHANTASM RND-04 | Fragmentation/EM pulse hybrid | Dispersion shell — Wraith-type burst\n| REVENANT SHARD-RND-Σ | Dual-load round that switches based on charge | Recalls target's shield frequency from past hits\n| WRAITHCORE HVC-M | High velocity conductive round | Electrically tuned to enemy harmonics\n\n---
+
+📦 Suggested Weapon Platform
+
+Name: Echo Lance or GhostSpine
+
+Modular coilgun / rail hybrid
+
+Accepts Prism-Charge Munition Shells (PCMS)
+
+AI target harmonization for round-type syncing
+
+Fire delay compensation synced to GhostCore predictive combat matrix
+
+💀 Tactical Use Case
+
+“The first shot breaks the wall.
+The second walks through like it’s been here before.”
+
+A GhostCore soldier uses these rounds not to overwhelm, but to rewrite the enemy’s shielding logic. Once the prism charge tags the frequency, every round after it harmonizes with a deeper layer of that target’s energy pattern.
