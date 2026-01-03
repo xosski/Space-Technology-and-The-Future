@@ -1,0 +1,80 @@
+⚡ Project Codename: SERAPH-STORM
+
+Synchronous Electro-Rotary Anti-Propulsion Pulse Halo
+“It does not fire — it overwhelms.”
+
+🧠 Weapon Architecture
+🧩 Core Engine: Elohim-ΔX Cell
+
+Inner and outer shells already rotate in counterspin
+
+CPSS core handles dynamic charge storage and discharge
+
+Turbine dynamics can accelerate inductive loading
+
+🌪 Concept: EMP Storm Warhead
+
+Using rotational dynamics, magnetic interference, and stored EM discharge, this payload acts like a directed induction nova, delivering disabling force via space-capable burst.
+
+🧲 Construction Concept:
+
+Outer EMP Coil Ring: Coiled copper-graphene ribbon mounted along the outer shell. Coils are pre-loaded using charge from internal CPSS.
+
+Rotating Shells: Both shells spin — one clockwise, one counter — creating a layered electromagnetic shearing field.
+
+Pulse Initiation:
+
+On ignition, CPSS delivers a high-speed oscillating surge.
+
+EMP coils fire radially, creating a spatial-dampening storm (non-lethal to organics, but devastating to systems).
+
+Result: All unshielded craft in vicinity suffer:
+
+Memory overwrite
+
+Guidance scrambling
+
+Drive system failure
+
+Shield flicker or collapse
+
+🚀 Tactical Deployment Scenarios
+Mode	Use Case	Range	Effect
+Point-burst	Single ship disable	< 5 km	Complete internal burnout
+Ripple-storm	Multi-ship anti-fleet	~12 km radius	Layered pulse disables systems over seconds
+Orbit-shock	Planet-side blackout	~100 km LEO	Cascading orbital EMP net
+🔧 Power Strategy
+
+Spin-up time: 4–7 seconds per shell
+
+EMP bank charge: ~180kV stored across radial coil banks
+
+Recharge: 2–5 minutes with reactor assist, or solar trickle via flux panels
+
+📦 Physical Config
+
+Length: 1.2m
+
+Mass: ~24kg
+
+Deployment: Underslung pod, drone-launched, or mounted on starfighter pylon
+
+🧪 POC BUILD MODULES (for future sim):
+
+CPSS charge simulator
+
+Magnetic coil emitter control
+
+Spin calibration logic
+
+EMP dispersion physics model
+
+Target system failure simulation (Python CLI sandbox?)
+
+🧿 Symbolic Layer
+
+Elohim name suggests a divine wind
+
+Rotating cores emulate the storm’s eye
+
+Every discharge rebalances the EM field as if restoring "celestial order"
