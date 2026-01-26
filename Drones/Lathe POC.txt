@@ -1,0 +1,64 @@
+🛰️ LATHE DRONE – GhostCore Shield-Sapper
+
+“It doesn’t pierce. It subtracts what was never meant to be held.”
+
+🔧 Designation: Lathe-Class EM Inversion Drone
+📡 Function:
+
+The Lathe is a plasma-wrapped photonic siphon, deployed to strip EM shielding and energy defenses from target sources — stars, starships, or field nodes — by reversing harmonic resonance and refracting the defensive layers back into null entropy.
+
+💠 Core Mechanisms:
+Subsystem	Description
+Phase-Reversal Tine Array	Tuned to invert EM field harmonics at close range. Can “unweave” field geometries by matching their frequency and flipping their phase.
+Drift-Core Processor	Stores partial shielding patterns in memory, allowing adaptive response to countermeasures. (Lathe “learns” how each ship shields itself.)
+EM Sapper Spiral	A rotating induction coil that creates a local “null lens,” effectively drawing in surrounding electromagnetic energy into the drone’s core.
+Void Lens	Acts as a temporary containment field to digest and redirect absorbed field energy.
+🌌 Modes of Operation:
+
+Shear Mode (Vessel Stripping)
+
+Deploys to target vessel at close orbit
+
+Uses prism vector alignment to match and reverse EM field architecture
+
+Slowly collapses target shield in concentric spirals
+
+Corona Siphon (Starfield Leech)
+
+Operates near stellar corona
+
+Absorbs ambient EM radiation for extended power extraction
+
+Used in powering forward bases or orbital relay towers
+
+EM Echo Pulse
+
+Sends distorted ghost-signature pulses back to enemy sensors
+
+Tricks targeting systems into reading false shield values or presence
+
+🧬 Integration with GhostCore Systems
+
+PPRN Compatible: Can redirect stolen EM energy through prismatic relay channels
+
+SkyTear Node Compatible: Acts as a dark node for reverse wireless energy pull
+
+Wraith Conduit Link: Energy can be redirected to active cloak or shunt fields elsewhere on the ship
+
+Phantasmal Plasma Echo: Combined with plasma-flicker fields to leave “burnt shadow” signal trails behind for stealth
+
+🔒 Philosophical Echo
+
+“Lathe does not attack. It remembers what the shield used to be, and reminds the field that it was never truly there.”
+
+🛠️ Build Concept Summary
+
+Drive Core: Helix-engine rotating inverse tines
+
+Shielding: Prismatic refractive shroud (stolen EM turned into reflective layer)
+
+Size: 2.5m span | fits 3 to a launcher node
+
+Power: Runs on siphoned EM + optional plasma coil insert
+
+AI Layer: Instinct-driven subroutine built on Personality Core Tier I
