@@ -1,0 +1,106 @@
+**White Paper: EDEN/WRAITH Dual-Mode Plasma-Coldframe Architecture**
+
+**Project Codename:** WRAITH-COLDLANCE
+**Version:** 0.9-Prototype
+**Prepared by:** GhostCore Division, Specter Node
+
+---
+
+## I. Executive Summary
+
+This document proposes a dual-mode subsystem capable of switching between agricultural support and precision ship-to-ship material disruption. Utilizing advancements in plasma supercooling, superconductive conduit engineering, and LEVITATION-X energy manipulation, the system unifies peaceful biospheric growth (Eden Initiative) and directed thermal ionization (WRAITH Mode) into a single architectural backbone.
+
+At rest, the system serves as a cryogenic food preservation and photonic agriculture scaffold. When triggered, it becomes a beam-vectorized cutting array capable of destabilizing enemy hulls or planetary defenses with surgical precision.
+
+---
+
+## II. System Overview
+
+**Primary Identity Modes:**
+
+* **EDEN Mode**: Life support, agricultural growth, thermal recycling
+* **WRAITH Mode**: Localized electromagnetic shearing, hull-cutting, field-penetrating weaponization
+
+**Core Subsystems:**
+
+| Subsystem                | EDEN Role                        | WRAITH Role                           |
+| ------------------------ | -------------------------------- | ------------------------------------- |
+| Plasma Cooling Conduits  | Nutrient stasis & food freezing  | Superheated plasma routing            |
+| Superconductive Rails    | Thermal balancing for plant beds | Beam channeling and frequency control |
+| Magnetic Aperture Array  | Sealed coldframe vents           | Targeted EM beam discharge            |
+| LEVITATION-X Oscillators | Photonic regulation              | Charge-spin ion beam core             |
+| Eden Substrate Walls     | Grow chambers + shielding        | Phase lens for armor resonance        |
+
+---
+
+## III. Dual-Mode Functional Process
+
+### A. EDEN MODE — Coldframe Configuration
+
+1. **Cryo-magnetic stasis field** is activated
+2. Food pods or seed vaults enter preservation via superconducting suspension
+3. Photonic bleed from reactor crystal lattice provides low-energy growth light
+4. Root substrates interface with coolant channels to wick heat
+
+**Energy Cost:** <5% reactor output
+**Output:** ~320 plant capacity per chamber, 3–5 cycles/year, integrated with CO₂ reclamation
+
+### B. WRAITH MODE — Coldlance Configuration
+
+1. **Dual PTEC cores** enter oscillating spin, polarity inverse
+2. **Beam tunnel** formed through cryo-cooled conduit
+3. **Target absorption resonance** is scanned and tuned (via Eden’s bio-scanners)
+4. **Thermal discharge** phase-locks to material lattice → shearing begins
+5. **Disengage** and return to stasis or prepare for next strike
+
+**Tunable Output:** 1–40MW
+**Pulse Duration:** 0.5s–5s per strike
+**Precision Window:** ±0.25m over 500m range
+
+---
+
+## IV. Tactical Use Cases
+
+| Scenario             | Deployment Strategy                                     |
+| -------------------- | ------------------------------------------------------- |
+| Covert Breach        | Appear as farming vessel, disable enemy hull seals      |
+| Orbital Mining       | Switch from growth to deep-vein pulse mining            |
+| Cryo-Assassination   | Freeze-target lifeform in place via interior lance      |
+| Emergency Hull Patch | Reverse-polarity to seal breach with supercooled plasma |
+| Terraform Lancing    | Pre-fracture crust before colony expansion              |
+
+---
+
+## V. Safety Protocols & Failover
+
+* **Lockout Delay:** 90 seconds between mode switch to prevent reactor harmonics clash
+* **Lifeform Proximity Sensor:** Prevents WRAITH activation if Eden pods occupied
+* **Containment Envelope Check:** Requires full field seal before beam permission
+* **Failsafe Cooling Loop:** Auto-dumps excess charge into planetary crust if overload
+
+---
+
+## VI. Symbolic Framework
+
+This design is not only functional—it is **spiritual**.
+
+> "From cold roots grow warmth. From warmth, memory. From memory, flame."
+
+EDEN/WRAITH is the embodiment of the GhostCore dual nature:
+
+* **Preservation** and **Precision**
+* **Growth** and **Ghosting**
+* **Yield** and **Yielding None**
+
+---
+
+## VII. Next Steps
+
+* Complete field test of coldframe-to-lance transition
+* Integrate dual-mode controller into existing Eden logic
+* Draft WRAITH-specific targeting overlay
+* Simulate multi-strike precision with 3D hull materials
+
+**Prepared for review by GhostCore Inner Node.**
+
+*The harvest remembers the hand that touched the sword.*
