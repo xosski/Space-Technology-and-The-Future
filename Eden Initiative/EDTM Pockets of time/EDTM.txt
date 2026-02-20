@@ -1,0 +1,101 @@
+EDEN “POCKET” PoC
+Eden Temporal Pocket Module (ETPM) — outcome-equivalent time control
+
+Concept: Use a rotating Eden grow cylinder + PTEC-controlled EM/cold-plasma tooling to create two modes:
+
+Growth Acceleration Mode (more biomass per day)
+
+Stasis Preservation Mode (slower spoilage, near-indefinite practical shelf life via sterilization + low-reactivity storage)
+
+This piggybacks on Eden’s “reactor photonic bleed + vertical grow cylinders” architecture.
+
+1) Architecture
+
+A) Eden Grow Cylinder (rotating)
+
+Spiral vertical tower (as already described) with modular grow pods.
+
+Rotation used for:
+
+uniform light exposure
+
+controlled nutrient flow (gravity pulsing / capillary mesh)
+
+boundary-layer mixing around leaves (gas exchange efficiency)
+
+B) Photonic Conduit Feed
+
+Your GhostCore lattice photonic bleed becomes the “sunline” feeding the cylinder.
+
+C) PTEC Field Collar
+
+A ring of PTEC nodes around the Eden cylinder (miniaturized “0DAY Ring” control logic, inside the ship instead of a station) for:
+
+phase-controlled EM fields (mixing, electrostatic precipitation, bio-aerosol control)
+
+pulsed cold-plasma injection for sterilization cycles
+This borrows the node logic / phase control approach you already defined for 0DAY systems.
+
+D) Cold Plasma Loop (non-thermal)
+
+Uses your “supercooled plasma thermal modulation” idea as a controllable tool, but aimed at surface decontamination + atmosphere conditioning, not time dilation.
+
+2) Mode 1 — Growth Acceleration (time-feels-faster)
+
+You “speed up food growth” by pushing the known levers:
+
+Photon optimization: tuned spectral output from the photonic lattice feed (visible + IR blend as described).
+
+CO₂ enrichment + O₂ export: Eden already routes crew CO₂ into chambers and loops O₂ back.
+
+Root-zone control: humidity, nutrient concentration, oxygenation.
+
+Sterile cycling: brief cold-plasma pulses between growth intervals to reduce mold/fungus load without cooking the plants.
+
+Result: faster growth because the environment is closer to “plant maximum,” not because time changes.
+
+3) Mode 2 — Stasis Preservation (time-feels-slower)
+
+“Nearly indefinite shelf life” is achievable practically by combining:
+
+Cold-plasma sterilization pass (surface microbes are what usually start the rot chain).
+
+Low-temperature storage (true cold, not “time cold”)
+
+Low-oxygen / controlled atmosphere storage (reduce oxidation + respiration)
+
+Humidity control (stop dehydration/mold)
+
+Result: food doesn’t “age” because you’ve removed microbes and slowed chemistry.
+
+4) What makes it “GhostCore”
+
+You’re not just farming. You’re closing the loop the Eden paper already frames:
+
+reactor photonics become growth light
+
+crew CO₂ becomes yield
+
+yield becomes stability + survival doctrine
+
+And you’re using 0DAY/PTEC thinking—phase control, segmented nodes, mode maps—but pointed at biology instead of propulsion.
+
+5) PoC test (simple, measurable)
+
+Run three identical crop trays:
+
+Baseline Eden (photonic feed + CO₂ loop)
+
+Eden + rotation
+
+Eden + rotation + PTEC-cold-plasma sterile cycling
+
+Measure:
+
+grams of biomass per day
+
+mold incidence / contamination rate
+
+post-harvest shelf life (days to spoilage) after the stasis protocol
+
+If tray (3) wins hard, you’ve proven the “pocket” effect—outcome-based, not relativistic.
