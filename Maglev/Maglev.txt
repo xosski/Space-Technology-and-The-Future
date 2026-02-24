@@ -1,0 +1,225 @@
+POC A — Superconductor Hover Rail + Guided Transport
+A0. What this POC proves
+
+Hover/lock (flux pinning) over a magnetic guideway
+
+Guided travel along a rail path
+
+Propulsion via a coil “linear pull” track (simple linear motor)
+
+This is the correct physics core for “train-through-a-ship.”
+
+A1. Bill of Materials (POC scale: ~0.5–1.0 m track)
+Levitation
+
+YBCO superconductor puck (HTS disk)
+
+Liquid nitrogen (LN₂) + small Dewar / LN₂-rated container
+
+Thermal gloves + face shield (LN₂ safety)
+
+Track / Guideway
+
+Neodymium magnets (lots of identical ones)
+
+Track base: wood/acrylic + a printed/laser-cut “magnet slot” spine
+
+Sidewalls (optional but recommended): thin acrylic strips or printed guard rails
+
+Propulsion (linear pull track)
+
+10–20 identical coils (enameled copper wire wound on printed bobbins)
+
+10–20 MOSFET driver channels (modules or a driver board)
+
+Flyback diodes per coil (if not built into modules)
+
+Controller: Arduino or ESP32
+
+Power supply: typically 12–24V (depends on coil resistance)
+
+Sensors (optional but helps a lot)
+
+Hall sensors or IR break-beams to detect “car position” per segment
+
+A2. Track geometry (stable, beginner-friendly)
+
+For stable levitation you want the puck to “want” the center line.
+
+Good POC geometry: a “magnetic trough”
+
+Two magnet rows on the sides with opposing polarity, producing a restoring field toward center.
+
+A third center row (optional) increases lift/locking.
+
+If you want, I can sketch an exact polarity map (N/S layout) for your magnet size—just tell me magnet dimensions.
+
+A3. The “car”
+
+Simplest reliable build:
+
+A small platform (light plastic/foam) with the YBCO puck mounted on it
+
+Keep the puck close to the field (don’t bury it behind thick material)
+
+Add a small steel/magnet “grab point” underneath if you’re using pull-coils for motion (details below)
+
+A4. Propulsion options (choose one)
+Option A (Recommended POC): “Segmented Pull-Coils”
+
+You place coils along the track and energize them in sequence.
+
+How it works
+
+Your levitating platform carries a small ferromagnetic slug (or small magnet) below it.
+
+Coil segment #1 turns on → pulls the slug forward a few cm → turns off.
+
+Segment #2 turns on → pulls again → repeat.
+
+This is easy, scalable, and good enough to prove “ship rail shuttle” dynamics.
+
+Option B (Later upgrade): True linear synchronous motor
+
+Smoother, faster, harder. Do this after A passes.
+
+A5. Wiring (per coil segment)
+
+Each coil segment:
+
+Coil + supply
+
+MOSFET low-side switching
+
+Flyback diode across the coil
+
+Optional current sense (nice-to-have)
+
+Control pattern
+
+Only energize one coil at a time (or two with overlap) to reduce heat and power spikes.
+
+A6. Control logic (code skeleton)
+
+Two modes:
+
+Mode 1: Open-loop stepping (simplest)
+
+Fixed pulse duration per coil (e.g., 50–150 ms)
+
+Adjustable delay between pulses
+
+Mode 2: Closed-loop stepping (best)
+
+Hall sensor detects the slug arriving at segment N
+
+Trigger segment N+1
+
+Pseudo-flow (closed-loop)
+
+Read sensors
+
+If sensor N triggers → turn ON coil N+1 briefly
+
+Turn OFF coil N after handoff
+
+Repeat
+
+If you tell me Arduino vs ESP32 and how many segments you want, I’ll give you a complete runnable sketch with pin map.
+
+A7. Test plan (what “POC A passed” means)
+
+Record these:
+
+Hover time: > 60 seconds stable
+
+Track adherence: stays within guideway without contact
+
+Distance traveled: > 0.5 m under coil propulsion
+
+Repeatability: 5 successful runs end-to-end
+
+A8. Safety (non-negotiable)
+
+LN₂ = cold burns + oxygen displacement risk → ventilate
+
+Magnets pinch hard and can shatter → eye protection
+
+Coils get hot → duty cycle limits
+
+POC B — Plasma Thermal Addon (Layered onto A)
+B0. What this addon proves
+
+Not “plasma magically makes cryogenics.” Instead, something testable:
+
+A controllable plasma discharge changes heat transfer from a target surface, and you can measure it.
+
+This gives you a real datapoint for the “plasma modulation / thermal management” theme and plugs into your white-paper narrative as an experimental module.
+
+B1. Safety-first constraint (important)
+
+I’m not going to walk you through building a DIY high-voltage power supply from scratch.
+
+Use a commercial / educational-rated plasma source, such as:
+
+a DBD plasma demonstrator/kit sold for education/research, or
+
+a commercial cold-plasma air treatment module with known ratings and enclosure
+
+Goal: keep this as an instrument, not a hazard.
+
+B2. Addon architecture
+
+You add a “thermal target” near the rail environment:
+
+Thermal target
+
+Small aluminum plate (or copper) with a resistive heater pad
+
+Temperature sensor: thermistor / RTD / thermocouple
+
+Controlled heater power (so you can generate repeatable heat)
+
+Plasma module positioning
+
+Plasma discharge directed across/near the plate
+
+You measure: temperature vs time at fixed heater power
+
+B3. Measurement procedure (clean A/B test)
+
+Run heater at fixed power until temperature stabilizes (baseline)
+
+Turn plasma ON (same heater power)
+
+Log temperature drop (or change in equilibrium temp)
+
+Turn plasma OFF
+
+Repeat 3–5 times
+
+What you extract
+
+ΔT at steady state (cooling effectiveness)
+
+Time constant change (how quickly it cools)
+
+Power cost (plasma watts vs thermal benefit)
+
+B4. How it “adds onto A”
+
+Once B works on the bench, you can mount the thermal target near:
+
+coil segments (coil heating management),
+
+enclosed rail tunnel airflow zone,
+
+or a “superconductor chamber mockup” (NOT LN₂ itself—keep it separate).
+
+This gives you a believable pathway:
+
+A: superconducting hover transport is real and demonstrated
+
+B: plasma modulation affects thermal behavior in a controllable way
+
+Later: integrate thermal management intelligently (not magically)
