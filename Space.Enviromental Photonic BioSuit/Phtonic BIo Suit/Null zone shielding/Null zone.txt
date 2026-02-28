@@ -1,0 +1,122 @@
+Space Suit Defensive PoC: Null-Zone Amplifier Shielding Module (Wearable EMC)
+Goal
+
+Protect a “crew core” (wearable electronics) from fast transients (ESD/EMP-like spikes) by combining:
+
+Conductive outer suit layer (hit surface)
+
+Segmented/active boundary layer (“null-zone amplifier”)
+
+Inner protected cage + filtered penetrations (crew bubble)
+
+You’ll measure: resets/glitches/spike pickup with vs without the null-zone amplifier layer.
+
+Conceptual Stack (Suit Layers)
+
+Layer A — Outer “Skin” (Strike Layer)
+
+Conductive fabric/copper mesh “cape” or wrap around the torso area (or a mannequin box if you don’t want to wear it).
+
+This is where the transient couples first.
+
+Layer B — Null-Zone Amplifier (Dynamic Boundary Layer)
+Home-safe equivalent: a segmented conductive band around the torso + controlled “dump path.”
+
+Make 8–16 vertical copper tape strips (petals) on a flexible backing, not electrically joined end-to-end (segmentation limits runaway current loops and smears hotspots).
+
+Add a bleed path from each segment to a common “chassis ring” using high-value resistors (slow discharge; avoids sharp arcs).
+
+Optional “active” mode (still safe): a tiny microcontroller toggles which segments are tied to the chassis ring (via low-voltage MOSFETs) to simulate “phase-shear / boundary modulation” without creating a weapon-like pulse.
+
+Layer C — Inner “Crew Bubble” (Protected Core)
+
+A metal project box / mesh pouch around the electronics + probe.
+
+All cables exiting pass through a filter node (ferrite + RC/TVS appropriate to low-voltage electronics).
+
+The magic is mostly in penetrations: seams and wires are where pulses get in.
+
+Payload (What you protect)
+
+A small logger device (Arduino/ESP32/whatever) that records:
+
+uptime counter
+
+reset count
+
+ADC reading from a probe loop
+
+Probe coil: 5–20 turns of wire loop placed inside the “crew bubble” to measure induced spikes.
+
+Safe Transient Source (No “EMP device”)
+
+Use ESD-style, low-energy sources intended for electronics testing:
+
+Consumer ESD tester (preferred), or
+
+A commercial benign noise/transient module used for EMC testing, or
+
+Controlled “static discharge” to the outer skin only (least repeatable)
+
+You’ll apply hits to the outer skin, not the inner cage.
+
+Build Steps (Home-Reproducible)
+
+Inner bubble: put payload + probe loop in a metal box/mesh pouch.
+
+Null-zone amplifier band: wrap a segmented copper-tape band around the bubble with 5–20 mm spacing.
+
+Outer skin: wrap conductive fabric/mesh around everything (looser fit), leaving a consistent “air gap.”
+
+Cable discipline: if power is external, route through:
+
+ferrite bead/choke
+
+RC filter
+
+(optional) TVS diode for the DC rail
+Keep the cable short and document where it exits.
+
+Test Protocol (3 Conditions)
+
+Run N hits (20–50) per condition, same hit point and distance.
+
+A) No suit layers (payload exposed)
+B) Suit without amplifier (outer skin + inner bubble only)
+C) Suit with null-zone amplifier (outer skin + amplifier + inner bubble)
+
+Record:
+
+resets (Y/N)
+
+probe peak (mV/ADC units)
+
+any logged error flags
+
+Pass: Condition C shows fewer resets and/or lower probe peaks than B.
+
+“Null-Zone Amplifier” Knobs (What you tune)
+
+Number of segments (8 vs 16)
+
+Segment spacing and overlap
+
+Bleed resistor values (slower vs faster discharge)
+
+Where the “dump ring” sits (waist vs chest)
+
+Whether you “modulate” connectivity (active toggling) or keep passive
+
+This maps cleanly to your lore:
+
+segmentation = prism facets
+
+bleed path = controlled vent
+
+modulation = phase shear / boundary re-lock
+
+Quick Lab Sheet Data Table (copy/paste)
+Condition	Hits	Resets	Avg Probe Peak	Max Peak	Notes
+A (No layers)					
+B (No amp)					
+C (Amp on)					
