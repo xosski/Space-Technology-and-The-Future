@@ -1,0 +1,306 @@
+Eden Chamber
+Proof-of-Concept (POC) White Paper — EM-Stabilized Controlled-Environment Grow Module (Eden-01)
+Version
+
+POC v0.1 (architecture + test plan)
+
+Abstract
+
+Eden-01 is a controlled-environment grow chamber designed to be stable, modular, and “electromagnetically quiet.” It repurposes EM-field management concepts (segmented dispersal liners, controlled inductive routing, and zoned shielding) to create a protected inner habitat where lighting, pumps, sensors, and automation operate with reduced interference. The chamber’s first goal is reliability and repeatable crop output; optional EM “stimulus modes” (electroculture, pulsed fields, plasma-activated water) are treated as experimental layers only after baseline performance is validated.
+
+1) Goals and Non-Goals
+Primary Goals (POC Success)
+
+Environmental stability: tight control of temperature, humidity, CO₂, airflow, and nutrient delivery.
+
+Instrumentation integrity: low sensor noise, low comms dropouts, high repeatability run-to-run.
+
+Modularity: tray-level replaceability and sealed service boundaries.
+
+EM hygiene: reduced EMI coupling between high-power subsystems (LED drivers, pumps) and sensitive sensing/control.
+
+Non-Goals (for v0.1)
+
+Not claiming guaranteed yield boosts from EM stimulus.
+
+Not building a full commercial vertical farm—this is a repeatable module.
+
+Not relying on exotic cooling; conventional thermal management is preferred for POC.
+
+2) System Overview
+2.1 Layered Architecture (Outside → Inside)
+
+Layer A — Infrastructure Shell
+
+Power conversion, lighting drivers, pump controllers, compressors/dehumidifiers (as needed)
+
+Designed to be “noisy by nature,” physically separated
+
+Layer B — EM Dispersal / Shield Liner
+
+Segmented conductive liner cells to disrupt large eddy-current loops and reduce resonance coupling
+
+Optional lossy/absorptive inserts (ferrite-style tiles, resistive films) to damp remaining modes
+
+Purpose: keep the inner volume “quiet” and prevent the shell from becoming an antenna
+
+Layer C — Eden Habitat Volume
+
+Sealed grow space: plants, sensors, air distribution, lighting field
+
+Designed as the “clean room” layer
+
+2.2 Core Subsystems
+
+Air & Atmosphere
+
+Temp control: heater + cooling coil (or Peltier only for small volumes)
+
+Humidity: dehumidifier coil and/or desiccant loop
+
+CO₂ injection (food-safe) + mixing fan
+
+HEPA + carbon filtration (optional but recommended)
+
+Lighting
+
+High-efficiency LED array with dimming control
+
+Drivers physically placed in Layer A; only DC power enters Layer C
+
+Hydroponics / Nutrient Delivery
+
+Recirculating reservoir (outside the habitat if possible)
+
+Per-tray nutrient film (NFT), drip, or aeroponics manifold
+
+Sensors: pH, EC, water temp, reservoir level, flow
+
+Sensing & Control
+
+Habitat: temp/RH, CO₂, light intensity (PAR), leaf temp (IR optional)
+
+Water: pH/EC/temp, flow, leak detection
+
+Control: microcontroller/PLC + data logging + alarms
+
+Optional Contactless Power (Inductive Tray Power)
+
+Inductive power pads to energize tray modules without corroding connectors
+
+POC option only after baseline chamber stability is proven
+
+Optional Sterilization / Water Treatment
+
+UV-C sterilization in recirculation loop
+
+Plasma-activated water module (experimental; off by default)
+
+3) Eden-01 Physical Form Factor (POC Target)
+
+Internal grow volume: ~0.5–2.0 m³ (bench-scale)
+
+Trays: 2–6 modular trays (stacked or single plane)
+
+Serviceability: front door access + slide-out tray rails
+
+Separation: “dry electronics zone” physically isolated from “wet grow zone”
+
+4) EM Hygiene Strategy (The “Eden” Twist)
+4.1 Why EM Management Matters Here
+
+In dense controlled-environment builds, failures often come from:
+
+sensor drift and noise
+
+comms resets
+
+ground loops and moisture-corroded connectors
+
+EMI from LED drivers and motors coupling into analog sensors
+
+Eden-01 treats EM stability as a first-class design constraint.
+
+4.2 Dispersal Liner Concepts (POC Implementation)
+
+Build the liner as segmented conductive cells (think “tiling,” not a continuous metal cylinder).
+
+Avoid long continuous loops; use breaks/slots to prevent resonant currents.
+
+Add optional absorptive zones in corners and around feedthroughs.
+
+4.3 Wiring Rules (Hard Requirements)
+
+Drivers and switching power supplies stay outside Layer C.
+
+Only low-noise DC and comms pass through feedthroughs.
+
+Star-ground topology with controlled bonding points.
+
+Shielded twisted pairs for sensor lines; isolate analog from PWM motor wiring.
+
+5) Operating Modes
+Mode 0 — Baseline Grow (required)
+
+Standard horticulture control loops only (temp/RH/CO₂/light/nutrient)
+
+EM stimulus features disabled
+
+This mode is used to establish repeatability and crop benchmarks
+
+Mode 1 — EM Quiet Hardening (POC focus)
+
+Dispersal liner enabled + cable routing discipline enforced
+
+Evaluate reduction in noise, dropouts, and drift
+
+Mode 2 — Experimental Stimulus (optional, after Mode 0/1 success)
+
+Low-field stimulus patterns
+
+Water treatment experiments (e.g., plasma-activated water) as a controlled A/B test
+
+Must be isolated so it can’t corrupt baseline controls
+
+6) Control Targets (POC Suggested Setpoints)
+
+(These are placeholders; choose based on crop species.)
+
+Temp: 20–26°C
+
+RH: 50–70% with VPD-based control
+
+CO₂: 800–1200 ppm (when lights on)
+
+Photoperiod: 16/8 or crop-specific
+
+Nutrient: crop-specific EC and pH bands
+
+7) Risks and Mitigations
+7.1 Condensation + Electronics
+
+Risk: moisture causes shorts, corrosion, sensor drift
+
+Mitigation: strict wet/dry separation, sealed feedthroughs, conformal coating, drip loops
+
+7.2 EMI Coupling into Sensors
+
+Risk: unstable readings cause control oscillations
+
+Mitigation: dispersal liner, driver relocation, shielding, star-ground, filtering
+
+7.3 Pathogens / Biofilm in Recirculation
+
+Risk: crop loss
+
+Mitigation: UV loop, filtration, periodic sanitation cycle, reservoir isolation
+
+7.4 Over-automation Instability
+
+Risk: oscillatory climate control
+
+Mitigation: slow control loops, hysteresis bands, rate limits, prioritized constraints (e.g., “no condensation”)
+
+8) POC Test Plan
+Phase 1 — Chamber Integrity + Baseline Environment
+
+Objective: prove you can hold stable conditions.
+
+Leak test habitat (pressure decay / smoke test)
+
+Validate temp/RH/CO₂ stability over 24–72 hrs
+
+Validate water loop: stable pH/EC control in recirculation
+
+Pass criteria
+
+No uncontrolled condensation events
+
+Control holds within acceptable bands for a full run window
+
+Phase 2 — EM Quiet Validation (Eden Differentiator)
+
+Objective: prove the dispersal liner + layout reduces operational noise.
+Test with identical operation under:
+
+Configuration A: no liner
+
+Configuration B: segmented liner
+
+Configuration C: liner + absorptive damping
+
+Measure:
+
+sensor noise (variance, spikes)
+
+comm errors/reset counts
+
+correlated noise during PWM dimming / motor starts
+
+Pass criteria
+
+measurable reduction in sensor noise and event spikes
+
+improved comm stability under worst-case switching loads
+
+Phase 3 — Crop Baseline Repeatability
+
+Objective: repeatable yields without stimulus.
+
+Grow the same cultivar across at least 2–3 cycles
+
+Record germination rate, time-to-harvest, biomass, uniformity, contamination rate
+
+Pass criteria
+
+cycle-to-cycle variance decreases vs a non-hardened control chamber
+
+Phase 4 — Optional Stimulus A/B Tests (Only After Baseline)
+
+Objective: test stimulus without corrupting controls.
+
+Split trays: stimulus ON vs OFF
+
+Everything else identical (light, CO₂, nutrients, VPD)
+
+Track statistical significance across cycles
+
+Pass criteria
+
+any improvement must be repeatable, not a one-off
+
+no increased stress markers (wilting, tip burn, disease)
+
+9) Minimum Build List (POC Bill of Modules)
+
+Sealed chamber enclosure + access door
+
+Air circulation fans + ducting baffles
+
+Temp control: heater + cooling coil (or compact HVAC)
+
+Humidity control: dehumidification
+
+CO₂ injection + sensor
+
+LED array + external drivers
+
+Hydroponic loop: reservoir, pump, filter, pH/EC sensors, dosing (optional)
+
+Controller + logging + alarm system
+
+EM liner panels (segmented) + grounding/bonding plan
+
+10) Deliverables
+
+Eden-01 POC build spec (dimensions, tray layout, ports, wiring rules)
+
+Test protocol checklist (Phase 1–4)
+
+Data schema for logging (what to record and how often)
+
+Upgrade path options (inductive trays, sterilization, stimulus)
+
+11) Summary
+
+Eden-01 is a stability-first grow chamber that uses EM-field management and modular zoning to make controlled-environment agriculture more reliable and repeatable. Its “Eden” quality is not magic growth beams—it’s a habitat where the machines stop lying, the sensors stop hallucinating, and the plants get a consistent reality to thrive in.
