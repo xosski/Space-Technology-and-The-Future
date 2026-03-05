@@ -1,0 +1,25 @@
+Unified Abstract — PoC Program for Controlled Plasma Switching and Propellantless Propulsion Demonstrations
+
+This proof-of-concept (PoC) program consolidates three tightly related modules discussed in this thread into a single experimental roadmap: (1) a noble-gas “plasma light switch” throttle, (2) a photon-momentum micro-thruster using directed RF/laser emission from a superconducting resonator, and (3) an external-field propulsion demonstrator using an electrodynamic tether/loop coupling to Earth’s magnetic field in LEO. The plasma throttle module uses noble-gas ignition as a threshold-switch process (engineered via pressure–gap regime control and timed gas/drive modulation) and pairs it with PTEC-inspired inductive coupling/field shaping and a supercooled thermal modulation pathway to widen stable operating regimes, reduce thermal drift, and improve repeatability under pulsed cycling. Consistent with conservation laws, the program explicitly distinguishes between (a) plasma as a controllable conductive medium and (b) true propulsion, which requires momentum exchange through either propellant acceleration, photon emission, or interaction with an external field. Accordingly, the PoC includes two “propellantless but physical” thrust demonstrations: a photon-based thruster whose expected thrust follows 
+𝐹
+≈
+𝑃
+/
+𝑐
+F≈P/c (nanonewtons to micronewtons depending on radiated power and collimation), and an electrodynamic tether/loop experiment in LEO producing Lorentz force consistent with 
+𝐹
+⃗
+=
+𝐼
+ 
+𝐿
+⃗
+×
+𝐵
+⃗
+F
+=I
+L
+×
+B
+, with thrust direction reversible by current polarity. Across all modules, success is defined by repeatable, instrumented outcomes and strict null tests that rule out thermal, mechanical, and electromagnetic artifacts—e.g., orientation reversal, matched-load/“no directed emission” photon tests, and current reversal for tether coupling—so measured forces align with first-principles models rather than laboratory bias.
