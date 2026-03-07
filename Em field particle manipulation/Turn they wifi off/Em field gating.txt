@@ -1,0 +1,224 @@
+PoC: Plasma Ignition Switch for Rapid EM Field Gating
+Polymer-Structured Plasma Cell with Optional Particulate Seeding
+1) Purpose
+
+Demonstrate a repeatable, fast-switching plasma element that can attenuate, detune, or clamp an internal electromagnetic field in a controlled test system. Intended applications:
+
+RF receiver protection (plasma limiter)
+
+fast safety interlock (field collapse on fault)
+
+pulse shaping in benign lab hardware
+
+EM cavity/waveguide gating inside instrumentation
+
+Scope limit: This PoC is not about affecting external/remote systems. The plasma switch acts inside a defined enclosure (waveguide/cavity/coil assembly).
+
+2) Hypothesis
+
+A switchable plasma region behaves like a controllable conductor/dielectric discontinuity. When plasma is OFF, the structure has low loss and normal resonance/field propagation. When plasma is ON, it:
+
+increases effective conductivity,
+
+introduces loss,
+
+and/or detunes resonance,
+
+thereby collapsing field amplitude or significantly attenuating transmitted power.
+
+3) Concept Architecture
+A) The Plasma Switch Cell (core component)
+
+Gas cavity (noble gas recommended for repeatability: Ar/Ne; optional Kr/Xe later)
+
+Electrodes or RF coupling to ignite plasma (current-limited)
+
+Polymer composite chassis used as:
+
+structural housing
+
+dielectric barrier shaping the discharge channel (DBD-like behavior)
+
+thermal/mechanical stability layer
+
+Ceramic/BN/quartz interface between discharge region and polymer if heat/outgassing is a concern
+
+B) The EM Field Test Fixture (choose one)
+
+Pick one based on what you mean by “active EM field”:
+
+Waveguide / coax section (recommended)
+
+Plasma cell placed in a window/iris region.
+
+You measure attenuation (S-parameters) with plasma OFF vs ON.
+
+Resonant cavity (also excellent)
+
+Plasma cell placed near a high-field region.
+
+You measure Q-factor and resonance detuning when plasma ignites.
+
+Coil field clamp (magnetic field)
+
+Plasma cell acts as a controlled shunt or detuner for a coil driver circuit.
+
+You measure coil current/field collapse timing.
+
+4) “Beam” Clarification
+
+In this PoC, the “beam” is not a remote effect—it’s one of these:
+
+a guided RF mode in a waveguide/coax,
+
+a confined cavity field,
+
+or a local coil field.
+
+Plasma is the gate inserted into that system.
+
+5) Optional: Particulate Seeding (Metal Shavings / Charged Dust)
+
+Concept: Add a controlled amount of conductive particulate to influence ignition threshold or switching speed by increasing local field enhancements.
+
+Reality check: This is high-risk:
+
+increases filamentary discharge and arcing probability
+
+contaminates electrodes and insulators
+
+creates unpredictable failure modes
+
+in oxygen-containing environments can introduce fire hazards (so keep inert)
+
+PoC use: Only as a comparison after the clean baseline is stable.
+
+Safer substitutes for “seed” studies:
+
+controlled surface roughness / micro-textured electrode
+
+conductive micro-pattern on ceramic (repeatable)
+
+carbon-loaded or resistive films designed for HV behavior (still needs care)
+
+6) Experimental Plan
+Phase 1 — Baseline “Clean Plasma Switch” (no particulates)
+
+Goal: demonstrate repeatable ON/OFF attenuation or detuning.
+
+Procedure:
+
+Assemble test fixture (waveguide/cavity/coil).
+
+Run EM field at low power. Record baseline:
+
+transmission/reflection (RF) or resonance/Q (cavity) or coil field amplitude
+
+Ignite plasma with current limiting.
+
+Measure field change:
+
+attenuation (dB), Q drop, resonance shift, coil field collapse time
+
+Cycle ON/OFF for endurance (e.g., 100–1000 cycles) and record drift.
+
+Primary measurements:
+
+Switching time (OFF→ON and ON→OFF)
+
+Attenuation (ΔdB) or Q-factor reduction (ΔQ) or field amplitude change
+
+Required ignition energy and sustaining power
+
+Thermal rise at boundaries
+
+Repeatability (variance of switching threshold)
+
+Success criteria (example targets):
+
+≥20 dB attenuation (waveguide) or
+
+≥10× reduction in cavity Q or
+
+≥80% field amplitude collapse in coil fixture
+
+consistent switching over ≥100 cycles without runaway arcing
+
+Phase 2 — Optimization (geometry + gas + drive)
+
+Goal: widen stable operating envelope and reduce arc risk.
+
+Knobs to test:
+
+gas type (Ar vs Ne)
+
+pressure (affects ignition threshold and stability)
+
+electrode shape and spacing
+
+dielectric barrier thickness (polymer/ceramic interface)
+
+pulsed vs continuous drive
+
+thermal extraction improvements (heat sinking)
+
+Success criteria:
+
+stable “glow-like” operation in desired range (min filamentation)
+
+reduced threshold drift across cycles
+
+Phase 3 — Particulate-Seeding Comparison (optional, controlled)
+
+Goal: evaluate whether particulates meaningfully improve any benign metric without unacceptable instability.
+
+Procedure:
+
+Introduce extremely small, controlled particulate loading in a sealed, inert environment
+
+Repeat Phase 1 metrics
+
+Track failure modes:
+
+arc events
+
+electrode pitting
+
+residue buildup
+
+insulation tracking
+
+Pass/fail rule:
+If particulates increase arcing/failure rate beyond a strict threshold, they’re rejected.
+
+7) Null Tests (credibility)
+
+Same EM input power with plasma ignition disabled → no attenuation change
+
+Insert a dummy dielectric plug with same geometry but no plasma → quantify purely geometric effect
+
+Reverse polarity/phase (if applicable) → verify repeatable response signature
+
+Thermal-only run (heat the fixture without plasma) → verify attenuation isn’t just thermal detuning
+
+8) Safety Notes
+
+HV + plasma = current limiting and interlocks required
+
+UV emissions (especially Kr/Xe): shielding and eye protection
+
+Particulates: contamination control; avoid reactive metal dust; keep inert
+
+If any oxygen is present: particulate ignition hazard increases
+
+9) Deliverables
+
+Switching performance dataset: attenuation/Q/field vs time and cycles
+
+Operating envelope map: pressure vs power vs stability
+
+Repeatability report: threshold drift and failure rate
+
+Material compatibility report: outgassing, residue, dielectric wear
+
+Recommendation: clean plasma switch vs particulate-seeded variant viability
