@@ -1,0 +1,205 @@
+PoC: Dual-Channel EM Gating Field for Defensive EMI Containment and Drone-Adjacent Resilience
+1) Objective
+
+Demonstrate a deployable, non-weaponized “dual-channel EM gating” system that creates a controlled electromagnetic environment around a protected zone to:
+
+Improve resilience of critical electronics against EMI/RFI disturbances (intentional or incidental)
+
+Contain sensitive emissions (reduce leakage / susceptibility)
+
+Detect nearby drone-related RF activity and correlate it with optical/acoustic cues
+
+Automate defensive actions that are lawful: logging, alarms, access control changes, lighting changes, routing people to safe areas, etc.
+
+Scope: This PoC does not attempt to interfere with, jam, or disable drones.
+
+2) Threat Model
+
+Threats addressed
+
+Drone presence near a facility causing:
+
+privacy/security risks (cameras)
+
+RF noise / EMI impacts on Wi-Fi, comms, sensors
+
+operational disruption from proximity
+
+Constraints
+
+Defensive-only: do not transmit in a way intended to disrupt third-party devices
+
+Favor passive sensing + internal hardening + controlled EMI environment
+
+3) Concept Summary: “Dual Channel” Means Two Independent Defensive Layers
+Channel A — Passive/Shielding & Filtering Layer (Contain + Harden)
+
+RF shielding concepts (partial Faraday enclosure, conductive mesh, shielding panels)
+
+Cable management, grounding, ferrites, filters, surge protection
+
+“Quiet zone” design for critical electronics (controllers, comms, sensors)
+
+Goal: even if the RF environment becomes noisy, your systems remain stable.
+
+Channel B — Active Field Conditioning Layer (Internal “Gating” for Your Gear)
+
+Instead of affecting external drones, the “gating field” is used to:
+
+create a controlled internal field in a shielded test/operational bay
+
+rapidly switch sensitive devices between modes:
+
+normal operation
+
+hardened mode (reduced bandwidth, alternate frequency hopping, reduced antenna gain, fallback comms)
+
+safe mode (temporary shutdown of nonessential radios)
+
+Goal: treat high-EMI conditions like a fire alarm: you don’t fight the fire with a bigger fire — you move into a safer configuration.
+
+4) PoC System Architecture
+4.1 Physical Layout
+
+Protected Zone (PZ): the area you care about (control room, lab, server rack, event space)
+
+Shield Boundary: conductive mesh curtains/panels or a partial enclosure around PZ
+
+Conditioning Bay (optional): a small shielded “equipment nook” where critical gear sits
+
+4.2 Sensor Suite (Detection, not interference)
+
+RF spectrum monitoring (receive-only): detect unusual activity in common drone/control bands
+
+Optical camera (computer vision optional): detect drone silhouette/motion
+
+Acoustic sensor: rotor frequency signatures (helpful at short range)
+
+Time correlation: tie RF anomalies to optical/acoustic confirmations
+
+4.3 Control + Response (Defensive Actions)
+
+When the system detects elevated probability of drone presence:
+
+log event + timestamped RF snapshots
+
+trigger local alarms / operator notification
+
+automatically shift your equipment to “hardened mode”
+
+optionally activate physical mitigations:
+
+close blinds/curtains
+
+switch lighting patterns (visibility reduction for sensitive areas)
+
+restrict door access (if appropriate)
+
+route people away from windows/roof access
+
+5) Defensive “EM Gating” — What It Means in This PoC
+
+Your “dual-channel gating formation” becomes:
+
+Channel A: reduce coupling between the outside RF environment and your electronics (shielding/filtering)
+
+Channel B: internally gate your own systems’ vulnerability (mode switching + internal field conditioning in a controlled enclosure)
+
+This is analogous to:
+
+how data centers handle power disturbances (UPS + graceful degradation)
+
+how RF labs prevent leakage (shielded rooms + filtering)
+
+how safety systems respond to uncertain threats (detect → confirm → safe mode)
+
+6) Lab Test Plan
+Phase 1 — Baseline Susceptibility Mapping
+
+Goal: measure how your electronics behave under normal RF noise.
+
+Measure: packet loss, latency spikes, sensor error rates, resets, control-loop instability
+
+Output: baseline “EMI tolerance envelope”
+
+Phase 2 — Shield Boundary Effectiveness (Channel A)
+
+Goal: quantify improvement from passive shielding/filtering.
+
+Compare system stability metrics with and without boundary in place
+
+Measure: attenuation of external RF into PZ (receive-only probes inside/outside)
+
+Phase 3 — “Hardened Mode” Gating (Channel B)
+
+Goal: demonstrate that upon detection triggers, your system:
+
+switches modes fast and reliably
+
+becomes measurably more stable under noisy conditions
+
+retains essential functions
+
+Metrics:
+
+time-to-safe-mode
+
+reduction in error rate under high-noise periods
+
+recovery behavior after threat ends
+
+Phase 4 — Multi-sensor Detection Confidence
+
+Goal: reduce false positives.
+
+Create a classifier score from RF+optical+acoustic correlations
+
+Validate:
+
+known benign RF events don’t trigger full response
+
+multi-sensor agreement triggers logging + hardening
+
+Mandatory Null Tests
+
+RF anomaly without optical/acoustic confirmation → log only (no aggressive responses)
+
+optical false positives (birds/fans) without RF signature → log only
+
+controlled EMI in lab with shield boundary → verify improvement is due to shielding, not coincidence
+
+7) Success Criteria (PoC Pass/Fail)
+
+Pass if:
+
+Shield boundary reduces measured RF ingress into PZ by a meaningful margin (defined for your use case)
+
+Critical systems maintain stable operation significantly better in the shielded/hardened configuration vs baseline
+
+Detection system achieves a practical false-positive rate with a clear confidence threshold
+
+Automated defensive actions are reliable and reversible, with complete audit logging
+
+8) Safety, Legal, and Compliance Notes
+
+This PoC is explicitly receive-only for detection and internal for conditioning/hardening.
+
+No features are designed to interfere with third-party radios or drones.
+
+If you later operate in an environment requiring counter-UAS action, that should be handled only under appropriate legal authority and certified systems.
+
+9) Deliverables
+
+PoC report with:
+
+attenuation measurements (inside vs outside)
+
+stability metrics (before/after)
+
+detection confidence curves and event logs
+
+operational playbook (“what happens when alert triggers”)
+
+Bill-of-material categories (shielding panels, filters, sensors, logging unit)
+
+Deployment guidance: “storm shelter” style protected zone layout
