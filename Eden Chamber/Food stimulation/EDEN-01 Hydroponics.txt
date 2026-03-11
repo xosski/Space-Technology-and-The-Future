@@ -1,0 +1,155 @@
+Eden-01 Hydroponics PoC
+EM-Quiet Chamber + Optional Stimulus Layers (after baseline)
+1) PoC Goal
+
+Demonstrate that an “EM-stabilized” hydroponics chamber improves:
+
+sensor integrity (pH/EC/CO₂/RH noise and drift)
+
+control-loop stability (fewer oscillations, fewer resets)
+
+crop repeatability (consistent time-to-harvest and biomass)
+
+…and only after that, test whether optional stimulus (e.g., plasma-activated water) produces a measurable delta.
+
+2) Build Configuration
+Two matched grow bins (A/B)
+
+A (Control): standard hydroponics chamber, normal wiring
+
+B (Eden): same chamber but with:
+
+segmented conductive dispersal liner (“tiling,” not a continuous metal shell)
+
+externalized LED drivers/pump controllers (noisy gear outside grow volume)
+
+star-ground + shielded twisted pair sensor lines
+
+wet/dry separation (electronics isolated from humidity)
+
+Grow method: NFT or drip recirculating (simplest to keep consistent).
+Crops (recommended for fast cycles): lettuce, basil, spinach, cilantro.
+
+3) PoC Phases (matches your Eden-01 plan)
+Phase 1 — Chamber Integrity + Environmental Stability (72 hours)
+
+Objective: prove you can hold stable conditions without condensation events.
+
+leak test / smoke test
+
+verify temp/RH/CO₂ stability
+
+verify water loop stability (pH/EC control)
+
+Pass criteria:
+
+no uncontrolled condensation
+
+setpoints held in-band continuously
+
+Phase 2 — EM Quiet Validation (Eden differentiator)
+
+Run identical loads and measure noise:
+
+PWM dimming sweeps on LEDs
+
+pump start/stop cycling
+
+dosing pump activation bursts
+
+Measure:
+
+pH sensor variance and spikes
+
+EC variance and spikes
+
+CO₂ sensor noise
+
+comms errors/resets
+
+correlation between switching events and sensor glitches
+
+Pass criteria:
+
+measurable reduction in noise/spikes in B vs A
+
+fewer comm dropouts/resets in B
+
+Phase 3 — Baseline Crop Repeatability (2–3 grow cycles)
+
+Objective: repeatable yields with no stimulus.
+Track:
+
+germination rate
+
+time-to-harvest
+
+fresh weight + dry weight
+
+uniformity (std dev of plant mass)
+
+root mass (subset)
+
+contamination rate (biofilm/mold)
+
+Pass criteria:
+
+lower cycle-to-cycle variance in B
+
+equal or improved biomass at same kWh
+
+Phase 4 — Optional Stimulus A/B (only after Phase 3 passes)
+
+This is where your “stimulation” ideas belong, but isolated so they can’t corrupt baseline controls.
+
+Pick one stimulus to test first:
+
+Option 4A — Plasma-Activated Water (PAW) in the recirc loop (experimental)
+
+PAW module operates in a closed side-loop, not in the grow chamber air
+
+dosing is controlled and reversible
+
+Measure:
+
+root health markers
+
+growth rate delta
+
+pathogen/biofilm reduction
+
+stress signs (tip burn, wilting)
+
+Option 4B — Low-field electroculture pattern (very cautious)
+
+low amplitude, localized near root zone
+
+strict A/B tray split
+
+Pass criteria:
+
+repeatable improvement across cycles
+
+no increase in stress or disease
+
+4) Data Logging Schema (minimum)
+
+Log at 1–10 second intervals:
+
+Temp/RH, CO₂, PAR/PPFD
+
+reservoir pH, EC, water temp, water level
+
+pump states, dosing events
+
+LED dimming state, driver temps
+
+alarms, resets, comm errors
+
+5) What this PoC proves
+
+Engineering win: “the machines stop lying” (sensor truthfulness and control stability)
+
+Biology win (optional): stimulus effects only if they survive proper A/B testing
+
+Scale path: modular trays, sealed service boundaries, reliable hydroponics module design
