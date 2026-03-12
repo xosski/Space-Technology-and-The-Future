@@ -1,4 +1,104 @@
+PoC Draft
+VeilPiercer Passive-First Radar Mode
+Drift-Pulse Interference Ranging and Thermal Confirmation
 
+Version: v0.3 PoC
+Date: 2026-03-05
+Program: Project VeilPiercer / GhostScope Integration
+
+1) Abstract
+
+This Proof-of-Concept proposes a passive-first sensing architecture that combines baseline environmental listening with optional low-energy probe pulses to detect, localize, and classify anomalies in a monitored volume. Unlike conventional radar, the system is designed to first establish a coherence map of the environment, then identify disturbances through shifts in phase, attenuation, timing, and thermal drift. Only after passive anomaly detection does the system enter a limited active confirmation mode, using short probe pulses to estimate range, shape, and persistence. This aligns with the VeilPiercer concept of layered interference capture, the passive/active thermal detection model, and the GhostScope-1 structural confirmation approach.
+
+2) Objective
+
+Demonstrate a sensing stack that can:
+
+passively detect anomalous disturbances in an environment,
+
+distinguish persistent objects from transient noise,
+
+optionally apply low-pulse interrogation for confirmation,
+
+correlate signal anomalies with thermal or structural signatures,
+
+produce a repeatable confidence score for operator review.
+
+This PoC is intended for defensive sensing, monitoring, and environmental awareness only.
+
+3) Concept Summary
+Tier 1 — Passive Drift Listening
+
+The system continuously listens to background environmental fields and builds a baseline map of:
+
+interference patterns,
+
+harmonic drift,
+
+phase coherence,
+
+thermal background stability.
+
+This matches the “passive harmonic drift” and baseline anomaly detection ideas in the VeilPiercer material.
+
+Tier 2 — Low-Pulse Interrogation
+
+When passive monitoring detects a candidate anomaly, the system emits a minimal confirmation pulse into the monitored volume and measures:
+
+return delay,
+
+phase distortion,
+
+attenuation gap,
+
+shadowing,
+
+wake persistence.
+
+This is the “active confirmation” layer already implied in the VeilPiercer PoC.
+
+Tier 3 — Secondary Confirmation
+
+If the anomaly remains unresolved, a second sensing channel is used:
+
+thermal differential confirmation,
+
+structural/diffraction-style confirmation,
+
+or high-speed waveform comparison.
+
+This aligns with GhostScope-1 and the passive/active thermal detection concept.
+
+4) Technical Hypothesis
+
+A monitored environment has a measurable baseline pattern. When an object, disturbance, or structural anomaly enters the detection space, it changes that pattern in ways that can be measured before and after low-energy pulse interrogation.
+
+The system should be able to detect anomalies by combining:
+
+passive coherence breaks,
+
+active pulse return differences,
+
+and secondary thermal/structural confirmation.
+
+The expected result is a hybrid passive/active ranging system with better false-positive resistance than passive-only sensing.
+
+5) PoC Architecture
+A) Sensor Node Array
+
+A multi-node listening geometry surrounding or facing the test zone.
+
+Functions:
+
+capture ambient signal drift,
+
+compare node-to-node phase differences,
+
+triangulate anomaly directionality.
+
+B) Pulse Source
+
+A controlled, low-energy pulse generator used only after passive detection.
 Purpose:
 
 confirm range,
