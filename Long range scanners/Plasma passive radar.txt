@@ -1,0 +1,194 @@
+
+Purpose:
+
+confirm range,
+
+confirm persistence,
+
+improve shape estimate.
+
+C) Thermal Confirmation Channel
+
+Independent thermal sensing to detect:
+
+wake effects,
+
+thermal voids,
+
+surface heat anomalies.
+
+D) Structural Confirmation Channel (Optional)
+
+A higher-resolution confirmation layer inspired by GhostScope-style diffraction/structural probing for difficult targets.
+
+6) PoC Test Phases
+Phase 1 — Passive Baseline Mapping
+
+Goal: establish a clean environmental signature with no target present.
+
+Procedure:
+
+run sensors continuously over fixed intervals,
+
+record harmonic drift, phase stability, and thermal background,
+
+generate a baseline interference/coherence map.
+
+Measurements:
+
+phase variance,
+
+background noise spectrum,
+
+thermal stability,
+
+cross-node timing offsets.
+
+Success criteria:
+
+stable baseline map,
+
+repeatable node correlation over time.
+
+Phase 2 — Passive Anomaly Detection
+
+Goal: prove that introduced objects create detectable passive deviations.
+
+Procedure:
+
+introduce known test objects into the monitored volume,
+
+compare passive readings against baseline,
+
+classify transient vs persistent changes.
+
+Measurements:
+
+coherence break magnitude,
+
+anomaly duration,
+
+multi-node agreement,
+
+thermal drift deviation.
+
+Success criteria:
+
+known objects produce measurable anomaly signatures,
+
+false positive rate remains bounded.
+
+Phase 3 — Low-Pulse Confirmation
+
+Goal: confirm that brief interrogation pulses improve detection confidence.
+
+Procedure:
+
+after passive anomaly detection, emit a short probe pulse,
+
+measure response timing, attenuation, and shadowing,
+
+compare against passive-only classification.
+
+Measurements:
+
+pulse delay,
+
+phase distortion,
+
+return attenuation,
+
+confidence score improvement.
+
+Success criteria:
+
+low-pulse mode improves target localization,
+
+active confirmation reduces ambiguous classifications.
+
+Phase 4 — Thermal / Secondary Confirmation
+
+Goal: validate that thermal or structural signatures help confirm difficult targets.
+
+Procedure:
+
+repeat Phase 2–3 with thermal channel enabled,
+
+compare classification performance with and without thermal confirmation.
+
+Measurements:
+
+thermal delta map,
+
+wake persistence,
+
+cross-correlation with pulse-confirmed anomaly position.
+
+Success criteria:
+
+improved distinction between real targets and noise,
+
+better confidence on low-signature objects.
+
+7) Null Tests
+
+These are required for credibility.
+
+No target / passive only → baseline must remain stable
+
+Target present / passive only → anomaly must appear before active confirmation
+
+Pulse with no target → system must not invent false structure
+
+Thermal-only disturbance → should not be misclassified as geometric target without corroboration
+
+Transient noise event → must decay below persistence threshold
+
+8) Deliverables
+
+baseline coherence maps,
+
+anomaly event logs,
+
+pulse-confirmation range curves,
+
+thermal correlation overlays,
+
+false-positive / false-negative analysis,
+
+recommended threshold set for passive-to-active handoff.
+
+9) What This PoC Proves
+
+Proves:
+
+passive-first anomaly detection is viable,
+
+low-pulse interrogation can improve range/confidence,
+
+thermal/secondary channels reduce ambiguity,
+
+a hybrid passive/active detection suite can be built as a layered system.
+
+Does not prove:
+
+full conventional radar replacement in all environments,
+
+perfect classification,
+
+long-distance performance without scale-up testing.
+
+10) Suggested Naming
+
+A clean name for this mode would be:
+
+VeilPiercer-PFR
+Passive-First Radar / Ranging Mode
+
+Alternate:
+
+Drift-Pulse Interference Ranging
+
+Coherence Shadow Detection Mode
+
+Hybrid Passive-Active Recon Layer
