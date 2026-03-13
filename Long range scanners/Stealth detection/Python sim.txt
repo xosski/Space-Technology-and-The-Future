@@ -1,0 +1,186 @@
+"""
+VeilPiercer Negative-Space Detection PoC
+
+What this does
+--------------
+This proof of concept simulates a 2D electromagnetic field baseline, then introduces
+an object that does not produce a strong direct reflection but does disturb the field
+through attenuation and phase distortion.
+
+Instead of detecting a bright return, the PoC detects:
+- missing energy relative to baseline
+- phase error relative to baseline
+- anomaly score across a sensor grid
+
+This is a software model for concept validation, not a hardware-ready detector.
+"""
+
+from __future__ import annotations
+
+import numpy as np
+import matplotlib.pyplot as plt
+from dataclasses import dataclass
+
+
+@dataclass
+class FieldConfig:
+    size: int = 220
+    wavelength: float = 22.0
+    source_a: tuple[int, int] = (40, 110)
+    source_b: tuple[int, int] = (180, 110)
+    object_center: tuple[int, int] = (112, 105)
+    object_radius: int = 24
+    attenuation: float = 0.78
+    phase_shift: float = np.pi / 2.7
+    detection_threshold: float = 0.28
+
+
+class NegativeSpaceDetector:
+    def __init__(self, cfg: FieldConfig):
+        self.cfg = cfg
+        self.x, self.y = np.meshgrid(np.arange(cfg.size), np.arange(cfg.size))
+
+    def wave_from_source(self, src: tuple[int, int]) -> np.ndarray:
+        sx, sy = src
+        r = np.sqrt((self.x - sx) ** 2 + (self.y - sy) ** 2) + 1e-6
+        k = 2 * np.pi / self.cfg.wavelength
+        # Simple decaying complex field
+        return np.exp(1j * k * r) / np.sqrt(r)
+
+    def baseline_field(self) -> np.ndarray:
+        return self.wave_from_source(self.cfg.source_a) + self.wave_from_source(self.cfg.source_b)
+
+    def object_mask(self) -> np.ndarray:
+        cx, cy = self.cfg.object_center
+        return ((self.x - cx) ** 2 + (self.y - cy) ** 2) <= self.cfg.object_radius ** 2
+
+    def disturbed_field(self) -> np.ndarray:
+        field = self.baseline_field().copy()
+        mask = self.object_mask()
+
+        # Object is not a bright reflector here; it behaves more like a stealthy distortion zone.
+        # We attenuate and phase-shift the local field to mimic an "absence signature".
+        field[mask] *= (1.0 - self.cfg.attenuation) * np.exp(1j * self.cfg.phase_shift)
+
+        # Add a weak diffuse scatter halo around the object so it is not unrealistically perfect.
+        cx, cy = self.cfg.object_center
+        r = np.sqrt((self.x - cx) ** 2 + (self.y - cy) ** 2)
+        halo = np.exp(-((r - self.cfg.object_radius) ** 2) / (2 * (self.cfg.object_radius / 3.5) ** 2))
+        field += 0.055 * halo * np.exp(1j * r / 7.0)
+        return field
+
+    def anomaly_maps(self) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+        baseline = self.baseline_field()
+        disturbed = self.disturbed_field()
+
+        amp_base = np.abs(baseline)
+        amp_dist = np.abs(disturbed)
+
+        # Missing-energy map: where observed amplitude is less than expected.
+        missing_energy = np.clip(amp_base - amp_dist, 0, None)
+        missing_energy /= (missing_energy.max() + 1e-9)
+
+        # Phase error map: where the local phase differs from the baseline.
+        phase_delta = np.angle(disturbed * np.conj(baseline))
+        phase_error = np.abs(phase_delta) / np.pi
+
+        # Combined anomaly score.
+        score = 0.65 * missing_energy + 0.35 * phase_error
+        score /= (score.max() + 1e-9)
+
+        return missing_energy, phase_error, score
+
+    def detect(self) -> dict:
+        missing_energy, phase_error, score = self.anomaly_maps()
+        detection_mask = score > self.cfg.detection_threshold
+
+        ys, xs = np.where(detection_mask)
+        if len(xs) == 0:
+            return {
+                "detected": False,
+                "bbox": None,
+                "peak_score": float(score.max()),
+                "pixels": 0,
+            }
+
+        bbox = {
+            "x_min": int(xs.min()),
+            "x_max": int(xs.max()),
+            "y_min": int(ys.min()),
+            "y_max": int(ys.max()),
+        }
+        return {
+            "detected": True,
+            "bbox": bbox,
+            "peak_score": float(score.max()),
+            "pixels": int(detection_mask.sum()),
+        }
+
+    def plot(self) -> None:
+        baseline = self.baseline_field()
+        disturbed = self.disturbed_field()
+        missing_energy, phase_error, score = self.anomaly_maps()
+        detection = self.detect()
+
+        fig, axes = plt.subplots(2, 3, figsize=(14, 9))
+        fig.suptitle("Negative-Space EM Detection PoC", fontsize=15)
+
+        plots = [
+            (np.abs(baseline), "Baseline amplitude"),
+            (np.abs(disturbed), "Observed amplitude"),
+            (missing_energy, "Missing-energy map"),
+            (phase_error, "Phase error map"),
+            (score, "Combined anomaly score"),
+        ]
+
+        for ax, (data, title) in zip(axes.flat[:5], plots):
+            im = ax.imshow(data, origin="lower")
+            ax.set_title(title)
+            ax.set_xticks([])
+            ax.set_yticks([])
+            fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+
+        ax = axes.flat[5]
+        ax.imshow(score, origin="lower")
+        ax.set_title("Detection overlay")
+        ax.set_xticks([])
+        ax.set_yticks([])
+
+        if detection["detected"]:
+            b = detection["bbox"]
+            rect_x = [b["x_min"], b["x_max"], b["x_max"], b["x_min"], b["x_min"]]
+            rect_y = [b["y_min"], b["y_min"], b["y_max"], b["y_max"], b["y_min"]]
+            ax.plot(rect_x, rect_y, linewidth=2)
+            ax.text(
+                b["x_min"],
+                max(0, b["y_min"] - 8),
+                f"detected | peak={detection['peak_score']:.2f}",
+                fontsize=9,
+                bbox=dict(boxstyle="round,pad=0.2", fc="white", alpha=0.8),
+            )
+
+        plt.tight_layout()
+        plt.show()
+
+
+def main() -> None:
+    cfg = FieldConfig()
+    detector = NegativeSpaceDetector(cfg)
+    result = detector.detect()
+
+    print("=== VeilPiercer Negative-Space Detection PoC ===")
+    print(f"Detected: {result['detected']}")
+    print(f"Peak anomaly score: {result['peak_score']:.3f}")
+    print(f"Triggered pixels: {result['pixels']}")
+    print(f"Bounding box: {result['bbox']}")
+    print()
+    print("Interpretation:")
+    print("The object is inferred from a deficit/distortion in the expected field,")
+    print("not from a strong direct reflection. In other words, we detect the bruise")
+    print("it leaves on the field.")
+
+    detector.plot()
+
+
+if __name__ == "__main__":
+    main()
