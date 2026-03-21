@@ -1,0 +1,159 @@
+One-Page Lab Sheet
+PTEC “Null Zone” PoC — Transient (EMP-like) Shielding With Counter-Rotation
+
+Lab ID: PTEC-EMC-001
+Goal: Demonstrate that a rotating outer conductive shell can reduce coupling of fast electrical transients into an inner protected “null zone” compared to a static shield.
+
+1) Objective (Success Criteria)
+
+You will measure transient intrusion into a protected payload under three conditions:
+
+A. No shield (control)
+B. Static shield (nested shells, rotation OFF)
+C. PTEC mode (nested shells, rotation ON)
+
+Pass options (pick one):
+
+Uptime: payload logs 0 resets over N hits in C (or fewer than B)
+
+Field pickup: probe shows lower peak intrusion in C than B (repeatably)
+
+Error rate: fewer logged glitches / corrupted samples in C than B
+
+2) Concept (What You’re Proving)
+
+A fast transient (EMP-like) is a broadband pulse that couples through seams, gaps, and wiring.
+Counter-rotation doesn’t “cancel” the pulse—it changes boundary conditions over time, smearing leakage hotspots and rerouting eddy currents so less energy coherently reaches the inner zone.
+
+3) Safety
+
+Do NOT build an EMP device. Use standard, low-energy ESD/EMC transient sources intended for electronics testing.
+
+Eye protection recommended. Keep transients on the OUTER shell only.
+
+Keep the payload electrically isolated from the outer shell unless specifically testing a grounding configuration.
+
+4) Materials (Home-Build Friendly)
+
+Payload (“crew”)
+
+Small microcontroller/logger (or any device that can log uptime/errors)
+
+Simple “field probe” pickup loop: 5–20 turns of wire (small coil) connected to:
+
+a microcontroller ADC, or
+
+an oscilloscope, or
+
+a cheap USB audio interface (as a crude transient monitor)
+
+Shielding
+
+Inner cage (Layer 1): metal project box OR copper tape box OR fine metal mesh box
+
+Rotating cage (Layer 2): mesh/copper tape sleeve on a ring + lazy-Susan bearing or turntable motor
+
+Outer shell (Layer 3): larger conductive wrap/mesh/foil “hit surface” with a defined discharge path (to its own ground reference)
+
+Transient source (choose one)
+
+Consumer ESD test tool (preferred)
+
+Commercial EFT/surge/noise injector (benign test gear)
+
+Controlled “noisy switching” of an inductive load near the outer shell (least preferred, least repeatable)
+
+Measuring
+
+Digital scale not needed here; you’re measuring spikes/resets
+
+Ruler/spacers to keep consistent distances/gaps
+
+5) Setup (Layer Stack)
+
+Layer 0: Payload + probe coil (inside)
+Layer 1: Inner cage (static)
+Layer 2: Rotating cage around Layer 1 (air gap 5–20 mm)
+Layer 3: Outer shell (where transient is applied)
+
+Notes
+
+Keep seams/cable holes minimal.
+
+If you must run a cable, route it through a tight, conductive “neck” and document it (this becomes your leakage point).
+
+6) Procedure (Repeatable Test)
+
+Define constants for the whole run:
+
+Hit location on outer shell: __________
+
+Distance from hit point to payload center: __________
+
+Number of hits per condition (N): ________ (suggest 20–50)
+
+Rotation speeds tested (RPM): ______ / ______ / ______
+
+Condition A — No Shield (Control)
+
+Place payload on bench, probe running/logging.
+
+Apply N transients in the same way each time.
+
+Record resets/errors and probe peak for each hit.
+
+Condition B — Static Shield
+
+Place payload in Layer 1 + Layer 2 + Layer 3, rotation OFF.
+
+Apply N transients to the same outer location.
+
+Record metrics.
+
+Condition C — PTEC Mode (Counter-Rotation ON)
+
+Same as B, but rotation ON at chosen RPM.
+
+Apply N transients.
+
+Record metrics.
+
+Repeat at different RPMs if desired.
+
+7) Data Table (Fill In)
+Condition	RPM	Hit #	Reset? (Y/N)	Probe Peak (mV or ADC)	Notes (where leak?)
+A	0	1			
+A	0	…			
+B	0	1			
+B	0	…			
+C	___	1			
+C	___	…			
+
+Summary
+
+Total resets A / B / C: ____ / ____ / ____
+
+Avg peak A / B / C: ____ / ____ / ____
+
+Max peak A / B / C: ____ / ____ / ____
+
+8) Analysis (What to Conclude)
+
+Does B improve over A? (basic shielding effectiveness)
+
+Does C improve over B? (rotation adds “phase shear / hotspot smearing”)
+
+Does performance change with RPM? (find a “best” region)
+
+Where are the leakage points? (seams, cable penetrations, shield alignment)
+
+9) Optional “Phase-Lock” Payload Mode (Lore-Accurate Add-On)
+
+If probe peak exceeds threshold, payload enters “lockdown”:
+
+reduce peripherals / pause noncritical tasks
+
+log event timestamp
+
+continue essential monitoring
+This models “inner null zone phase-lock” during a strike.

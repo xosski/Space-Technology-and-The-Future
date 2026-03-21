@@ -1,0 +1,566 @@
+POC: 5D Navigation With Attitude as the 5th Dimension
+1) Define the 5D state
+
+We treat navigation as planning through a state-space:
+
+𝑠
+=
+(
+𝑥
+,
+𝑦
+,
+𝑧
+,
+𝑡
+,
+𝜃
+)
+s=(x,y,z,t,θ)
+
+Where:
+
+𝑥
+,
+𝑦
+,
+𝑧
+x,y,z = position in an inertial frame
+
+𝑡
+t = time
+
+𝜃
+θ = ship rotational position relative to a “baseline”
+
+You can use:
+
+Yaw only (simplest) → 
+𝜃
+θ is heading angle
+
+Or if you want more realism: pick one principal axis angle relative to baseline (still “one dimension”)
+
+2) Choose the “baseline point” and baseline direction
+
+You said: “rotational position in regards to a point set as a baseline.”
+
+Define:
+
+A fixed point 
+𝐵
+B in space (base station, star, beacon, waypoint)
+
+A baseline direction vector from ship to that point:
+
+𝑏
+^
+(
+𝑡
+)
+=
+𝐵
+(
+𝑡
+)
+−
+𝑟
+(
+𝑡
+)
+∥
+𝐵
+(
+𝑡
+)
+−
+𝑟
+(
+𝑡
+)
+∥
+b
+^
+(t)=
+∥B(t)−r(t)∥
+B(t)−r(t)
+	​
+
+
+Where 
+𝑟
+(
+𝑡
+)
+=
+(
+𝑥
+,
+𝑦
+,
+𝑧
+)
+r(t)=(x,y,z).
+
+Define the ship’s forward axis unit vector 
+𝑓
+^
+(
+𝑡
+)
+f
+^
+(t) from its attitude.
+
+Now define the 5th-dim coordinate 
+𝜃
+θ as the signed angle between the two:
+
+𝜃
+(
+𝑡
+)
+=
+atan2
+(
+∥
+𝑓
+^
+×
+𝑏
+^
+∥
+,
+ 
+𝑓
+^
+⋅
+𝑏
+^
+)
+θ(t)=atan2(∥
+f
+^
+×
+b
+^
+∥, 
+f
+^
+⋅
+b
+^
+)
+
+(With sign determined by a chosen “up” axis so clockwise vs counterclockwise is consistent.)
+
+Interpretation:
+
+𝜃
+=
+0
+θ=0 means the ship is pointing exactly at the baseline point.
+
+𝜃
+=
+𝜋
+θ=π means pointed directly away.
+
+3) Why this matters for navigation (what it “buys” you)
+
+Many constraints depend on attitude:
+
+comms antenna must face the relay
+
+solar panels must face the star
+
+thermal radiators must avoid pointing at heat sources
+
+sensors/weapon/scan cones require certain pointing
+
+So we define a “safe corridor” not just in position/time, but also in allowed 
+𝜃
+θ.
+
+That makes your “null zone corridor” a real thing:
+
+a 4D tube becomes a 5D ribbon.
+
+4) Define the navigability rule: the Viability Ribbon
+
+At every 
+(
+𝑥
+,
+𝑦
+,
+𝑧
+,
+𝑡
+)
+(x,y,z,t), only certain 
+𝜃
+θ are acceptable:
+
+𝜃
+∈
+Θ
+allowed
+(
+𝑥
+,
+𝑦
+,
+𝑧
+,
+𝑡
+)
+θ∈Θ
+allowed
+	​
+
+(x,y,z,t)
+
+Example allowed bands:
+
+Comms lock: 
+∣
+𝜃
+∣
+≤
+𝜃
+max
+⁡
+∣θ∣≤θ
+max
+	​
+
+
+Solar lock: 
+∣
+𝜃
+−
+𝜃
+⊙
+∣
+≤
+𝜃
+panel
+∣θ−θ
+⊙
+	​
+
+∣≤θ
+panel
+	​
+
+
+Thermal: avoid 
+𝜃
+θ ranges pointing radiators at hot bodies
+
+The “null zone” is where the intersection is non-empty:
+
+Θ
+allowed
+≠
+∅
+Θ
+allowed
+	​
+
+
+=∅
+5) Dynamics: how you move through 5D
+
+You have two sets of controls:
+
+Translation (thrusters) → changes 
+𝑥
+,
+𝑦
+,
+𝑧
+x,y,z
+
+Rotation (reaction wheels / RCS) → changes 
+𝜃
+θ
+
+Discrete-time update:
+
+𝑟
+𝑘
++
+1
+=
+𝑟
+𝑘
++
+𝑣
+𝑘
+Δ
+𝑡
+r
+k+1
+	​
+
+=r
+k
+	​
+
++v
+k
+	​
+
+Δt
+𝜃
+𝑘
++
+1
+=
+𝜃
+𝑘
++
+𝜔
+𝑘
+Δ
+𝑡
+θ
+k+1
+	​
+
+=θ
+k
+	​
+
++ω
+k
+	​
+
+Δt
+
+Where:
+
+𝜔
+𝑘
+ω
+k
+	​
+
+ is commanded angular rate (limited)
+
+Constraints:
+
+∣
+𝜔
+𝑘
+∣
+≤
+𝜔
+max
+⁡
+∣ω
+k
+	​
+
+∣≤ω
+max
+	​
+
+
+∣
+𝜃
+𝑘
++
+1
+−
+𝜃
+𝑘
+∣
+≤
+𝜔
+max
+⁡
+Δ
+𝑡
+∣θ
+k+1
+	​
+
+−θ
+k
+	​
+
+∣≤ω
+max
+	​
+
+Δt
+
+6) Cost function (how the planner chooses routes)
+
+Define a cost for a step in 5D:
+
+𝐽
+=
+𝑤
+1
+(
+Δ
+𝑣
+)
++
+𝑤
+2
+(
+Δ
+𝜃
+)
++
+𝑤
+3
+(
+risk
+)
++
+𝑤
+4
+(
+violation penalty
+)
+J=w
+1
+	​
+
+(Δv)+w
+2
+	​
+
+(Δθ)+w
+3
+	​
+
+(risk)+w
+4
+	​
+
+(violation penalty)
+
+Where:
+
+Δ
+𝑣
+Δv ≈ fuel usage
+
+Δ
+𝜃
+Δθ ≈ attitude-control effort
+
+risk could include debris density, radiation, etc.
+
+violations are huge penalties if 
+𝜃
+θ leaves the allowed band
+
+This is the “map”: a 5D cost field.
+
+7) The actual PoC experiment (simulation you can run)
+
+Inputs
+
+Baseline point 
+𝐵
+B (fixed or moving)
+
+A set of waypoints or a target location
+
+Attitude constraint: must maintain 
+∣
+𝜃
+∣
+<
+20
+∘
+∣θ∣<20
+∘
+ for comms lock (example)
+
+Angular rate limit: 
+𝜔
+max
+⁡
+ω
+max
+	​
+
+
+Run two planners
+
+4D planner: ignores 
+𝜃
+θ, plans shortest Δv path
+
+5D planner: plans in 
+(
+𝑥
+,
+𝑦
+,
+𝑧
+,
+𝑡
+,
+𝜃
+)
+(x,y,z,t,θ) with constraints
+
+Measure
+
+% of time comms lock is maintained
+
+total Δv cost
+
+total attitude maneuver cost (integral of |
+𝜔
+ω|)
+
+number of constraint violations
+
+Expected result
+
+4D planner breaks comms lock a lot (unplanned attitude demands)
+
+5D planner produces a slightly “longer” route but keeps 
+𝜃
+θ viable the whole time
+
+That’s your proof: the 5th dimension (rotation) changes which paths are feasible.
+
+8) If you want to make it very “GhostCore”
+
+Name it:
+
+Baseline Anchor Point (BAP)
+
+Attitude Phase Coordinate (APC) = 
+𝜃
+θ
+
+Viability Ribbon = the connected region of allowed 
+(
+𝑥
+,
+𝑦
+,
+𝑧
+,
+𝑡
+,
+𝜃
+)
+(x,y,z,t,θ)
+
+Drift = when 
+𝜃
+θ slips outside the allowed band and the planner must rethread the ribbon

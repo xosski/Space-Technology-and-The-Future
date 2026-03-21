@@ -1,0 +1,79 @@
+# POC: Programmable Crystal Lattice Simulation for Energy Routing
+# Description: Simulates a metamaterial unit cell with tunable lattice geometry for thermal/electronic routing.
+# Disclaimer: For educational, conceptual, and speculative modeling purposes only.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# -- Material Node Definition --
+class LatticeNode:
+    def __init__(self, position, conductivity=1.0, adaptive=False):
+        self.position = np.array(position)
+        self.conductivity = conductivity  # scalar for now
+        self.adaptive = adaptive
+        self.heat = 0.0
+
+    def interact(self, neighbors):
+        if not neighbors:
+            return
+        avg = sum(n.heat for n in neighbors) / len(neighbors)
+        delta = (avg - self.heat) * self.conductivity
+        self.heat += delta
+
+        if self.adaptive:
+            self.conductivity = min(2.0, self.conductivity + 0.01 * delta)
+
+# -- Lattice Constructor --
+def construct_lattice(size=(10, 10), adaptive_map=None):
+    lattice = []
+    for x in range(size[0]):
+        row = []
+        for y in range(size[1]):
+            is_adaptive = adaptive_map[x][y] if adaptive_map else False
+            node = LatticeNode(position=(x, y), adaptive=is_adaptive)
+            row.append(node)
+        lattice.append(row)
+    return lattice
+
+# -- Simulation Loop --
+def simulate_heat_flow(lattice, steps=100, heat_source=(0, 0), intensity=10):
+    history = []
+    for step in range(steps):
+        # Apply heat
+        x, y = heat_source
+        lattice[x][y].heat += intensity
+
+        # Propagate heat
+        for row in lattice:
+            for node in row:
+                neighbors = get_neighbors(lattice, node.position)
+                node.interact(neighbors)
+
+        # Capture snapshot
+        snapshot = np.array([[node.heat for node in row] for row in lattice])
+        history.append(snapshot)
+
+    return history
+
+# -- Neighbor Retrieval --
+def get_neighbors(lattice, pos):
+    x, y = pos
+    neighbors = []
+    for dx, dy in [(-1,0), (1,0), (0,-1), (0,1)]:
+        nx, ny = x + dx, y + dy
+        if 0 <= nx < len(lattice) and 0 <= ny < len(lattice[0]):
+            neighbors.append(lattice[nx][ny])
+    return neighbors
+
+# -- Visualization --
+def visualize(history, step=-1):
+    plt.imshow(history[step], cmap='inferno')
+    plt.colorbar(label='Heat Intensity')
+    plt.title(f"Heat Distribution at Step {step}")
+    plt.show()
+
+# -- Demo Run --
+adaptive_map = [[(x+y)%5==0 for y in range(10)] for x in range(10)]
+lattice = construct_lattice(size=(10, 10), adaptive_map=adaptive_map)
+history = simulate_heat_flow(lattice, steps=100, heat_source=(5, 5), intensity=5)
+visualize(history, step=99)

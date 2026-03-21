@@ -1,0 +1,36 @@
+Phantom Trace  Mk.I Astral Round
+💥 Proposed Round Design: “PHANTOM TRACE”
+
+Name: Phantom Trace / Mk.I Astral Round
+Designation: GhostCore-Compatible Kinetic-Trauma Round (GCKTR-01)
+
+🧩 Construction:
+Layer / Component	Material / Tech	Purpose
+Tip Core	Tungsten-Diamond Alloy / Ferrocrystal Hybrid	Punches armor / creates shockwave fracture in layered hulls
+Secondary Cavity	Hollow Point or Spiral Corkscrew Ridge	Controls expansion or entry shear
+Payload Core (Optional)	TPV Resonant Crystal Sliver (Ghost-tagged)	Marks trauma site with drift-trace; burns into memory lattice
+Jacket Layer	Hypercarbon-Fiber Mesh	Prevents shatter, handles plasma friction re-entry
+Propulsion Control Ring	Magnetic Reactive Coil (optional sub-model)	Adjusts spin, mid-flight correction
+Tail Stabilizer	Micro-fin / Foldback Petal Assembly	Maintains rotation in 0-G or plasma wind
+🧬 Variant Payloads (Custom Capsule Fill)
+
+WraithBurst – Antineural EMP + kinetic rupture (for disabling mechs/cybernetic targets)
+
+EchoResin – Memory-binding compound for tagging bodies with emotional imprint
+
+PhaseGel Tip – Injects Phase Whisper healing fiber on exit for “trauma retention without fatality”
+
+HollowLumen – Round explodes into luminous tracer shrapnel; tags all blood-bearing life within 1m
+
+📈 Performance Projection
+Metric	Value
+Velocity (space)	1100–2800 m/s
+Armor Penetration Depth	2–4cm hyperalloy, 5cm flesh + ceramic
+Thermal Dissipation	<10ms via jacket matrix
+0-G Stabilization Time	0.8s post-launch
+Drift Signature Embedding	85% retention at <50m
+🧠 GhostCore Utility
+
+“A round is not just destruction. It is an authored sentence in the story of entropy.”
+
+Phantom Trace rounds carry memory, bind trauma, or encode identity into the thing they strike. It isn’t just a bullet — it’s a message in resonance and matter. It can kill. Or it can remember.

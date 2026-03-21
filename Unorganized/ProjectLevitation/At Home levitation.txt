@@ -1,0 +1,179 @@
+PoC: Spinning-Magnet Eddy-Current “Lift” Measured on a Scale (100 g target)
+What you’re proving
+
+A changing magnetic field induces eddy currents in a conductor (aluminum). Those currents create an opposing magnetic field → repulsive force. If your rotor generates an upward force on itself, it generates an equal downward force on the plate.
+
+So you measure the effect by watching the scale reading increase.
+
+Target: +100 g on the scale (≈ 0.98 N).
+
+Parts you can source easily
+
+Mechanical
+
+1× DC motor (12–24 V “775 motor” style or similar) + simple speed controller (PWM).
+The exact model isn’t sacred; you just want decent RPM and torque.
+
+1× rotor disk (plywood, acrylic, or 3D printed), ~100–150 mm diameter
+
+1× motor mount (wood blocks / L-brackets / scrap metal)
+
+1× clear guard (polycarbonate/acrylic bowl or sheet) to cover the spinning rotor
+
+Magnet + target
+
+8–16× neodymium magnets (rectangular or arc segments; identical is best)
+
+1× aluminum plate (thicker is better):
+
+3–6 mm thick if possible
+
+~200×200 mm or larger
+
+Measuring
+
+1× digital kitchen scale (1 g resolution is fine)
+
+Feeler gauges / stack of cards / spacers (to set a consistent gap)
+
+Fasteners + safety
+
+Epoxy (high strength), or mechanical magnet retainers (highly recommended)
+
+Eye protection, gloves
+
+Threadlocker, zip ties, tape
+
+Layout (top-down + side-view)
+Top view (rotor disk)
+
+Make a disk with magnets arranged around the perimeter like a ring:
+
+Place magnets equally spaced around the edge.
+
+Alternate polarity around the ring (N-S-N-S…) if you can identify poles.
+
+This alternating pattern increases field “change” as it spins over the plate → more eddy currents.
+
+Side view (measurement rig)
+[Guard罩罩罩罩罩罩罩罩罩]
+        Motor
+         |
+      Rotor disk (magnets on underside)
+         |   (air gap: 2–10 mm adjustable)
+----------------------------------------   <-- Aluminum plate (sits on scale)
+             Digital scale
+----------------------------------------   <-- Table
+
+Critical: The rotor never touches the plate. You want a controllable air gap.
+
+Build steps (reproducible, not finicky)
+1) Build the rotor safely (most important part)
+
+Put magnets on the underside of the disk near the edge.
+
+Do not rely on glue alone if you can avoid it:
+
+Add a thin “retaining ring” (plastic/wood) over the magnets,
+
+Or tape + epoxy + mechanical lip.
+
+Balance matters. Keep spacing consistent.
+
+Safety note: A thrown magnet at high RPM is nasty. Guard it like it’s trying to escape (it is).
+
+2) Mount motor + set adjustable gap
+
+Motor mounted rigidly above where the plate will sit.
+
+Add an adjustable height mechanism:
+
+stacked spacers, shims, or a simple screw-adjust platform.
+
+Start with a large gap (like 10 mm) and move closer later.
+
+3) Measurement setup (how to “see” 100 g clearly)
+
+Put aluminum plate on the scale.
+
+Tare the scale with the plate on it.
+
+Position rotor centered above the plate (no contact).
+
+Place a guard over rotor.
+
+4) Test protocol (repeatable)
+
+Baseline: rotor off → scale ~0 g (tared).
+
+Turn rotor on at low speed → watch scale reading.
+
+Increase speed gradually:
+
+You should see the scale reading rise (e.g., +5 g → +20 g → +60 g…).
+
+For each speed, record:
+
+gap distance
+
+scale reading increase
+
+approximate RPM (optional; phone tach apps exist but not required)
+
+To reach 100 g, you generally need:
+
+small-ish gap (a few mm)
+
+decent RPM
+
+enough magnet strength and perimeter coverage
+
+a thick-ish aluminum plate
+
+Tuning knobs (what to change when you’re stuck)
+
+If you’re only getting a few grams:
+
+Increase effect
+
+More magnets (increase ring density)
+
+Stronger magnets
+
+Smaller gap
+
+Higher RPM
+
+Larger rotor diameter (more edge speed)
+
+Improve conductor coupling
+
+Thicker aluminum plate (up to a point)
+
+Keep the plate directly under the magnet path (big enough area)
+
+Reduce losses
+
+Keep rotor balanced to allow higher RPM safely
+
+Improve mounting rigidity (wobble kills close gaps)
+
+What counts as “Demonstrating 100 g”
+
+If the scale reads +100 g (while tared with the plate), that means your system is applying ~0.98 N downward onto the plate, which corresponds to ~0.98 N upward on the rotor assembly (Newton’s 3rd).
+
+That is a legitimate 100 g-force demonstration.
+
+Safety checklist (don’t skip)
+
+Guard over rotor (polycarbonate is best)
+
+Eye protection
+
+No loose clothing/hair
+
+Start at large gap + low RPM
+
+Keep hands away while spinning
+
+Inspect magnets every run

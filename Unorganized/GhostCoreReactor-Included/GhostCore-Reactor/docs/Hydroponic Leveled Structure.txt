@@ -1,0 +1,6 @@
+Module Zones:
+1. Core Reactor Node (MGCR + TPV)
+2. Nutrient Synth Unit (Algae Bioreactor)
+3. Light Distribution Array (Photonic Tuning Panels)
+4. Root Channel Grid (Electrified Nutrient Pathways)
+5. Environmental Shell (Atmospheric Regeneration Membrane)

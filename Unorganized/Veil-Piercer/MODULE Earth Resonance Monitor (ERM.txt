@@ -1,0 +1,27 @@
+MODULE: Earth Resonance Monitor (ERM)
+VERSION: 1.1
+
+DESCRIPTION:
+Tracks and analyzes seismic resonance for both peak and trough anomalies. Built to detect the subtle lull before activity — the inhale before Earth screams. Integrates LIDAR, vibration telemetry, and waveform analysis to establish a baseline and measure distortions in subterranean harmony.
+
+NEW MODULE: Stormbound Echo Mapper (SEM)
+VERSION: 0.1 (DRAFT)
+
+DESCRIPTION:
+Designed to monitor hydrodynamic and atmospheric harmonic shifts for early detection of water-based anomalies including:
+- Tsunamis
+- Sinkholes
+- Flash floods
+- Coastal surges
+
+CORE FUNCTIONS:
+- Collect infrasonic and ultrasonic pressure wave data
+- Overlay radar-based echo maps with pressure drop curves
+- Analyze stagnation troughs for silence-before-impact scenarios
+- Tie in with LIDAR and satellite-based humidity gradients
+
+APPLICATIONS:
+- Emergency broadcast enhancement
+- Infrastructure shielding prep (e.g., tunnel shutdowns)
+- Oceanic event prediction models
+- Predictive modeling for underground water collapse (sinkholes)

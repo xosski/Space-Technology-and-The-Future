@@ -1,0 +1,29 @@
+GhostCore Public License (GHOST-PL) v1.0
+---------------------------------------
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software, designs, models, simulations, or associated documentation files (the "Technology"), to use the Technology for non-commercial and peaceful purposes, subject to the following conditions:
+
+1. Non-Commercial Use Only  
+   You may not use the Technology or derivatives thereof for commercial purposes without express permission.
+
+2. Peaceful Purposes Only  
+   You may not use this Technology in the development, deployment, or enhancement of weapons of mass destruction, autonomous lethal weapons, or systems that violate human rights.
+
+3. Attribution  
+   You must give appropriate credit to the original creators (GhostCore Systems) and include a link to the license.
+
+4. ShareAlike  
+   If you modify, adapt, or build upon the Technology, you must distribute your contributions under the same license.
+
+5. No Liability  
+   The Technology is provided "as is", without warranty of any kind. In no event shall the authors be held liable for any damages arising in any way from the use of this Technology.
+
+6. GhostCore Clause  
+   Any attempts to patent, privatize, or obscure access to the Technology with malicious or monopolistic intent will render all such claims null and void under this license.
+
+For inquiries: GhostOpNode000@proton.me
+
+Inspired by CC BY-NC-SA 4.0 and adapted for emerging defense-grade open research.
+
+---------------------------------------
+This license is effective from April 2025.

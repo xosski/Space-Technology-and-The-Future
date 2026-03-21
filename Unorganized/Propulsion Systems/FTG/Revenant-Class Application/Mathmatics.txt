@@ -1,0 +1,54 @@
+⚡ How Revenant-Class FTG Works
+🔁 1. Folded Space Model (Drift-Fold Path)
+Instead of moving through space, the vessel moves through a shortcut in spacetime. This is modeled using a metric distortion.
+
+📐 Visual Model:
+Imagine space as a flat sheet:
+
+A → B directly = 10 light-years.
+
+If you fold the sheet so A touches B, your ship only travels, say, 0.1 light-years through the fold.
+
+You haven’t exceeded light speed — you’ve changed the topology of space.
+
+📏 Drift Path vs. Linear Path
+Let:
+D = linear distance (e.g., 10 light-years)
+V drift = actual speed of travel through the fold, e.g., 0.1c
+L fold = = effective drift-fold path length (e.g., 0.2 light-years)
+Then Travel time:
+T drift= v drift/L fold= 0.1/0.2 =2 years
+Compared to :
+T linear= 10/1 =10 years at light speed
+Now effective velocity:
+Velocity= D/T drift = 10/2 =5c
+⚠️ But critically:
+The ship never moves through space at 5c. It moves through a shorter path that is permitted by General Relativity.
+
+🌀 Supporting Physics
+1. Alcubierre Metric (1994):
+A solution to Einstein's field equations that permits a "warp bubble" moving spacetime itself.
+ds^2=−dt^2+[dx−vs(t)f(rs)dt]^2+dy^2+dz^2
+This allows the ship to stay stationary in local spacetime while the bubble moves — effectively dragging space with it.
+
+2. Wormholes and Einstein-Rosen Bridges:
+Theoretical constructs where spacetime is connected via a tunnel. Traversing it appears FTL but again never breaks the local c limit.
+
+🔧 Revenant Implementation
+Revenant-class vessels leverage:
+
+Lazarus Inertial Suppression: Nulls internal forces, making drift transitions survivable.
+
+Spectral Drift Phase Anchoring: Lets the ship align with pre-echoed destinations.
+
+Fold Bloom Generation: Grows a spacetime tunnel dynamically using field resonance, not static wormholes.
+
+GhostCore Synchronization: Maintains phase stability, avoiding time paradoxes by anchoring to a causal lattice.
+Summary Why its Legal:
+| Feature                    | Explanation                                                      |
+| -------------------------- | ---------------------------------------------------------------- |
+| No local FTL motion        | Ship never exceeds `c` in its own frame                          |
+| Shortened path             | Folded space = shorter travel distance                           |
+| Uses relativistic effects  | Time dilation, mass shifting, and phase anchoring respected      |
+| Energy-intensive but valid | No violation of Einstein field equations; just extreme solutions |
+| Causality protected        | Anchoring systems prevent paradoxes via drift-phase resonance    |
