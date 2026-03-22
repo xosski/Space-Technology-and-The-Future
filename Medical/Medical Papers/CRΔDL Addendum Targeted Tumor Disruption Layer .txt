@@ -1,0 +1,29 @@
+Addendum: Targeted Tumor Disruption Layer
+
+While the CRΔDL photonic and regenerative stack is well suited for recovery support, calibration, and controlled biological repair, a complete oncology-oriented configuration would likely require an initial targeted tumor-disruption stage before regenerative phases begin.
+
+In this framing, the first stage is not described as a generalized destructive radiation burst, but as a localized debulking layer intended to disrupt, reduce, or sterilize the primary cancer burden in a controlled treatment field. At a high level, this role is conceptually closer to established clinical modalities such as:
+
+external beam radiation therapy, which delivers focused radiation to a defined region of the body,
+brachytherapy, in which radiation is placed in or near the tumor,
+or thermal ablation methods, which use localized heat to damage tumor tissue in selected cases.
+
+Within the CRΔDL architecture, this disruption layer would be treated as the front-end tumor-reduction phase, while the photonic resonance, metabolic support, regenerative calibration, and cradle-control systems would be positioned as the post-disruption support environment rather than the sole tumor-killing mechanism.
+
+This creates a more coherent therapeutic sequence:
+
+1. Localized tumor disruption
+Reduce or damage the dominant cancer cell population through a targeted local treatment field.
+
+2. Residual-field assessment
+Use imaging, diagnostics, and calibration layers to determine remaining burden and tissue condition.
+
+3. Photonic / regenerative support phase
+Apply CRΔDL-controlled stabilization, monitoring, and recovery-oriented support to surrounding tissue and the treatment environment.
+
+4. Ongoing surveillance
+Track recurrence risk, tissue response, and residual disease markers over time.
+
+Boundary Statement
+
+This addendum should be described as a conceptual treatment-sequencing layer
