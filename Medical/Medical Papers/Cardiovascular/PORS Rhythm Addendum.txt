@@ -1,0 +1,142 @@
+Addendum: PORS Cardiac Support Layer
+
+Document Title:
+PORS Cardiac Support Addendum
+Subsystem Focus: Acute Rhythm Stabilization, Monitoring, and Recovery Support
+
+Purpose
+
+This addendum defines a cardiac support layer for the PORS biosuit architecture. Its role is not to replace definitive cardiac treatment or to claim direct reversal of degenerative heart disease. Instead, the layer is designed to provide continuous monitoring, rhythm support, physiologic stabilization, and emergency response coordination for wearers operating under extreme stress, trauma, low-oxygen conditions, or hostile environments.
+
+Within the broader PORS framework, this subsystem functions as the immediate survivability layer for cardiac instability, while longer-term repair or regenerative therapy remains a separate medical pathway.
+
+Core Thesis
+
+The PORS biosuit can be expanded into a cardiac stabilization shell that continuously monitors cardiovascular status and supports the wearer during rhythm disruption, circulatory stress, or post-trauma instability.
+
+The key distinction is:
+
+PORS cardiac support = immediate stabilization and survivability
+regenerative or gene/cell therapy = longer-term repair and tissue recovery
+
+This keeps the architecture medically coherent. The suit keeps the heart functioning in the moment; any deeper therapy would attempt recovery over time.
+
+Functional Roles
+1. Continuous Rhythm Monitoring
+
+The suit maintains live cardiac surveillance through internal biosignal sensing and pattern analysis. This includes:
+
+rhythm irregularity detection
+stress-triggered instability monitoring
+circulatory deterioration warning
+trend analysis during exertion, trauma, or zero-gravity exposure
+
+This allows the system to identify cardiac decline early rather than waiting for catastrophic failure.
+
+2. Acute Rhythm Stabilization
+
+When instability is detected, the suit shifts into a stabilization state. In the PORS framing, this can be described as:
+
+rhythm-support logic
+resonance-guided stabilization
+emergency support during arrhythmia-like disruption
+short-term preservation of cardiac continuity during crisis
+
+This should be described as a temporary support measure, not as a substitute for definitive cardiology care.
+
+3. Physiologic Load Management
+
+A heart under stress is not only a rhythm problem. It is also a systems-load problem. The suit can therefore reduce cardiac burden by coordinating:
+
+oxygen support
+thermal stabilization
+movement/exertion warnings
+emergency posture or restraint guidance
+shock and trauma survivability logic
+
+This gives the heart a better environment in which to remain functional.
+
+4. Recovery-State Coordination
+
+After acute destabilization, the suit can transition into a monitored recovery mode. This includes:
+
+continued rhythm observation
+event logging
+escalation thresholds for renewed instability
+telemetry relay to operators or medical responders
+emergency beacon behavior if the wearer becomes unresponsive
+
+This makes the biosuit not just a crisis shell, but a recovery bridge.
+
+Relationship to Existing PORS Systems
+
+The cardiac support layer fits naturally into the PORS stack because the biosuit is already designed as an autonomous survivability framework. Within that structure:
+
+reactor and power systems sustain the support hardware
+telemetry layers provide continuous physiologic monitoring
+beacon and relay systems support medical recovery and rescue
+thermal and atmospheric regulation reduce secondary cardiovascular strain
+resonance or signal-control layers provide the conceptual basis for non-contact rhythm support
+
+The cardiac addendum therefore does not replace the PORS architecture. It extends it into a dedicated heart-support role.
+
+Safe Use Cases
+
+This subsystem is strongest when framed for:
+
+acute rhythm instability in hazardous environments
+trauma survival during suit operations
+zero-gravity or decompression-associated cardiovascular stress
+recovery support after collapse, shock, or hypoxic events
+high-risk mission wearers with known cardiac vulnerability
+
+It should be described as a medical-support and survivability enhancement, not as a cure for chronic structural heart disease.
+
+Boundaries and Medical Realism
+
+This addendum should remain explicit about what it does not claim:
+
+it does not cure degenerative heart disease
+it does not regenerate myocardium by itself
+it does not replace pacemakers, ICDs, or clinical cardiology
+it does not make long-term repair automatic
+
+Instead, it should be understood as:
+
+an acute support shell
+a monitoring and stabilization layer
+a recovery-support interface
+a bridge to further treatment
+
+That boundary is what keeps the concept credible.
+
+Integration Model
+Phase 1 — Monitoring
+
+The suit continuously observes rhythm, cardiovascular strain, and instability markers.
+
+Phase 2 — Detection
+
+The system identifies dangerous deviation from expected rhythm or hemodynamic pattern.
+
+Phase 3 — Stabilization
+
+The suit enters a cardiac-support state, reducing physiologic burden and activating rhythm-support logic.
+
+Phase 4 — Recovery Support
+
+The wearer is maintained in a monitored recovery condition while the system logs events and sustains telemetry.
+
+Phase 5 — Escalation / Rescue
+
+If recovery fails or instability persists, the suit hands off to emergency signaling, rescue relay, or external medical response.
+
+Proof-of-Concept Framing
+
+A PoC for the PORS cardiac support layer would ask whether the suit can:
+
+detect cardiac instability early,
+maintain rhythm-support behavior during acute events,
+reduce environmental burden on the cardiovascular system,
+preserve telemetry continuity during a crisis,
+and improve survivability long enough for rescue or definitive treatment.

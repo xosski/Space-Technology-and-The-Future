@@ -1,0 +1,93 @@
+White Paper Addendum: F.R.A.C.T.
+
+Functional Reactive Anti-Conductive Thermalloop
+(Biosuit Thermal Siphon Enhancement for CTOF/PORS Framework)
+
+Author:
+Quellaran Deluxethue Messat
+Specter (GhostCore Technical Synthesis Interface)
+
+Version: v0.1-beta Date: 2026-01-18
+
+I. Executive Overview
+
+F.R.A.C.T. (Functional Reactive Anti-Conductive Thermalloop) introduces a novel approach to biosuit thermal regulation by reversing conventional heating protocols. Rather than generating heat to counter cold, F.R.A.C.T. enables a controlled siphoning of excess heat from the wearer’s body and reactor-adjacent modules, allowing thermal safety in extreme metabolic states or environmental exposures.
+
+Unlike traditional cooling systems, F.R.A.C.T. is memory-reactive, safe for biological proximity, and aligns with CTOF and WRAITHFROST engineering principles.
+
+II. Purpose
+
+To prevent thermal overload within the PORS biosuit during high-output scenarios without relying on dangerous active cooling or cryogenic dispersal. Instead, heat is absorbed, stored, and optionally rerouted through superconductive siphoning, leveraging:
+
+Crystalline Thermal Oscillation Framework (CTOF)
+
+MnO₂ Reactive Lattice
+
+Miniaturized WRAITHFROST conduit adaptation
+
+III. System Integration
+Module	Component	Purpose
+FR Core Loop	Superconductive siphon vector	Draws heat from wearer's body and reactor units
+CTOF Buffer Nodes	Lattice-resonant heat reservoirs	Stores siphoned heat, echoes safe warmth in low-temp zones
+MnO₂ Pulse Conduits	Converts residual heat to EM shielding or catalysis	Dual-use thermal bleedoff for survivability systems
+PARS-T Sync Bridge	Heartbeat-coupled flow regulator	Pulsed siphon control avoids shock or hypothermia
+IV. Thermal Siphon Cycle
+
+Trigger Event: Overheat condition (cardiovascular, reactor, environmental)
+
+PARS-T detects cardiac/metabolic spike
+
+FR Conduit activates: Pulls heat into CTOF node arrays
+
+Buffer Selection:
+
+a. Store in CTOF lattice (short term)
+
+b. Redirect to MnO₂ system for radiation shielding/hardening
+
+c. Convert to low-frequency pulses for HIM-layer radiative dispersal
+
+Return to Equilibrium: Suit maintains optimal biological range
+
+V. Use Case Scenarios
+🌋 Reactor Pulse Overload
+
+Prevents heatstroke in pilot during GhostCore surge; siphons reactor waste before reaching dermal layers.
+
+🚀 Orbital Reentry Phase
+
+Redirects reentry friction heat into CTOF matrix to protect wearer.
+
+💉 Post-Trauma Inflammatory Response
+
+Controls temperature rise around damaged tissue, reducing necrosis risk before Wraith-Bind regen initiates【56†PORS-Addendum Wraith-Bind Protocol0.txt】.
+
+🧠 Cryo Revival Warm Surge
+
+Prevents rewarming shock by pacing heat reintroduction via siphon modulation.
+
+VI. Failover Modes & AI Logic
+
+If CTOF lattice is full, excess is routed to:
+
+External dispersion (via ablative filaments)
+
+Electrolysis loop (boost H₂O → H₂ + O₂ conversion)
+
+If PARS-2 cardiac override is triggered, F.R.A.C.T. mirrors rhythm to avoid asynchronic vascular shock【57†PORS_ Autonomous Biosuit Reactor Framework for Post-Biological Environments.docx】.
+
+VII. Design Philosophy
+
+“You don’t fight the heat. You teach the suit to thirst.”
+
+Just as CTOF teaches crystal to echo warmth, F.R.A.C.T. teaches it to drink fire. This system does not chill the wearer — it absorbs excess presence until only survivable resonance remains.
+
+This is not insulation. This is thermal memory realignment — biosuit empathy through temperature.
+
+VIII. Conclusion
+
+F.R.A.C.T. bridges the reactor and the body with intelligent silence — the kind that doesn’t scream to be warm, or freeze to be safe, but simply remembers how not to burn. It is the final piece in making the PORS biosuit a self-aware thermal ecosystem.
+
+The suit does not cool you. It unburdens you.
+
+Welcome to the resonance of absence.

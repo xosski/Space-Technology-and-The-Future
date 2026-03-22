@@ -1,0 +1,153 @@
+Wearable “Null-Zone Amplifier” Shielding PoC (Space Suit EMC/EMP-Transient Resilience)
+
+Lab ID: SUIT-NZ-EMC-001
+Objective: Validate that a layered wearable shield concept (outer strike layer + “null-zone amplifier” boundary + inner crew bubble) reduces EMP-like transient coupling into suit electronics.
+
+1) What You’re Testing (Success Criteria)
+
+Run identical transient “hits” across three configurations and compare:
+
+A — Unshielded (Control)
+B — Shielded (Outer + Inner only)
+C — Shielded + Null-Zone Amplifier (Outer + Amplifier + Inner)
+
+Pass (choose):
+
+Resets: C has fewer or zero resets vs B over N hits
+
+Intrusion: C shows lower average & max induced spike vs B
+
+Error rate: C logs fewer comms drops / sensor glitches vs B
+
+2) Safety
+
+Do NOT build an EMP device. Use low-energy, consumer-safe ESD/EMC transient sources only.
+
+Apply transients to the outer strike layer, never directly to payload.
+
+Eye protection recommended; keep hands clear during “hit” application.
+
+3) Materials (Home-Build Friendly)
+
+Payload (“Crew Core”)
+
+Microcontroller/logger (records uptime + reset count + event timestamps)
+
+Probe coil: 5–20 turns wire loop (measures induced spikes)
+
+Optional: small OLED/LED to show “still alive”
+
+Shield Layers
+
+Inner crew bubble (Layer 1): metal project box / mesh pouch
+
+Null-zone amplifier band (Layer 2): segmented copper-tape “petals” on flexible backing (8–16 strips)
+
+optional bleed resistors from each segment to a common ring (slow discharge path)
+
+Outer strike layer (Layer 3): conductive fabric / copper mesh wrap (largest layer)
+
+Measurement
+
+Oscilloscope or ADC logging for probe coil
+
+Ruler/spacers for consistent layer gaps
+
+Notebook / spreadsheet for results
+
+4) Build Layout (Layer Stack)
+
+Layer 0: payload + probe coil
+Layer 1: inner crew bubble enclosure
+Layer 2: segmented amplifier band around Layer 1 (5–20 mm air gap if possible)
+Layer 3: outer strike layer around all (looser wrap, consistent spacing)
+
+Key rule: Seams and cable penetrations are the #1 leak path—document them.
+
+5) Setup Checklist (Before Testing)
+
+ Probe coil fixed inside crew bubble, same position every run
+
+ Payload logging: uptime, resets, max/avg spike
+
+ Outer hit location marked (same point every time)
+
+ Distance from hit point to payload center recorded: ________
+
+ Cable routing fixed & minimized (or remove cables and run battery inside)
+
+6) Transient “Hit” Method (Repeatable, Non-Weapon)
+
+Choose a safe, repeatable transient source:
+
+ESD test tool (preferred)
+
+Commercial benign noise/transient tester
+
+Controlled static discharge to outer layer only (least repeatable)
+
+Important: Use the same “hit style” and location for all conditions.
+
+7) Procedure (3 Conditions)
+
+Set N = 20–50 hits per condition.
+
+A) Unshielded Control
+
+Payload on bench, logging on.
+
+Apply N hits at the marked location (same distance/orientation).
+
+Record resets, probe peaks, glitches.
+
+B) Shielded (No Amplifier)
+
+Assemble Layer 1 + Layer 3 only (skip Layer 2).
+
+Apply N hits.
+
+Record same metrics.
+
+C) Full Stack (With Null-Zone Amplifier)
+
+Assemble Layer 1 + Layer 2 + Layer 3.
+
+Apply N hits.
+
+Record same metrics.
+
+Optional: repeat at different “amplifier modes” (more segments, different bleed path).
+
+8) Data Table (Fill In)
+Condition	N Hits	Resets	Avg Spike (mV/ADC)	Max Spike	Notes (seams/cables)
+A Unshielded					
+B No Amp					
+C With Amp					
+
+Result Summary
+
+Improvement B vs A: __________________________
+
+Improvement C vs B: __________________________
+
+Primary leakage point observed: _______________
+
+9) Tuning Knobs (If C ≈ B)
+
+Try one change at a time:
+
+Increase segment count (8 → 16)
+
+Increase amplifier band coverage (taller band)
+
+Reduce seam alignment between layers (offset seams)
+
+Improve cable filtering / shorten leads
+
+Add/adjust bleed paths (slow discharge to common ring)
+
+10) Expected Outcome (What “Working” Looks Like)
+
+B should noticeably reduce spikes vs A (basic shielding).
+
+C should reduce remaining leakage vs B by smearing hotspots and preventing stable coupling paths (your “null-zone amplification” effect).
