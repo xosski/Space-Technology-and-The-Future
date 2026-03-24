@@ -1,0 +1,67 @@
+High-level PoC: Deep-Space Cannabinoid Transdermal Support Patch
+Purpose
+
+A transdermal cannabinoid patch concept for long-duration missions that aims to provide slow, steady symptom support for:
+
+chronic pain flare control
+sleep-support adjunct use
+selected distress/anxiety symptom support
+reduction in oral dosing burden
+Best medical positioning
+
+The patch should be positioned as:
+
+an adjunctive symptom-management tool
+more credible for pain support than for PTSD treatment
+inappropriate for primary trauma therapy
+restricted during flight-critical, EVA, docking, navigation, or emergency-response periods because of possible cognitive and psychomotor impairment
+Why transdermal is attractive in space
+
+At a concept level, a patch could offer:
+
+steadier delivery than repeated inhaled or oral use
+easier logging and adherence
+lower contamination burden than inhaled routes
+simpler integration into suit/medical monitoring workflows
+
+But transdermal cannabinoid products are still much less established clinically than standard spaceflight medical countermeasures, and the regulatory path would be difficult.
+
+Safer mission architecture
+
+A good mission-safe version would include:
+
+medical authorization only
+role restrictions so no use during safety-sensitive operations
+biosensor monitoring for heart rate, alertness, sleep state, and adverse reactions
+lockout windows before EVA or critical decision tasks
+integration with mental-health care rather than substituting for it
+
+That last point matters because evidence-based PTSD care still centers on psychotherapy and established treatments, not cannabis.
+
+Best use cases
+
+Most credible:
+
+chronic neuropathic-type pain support
+off-duty recovery periods
+sleep-disruption support in selected cases
+palliative or low-duty medical scenarios
+
+Least credible:
+
+first-line PTSD treatment
+high-cognition duty periods
+emergency-response use
+blanket issue to all crew
+Main risks
+
+The biggest operational concerns are:
+
+impaired alertness or slowed reaction time
+impaired attention, memory, and decision-making
+variable individual response
+cardiovascular side effects like dizziness or fast heartbeat in some users
+dependence/misuse concerns with long-duration use
+Clean doctrine sentence
+
+Use a cannabinoid transdermal patch, if at all, as a medically supervised off-duty symptom-support tool for selected crew—more defensible for pain than PTSD, and never as a substitute for safety-critical readiness or evidence-based trauma care.
