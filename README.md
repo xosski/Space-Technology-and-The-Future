@@ -65,6 +65,73 @@ Use these entry points to start browsing quickly:
 6. `Space-Time-and-Research/Folding Space Time/` for space-time model experiments.
 7. `Programs-and-Initiatives/Eden Initiative/` for initiative-level planning artifacts.
 
+## What's Inside the Archive
+
+This archive is organized by domain. Each domain contains a mix of white papers, proof-of-concept notes, design drafts, diagrams, and occasional simulation scripts.
+
+### Energy and Power (`Energy-and-Power/`)
+
+- File count: **178**
+- Focus: reactor concepts, energy storage, cooling, EM field applications, and power-transfer systems.
+- Key sub-archives: `Genesis Reactor`, `PTEC(Prismatic Tesseract Energy Core)`, `GhostCoreReactor-Included`, `Reactor-Cooling`, `CPSS(Crystaline Battery)`, `Halo Energy`, `TCPPE(Tesla Power Generation)`.
+- Includes: markdown/text concept documents, PDFs, DOCX files, diagrams, and Python/PowerShell simulation assets.
+
+### Propulsion and Vehicles (`Propulsion-and-Vehicles/`)
+
+- File count: **101**
+- Focus: propulsion architectures, drive variants, maglev and launch-spine concepts, and off-planetary vehicle frameworks.
+- Key sub-archives: `Propulsion Systems`, `Mercy Drive`, `Spectral Charge Divergence Engine(SCDE)`, `Halo Spine Transit System`, `SSOV-self sustained offplanetary vehicles`, `VerdantEngine`.
+- Includes: theoretical drive papers, POC notes, engineering draft PDFs, diagrams, and propulsion support assets.
+
+### Shielding and Defense (`Shielding-and-Defense/`)
+
+- File count: **67**
+- Focus: EM/spectral shielding, adaptive defense layers, suit systems, and specialized protective concepts.
+- Key sub-archives: `Reactive Em Shielding`, `Revenant Shielding`, `Spectral shielding`, `Shielding`, `WraithConduit`, `Phtonic BIo Suit`.
+- Includes: shielding doctrines, field-response concepts, diagrams, and related biosuit integration notes.
+
+### Armaments (`Armaments/`)
+
+- File count: **101**
+- Focus: tactical/defensive armaments, orbital systems, drone concepts, and specialized munitions.
+- Key sub-archives: `Future Defensive Armaments`, `Defensive.Offensive Personel`, `Drones`, `Orbital Skylance-Ω`, `Veil-Piercer`.
+- Includes: tactical doctrine PDFs, white papers, POC drafts, and associated imagery.
+
+### Communications and Systems (`Comms-and-Systems/`)
+
+- File count: **34**
+- Focus: communications relays, long-range scanning, targeting support, navigation, and planetary relay concepts.
+- Key sub-archives: `Communications`, `Long range scanners`, `PPRN Prismatic Plasma Relay network`, `Project SkyTear`, `Prism Relays`, `Targeting`.
+- Includes: comms and scanner POC documents, relay architecture notes, and multi-channel network concepts.
+
+### Medical (`Medical/`)
+
+- File count: **70**
+- Focus: regenerative medicine concepts, life support, biosuit integration, and condition-specific exploratory papers.
+- Key sub-archives: `Medical Papers`, `Eden Chamber`, `CyroHalo`, `Life support systems`, `Space.Enviromental Photonic BioSuit`.
+- Includes: structured markdown papers plus text/Docx artifacts for protocols, addendums, and biomedical concepts.
+
+### Space-Time and Research (`Space-Time-and-Research/`)
+
+- File count: **55**
+- Focus: space-time modeling, resonance measurement, temporal/geometry experiments, and theoretical research tracks.
+- Key sub-archives: `Folding Space Time`, `Space-Time Resonance Measurement`, `Asynchronous Memory Mapping (EchoWing)`, `Singularity Hawking`, `Crystal Lattices`, `Project Mnemosyne Node`.
+- Includes: conceptual white papers, exploratory scripts, and model artifacts.
+
+### Programs and Initiatives (`Programs-and-Initiatives/`)
+
+- File count: **19**
+- Focus: initiative-level planning, deployment concepts, advocacy programs, and applied ecosystem projects.
+- Key sub-archives: `Eden Initiative`, `Self-Sustaining-Structure_Unit`, `RobinHood Project`, `Independent Youth Advocacy And Support Foundation`.
+- Includes: program briefs, concept notes, deployment drafts, and project-level documentation.
+
+### Waste Management (`Waste-Management/`)
+
+- File count: **3**
+- Focus: waste and ecological restoration concept notes.
+- Key sub-archives: `Project Mycowell`, `Waste managment`.
+- Includes: compact POC-style documentation.
+
 ## Content Notes
 
 1. The archive includes mixed formats (`.txt`, `.md`, `.docx`, `.pdf`, images, scripts).
