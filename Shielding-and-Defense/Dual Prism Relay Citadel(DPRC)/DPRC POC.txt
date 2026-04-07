@@ -1,0 +1,198 @@
+Dual Prism Relay Citadel (DPRC)
+
+Proof of Concept White Paper
+GhostCore Shielding Architecture | Internal Compartment Defense Draft
+
+Document Type
+
+High-level shielding proof-of-concept white paper
+
+Concept Thesis
+
+Use two synchronized prism nodes to generate a stabilized reactive shield corridor around a small protected ship volume rather than around the entire hull. The purpose is to create a citadel layer for critical compartments such as the bridge, crew quarters, medical bay, reactor controls, and flight core.
+
+This extends the earlier prism-cell and dual-corridor logic into a localized survivability system: not a full ship bubble, but an inner defensive shell that remains active even if the outer hull or primary shield lattice is compromised. The earlier shield framework already defines prism cells as fast-switching polarity nodes, and the tri-prong concept explicitly states that its rotating three-node architecture extends an earlier dual prismatic shield channel model.
+
+1. Title
+
+Dual Prism Relay Citadel (DPRC)
+Alternate designation: Wraithveil Dual Corridor Citadel
+Optional class tag: MK-I / EchoVariant
+
+2. Abstract
+
+Dual Prism Relay Citadel is a compact defensive-field architecture for small craft and compartment-protected vessels. Two prism nodes are mounted across a protected volume and operated as a synchronized pair. Instead of attempting to shield the entire ship uniformly, the system creates a corridor or nested shell of reinforced field density around essential internal spaces.
+
+The two-node geometry produces a stable defensive lane between relay points. When coupled to hull armor, structural ribs, and internal bulkhead conductors, the lane becomes a secondary defensive shell capable of:
+
+localized EM and plasma deflection,
+transient hardening around crew and command spaces,
+surge isolation,
+pressure-loss buffering,
+and impact-memory retuning.
+
+This aligns with the prism-cell doctrine, where a rotating prism supports near-instant polarity reversal, phase modulation, and rapid discharge control for reactive shielding.
+
+3. Why the Dual-Node Layout Matters
+
+A full lattice or tri-prong ring is powerful, but smaller craft often need survival density, not full-envelope complexity. A dual-node layout matters because it:
+
+protects the parts of the ship that must not fail first,
+requires less energy than maintaining a ship-wide field shell,
+creates a second line of defense after hull breach,
+simplifies synchronization compared with three rotating nodes,
+and supports compartment shielding in smaller hull geometries.
+
+Where the tri-prong architecture creates moving reinforcement waves across a wider hull, this concept focuses on fixed or semi-mobile reinforcement around a specific protected interior volume. The tri-prong paper frames the three-node model as an extension of the earlier dual-channel concept rather than a replacement for it.
+
+4. Primary Use Cases
+A. Bridge Citadel
+
+Protect command crew, control systems, avionics, and targeting interfaces.
+
+B. Crew Survival Shell
+
+Wrap bunks, cryo, medbay, or evacuation staging compartments in a second defensive layer.
+
+C. Reactor/Control Isolation
+
+Prevent EM surge, plasma wash, or cascading system fault from reaching core controls.
+
+D. Boarding/Impact Compartment Defense
+
+Create hardened corridors against localized breach or internal hostile penetration.
+
+5. System Architecture
+Layer	Subsystem	Primary Function	Role
+L1	Prism Node A	Generates synchronized field output	Primary source
+L2	Prism Node B	Receives, balances, and reflects corridor state	Counter-source
+L3	Reactive Shield Corridor	Forms reinforced lane/shell between nodes	Citadel field
+L4	Bulkhead Coupling Grid	Feeds structural ribs, plating, and compartment shell	Support layer
+L5	Protected Volume	Houses bridge / crew / med / reactor controls	Survivability zone
+6. Core Components
+6.1 Dual Revenant Prism Cells
+
+Each node is based on the prism-cell idea already described in the shielding notes:
+
+crystalline battery matrix,
+rotating central prism,
+dielectric fluid bath,
+microsecond polarity reversal,
+plasma/electric discharge choice,
+drift-coupled phase modulation.
+6.2 Corridor Control Spine
+
+A conductor backbone links both nodes through:
+
+superconductive relay veins,
+shield-state timing control,
+bulkhead taps,
+emergency bypass loops.
+6.3 Citadel Bulkhead Mesh
+
+A conductive structural shell around the protected compartment:
+
+segmented armor ribs,
+insulated frame rings,
+compartment-specific field anchors,
+surge bleed channels.
+6.4 Echo Memory Controller
+
+Stores recent attack vectors and retunes corridor behavior after impact. This follows the broader GhostCore shielding logic that some shield types learn, adapt, and return stronger after stress.
+
+7. Operational Logic
+Mode 1 — Standby Corridor
+
+Low-power, low-signature field present around protected volume.
+
+Mode 2 — Impact Hardening
+
+When outer hull sensors detect stress, the dual corridor increases density and polarization around the citadel.
+
+Mode 3 — Surge Isolation
+
+Electrical, plasma, or magnetic overloads are redirected through the prism pair and compartment mesh.
+
+Mode 4 — Breach Response
+
+If a nearby hull breach occurs, the corridor compresses inward and reinforces the compartment shell.
+
+Mode 5 — Echo Retune
+
+The system records attack pattern, angle, and frequency, then retunes the two-node phase relationship for subsequent impacts.
+
+8. Defensive Roles
+localized EM and charged-particle deflection,
+shock redistribution around a compact critical space,
+emergency bridge and crew preservation,
+internal systems shielding after outer-field collapse,
+selective hardening of life-critical zones,
+structural decoupling during asymmetric attack.
+
+This keeps the concept realistic: it is strongest as a field-management and internal-defense architecture, not as universal protection against every threat type. That realism matches the boundaries already stated in the tri-prong PoC.
+
+9. Strengths Over a Single Static Shield Source
+two nodes create a managed corridor instead of one isolated emitter path,
+smaller protected volume means tighter control and lower power demand,
+inner shell continues to function after partial outer-layer failure,
+protects people and command systems rather than wasting energy on noncritical volume,
+easier to package into gunships, shuttles, corvettes, boarding craft, and dropships.
+10. Risks and Boundaries
+A. Harmonic Clash
+
+Outer shield lattice and inner corridor may interfere if phase timing is poorly separated.
+
+B. Crew Exposure
+
+Poor isolation may create EM, heat, or vibrational hazards inside inhabited compartments.
+
+C. Dual-Point Dependency
+
+If one prism node fails, corridor symmetry collapses unless backup routing exists.
+
+D. Coffin Effect
+
+An overhardened bridge shell may trap the crew after structural collapse if emergency release systems are not built in.
+
+E. Threat-Class Limits
+
+Best framed for EM, plasma, surge, and field-shaped threats; less persuasive as a sole answer to heavy kinetic penetration or bulk radiation.
+
+11. Proof-of-Concept Build Path
+Phase	Goal	Bench / Program Activity	Success Signal
+P1	Dual-node source demo	Drive two prism-like oscillation nodes across a fixed test gap	Stable synchronized corridor
+P2	Corridor formation	Measure field density between nodes around a mock compartment shell	Repeatable reinforcement lane
+P3	Bulkhead coupling	Feed corridor into conductive frame ribs / segmented shell	Improved shell response
+P4	Impact simulation	Apply EM/plasma pulse loads to one side of test shell	Localized hardening observed
+P5	Breach response	Simulate outer-shell failure and force corridor compression inward	Protected inner volume remains stable
+P6	Echo adaptation	Repeat attack pattern and retune relay phase	Faster or stronger second response
+12. Suggested Configurations
+Configuration A — Bridge Citadel Pair
+
+One node portside, one node starboard, with corridor wrapped around command deck.
+
+Configuration B — Crew Vault Pair
+
+Mounted fore and aft of crew quarters, creating an elongated survivability cocoon.
+
+Configuration C — Reactor-Control Vault
+
+Dual-node shell around control room only, not reactor body, to preserve guidance and shutdown authority.
+
+Configuration D — Split Citadel
+
+One main pair around bridge, second lighter pair around medbay or cryo.
+
+13. Doctrine Summary
+
+Dual Prism Relay Citadel does not try to save the whole ship at once. It decides what must remain alive after the first failure.
+
+The outer shield may bend.
+The hull may crack.
+But the bridge still speaks, the crew still breathes, and the ship still chooses.
+
+That is the point of the second layer.
+
+14. One-Line Working Doctrine
+
+Use two synchronized prism nodes to generate a localized reactive shield corridor around critical compartments, creating a compact inner citadel that hardens, isolates, and adapts when the outer defense fails.
