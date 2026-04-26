@@ -430,3 +430,446 @@ And that is why XRM Shield Core 2.0 is stronger.
 Final Doctrine Statement
 
 XRM Shield Core 2.0 is a distributed annular lattice of synchronized plasma-electric-maglev shield nodes that cooperatively generate a unified, adaptive, and fault-tolerant defensive envelope around the spacecraft hull.
+Secondary Propulsion Through Field Divergence
+Proof-of-Concept Addendum to XRM Shield Core 2.0
+Using Distributed Counterphase Shield Architecture for Emergency Vectoring, Attitude Control, and Limited Propulsive Bias
+
+GhostCore Systems Archive Draft
+
+Document Type
+
+High-level propulsion-support and shielding-divergence proof-of-concept addendum
+
+One-Line Doctrine
+
+Secondary Propulsion Through Field Divergence is an emergency operating mode of XRM Shield Core 2.0 in which a distributed annular shield lattice intentionally biases its counterphase field geometry to generate limited directional force without fully abandoning defensive function.
+
+1. Executive Premise
+
+A shield normally survives by staying balanced.
+
+A drive normally moves by becoming unbalanced.
+
+This addendum proposes that XRM Shield Core 2.0 can exploit that tension deliberately. The base 2.0 architecture already describes a distributed annular lattice of synchronized plasma-electric-maglev shield nodes designed for redundancy, sector control, and adaptive envelope generation. In normal operation, those nodes cooperate to maintain a stable shared defensive envelope. In divergence mode, that balance is intentionally biased.
+
+The concept is not that the shield becomes the ship’s main engine.
+The concept is that the shield lattice can enter a controlled off-balance state that produces:
+
+attitude correction
+drift trimming
+station-keeping
+emergency translation
+braking bias
+and limited limp-home propulsion
+
+This becomes possible because the supporting subsystems already exist in the family:
+
+XRM Shield Core provides the annular manifold logic and distributed field-routing doctrine.
+Maglev Plasma Shield Core provides a compact plasma induction model in which coils, plasma medium, and rotating maglev geometry can be tuned and biased dynamically.
+HaloShard shows that excess plasma and field energy can be redirected into another structured outcome rather than simply discarded.
+
+The result is a coherent emergency doctrine:
+
+balanced field for shielding, biased field for motion.
+
+2. Problem Statement
+
+A damaged vessel may lose its main engines before it loses its shield lattice.
+
+Or worse, it may retain enough power to shape fields, but not enough to drive a dedicated propulsion chain.
+
+This creates a survivability gap:
+
+How does a ship move when it still has field control but no trustworthy main thrust?
+
+Traditional answers are incomplete:
+
+reaction thrusters may be damaged
+main engines may be offline
+control jets may be insufficient for mass and drift
+towing assistance may not arrive in time
+
+At the same time, XRM 2.0 already assumes a distributed shield system capable of:
+
+dynamic sector bias
+counterphase management
+load redistribution
+directional emphasis
+and graceful degradation under damage
+
+The question becomes:
+
+Can the same field architecture that protects the ship also create limited emergency motion by controlled asymmetry?
+
+This PoC says yes, with limits.
+
+3. Concept Thesis
+
+Secondary Propulsion Through Field Divergence proposes that XRM Shield Core 2.0 can operate in a special mode where the distributed annular shield lattice intentionally departs from ideal symmetry.
+
+Instead of using all shield nodes to preserve an even envelope, the system:
+
+increases output or divergence in selected arcs
+reduces or tightens output in opposed arcs
+biases plasma and electromagnetic pressure asymmetrically
+and uses the resulting field imbalance to generate net force or torque
+
+This force is not expected to rival a true primary engine.
+It is expected to provide:
+
+emergency mobility
+attitude authority
+braking and drift correction
+controlled repositioning
+and last-resort translation
+
+The architecture is most believable when framed as:
+
+vectored field bleed
+controlled plasma divergence
+counterphase thrust bias
+limited maneuvering through shield asymmetry
+
+not as a wholesale replacement for propulsion.
+
+4. Core Design Principle
+
+The original XRM doctrine is:
+
+define, energize, circulate, couple, reinforce.
+
+This addendum extends that doctrine:
+
+define, energize, circulate, diverge, vector.
+
+In normal shield mode:
+
+node outputs remain synchronized
+field paths stay balanced
+the envelope is shaped for protection
+
+In divergence mode:
+
+node synchronization remains disciplined
+but output is intentionally weighted
+selected arcs are allowed to “lean”
+energy that would otherwise remain evenly wrapped is redirected into motion-producing asymmetry
+
+This is a controlled injury to symmetry, not a collapse into chaos.
+
+5. Why XRM 2.0 Is a Better Candidate Than XRM 1.0
+
+The distributed nature of XRM Shield Core 2.0 makes this concept much more plausible than trying it with a single monolithic shield heart.
+
+Version 2.0 already improves on the original by using:
+
+distributed nodes
+phase-link synchronization
+central coordination
+sector reinforcement
+local degradation instead of total collapse
+
+Those same properties make divergence safer and more controllable:
+
+one sector can be biased without destabilizing the whole lattice
+neighboring nodes can compensate
+thrust can be introduced incrementally
+local envelope weakening can be managed instead of imposed globally
+
+So this mode belongs much more naturally to XRM 2.0 than to the earlier single-core version.
+
+6. System Architecture for Divergence Mode
+6.1 Distributed Shield Nodes
+
+Each shield node remains a local field source. In divergence mode, node outputs are no longer equal. Selected nodes overperform or underperform according to the desired vector.
+
+6.2 Counterphase Ring Logic
+
+The dual-ring or counterphase architecture is especially valuable here. One ring can remain more stabilizing while the other provides more aggressive divergence bias. This preserves a minimum coherent envelope while motion is generated.
+
+6.3 Divergence Controller
+
+A dedicated control layer computes:
+
+desired vector
+local node weighting
+allowable envelope degradation
+seam stability
+thermal burden
+compensation requirements
+6.4 Plasma Flow and Field Bleed Paths
+
+The system needs explicit pathways for:
+
+controlled field expansion
+asymmetrical plasma pressure release
+localized envelope loosening
+return-path stabilization in non-thrusting arcs
+6.5 Hull Coupling and Structural Feedback
+
+Since the shield lattice is tied to the hull, the control system must account for:
+
+bending loads
+hull resonance
+stress concentration during asymmetric force
+damaged sectors that cannot safely carry vectoring load
+7. Operating Theory
+Stage A — Stable Envelope
+
+The shield lattice begins in normal protected mode with balanced node output and full envelope coherence.
+
+Stage B — Vector Request
+
+The ship requests one of several emergency motion outcomes:
+
+pitch up
+yaw port
+roll starboard
+aft braking
+low-thrust translation
+docking trim
+drift arrest
+Stage C — Controlled Asymmetry
+
+The divergence controller biases:
+
+node output amplitude
+local plasma divergence
+ring-to-ring phase offset
+field curvature
+and protective density by arc
+Stage D — Net Force or Torque Generation
+
+The asymmetry produces either:
+
+torque for attitude control
+or net directional force for translation and braking
+Stage E — Envelope Retention
+
+The system preserves as much defensive continuity as possible by:
+
+keeping one ring more stabilizing
+limiting local overexpansion
+preventing hard seam collapse
+and maintaining a minimum viable shell around critical compartments
+8. What This Mode Is Good At
+
+This mode is strongest for:
+
+8.1 Attitude Control
+
+The best and most believable use. The lattice can create fine torques for:
+
+pitch
+yaw
+roll
+and orientation hold
+8.2 Drift Trimming
+
+Useful for crippled ships that still need to stop tumbling or reduce unwanted lateral motion.
+
+8.3 Station-Keeping
+
+Allows damaged vessels to hold relative position during:
+
+rescue
+docking
+Bastion support operations
+convoy reforming
+8.4 Emergency Braking
+
+If the field can be biased forward, it can create drag-like opposition or controlled thrust opposition.
+
+8.5 Limp-Home Translation
+
+Low-authority movement for damaged vessels that need to clear danger or reach a safer corridor.
+
+9. What This Mode Is Not Good At
+
+It is much weaker as:
+
+primary sustained propulsion
+efficient high-Δv travel
+heavy acceleration of large hulls
+replacement for real engines over long intervals
+high-thrust combat maneuvering
+
+The reason is simple:
+the XRM family is optimized for containment and field organization, not propellant efficiency or long-duration thrust production.
+
+10. Relationship to Maglev Plasma Shield Core
+
+The Maglev Plasma Shield Core already establishes a useful smaller-scale logic:
+
+plasma is the active medium
+coils are the control layer
+the maglev rotor creates dynamic circulation
+the system behaves better when the field is organized rather than static
+
+This addendum effectively scales that same philosophy upward:
+
+the distributed XRM lattice becomes a large multi-node induction field system
+divergence mode is the ship-scale equivalent of biasing that organized field into a directional outcome
+
+So the Maglev Plasma Shield Core acts as the conceptual bridge between shielding and divergence-based maneuvering.
+
+11. Relationship to HaloShard
+
+HaloShard is important because it already frames plasma and field energy as something that can be:
+
+captured
+redirected
+wrapped
+and converted into a different functional outcome, especially shielding from overflow or surplus energy.
+
+This addendum mirrors that principle in reverse:
+
+in HaloShard, excess becomes shield
+in divergence mode, controlled field imbalance becomes motion
+
+That does not mean HaloShard is a propulsion system. It means its routing philosophy supports the plausibility of using structured field redirection rather than treating all non-shield energy as waste.
+
+12. Mode Variants
+12.1 Attitude Divergence Mode
+
+Prioritizes torque over translation. Best for stabilizing damaged vessels.
+
+12.2 Brake Divergence Mode
+
+Biases field geometry forward to oppose motion and reduce drift speed.
+
+12.3 Translation Divergence Mode
+
+Generates very low thrust for controlled repositioning.
+
+12.4 Docking Assist Mode
+
+Fine alignment and station-keeping for approach and contact operations.
+
+12.5 Bastion Support Mode
+
+Used in conjunction with Halo Bastion 2.0 so a crippled ship can maintain orientation while shield-support drones are attached. Bastion 2.0 already assumes hull-coupled emergency shielding support built around compact shield-core logic.
+
+13. Major Engineering Challenges
+13.1 Shield-Propulsion Tradeoff
+
+Every unit of asymmetry used for motion is a unit of symmetry no longer dedicated to protection.
+
+13.2 Seam Instability
+
+Biased fields can create weak arcs and transition seams if compensation is poor.
+
+13.3 Thermal Load
+
+Divergence will likely increase thermal stress in overdriven arcs and nodes.
+
+13.4 Control Complexity
+
+The controller must coordinate:
+
+vector goals
+node phase
+protective minimums
+seam smoothing
+and thermal safety
+13.5 Structural Coupling
+
+Asymmetric force may impose unexpected mechanical stress on damaged hulls.
+
+14. Primary Safety Rule
+
+The system must never fully collapse the envelope merely to gain thrust.
+
+So the doctrine should be:
+
+motion only inside survivable envelope limits.
+
+That means divergence mode should always obey:
+
+minimum shield density around critical systems
+maximum allowable seam weakness
+node thermal ceiling
+hull stress tolerances
+emergency abort thresholds
+15. Proof-of-Concept Development Path
+Phase D1 — Dual-Arc Bias Test
+
+Use two opposed node groups to show that controlled asymmetry can generate measurable torque without total envelope loss.
+
+Phase D2 — Four-Node Attitude Demo
+
+Demonstrate pitch/yaw/roll control on a small protected test mass using distributed node weighting.
+
+Phase D3 — Translation Micro-Thrust Test
+
+Show measurable net directional force from sustained asymmetric divergence.
+
+Phase D4 — Shield Retention Test
+
+Measure minimum viable envelope while divergence mode is active.
+
+Phase D5 — Thermal Burden Test
+
+Compare heat concentration in balanced shield mode vs divergence mode.
+
+Phase D6 — Dual-Ring Counterphase Test
+
+Demonstrate that one ring can stabilize while the other provides stronger vector bias.
+
+Phase D7 — Damaged-Hull Simulation
+
+Test whether a partially compromised lattice can still provide useful attitude or braking authority without catastrophic seam collapse.
+
+16. Measurement Targets
+
+The PoC should record:
+
+net torque generated by arc bias
+net translational force from divergence mode
+residual shield density during vectoring
+seam weakness under asymmetry
+node thermal rise
+ring-to-ring phase stability
+hull stress coupling
+response time to vector changes
+recovery time back to full shield symmetry
+
+These are the measurements that decide whether the concept is a gimmick or a real emergency subsystem.
+
+17. Operational Doctrine
+
+The clean doctrine is:
+
+main engines for travel
+shield divergence for survival maneuvering
+
+So the mode should be treated as:
+
+emergency only
+short burst
+limited authority
+useful when conventional propulsion is degraded
+especially valuable for ships already carrying XRM 2.0 and needing one more layer of graceful degradation
+18. Conclusion
+
+Secondary Propulsion Through Field Divergence is a coherent addendum to XRM Shield Core 2.0 because it does not ask the shield to become something alien to itself.
+
+It asks the shield to do what it already knows how to do:
+
+shape fields
+bias sectors
+manage counterphase
+redirect load
+and survive asymmetry
+
+The difference is that in this mode, that asymmetry is no longer only defensive.
+
+It moves the ship.
+
+Not far.
+Not fast.
+But enough to matter.
+
+Final Doctrine Statement
+
+Secondary Propulsion Through Field Divergence is an emergency operating mode of XRM Shield Core 2.0 in which the distributed counterphase shield lattice intentionally biases its plasma-electric field geometry to generate limited directional force and torque for attitude control, drift correction, braking, and low-authority translation while preserving a minimum viable defensive envelope.
