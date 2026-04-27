@@ -1,0 +1,290 @@
+Emergency Respiratory Preservation Mode
+Addendum to the Shipboard Prism Alveolar Vent Network PoC
+Low-Power Atmospheric Survival Operation for Partial or Main-System Failure
+
+GhostCore Systems Archive Draft
+
+Purpose
+
+Emergency Respiratory Preservation Mode (ERPM) is a degraded-power operating state of the Shipboard Prism Alveolar Vent Network (SPAN) in which the ship’s distributed prism-lattice duct panels shift from normal atmospheric conditioning into a survival-priority configuration.
+
+The goal is not full comfort and not full regeneration.
+
+The goal is simple:
+
+preserve breathable air as long as possible when main life-support capacity is degraded, intermittent, or partially offline.
+
+This addendum follows directly from the underlying Prism Lung architecture, which already divides labor between a central conversion heart and a surrounding lattice-based regulation structure. Prism Lung makes clear that the value of the lattice is not magical gas transmutation, but load smoothing, thermal regulation, and stabilization of the atmospheric-processing environment. ERPM extends that same logic across the ship’s distributed vent network under emergency conditions.
+
+1. Executive Premise
+
+A ship does not lose breathable air all at once.
+
+It loses it in layers:
+
+filtration quality drops
+thermal balance fails
+humidity drifts
+contaminants spread
+CO₂ load rises
+oxygen reserves are consumed faster than expected
+
+A conventional duct system mostly watches this happen.
+
+SPAN in Emergency Respiratory Preservation Mode tries to slow it down.
+
+Rather than running the full ventilation network in normal comfort mode, ERPM converts the ship’s distributed vent panels into a survival scaffold that prioritizes:
+
+air cleanliness
+compartment isolation
+moisture control
+thermal smoothing
+routing of the best remaining air to the most critical zones
+and reduced burden on whatever central regeneration capacity remains
+
+It does not make unlimited oxygen from nothing.
+It buys time.
+
+2. Emergency Role
+
+ERPM is intended for scenarios such as:
+
+reactor brownout
+life-support core damage
+fire or smoke event
+hull breach followed by atmospheric contamination
+compartment toxic release
+extended evacuation delay
+limp-home operation on emergency power
+partial loss of central oxygen-regeneration capability
+
+In these situations, SPAN shifts from distributed atmospheric optimization to distributed atmospheric preservation.
+
+3. Core Operating Priorities
+
+In ERPM, SPAN stops trying to do everything evenly across the ship and instead prioritizes five survival functions.
+
+3.1 Contaminant Interception
+
+Micro-prism and capture layers focus on trapping:
+
+smoke
+particulates
+combustion residue
+chemical aerosols
+debris from damaged compartments
+
+The goal is to prevent local contamination from becoming shipwide contamination.
+
+3.2 Breathable-Zone Prioritization
+
+The network routes the cleanest available air toward:
+
+bridge / CIC
+medical compartments
+inhabited refuge spaces
+engineering control stations
+emergency shelter rooms
+
+This turns the duct network into a triage organ.
+
+3.3 Humidity and Condensate Control
+
+When power falls, uncontrolled humidity becomes dangerous fast. ERPM prioritizes:
+
+condensation capture
+moisture routing
+prevention of pooling in vent lines
+reduction of mold/corrosion/fogging risk
+reclaimed water support for whatever core systems remain
+3.4 Thermal Smoothing
+
+The lattice webbing reduces hot and cold banding in the airflow network so that:
+
+overheated compartments do not poison adjacent zones thermally
+cold-shock duct sections do not cause condensation failure
+remaining life-support equipment receives more stable inlet conditions
+
+This is consistent with the lattice role already defined in Prism Lung as a thermal and routing mantle.
+
+3.5 Core Load Reduction
+
+If the central regeneration core is still functioning at reduced capacity, SPAN pre-conditions air so that the remaining core power is spent more efficiently. That means:
+
+fewer particulates reaching the core
+more stable temperature
+better humidity behavior
+less chaotic input atmosphere
+
+This is one of the most important emergency benefits.
+
+4. Mode Logic
+
+ERPM can be structured into three escalating emergency tiers.
+
+Tier 1 — Reduced Efficiency Support
+
+Main systems are degraded but not collapsed.
+
+SPAN continues broad operation, but shifts toward:
+
+more aggressive filtration
+tighter contaminant sensing
+thermal stabilization for the remaining central life-support core
+early isolation of unhealthy compartments
+Tier 2 — Survival Routing Mode
+
+Main regeneration is weak or intermittent.
+
+SPAN reduces nonessential circulation and focuses on:
+
+routing best air to critical zones
+slowing contamination spread
+preserving humidity stability
+protecting refuge compartments
+reducing pressure losses in priority paths
+Tier 3 — Last-Reserve Preservation
+
+Main systems are nearly gone and emergency reserves dominate.
+
+SPAN enters minimal-power operation and acts mainly as:
+
+a passive/semi-active distributed filter network
+a compartment isolation aid
+a thermal and moisture stabilizer
+a clean-air preservation path for the last habitable zones
+
+At this tier, the mission is no longer full atmospheric management.
+It is survivable delay.
+
+5. What ERPM Extends
+
+ERPM can extend survivability in several ways:
+
+5.1 Oxygen Reserve Lifetime
+
+Not by generating infinite oxygen, but by ensuring remaining breathable zones waste less of it through poor routing, contamination mixing, or unnecessary circulation losses.
+
+5.2 Central Core Runtime
+
+If the main regeneration unit still works at partial power, cleaner and more stable incoming air lets it keep functioning longer per unit of energy.
+
+5.3 Compartment Viability
+
+A damaged ship may not be able to save every space equally. ERPM helps make a few compartments remain habitable much longer.
+
+5.4 Crew Decision Time
+
+In emergencies, extra breathable minutes matter more than elegant engineering. SPAN gives the crew:
+
+more time to isolate damage
+more time to reach shelter zones
+more time to repair
+more time to evacuate
+6. Relationship to Prism Lung
+
+The Prism Lung paper already establishes the core realism boundary:
+
+the prism concentrates energy
+the lattice stabilizes and routes load
+known processes like CO₂ handling, electrolysis assist, humidity management, and thermal control still matter
+the architecture’s value lies in integration, not magic
+
+ERPM obeys that same boundary.
+
+SPAN in emergency mode is not a claim of infinite closed-loop survival with zero power.
+It is a claim that distributed conditioning and regulation can delay collapse and improve how remaining life-support capacity is spent.
+
+That is a much stronger and more believable claim.
+
+7. Emergency Subsystems
+
+In ERPM, specific subsystems rise in priority.
+
+7.1 Isolation Dampers
+
+Close or restrict airflow from contaminated compartments.
+
+7.2 Priority Air Corridors
+
+Maintain breathable routing to refuge spaces, medical areas, and control nodes.
+
+7.3 Passive Capture Bias
+
+Shift panels toward lower-power particulate interception and moisture trapping.
+
+7.4 Thermal Stabilization Bias
+
+Use lattice routing primarily to preserve stable air temperature in critical loops rather than shipwide comfort.
+
+7.5 Core Protection Feed
+
+Deliver the cleanest, driest, most thermally stable air possible to the central regeneration hardware that remains online.
+
+8. Proof-of-Concept Emergency Validation Path
+Phase E1 — Reduced-Power Duct Operation
+
+Run SPAN panels at emergency power and measure whether useful filtration and humidity control remain possible.
+
+Phase E2 — Compartment Contamination Isolation
+
+Inject smoke or particulate load into one duct branch and measure whether ERPM limits spread to other zones.
+
+Phase E3 — Core Assist Under Brownout
+
+Operate a reduced-capacity central regeneration core and compare performance with and without SPAN pre-conditioning.
+
+Phase E4 — Refuge Compartment Preservation Test
+
+Simulate a damaged ship with one designated habitable refuge area and measure how long breathable conditions remain acceptable with ERPM active.
+
+Phase E5 — Moisture and Thermal Stability Under Power Rationing
+
+Measure whether ERPM reduces condensation failures and thermal banding during prolonged emergency operation.
+
+9. Measurements
+
+ERPM should be judged by:
+
+extension of breathable-air viability time
+particulate and smoke spread reduction
+humidity stability under low power
+thermal stability in priority compartments
+reduced contaminant load reaching central life-support hardware
+refuge-zone survivability duration
+airflow preservation efficiency under isolation conditions
+
+These are the numbers that matter in a real emergency.
+
+10. Limits
+
+ERPM has hard boundaries.
+
+It cannot:
+
+create infinite oxygen with no energy input
+fully replace emergency oxygen stores
+guarantee survival after total atmospheric collapse
+save all compartments equally in every failure mode
+
+It can:
+
+make reserves last longer
+keep cleaner spaces cleaner
+reduce central system burden
+slow contamination spread
+and turn a failing ship from a single-breath problem into a managed survival problem
+11. Conclusion
+
+Emergency Respiratory Preservation Mode is one of the strongest arguments for SPAN.
+
+Because in a crisis, distributed environmental architecture matters more than normal-day efficiency curves.
+
+A ship with passive ducts loses air like a machine.
+A ship with SPAN in ERPM loses air like a body trying to survive.
+
+That is the difference.
+
+Final Doctrine Statement
+
+Emergency Respiratory Preservation Mode is a degraded-power operating state of the Shipboard Prism Alveolar Vent Network in which distributed micro-prism and lattice vent panels prioritize contaminant interception, breathable-zone routing, humidity control, thermal smoothing, and core-load reduction in order to extend habitable atmospheric conditions during life-support emergencies.
