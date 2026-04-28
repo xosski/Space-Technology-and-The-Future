@@ -2,29 +2,37 @@
 
 This repository is a large research archive covering speculative and conceptual work in energy, propulsion, shielding, communications, medical systems, and space-time research.
 
+## Spacecraft Worthiness Analysis
+
+For a realistic, archive-wide assessment of spacecraft/space-ship readiness, read:
+
+- `SPACECRAFT_WORTHINESS_ANALYSIS_2026.md`
+
+That report evaluates the collection against practical aerospace criteria (physics plausibility, verification evidence, safety maturity, and integration readiness).
+
 ## Repository Snapshot
 
-Scanned from the current workspace on `2026-03-29`.
+Scanned from the current workspace on `2026-04-27`.
 
 | Metric | Value |
 |---|---:|
-| Total files | 2241 |
-| Top-level domain folders | 9 |
-| Root markdown reports | 4 |
+| Total files tracked | 680 |
+| Top-level domain folders | 10 |
+| Root markdown reports | 2 |
 
 ### File Type Distribution (Top Entries)
 
 | Extension | Count |
 |---|---:|
-| `.txt` | 312 |
-| `.png` | 87 |
+| `.txt` | 330 |
+| `.png` | 85 |
 | `.pdf` | 65 |
-| `.md` | 61 |
-| `.docx` | 59 |
+| `.docx` | 67 |
+| `.md` | 50 |
 | `.py` | 11 |
 | `.odt` | 9 |
 | `.jpg` | 9 |
-| `.ini` | 5 |
+| `.ini` | 4 |
 | `.ps1` | 3 |
 
 ## Top-Level Structure
@@ -48,10 +56,7 @@ Scanned from the current workspace on `2026-03-29`.
 | File | Purpose |
 |---|---|
 | `README.md` | Repository index and navigation guide |
-| `GHOSTCORE_OPERATIONAL_ASSESSMENT.md` | Operational assessment document |
-| `OPERATIONAL_ASSESSMENT_UPDATED_2026_Q1.md` | Updated operational assessment (Q1 2026) |
-| `SPACECRAFT_GAPS_ANALYSIS.md` | Spacecraft capability gap analysis |
-| `SPACECRAFT_GAPS_ANALYSIS_REVISED_2026.md` | Revised spacecraft gap analysis (2026) |
+| `SPACECRAFT_WORTHINESS_ANALYSIS_2026.md` | Realistic spacecraft-worthiness assessment and gap summary |
 
 ## Navigation Guide
 
@@ -71,28 +76,28 @@ This archive is organized by domain. Each domain contains a mix of white papers,
 
 ### Energy and Power (`Energy-and-Power/`)
 
-- File count: **178**
+- File count: **196**
 - Focus: reactor concepts, energy storage, cooling, EM field applications, and power-transfer systems.
 - Key sub-archives: `Genesis Reactor`, `PTEC(Prismatic Tesseract Energy Core)`, `GhostCoreReactor-Included`, `Reactor-Cooling`, `CPSS(Crystaline Battery)`, `Halo Energy`, `TCPPE(Tesla Power Generation)`.
 - Includes: markdown/text concept documents, PDFs, DOCX files, diagrams, and Python/PowerShell simulation assets.
 
 ### Propulsion and Vehicles (`Propulsion-and-Vehicles/`)
 
-- File count: **101**
+- File count: **103**
 - Focus: propulsion architectures, drive variants, maglev and launch-spine concepts, and off-planetary vehicle frameworks.
 - Key sub-archives: `Propulsion Systems`, `Mercy Drive`, `Spectral Charge Divergence Engine(SCDE)`, `Halo Spine Transit System`, `SSOV-self sustained offplanetary vehicles`, `VerdantEngine`.
 - Includes: theoretical drive papers, POC notes, engineering draft PDFs, diagrams, and propulsion support assets.
 
 ### Shielding and Defense (`Shielding-and-Defense/`)
 
-- File count: **67**
+- File count: **75**
 - Focus: EM/spectral shielding, adaptive defense layers, suit systems, and specialized protective concepts.
 - Key sub-archives: `Reactive Em Shielding`, `Revenant Shielding`, `Spectral shielding`, `Shielding`, `WraithConduit`, `Phtonic BIo Suit`.
 - Includes: shielding doctrines, field-response concepts, diagrams, and related biosuit integration notes.
 
 ### Armaments (`Armaments/`)
 
-- File count: **101**
+- File count: **116**
 - Focus: tactical/defensive armaments, orbital systems, drone concepts, and specialized munitions.
 - Key sub-archives: `Future Defensive Armaments`, `Defensive.Offensive Personel`, `Drones`, `Orbital Skylance-Ω`, `Veil-Piercer`.
 - Includes: tactical doctrine PDFs, white papers, POC drafts, and associated imagery.
@@ -106,14 +111,14 @@ This archive is organized by domain. Each domain contains a mix of white papers,
 
 ### Medical (`Medical/`)
 
-- File count: **70**
+- File count: **74**
 - Focus: regenerative medicine concepts, life support, biosuit integration, and condition-specific exploratory papers.
 - Key sub-archives: `Medical Papers`, `Eden Chamber`, `CyroHalo`, `Life support systems`, `Space.Enviromental Photonic BioSuit`.
 - Includes: structured markdown papers plus text/Docx artifacts for protocols, addendums, and biomedical concepts.
 
 ### Space-Time and Research (`Space-Time-and-Research/`)
 
-- File count: **55**
+- File count: **56**
 - Focus: space-time modeling, resonance measurement, temporal/geometry experiments, and theoretical research tracks.
 - Key sub-archives: `Folding Space Time`, `Space-Time Resonance Measurement`, `Asynchronous Memory Mapping (EchoWing)`, `Singularity Hawking`, `Crystal Lattices`, `Project Mnemosyne Node`.
 - Includes: conceptual white papers, exploratory scripts, and model artifacts.
@@ -138,13 +143,14 @@ This archive is organized by domain. Each domain contains a mix of white papers,
 2. Naming is intentionally heterogeneous and reflects evolving project drafts.
 3. Some conceptual themes appear in more than one folder as parallel or copied iterations.
 4. There is no single build system or executable application at the repository root.
+5. Several filenames contain emoji/unicode artifacts; extension counts in shell output can include quoted variants.
 
 ## Maintenance Guidance
 
 For future README updates after content changes:
 
-1. Recount files with `find . -type f | wc -l`.
-2. Rebuild extension counts with `find . -type f | sed 's|.*\.||' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr`.
+1. Recount tracked files with `git ls-files | wc -l`.
+2. Rebuild extension counts with `git ls-files | sed -n 's/.*\.//p' | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr`.
 3. Recheck top-level folders with `find . -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort`.
 
 ## Disclaimer
