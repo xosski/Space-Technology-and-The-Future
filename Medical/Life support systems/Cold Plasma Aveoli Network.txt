@@ -1,0 +1,378 @@
+Cold Plasma Alveolar Preclean Layer
+Proof-of-Concept White Paper
+Low-Energy Ion-Assisted Precleaning Layer for Shipboard Prism Alveolar Vent Network and Emergency Atmospheric Preservation
+
+GhostCore Systems Archive Draft
+
+Document Type
+
+High-level atmospheric treatment and filtration-assist proof-of-concept white paper
+
+Working Classification
+
+Distributed air preclean subsystem / low-energy ionization assist layer / SPAN-compatible contaminant conditioning stage
+
+One-Line Doctrine
+
+Cold Plasma Alveolar Preclean Layer is a low-energy ion-assisted treatment stage embedded within SPAN duct architecture to pre-charge particulates, suppress selected contaminants, and improve downstream capture efficiency without replacing the primary atmospheric regeneration core.
+
+1. Executive Summary
+
+A filter catches what reaches it.
+
+A preclean layer decides what reaches it first.
+
+The Cold Plasma Alveolar Preclean Layer is proposed as a controlled, low-energy treatment stage integrated into the Shipboard Prism Alveolar Vent Network (SPAN). Its purpose is to improve atmospheric cleaning before air reaches the deeper capture, conditioning, and regeneration layers by using carefully managed ionization or cold-plasma exposure to alter the behavior of airborne contaminants.
+
+This system is not meant to replace conventional filtration, moisture control, or central oxygen-regeneration processes. Instead, it sits upstream as a pre-treatment organ. It is strongest when used to:
+
+charge particulates so they are easier to capture
+reduce smoke and aerosol spread
+suppress some microbial or bioaerosol loads
+precondition contaminated air before it reaches the central life-support core
+
+That framing is consistent with SPAN, which already treats ventilation as distributed life support rather than passive plumbing, and with Emergency Respiratory Preservation Mode (ERPM), which prioritizes contaminant interception, breathable-zone routing, and reduced burden on the central core during crisis conditions.
+
+It also fits the realism boundary of Prism Lung, which makes clear that atmospheric survivability depends on layered integration, not a magical single mechanism.
+
+2. Problem Statement
+
+In closed-loop ships and sealed habitats, contamination spreads faster than centralized systems can always respond.
+
+Raw cabin air may contain:
+
+smoke
+dust
+micro-particles
+aerosols
+chemical residues
+humidity-carrying contaminant droplets
+biological particulates
+
+Even in a strong SPAN architecture, these still impose load on downstream elements:
+
+capture meshes
+humidity layers
+duct routing surfaces
+and the central regeneration core
+
+This creates a simple design question:
+
+Can a low-energy ion/plasma stage improve the speed and effectiveness of atmospheric cleaning by conditioning contaminants before they reach the main capture and regeneration layers?
+
+This PoC says yes, within strict safety limits.
+
+3. Concept Thesis
+
+The Cold Plasma Alveolar Preclean Layer proposes a low-energy ionization or cold-plasma zone embedded in SPAN duct panels.
+
+Its role is not to fully purify breathing air by itself.
+
+Its role is to prepare contaminated airflow for better downstream treatment by:
+
+Charging particulates
+Making smoke, dust, and aerosol particles easier to attract to capture surfaces.
+Conditioning contaminant chemistry
+Helping break down or destabilize selected compounds before they enter the main loop.
+Improving capture efficiency
+Increasing the effectiveness of downstream contaminant meshes and condensate-routing layers.
+Reducing central core burden
+Delivering cleaner, more stable air into the main regeneration architecture.
+
+That is exactly the kind of layered support logic already present in SPAN and Prism Lung.
+
+4. Parent System Logic
+4.1 From SPAN
+
+SPAN already defines the duct network as a distributed respiratory scaffold with:
+
+micro-prism interaction surfaces
+lattice routing
+contaminant capture layers
+moisture handling
+thermal equalization
+and sensor-aware flow control
+
+The Cold Plasma Alveolar Preclean Layer fits naturally as an additional treatment stage inside that scaffold.
+
+4.2 From ERPM
+
+In emergency mode, SPAN prioritizes:
+
+contaminant interception
+breathable-zone prioritization
+humidity control
+thermal smoothing
+and core-load reduction
+
+A preclean ion/plasma stage is especially useful here because it can improve filtration effectiveness before contaminated air overwhelms already-stressed emergency systems.
+
+4.3 From Prism Lung
+
+Prism Lung establishes the realism boundary: the system works through layered integration of conversion, regulation, humidity management, and thermal control, not through magic gas transmutation.
+
+This means the Cold Plasma layer should be framed as:
+
+a preclean assist loop
+not a full air-regeneration substitute
+5. Core Architecture
+
+The most coherent implementation is a staged airflow module embedded inside SPAN.
+
+5.1 Micro-Prism Flow-Shaping Face
+
+Incoming air first passes through SPAN’s prism interaction layer, which:
+
+increases interaction path length
+promotes mixing
+slows local particulate lanes
+and improves exposure to downstream treatment surfaces
+5.2 Cold Plasma / Ionization Zone
+
+A low-energy treatment region applies controlled ionization or cold-plasma exposure to the airflow.
+
+Its functions:
+
+charge airborne particulates
+destabilize selected contaminants
+assist with smoke and aerosol handling
+prepare particles for capture
+5.3 Capture and Deposition Layer
+
+Immediately downstream, a capture surface or structured mesh collects treated particles more efficiently than passive filtration alone.
+
+5.4 Moisture and Condensate Routing Layer
+
+Humidity-bearing droplets and chemically altered condensables are separated and routed into SPAN’s moisture control path.
+
+5.5 Thermal and Byproduct Stabilization Layer
+
+A local regulation shell prevents the plasma treatment zone from introducing harmful thermal spikes or unstable byproduct behavior into the breathing stream.
+
+5.6 Duct Control Bus
+
+Sensors monitor:
+
+ion/plasma intensity
+airflow rate
+contaminant load
+humidity
+local temperature
+byproduct thresholds
+and capture saturation
+6. Operating Principle
+Stage A — Intake and Flow Shaping
+
+Contaminated air enters a SPAN duct section and passes through the micro-prism array, which redistributes flow and improves treatment exposure.
+
+Stage B — Low-Energy Plasma Exposure
+
+The air enters a cold-plasma or ionization field calibrated to remain below harmful crew-exposure thresholds while still altering particulate behavior.
+
+Stage C — Particle Charging and Contaminant Conditioning
+
+Suspended particles become easier to collect, and selected aerosol or volatile burdens are partially conditioned for downstream treatment.
+
+Stage D — Capture and Routing
+
+Charged or altered contaminants are intercepted by the capture mesh and moisture-routing layers.
+
+Stage E — Stabilized Output
+
+The partially cleaned and conditioned air exits the preclean module and continues into:
+
+broader SPAN circulation
+the central regeneration core
+or emergency refuge loops
+7. Primary Modes of Operation
+7.1 Passive Assist Mode
+
+Very low-energy operation used during normal airflow to improve particle capture without significant additional power draw.
+
+7.2 Smoke Suppression Support Mode
+
+Prioritizes rapid pre-treatment of smoke and combustion particulates before they overload downstream systems.
+
+7.3 Containment Mode
+
+Used near contaminated compartments to reduce spread of aerosols and particulates into the wider ship loop.
+
+7.4 Core Assist Mode
+
+Optimized to deliver cleaner inlet air to the central regeneration hardware.
+
+7.5 ERPM Burst Mode
+
+Short, carefully controlled emergency operation during ERPM to improve dirty-air handling when breathable-zone preservation matters most.
+
+8. What It Improves
+
+The Cold Plasma Alveolar Preclean Layer is strongest at improving:
+
+particulate capture efficiency
+smoke and aerosol handling
+dirty-air preconditioning
+downstream filter longevity
+contamination localization
+central core inlet stability
+emergency breathable-zone preservation
+
+This is especially valuable because SPAN already emphasizes distributed atmospheric processing near the source of contamination rather than waiting for one central filter block to catch everything.
+
+9. What It Does Not Replace
+
+This layer should not be oversold.
+
+It is not:
+
+the main oxygen-regeneration system
+the sole filtration mechanism
+a substitute for humidity management
+a guarantee against all chemical or biological hazards
+a justification for sending uncontrolled plasma into breathing air
+
+It is:
+
+a pre-treatment layer
+a capture-efficiency booster
+a contamination-control aid
+and a core-load reduction tool
+
+That boundary keeps it believable and consistent with Prism Lung’s layered systems doctrine.
+
+10. Safety Boundary
+
+This is the most important section.
+
+The system must remain cold, controlled, and downstream-safe.
+
+Major hazards include:
+
+ozone generation
+nitrogen oxide formation
+oxidant overproduction
+polymer or seal degradation
+lung-irritating byproducts
+local overheating
+accidental crew exposure to untreated discharge
+
+So the doctrine should be:
+
+Never breathe the treatment field directly.
+
+Treat the air, then stabilize it, then capture residue, then route it onward.
+
+This means the plasma stage should always be followed by:
+
+a capture layer
+a byproduct-monitoring layer
+and output safety checks
+11. Best Use Cases
+
+The Cold Plasma Alveolar Preclean Layer is most coherent for:
+
+smoke-heavy emergency events
+industrial contamination corridors
+suit-bay and workshop vent lines
+medical isolation or quarantine routing
+ERPM refuge-zone protection
+dusty or aerosol-rich work environments
+sealed ships where reducing core burden matters
+12. Engineering Risks
+12.1 Byproduct Risk
+
+The preclean layer may create hazardous secondary compounds if not tightly controlled.
+
+12.2 Pressure Drop
+
+Too much internal complexity may reduce airflow.
+
+12.3 Capture Saturation
+
+Charged particles still need somewhere to go; collector overload remains a real failure mode.
+
+12.4 Thermal Cycling
+
+Repeated activation may fatigue plasma electrodes, lattice interfaces, or duct structures.
+
+12.5 Control Complexity
+
+Safe operation requires tight sensing and automated shutoff logic.
+
+12.6 Emergency Overuse
+
+In a crisis, operators may be tempted to overdrive the plasma layer, creating more harm than help.
+
+13. Proof-of-Concept Development Path
+Phase C1 — Benchtop Ionization Stability Test
+
+Demonstrate a low-energy cold-plasma or ionization zone that remains within defined thermal and chemical safety bounds.
+
+Phase C2 — Particulate Charging Test
+
+Measure whether treated smoke and dust are captured more effectively downstream than in a passive-only control.
+
+Phase C3 — Byproduct Monitoring Test
+
+Quantify ozone, NOx, and other unwanted compounds under varying airflow and power conditions.
+
+Phase C4 — SPAN Panel Integration Test
+
+Integrate the preclean stage into a SPAN duct panel and evaluate pressure drop, capture efficiency, and thermal behavior.
+
+Phase C5 — Core Assist Test
+
+Feed treated and untreated air into a central Prism Lung-style processing test loop and compare inlet stability and downstream burden.
+
+Phase C6 — ERPM Smoke Event Test
+
+Run the system under ERPM-like reduced-power conditions during a smoke contamination scenario and measure breathable-zone preservation.
+
+14. Measurement Targets
+
+The PoC should track:
+
+particulate capture improvement
+smoke suppression effectiveness
+airflow pressure drop
+plasma/ion energy cost
+byproduct concentration
+downstream filter loading rate
+central core inlet cleanliness improvement
+refuge-zone air-quality extension in ERPM conditions
+safe operating envelope margins
+15. Variants
+15.1 Preclean-Light
+
+Low-power particulate charger for routine SPAN use
+
+15.2 SmokeGuard Variant
+
+Optimized for combustion particle loads and fire-response routing
+
+15.3 Containment Variant
+
+Built for contaminated compartment isolation and quarantine lines
+
+15.4 CoreAssist Variant
+
+Focused on protecting central regeneration hardware from dirty-air surges
+
+15.5 ERPM Variant
+
+Specialized for emergency breathable-zone preservation under degraded power
+
+16. Conclusion
+
+The Cold Plasma Alveolar Preclean Layer is a coherent next step because it improves the ship’s atmospheric response without pretending to replace the rest of the respiratory architecture.
+
+SPAN already made the ship breathe through its walls.
+This layer teaches those walls to prepare the breath before they pass it on.
+
+It is not the lung.
+It is not the heart.
+It is the charged moment before capture.
+
+Final Doctrine Statement
+
+Cold Plasma Alveolar Preclean Layer is a low-energy ion-assisted treatment stage integrated into SPAN duct architecture to pre-charge particulates, suppress selected contaminants, and improve downstream filtration and regeneration efficiency while remaining subordinate to the primary atmospheric capture, conditioning, and oxygen-regeneration systems.
