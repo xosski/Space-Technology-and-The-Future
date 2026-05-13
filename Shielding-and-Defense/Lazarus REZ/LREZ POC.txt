@@ -1,0 +1,1109 @@
+Proof of Concept
+REZ Lazarus
+Rapid Electric Zap Lazarus Defensive Dispersal Array
+
+System Type: High-capacity defensive discharge and surge-dispersal system
+Full Name: Rapid Electric Zap Lazarus Array
+Short Name: REZ Lazarus
+Architecture Family: Prismatic Lazarus Capacitor / Elohim Reserve Lattice / Aegis Skin / Spectral Divergent Drive
+Purpose: High-energy defensive pulse bloom, overload venting, shield reinforcement, and emergency field dispersal
+Status: Speculative GhostCore engineering PoC, physics-bounded
+
+1. Core Concept
+
+REZ Lazarus is a top-and-bottom Lazarus capacitor array mounted around a ship’s central protected spine. The system stores high-density energy in paired capacitor banks and releases it in rapid, controlled bursts.
+
+The goal is not normal propulsion.
+
+The goal is:
+
+store hard
+release fast
+shape outward
+survive the backlash
+
+In your diagram:
+
+Red diamonds = REZ Lazarus capacitor/discharge arrays
+Yellow rectangle = outer ship hull / armored energy bus
+Blue rectangle = protected core / internal power spine
+
+The top and bottom arrays create a biaxial defensive discharge system. When fired together, they push energy away from the hull in opposite directions, creating a temporary protective bloom, flare, or dispersal field.
+
+The Prismatic Lazarus Capacitor already defines this role well: a rapid pulse reservoir used for shield recharge, plasma pulse, emergency power dump, and short-duration power surges.
+
+GhostCore phrasing:
+
+The ship does not hold lightning in one fist.
+It places a storm above,
+a storm below,
+and dares impact to choose poorly.
+2. Main Hypothesis
+
+If high-capacity Lazarus capacitor banks are mounted above and below the ship’s central core, then synchronized discharge can create a balanced defensive energy dispersal effect.
+
+The system can be used to:
+
+- reinforce shields
+- vent overload away from the hull
+- disperse incoming plasma or EM energy
+- break target lock with burst interference
+- create a temporary defensive pulse shell
+- feed emergency evasive systems
+- absorb and redirect surge through the Elohim Reserve Lattice
+
+The system does not create free energy.
+It does not make the ship invincible.
+It does not bypass thermal or structural limits.
+
+It stores energy and releases it violently, but with manners. Ideally.
+
+3. System Architecture
+                 [ REZ Lazarus Top Array ]
+                         red diamond
+                              ▲
+                              │
+                outward defensive discharge
+                              │
+
+        +-----------------------------------------+
+        |          Outer Hull / Aegis Bus          |
+        |                 yellow layer             |
+        |                                         |
+        |        Protected Core / Power Spine      |
+        |                 blue layer               |
+        |                                         |
+        +-----------------------------------------+
+
+                              │
+                outward defensive discharge
+                              │
+                              ▼
+                [ REZ Lazarus Bottom Array ]
+                         red diamond
+
+The two arrays work as a matched pair.
+
+If both fire equally:
+
+net translation ≈ low
+defensive field expansion ≈ high
+
+If they fire asymmetrically:
+
+net translation / roll torque may occur
+
+That means REZ Lazarus can either act as a defensive shield bloom or a maneuver-assist pulse layer, depending on timing.
+
+4. Primary Components
+A. REZ Lazarus Capacitor Arrays
+
+These are high-capacity pulse banks.
+
+Their job:
+
+- store emergency discharge energy
+- release rapid electric/EM pulses
+- feed plasma/field dispersal gates
+- support shield bloom events
+- provide burst power to defensive systems
+
+The Prismatic Lazarus Capacitor model stores energy across several layers, including rotational, magnetic, electric, plasma thermal, and resonant energy, with the discharge gate acting as the useful output stage.
+
+B. Aegis Dispersal Surface
+
+This is the field-shaping layer around the hull.
+
+Its job:
+
+- shape capacitor discharge outward
+- prevent inward arcing
+- spread energy across the hull surface
+- convert raw discharge into defensive field geometry
+
+Without this, REZ is just a capacitor yelling at the universe.
+
+C. Elohim Reserve Lattice
+
+The Elohim Reserve Lattice is the shipwide reserve and surge-management layer.
+
+Its job:
+
+- feed charge into REZ arrays
+- absorb discharge backlash
+- diffuse overload
+- reroute emergency power
+- prevent one capacitor bank from becoming a single catastrophic failure point
+
+The Elohim Reserve Lattice is designed specifically for distributed storage, surge absorption, controlled dissipation, and emergency power rerouting.
+
+D. Discharge Gates
+
+The discharge gates control how stored energy leaves the arrays.
+
+Possible output forms:
+
+- electric pulse
+- EM burst
+- plasma flare
+- shield recharge pulse
+- overload vent
+- sensor-blinding interference flare
+
+The gate is the leash.
+
+Without the gate, the capacitor is not a system. It is a future accident.
+
+E. Control Core
+
+The control core synchronizes the top and bottom arrays.
+
+It monitors:
+
+- capacitor charge
+- hull field stress
+- thermal load
+- top/bottom balance
+- incoming threat vector
+- lattice absorption capacity
+- discharge-gate timing
+
+Its primary duty is to prevent the arrays from firing unevenly unless asymmetric discharge is deliberately requested.
+
+5. Operating Modes
+Mode 1 — REZ Bloom
+
+Both top and bottom arrays fire outward at the same time.
+
+Purpose:
+temporary high-energy defensive shield expansion
+
+Useful against:
+
+- incoming missiles
+- debris clouds
+- plasma bursts
+- radiation surges
+- close-range energy discharge
+
+Result:
+
+balanced outward pulse
+minimal ship translation
+maximum defensive expansion
+Mode 2 — REZ Curtain
+
+Arrays fire in staggered pulses.
+
+Purpose:
+create layered EM/plasma interference around the ship
+
+This is useful when the ship needs to confuse sensors, disrupt targeting locks, or break through an incoming field pattern.
+
+Top pulse
+delay
+bottom pulse
+delay
+side lattice echo
+repeat
+
+This forms a defensive curtain rather than a single blast.
+
+Mode 3 — REZ Vent
+
+The arrays dump excess internal energy away from the protected core.
+
+Purpose:
+prevent internal power-bus collapse
+
+Use when:
+
+- capacitor charge is unstable
+- reactor output spikes
+- drive feedback overloads the bus
+- shields collapse and rebound energy returns inward
+
+The Elohim lattice helps diffuse this excess energy across distributed reserve cells instead of forcing one central system to absorb everything.
+
+Mode 4 — REZ Snap
+
+Top and bottom arrays fire asymmetrically to create emergency roll or field-vector shift.
+
+Purpose:
+rapid evasive movement / Angel Drift support
+
+Example:
+
+top array fires 40 ms before bottom array
+bottom array fires at 70% intensity
+result = controlled roll impulse
+
+This links REZ Lazarus to the Spectral Divergent Drive concept, where counter-polarized plasma/electric divergence supports spin-state induction and torque generation.
+
+Mode 5 — REZ Black-Start
+
+The Elohim Reserve Lattice feeds enough emergency power into REZ arrays to restart critical shield or field systems.
+
+Purpose:
+bring defensive field authority back online after blackout
+
+Useful for:
+
+- post-impact recovery
+- EMP-like disruption
+- reactor trip
+- shield-bus collapse
+6. Energy Flow
+Primary Reactor / Aegis Intake
+          ↓
+Elohim Reserve Lattice
+          ↓
+REZ Lazarus Capacitor Arrays
+          ↓
+Discharge Gates
+          ↓
+Aegis Field Surface
+          ↓
+Outward Defensive Bloom / Curtain / Vent / Snap
+
+The best division of labor:
+
+Aegis gathers and shapes.
+Elohim stores and diffuses.
+Lazarus holds the violent charge.
+REZ releases it fast.
+7. Mathematical Sketch
+Capacitor Pulse Energy
+E = 1/2 C V²
+
+Where:
+
+E = stored electrical energy
+C = capacitance
+V = voltage
+
+The important point is that voltage matters brutally. Doubling voltage quadruples stored energy.
+
+Very useful.
+Very rude.
+
+Magnetic Field Energy Density
+u = B² / 2μ₀
+
+Where:
+
+u = magnetic energy density
+B = magnetic field strength
+μ₀ = permeability of free space
+
+If REZ uses magnetic confinement or field-shaping coils, those coils are not passive plumbing. They are structural stress monsters wearing copper hats.
+
+Balanced Discharge Condition
+
+For defensive bloom:
+
+F_top ≈ F_bottom
+t_top ≈ t_bottom
+phase_top ≈ phase_bottom
+
+Goal:
+
+net movement ≈ 0
+field expansion = maximum
+
+For maneuver snap:
+
+F_top ≠ F_bottom
+or
+t_top ≠ t_bottom
+
+Goal:
+
+controlled torque / roll impulse
+8. Control Logic
+def rez_lazarus_step(ship, rez_top, rez_bottom, lattice, threat, command):
+    """
+    Speculative control step for the REZ Lazarus defensive dispersal array.
+    """
+
+    # 1. Read system state
+    top_charge = rez_top.available_energy
+    bottom_charge = rez_bottom.available_energy
+    lattice_margin = lattice.available_absorption
+    hull_stress = ship.hull_field_stress
+    thermal_margin = min(rez_top.thermal_margin, rez_bottom.thermal_margin)
+    threat_vector = threat.vector
+
+    # 2. Safety checks
+    if thermal_margin < 0.2:
+        return emergency_bleedoff(
+            rez_top, rez_bottom, lattice,
+            reason="thermal_margin_low"
+        )
+
+    if lattice_margin < command.minimum_lattice_margin:
+        return hold_fire(
+            rez_top, rez_bottom,
+            reason="insufficient_lattice_absorption"
+        )
+
+    if abs(top_charge - bottom_charge) > command.max_charge_imbalance:
+        return rebalance_arrays(
+            rez_top, rez_bottom, lattice,
+            reason="top_bottom_charge_mismatch"
+        )
+
+    # 3. Select operating mode
+    if command.mode == "defensive_bloom":
+        pulse_plan = synchronize_biaxial_pulse(
+            top=rez_top,
+            bottom=rez_bottom,
+            intensity=command.intensity,
+            phase="matched",
+        )
+
+    elif command.mode == "dispersal_curtain":
+        pulse_plan = staggered_pulse_train(
+            top=rez_top,
+            bottom=rez_bottom,
+            interval_ms=command.interval_ms,
+            cycles=command.cycles,
+        )
+
+    elif command.mode == "overload_vent":
+        pulse_plan = outward_dump_sequence(
+            top=rez_top,
+            bottom=rez_bottom,
+            dump_limit=command.dump_limit,
+        )
+
+    elif command.mode == "snap_roll":
+        pulse_plan = asymmetric_snap_pulse(
+            top=rez_top,
+            bottom=rez_bottom,
+            offset_ms=command.offset_ms,
+            torque_limit=ship.max_safe_torque,
+        )
+
+    else:
+        return standby_status(rez_top, rez_bottom, lattice)
+
+    # 4. Fire discharge gates
+    rez_top.discharge(pulse_plan.top)
+    rez_bottom.discharge(pulse_plan.bottom)
+
+    # 5. Route backlash into Elohim lattice
+    lattice.absorb_transient_load(
+        electrical_spike=pulse_plan.estimated_backlash,
+        thermal_spike=pulse_plan.estimated_heat,
+        field_echo=pulse_plan.estimated_field_echo,
+    )
+
+    # 6. Update ship state estimate
+    ship.hull_field_stress += pulse_plan.estimated_hull_stress
+    ship.thermal_load += pulse_plan.estimated_heat
+
+    return {
+        "mode": command.mode,
+        "top_charge": rez_top.available_energy,
+        "bottom_charge": rez_bottom.available_energy,
+        "lattice_margin": lattice.available_absorption,
+        "status": "pulse_executed",
+    }
+9. Failure Modes
+1. Top/Bottom Imbalance
+
+One array fires harder than the other.
+
+Result:
+
+- unwanted roll
+- hull torque
+- field shear
+- navigation instability
+2. Discharge Gate Failure
+
+Energy leaves too quickly or through the wrong path.
+
+Result:
+
+- arcing
+- EMP-like burst
+- coil burnout
+- internal system damage
+
+This matches the Prismatic Lazarus Capacitor risk model: uncontrolled discharge, field spikes, arcing, and containment failure are central dangers.
+
+3. Lattice Saturation
+
+The Elohim Reserve Lattice absorbs too much transient load.
+
+Result:
+
+- reserve cell overheating
+- sector brownouts
+- reroute failure
+- distributed thermal hazard
+4. Aegis Skin Flashback
+
+The hull field surface reflects energy inward instead of shaping it outward.
+
+Result:
+
+- internal bus rebound
+- sensor blackout
+- crew-system disruption
+- shield collapse
+5. Thermal Bloom
+
+Repeated REZ pulses heat the array faster than the radiators can dump.
+
+Result:
+
+- capacitor degradation
+- coil quench
+- insulation breakdown
+- forced shutdown
+10. Safety Requirements
+1. Never fire REZ arrays without top/bottom phase lock.
+2. Never use REZ Bloom if the Elohim lattice cannot absorb backlash.
+3. Never allow inward discharge paths toward the protected core.
+4. Never pulse during capacitor imbalance beyond safe margin.
+5. Always preserve passive bleed-off capacity.
+6. Always monitor hull torsion and field shear.
+7. Always separate defensive bloom from maneuver snap mode.
+8. Always include manual abort and automatic thermal cutoff.
+
+GhostCore safety doctrine:
+
+Do not let the red diamonds blink alone.
+Do not let the hull become the wire.
+Do not let the blue core taste the lightning.
+11. Bench-Scale Demonstration
+
+A safe low-energy demo would avoid real high-energy discharge.
+
+Use:
+
+- small capacitor bank at safe voltage
+- LEDs or xenon flash analogy
+- paired coils
+- Hall sensors
+- thermal sensors
+- oscilloscope
+- microcontroller timing logic
+- nonconductive ship mockup
+
+Demonstrate:
+
+- synchronized top/bottom pulse timing
+- balanced discharge
+- staggered pulse curtain behavior
+- asymmetric timing causing measurable torque on a lightweight suspended mockup
+- safe bleed-off after aborted pulse
+
+Do not attempt:
+
+- high-voltage open-air arcing
+- plasma discharge
+- weaponized EMP pulses
+- unsafe capacitor banks
+
+No garage thunder coffins. The universe has enough comedy.
+
+12. Integration with Other Systems
+Prismatic Lazarus Capacitor:
+provides the high-capacity pulse storage model
+
+Elohim Reserve Lattice:
+feeds, diffuses, and absorbs overload
+
+SCDE:
+contributes torque and spin-state logic for asymmetric REZ Snap behavior
+
+Aegis Skin:
+shapes the outward defensive field
+
+Angel Drift:
+uses REZ Snap as an emergency evasive impulse
+13. Final PoC Statement
+
+REZ Lazarus, or Rapid Electric Zap Lazarus, is a speculative high-capacity defensive discharge system built from paired Lazarus capacitor arrays mounted above and below a ship’s protected core.
+
+Its main function is rapid outward energy dispersal.
+
+It can create defensive shield blooms, staged dispersal curtains, overload vents, black-start pulses, and emergency snap-roll maneuvers.
+
+It does not create energy.
+It stores energy and releases it with disciplined violence.
+
+Final doctrine:
+
+REZ does not make the storm.
+REZ keeps the storm ready.
+
+Above the ship: a red diamond of charge.
+Below the ship: a red diamond of refusal.
+Between them: the blue heart that must not burn.
+
+When impact arrives,
+REZ answers first.
+
+PoC classification: speculative fiction / conceptual engineering
+Physics status: plausible as a high-energy pulse-defense concept, not validated hardware
+Best role: emergency shield bloom, overload venting, and defensive pulse dispersal
+Primary risk: uncontrolled discharge and top/bottom phase imbalanceProof of Concept
+REZ Lazarus
+Rapid Electric Zap Lazarus Defensive Dispersal Array
+
+System Type: High-capacity defensive discharge and surge-dispersal system
+Full Name: Rapid Electric Zap Lazarus Array
+Short Name: REZ Lazarus
+Architecture Family: Prismatic Lazarus Capacitor / Elohim Reserve Lattice / Aegis Skin / Spectral Divergent Drive
+Purpose: High-energy defensive pulse bloom, overload venting, shield reinforcement, and emergency field dispersal
+Status: Speculative GhostCore engineering PoC, physics-bounded
+
+1. Core Concept
+
+REZ Lazarus is a top-and-bottom Lazarus capacitor array mounted around a ship’s central protected spine. The system stores high-density energy in paired capacitor banks and releases it in rapid, controlled bursts.
+
+The goal is not normal propulsion.
+
+The goal is:
+
+store hard
+release fast
+shape outward
+survive the backlash
+
+In your diagram:
+
+Red diamonds = REZ Lazarus capacitor/discharge arrays
+Yellow rectangle = outer ship hull / armored energy bus
+Blue rectangle = protected core / internal power spine
+
+The top and bottom arrays create a biaxial defensive discharge system. When fired together, they push energy away from the hull in opposite directions, creating a temporary protective bloom, flare, or dispersal field.
+
+The Prismatic Lazarus Capacitor already defines this role well: a rapid pulse reservoir used for shield recharge, plasma pulse, emergency power dump, and short-duration power surges.
+
+GhostCore phrasing:
+
+The ship does not hold lightning in one fist.
+It places a storm above,
+a storm below,
+and dares impact to choose poorly.
+2. Main Hypothesis
+
+If high-capacity Lazarus capacitor banks are mounted above and below the ship’s central core, then synchronized discharge can create a balanced defensive energy dispersal effect.
+
+The system can be used to:
+
+- reinforce shields
+- vent overload away from the hull
+- disperse incoming plasma or EM energy
+- break target lock with burst interference
+- create a temporary defensive pulse shell
+- feed emergency evasive systems
+- absorb and redirect surge through the Elohim Reserve Lattice
+
+The system does not create free energy.
+It does not make the ship invincible.
+It does not bypass thermal or structural limits.
+
+It stores energy and releases it violently, but with manners. Ideally.
+
+3. System Architecture
+                 [ REZ Lazarus Top Array ]
+                         red diamond
+                              ▲
+                              │
+                outward defensive discharge
+                              │
+
+        +-----------------------------------------+
+        |          Outer Hull / Aegis Bus          |
+        |                 yellow layer             |
+        |                                         |
+        |        Protected Core / Power Spine      |
+        |                 blue layer               |
+        |                                         |
+        +-----------------------------------------+
+
+                              │
+                outward defensive discharge
+                              │
+                              ▼
+                [ REZ Lazarus Bottom Array ]
+                         red diamond
+
+The two arrays work as a matched pair.
+
+If both fire equally:
+
+net translation ≈ low
+defensive field expansion ≈ high
+
+If they fire asymmetrically:
+
+net translation / roll torque may occur
+
+That means REZ Lazarus can either act as a defensive shield bloom or a maneuver-assist pulse layer, depending on timing.
+
+4. Primary Components
+A. REZ Lazarus Capacitor Arrays
+
+These are high-capacity pulse banks.
+
+Their job:
+
+- store emergency discharge energy
+- release rapid electric/EM pulses
+- feed plasma/field dispersal gates
+- support shield bloom events
+- provide burst power to defensive systems
+
+The Prismatic Lazarus Capacitor model stores energy across several layers, including rotational, magnetic, electric, plasma thermal, and resonant energy, with the discharge gate acting as the useful output stage.
+
+B. Aegis Dispersal Surface
+
+This is the field-shaping layer around the hull.
+
+Its job:
+
+- shape capacitor discharge outward
+- prevent inward arcing
+- spread energy across the hull surface
+- convert raw discharge into defensive field geometry
+
+Without this, REZ is just a capacitor yelling at the universe.
+
+C. Elohim Reserve Lattice
+
+The Elohim Reserve Lattice is the shipwide reserve and surge-management layer.
+
+Its job:
+
+- feed charge into REZ arrays
+- absorb discharge backlash
+- diffuse overload
+- reroute emergency power
+- prevent one capacitor bank from becoming a single catastrophic failure point
+
+The Elohim Reserve Lattice is designed specifically for distributed storage, surge absorption, controlled dissipation, and emergency power rerouting.
+
+D. Discharge Gates
+
+The discharge gates control how stored energy leaves the arrays.
+
+Possible output forms:
+
+- electric pulse
+- EM burst
+- plasma flare
+- shield recharge pulse
+- overload vent
+- sensor-blinding interference flare
+
+The gate is the leash.
+
+Without the gate, the capacitor is not a system. It is a future accident.
+
+E. Control Core
+
+The control core synchronizes the top and bottom arrays.
+
+It monitors:
+
+- capacitor charge
+- hull field stress
+- thermal load
+- top/bottom balance
+- incoming threat vector
+- lattice absorption capacity
+- discharge-gate timing
+
+Its primary duty is to prevent the arrays from firing unevenly unless asymmetric discharge is deliberately requested.
+
+5. Operating Modes
+Mode 1 — REZ Bloom
+
+Both top and bottom arrays fire outward at the same time.
+
+Purpose:
+temporary high-energy defensive shield expansion
+
+Useful against:
+
+- incoming missiles
+- debris clouds
+- plasma bursts
+- radiation surges
+- close-range energy discharge
+
+Result:
+
+balanced outward pulse
+minimal ship translation
+maximum defensive expansion
+Mode 2 — REZ Curtain
+
+Arrays fire in staggered pulses.
+
+Purpose:
+create layered EM/plasma interference around the ship
+
+This is useful when the ship needs to confuse sensors, disrupt targeting locks, or break through an incoming field pattern.
+
+Top pulse
+delay
+bottom pulse
+delay
+side lattice echo
+repeat
+
+This forms a defensive curtain rather than a single blast.
+
+Mode 3 — REZ Vent
+
+The arrays dump excess internal energy away from the protected core.
+
+Purpose:
+prevent internal power-bus collapse
+
+Use when:
+
+- capacitor charge is unstable
+- reactor output spikes
+- drive feedback overloads the bus
+- shields collapse and rebound energy returns inward
+
+The Elohim lattice helps diffuse this excess energy across distributed reserve cells instead of forcing one central system to absorb everything.
+
+Mode 4 — REZ Snap
+
+Top and bottom arrays fire asymmetrically to create emergency roll or field-vector shift.
+
+Purpose:
+rapid evasive movement / Angel Drift support
+
+Example:
+
+top array fires 40 ms before bottom array
+bottom array fires at 70% intensity
+result = controlled roll impulse
+
+This links REZ Lazarus to the Spectral Divergent Drive concept, where counter-polarized plasma/electric divergence supports spin-state induction and torque generation.
+
+Mode 5 — REZ Black-Start
+
+The Elohim Reserve Lattice feeds enough emergency power into REZ arrays to restart critical shield or field systems.
+
+Purpose:
+bring defensive field authority back online after blackout
+
+Useful for:
+
+- post-impact recovery
+- EMP-like disruption
+- reactor trip
+- shield-bus collapse
+6. Energy Flow
+Primary Reactor / Aegis Intake
+          ↓
+Elohim Reserve Lattice
+          ↓
+REZ Lazarus Capacitor Arrays
+          ↓
+Discharge Gates
+          ↓
+Aegis Field Surface
+          ↓
+Outward Defensive Bloom / Curtain / Vent / Snap
+
+The best division of labor:
+
+Aegis gathers and shapes.
+Elohim stores and diffuses.
+Lazarus holds the violent charge.
+REZ releases it fast.
+7. Mathematical Sketch
+Capacitor Pulse Energy
+E = 1/2 C V²
+
+Where:
+
+E = stored electrical energy
+C = capacitance
+V = voltage
+
+The important point is that voltage matters brutally. Doubling voltage quadruples stored energy.
+
+Very useful.
+Very rude.
+
+Magnetic Field Energy Density
+u = B² / 2μ₀
+
+Where:
+
+u = magnetic energy density
+B = magnetic field strength
+μ₀ = permeability of free space
+
+If REZ uses magnetic confinement or field-shaping coils, those coils are not passive plumbing. They are structural stress monsters wearing copper hats.
+
+Balanced Discharge Condition
+
+For defensive bloom:
+
+F_top ≈ F_bottom
+t_top ≈ t_bottom
+phase_top ≈ phase_bottom
+
+Goal:
+
+net movement ≈ 0
+field expansion = maximum
+
+For maneuver snap:
+
+F_top ≠ F_bottom
+or
+t_top ≠ t_bottom
+
+Goal:
+
+controlled torque / roll impulse
+8. Control Logic
+def rez_lazarus_step(ship, rez_top, rez_bottom, lattice, threat, command):
+    """
+    Speculative control step for the REZ Lazarus defensive dispersal array.
+    """
+
+    # 1. Read system state
+    top_charge = rez_top.available_energy
+    bottom_charge = rez_bottom.available_energy
+    lattice_margin = lattice.available_absorption
+    hull_stress = ship.hull_field_stress
+    thermal_margin = min(rez_top.thermal_margin, rez_bottom.thermal_margin)
+    threat_vector = threat.vector
+
+    # 2. Safety checks
+    if thermal_margin < 0.2:
+        return emergency_bleedoff(
+            rez_top, rez_bottom, lattice,
+            reason="thermal_margin_low"
+        )
+
+    if lattice_margin < command.minimum_lattice_margin:
+        return hold_fire(
+            rez_top, rez_bottom,
+            reason="insufficient_lattice_absorption"
+        )
+
+    if abs(top_charge - bottom_charge) > command.max_charge_imbalance:
+        return rebalance_arrays(
+            rez_top, rez_bottom, lattice,
+            reason="top_bottom_charge_mismatch"
+        )
+
+    # 3. Select operating mode
+    if command.mode == "defensive_bloom":
+        pulse_plan = synchronize_biaxial_pulse(
+            top=rez_top,
+            bottom=rez_bottom,
+            intensity=command.intensity,
+            phase="matched",
+        )
+
+    elif command.mode == "dispersal_curtain":
+        pulse_plan = staggered_pulse_train(
+            top=rez_top,
+            bottom=rez_bottom,
+            interval_ms=command.interval_ms,
+            cycles=command.cycles,
+        )
+
+    elif command.mode == "overload_vent":
+        pulse_plan = outward_dump_sequence(
+            top=rez_top,
+            bottom=rez_bottom,
+            dump_limit=command.dump_limit,
+        )
+
+    elif command.mode == "snap_roll":
+        pulse_plan = asymmetric_snap_pulse(
+            top=rez_top,
+            bottom=rez_bottom,
+            offset_ms=command.offset_ms,
+            torque_limit=ship.max_safe_torque,
+        )
+
+    else:
+        return standby_status(rez_top, rez_bottom, lattice)
+
+    # 4. Fire discharge gates
+    rez_top.discharge(pulse_plan.top)
+    rez_bottom.discharge(pulse_plan.bottom)
+
+    # 5. Route backlash into Elohim lattice
+    lattice.absorb_transient_load(
+        electrical_spike=pulse_plan.estimated_backlash,
+        thermal_spike=pulse_plan.estimated_heat,
+        field_echo=pulse_plan.estimated_field_echo,
+    )
+
+    # 6. Update ship state estimate
+    ship.hull_field_stress += pulse_plan.estimated_hull_stress
+    ship.thermal_load += pulse_plan.estimated_heat
+
+    return {
+        "mode": command.mode,
+        "top_charge": rez_top.available_energy,
+        "bottom_charge": rez_bottom.available_energy,
+        "lattice_margin": lattice.available_absorption,
+        "status": "pulse_executed",
+    }
+9. Failure Modes
+1. Top/Bottom Imbalance
+
+One array fires harder than the other.
+
+Result:
+
+- unwanted roll
+- hull torque
+- field shear
+- navigation instability
+2. Discharge Gate Failure
+
+Energy leaves too quickly or through the wrong path.
+
+Result:
+
+- arcing
+- EMP-like burst
+- coil burnout
+- internal system damage
+
+This matches the Prismatic Lazarus Capacitor risk model: uncontrolled discharge, field spikes, arcing, and containment failure are central dangers.
+
+3. Lattice Saturation
+
+The Elohim Reserve Lattice absorbs too much transient load.
+
+Result:
+
+- reserve cell overheating
+- sector brownouts
+- reroute failure
+- distributed thermal hazard
+4. Aegis Skin Flashback
+
+The hull field surface reflects energy inward instead of shaping it outward.
+
+Result:
+
+- internal bus rebound
+- sensor blackout
+- crew-system disruption
+- shield collapse
+5. Thermal Bloom
+
+Repeated REZ pulses heat the array faster than the radiators can dump.
+
+Result:
+
+- capacitor degradation
+- coil quench
+- insulation breakdown
+- forced shutdown
+10. Safety Requirements
+1. Never fire REZ arrays without top/bottom phase lock.
+2. Never use REZ Bloom if the Elohim lattice cannot absorb backlash.
+3. Never allow inward discharge paths toward the protected core.
+4. Never pulse during capacitor imbalance beyond safe margin.
+5. Always preserve passive bleed-off capacity.
+6. Always monitor hull torsion and field shear.
+7. Always separate defensive bloom from maneuver snap mode.
+8. Always include manual abort and automatic thermal cutoff.
+
+GhostCore safety doctrine:
+
+Do not let the red diamonds blink alone.
+Do not let the hull become the wire.
+Do not let the blue core taste the lightning.
+11. Bench-Scale Demonstration
+
+A safe low-energy demo would avoid real high-energy discharge.
+
+Use:
+
+- small capacitor bank at safe voltage
+- LEDs or xenon flash analogy
+- paired coils
+- Hall sensors
+- thermal sensors
+- oscilloscope
+- microcontroller timing logic
+- nonconductive ship mockup
+
+Demonstrate:
+
+- synchronized top/bottom pulse timing
+- balanced discharge
+- staggered pulse curtain behavior
+- asymmetric timing causing measurable torque on a lightweight suspended mockup
+- safe bleed-off after aborted pulse
+
+Do not attempt:
+
+- high-voltage open-air arcing
+- plasma discharge
+- weaponized EMP pulses
+- unsafe capacitor banks
+
+No garage thunder coffins. The universe has enough comedy.
+
+12. Integration with Other Systems
+Prismatic Lazarus Capacitor:
+provides the high-capacity pulse storage model
+
+Elohim Reserve Lattice:
+feeds, diffuses, and absorbs overload
+
+SCDE:
+contributes torque and spin-state logic for asymmetric REZ Snap behavior
+
+Aegis Skin:
+shapes the outward defensive field
+
+Angel Drift:
+uses REZ Snap as an emergency evasive impulse
+13. Final PoC Statement
+
+REZ Lazarus, or Rapid Electric Zap Lazarus, is a speculative high-capacity defensive discharge system built from paired Lazarus capacitor arrays mounted above and below a ship’s protected core.
+
+Its main function is rapid outward energy dispersal.
+
+It can create defensive shield blooms, staged dispersal curtains, overload vents, black-start pulses, and emergency snap-roll maneuvers.
+
+It does not create energy.
+It stores energy and releases it with disciplined violence.
+
+Final doctrine:
+
+REZ does not make the storm.
+REZ keeps the storm ready.
+
+Above the ship: a red diamond of charge.
+Below the ship: a red diamond of refusal.
+Between them: the blue heart that must not burn.
+
+When impact arrives,
+REZ answers first.
+
+PoC classification: speculative fiction / conceptual engineering
+Physics status: plausible as a high-energy pulse-defense concept, not validated hardware
+Best role: emergency shield bloom, overload venting, and defensive pulse dispersal
+Primary risk: uncontrolled discharge and top/bottom phase imbalance

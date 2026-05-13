@@ -1,0 +1,487 @@
+B. Spectral Divergent Drive Units
+
+Each drive has two coupled emission channels:
+
+plasma channel
+electric / EM channel
+
+The channels are opposed and polarity-linked.
+
+Example:
+
+SCDE A:
+plasma upward
+electric discharge downward
+
+SCDE B:
+electric discharge upward
+plasma downward
+
+The point is not that plasma and electricity magically cancel. The point is that their field interaction creates a controllable divergence couple, especially when their pulses are phase-timed.
+
+The SCDE document describes this as counter-polarized plasma-electric divergence used for spin-state induction and propulsive torque generation.
+
+C. High-Capacity Lazarus Capacitors
+
+These are the high-energy pulse reservoirs.
+
+They provide:
+
+- rapid discharge
+- emergency surge power
+- spin-up bursts
+- counter-spin braking pulses
+- shield recharge pulses
+- drive restart energy
+
+The capacitor system should not be used as casual long-term storage. It is a burst system. The Prismatic Lazarus Capacitor document explicitly frames the device as best suited for emergency shield recharge, drive restart, evasive maneuvers, and short-duration power surges.
+
+D. Elohim Reserve Lattice
+
+The Elohim Reserve Lattice acts as the distributed shipwide safety net.
+
+It does not replace the Lazarus capacitors. It supports them.
+
+Its roles:
+
+- absorb capacitor backlash
+- diffuse overload
+- reroute emergency power
+- keep damaged sectors alive
+- prevent one capacitor bank from becoming a single catastrophic failure point
+
+This matches the lattice doctrine: distributed reserve cells store charge, absorb overload, diffuse excess energy, and later rerelease it in controlled form.
+
+In short:
+
+Lazarus capacitors = pulse violence
+Elohim lattice = distributed mercy
+5. Operating Sequence
+Stage 1 — Charge
+
+The Elohim Reserve Lattice and primary reactor charge the Lazarus capacitors.
+
+reactor / reserve lattice
+→ capacitor banks
+→ SCDE drive bus
+
+The capacitors enter a ready state.
+
+Stage 2 — Prime
+
+The SCDE units establish their opposing plasma/electric field channels.
+
+Drive A: plasma north / electric south
+Drive B: electric north / plasma south
+
+The field controller checks:
+
+- phase lock
+- capacitor voltage
+- plasma containment
+- thermal state
+- structural stress margin
+- spin axis alignment
+Stage 3 — Divergence Pulse
+
+The drives fire in synchronized pulses.
+
+The trick is to make the translational forces oppose while the rotational moments add.
+
+net translation ≈ low
+net torque ≈ high
+
+This begins the Lazarus spin-state.
+
+Stage 4 — Spin-Up
+
+The ship rotates around its intended axis.
+
+The controller adjusts pulse duration and phase offset.
+
+increase pulse width = stronger torque
+increase pulse frequency = smoother spin-up
+increase asymmetry = more directional maneuvering
+Stage 5 — Stabilize
+
+Once desired spin rate is reached, the system reduces pulse intensity and shifts into maintenance.
+
+SCDE pulse output lowers
+capacitor draw decreases
+Elohim lattice absorbs transient spikes
+shield and navigation systems align to spin state
+Stage 6 — Brake / Counter-Pulse
+
+To stop or reverse the ship, the paired drives invert pulse timing.
+
+spin-up polarity pattern → spin
+reverse phase pattern → brake
+opposite pulse sequence → counter-spin
+
+This uses the same drive array as both accelerator and brake.
+
+That is clean architecture. The same sword cuts and cauterizes. Very dramatic. Very expensive.
+
+6. Control Logic
+def spectral_divergent_lazarus_step(ship, drives, capacitors, lattice, command):
+    """
+    Speculative high-level control step for the Spectral Divergent Lazarus Drive Array.
+    """
+
+    # 1. Read state
+    spin_rate = ship.angular_velocity
+    spin_target = command.target_angular_velocity
+    torsion_load = ship.structural_torsion
+    capacitor_charge = capacitors.available_energy
+    lattice_capacity = lattice.available_absorption
+    thermal_margin = min(drives.thermal_margin, capacitors.thermal_margin)
+
+    # 2. Evaluate safety
+    if torsion_load > ship.max_safe_torsion * 0.85:
+        return emergency_bleedoff(ship, drives, capacitors, lattice, reason="torsion_limit")
+
+    if thermal_margin < 0.2:
+        return emergency_bleedoff(ship, drives, capacitors, lattice, reason="thermal_limit")
+
+    if capacitor_charge < command.minimum_required_energy:
+        return hold_state(ship, drives, capacitors, lattice, reason="insufficient_charge")
+
+    # 3. Determine torque request
+    spin_error = spin_target - spin_rate
+
+    if abs(spin_error) < command.spin_tolerance:
+        pulse_mode = "maintain_spin"
+    elif spin_error > 0:
+        pulse_mode = "spin_up"
+    else:
+        pulse_mode = "counter_pulse_brake"
+
+    # 4. Phase drives
+    drive_phase = calculate_divergence_phase(
+        mode=pulse_mode,
+        spin_axis=command.spin_axis,
+        current_spin=ship.angular_velocity_vector,
+        structural_margin=ship.remaining_torsion_margin,
+    )
+
+    # 5. Discharge capacitors into drives
+    pulse = capacitors.discharge(
+        amount=command.pulse_energy,
+        max_rate=command.max_discharge_rate,
+        phase=drive_phase,
+    )
+
+    drives.fire_spectral_divergence_pulse(
+        plasma_channel=pulse.plasma_component,
+        electric_channel=pulse.electric_component,
+        phase=drive_phase,
+    )
+
+    # 6. Absorb backlash
+    lattice.absorb_transient_load(
+        thermal_spike=drives.thermal_backwash,
+        electrical_spike=capacitors.rebound_current,
+        field_spike=drives.field_echo,
+    )
+
+    # 7. Update ship state
+    ship.angular_velocity += estimate_torque_delta(pulse, drives.geometry, ship.moment_of_inertia)
+
+    return {
+        "mode": pulse_mode,
+        "spin_rate": ship.angular_velocity,
+        "capacitor_charge": capacitors.available_energy,
+        "lattice_absorption_remaining": lattice.available_absorption,
+        "status": "controlled"
+    }
+7. Operating Modes
+Mode 1 — Spin-Up
+
+Used to enter Lazarus rotation.
+
+Drive pair fires synchronized torque pulses.
+Linear thrust is minimized.
+Rotational force is maximized.
+Mode 2 — Spin Hold
+
+Used to maintain a stable rotational state.
+
+low-energy correction pulses
+small phase adjustments
+minimal capacitor draw
+Mode 3 — Counter-Pulse Brake
+
+Used to stop or slow the ship.
+
+drive phase reverses
+torque opposes spin
+Elohim lattice absorbs electrical backlash
+Mode 4 — Evasive Snap Roll
+
+Used for emergency maneuvering.
+
+short capacitor burst
+high torque
+brief spin-axis offset
+rapid heading/field reorientation
+
+This is where Angel Drift would connect.
+
+Mode 5 — Capacitor Dump
+
+Emergency discharge if capacitor containment becomes unstable.
+
+reroute to lattice
+bleed into radiators
+fire low-yield counter pulses
+dump to sacrificial discharge gates
+Mode 6 — Dead-Ship Black Start
+
+If the ship loses primary power:
+
+Elohim lattice wakes local sectors
+Lazarus capacitors provide ignition pulse
+SCDE units perform orientation correction
+main reactor restart sequence begins
+
+This maps well to the Elohim Reserve Lattice’s black-start and sector survival logic.
+
+8. Mathematical Sketch
+Torque from paired offset forces
+τ = r × F
+
+Where:
+
+τ = torque
+r = distance from center of mass to drive
+F = force vector produced by drive pulse
+
+With two opposed drives:
+
+τ_total = τ_A + τ_B
+
+The design goal:
+
+F_linear_A + F_linear_B ≈ 0
+τ_A + τ_B > 0
+
+Translation cancels.
+Spin remains.
+
+Capacitor pulse energy
+E_pulse = 1/2 C V²
+
+Where:
+
+C = capacitance
+V = voltage
+
+For the speculative Lazarus capacitor:
+
+E_total =
+E_rotation
++ E_magnetic
++ E_electric
++ E_plasma
+- E_losses
+
+This matches the Prismatic Lazarus Capacitor’s broader storage model.
+
+Spin energy required
+E_spin = 1/2 Iω²
+
+Meaning large ships require enormous energy to spin quickly.
+
+This is why the system is better for:
+
+- emergency rotation
+- defensive reorientation
+- short evasive movement
+- controlled braking
+
+Not casual “spin the whole ship like a fidget toy” navigation.
+
+Kyle is not allowed near the throttle.
+
+9. Failure Modes
+1. Linear Thrust Imbalance
+
+If one drive fires harder than the other:
+
+- unwanted translation
+- drift off course
+- structural yaw
+- navigation instability
+2. Torsional Overload
+
+If torque rises too fast:
+
+- frame stress
+- hull twisting
+- internal deck shear
+- conduit rupture
+
+This is the most important engineering risk.
+
+3. Capacitor Backlash
+
+If the capacitors discharge too fast or reflect energy back into the bus:
+
+- arcing
+- EM pulse
+- coil damage
+- thermal bloom
+
+The Prismatic Lazarus Capacitor document already identifies discharge gate failure, resonant runaway, magnetic quench, and rotor fracture as major risks.
+
+4. Plasma/Electric Phase Slip
+
+If plasma and electric channels desynchronize:
+
+- torque becomes unstable
+- drive plume warps
+- plasma containment weakens
+- heat rises sharply
+5. Lattice Saturation
+
+If the Elohim Reserve Lattice absorbs too much transient load:
+
+- reserve cells overheat
+- local sectors brown out
+- rerouting logic fails
+- stored energy becomes distributed hazard
+
+The lattice is safer than one giant battery, but it is not magic. Distributed danger is still danger. It just has better manners.
+
+10. Safety Requirements
+1. Never fire SCDE drives without spin-axis lock.
+2. Never pulse both drives unless capacitor discharge phase is synchronized.
+3. Never allow torque rise faster than hull torsion limits.
+4. Always maintain counter-pulse braking capacity.
+5. Always reserve lattice absorption margin before spin-up.
+6. Always include passive bleed-off paths.
+7. Always separate emergency maneuver mode from routine propulsion.
+8. Always monitor crew acceleration and artificial gravity coupling.
+
+GhostCore doctrine:
+
+Do not let the spin outrun the bones.
+Do not let the capacitor speak without a gate.
+Do not let the lattice drink more lightning than it can forgive.
+11. Proof-of-Concept Build Path
+Phase 1 — Simulation Model
+
+Build a simple 2D torque simulation.
+
+Model:
+
+- ship mass
+- center of mass
+- two drive locations
+- two force vectors
+- torque output
+- spin rate over time
+
+Success condition:
+
+linear motion remains low while angular velocity increases
+Phase 2 — Low-Energy Bench Analogy
+
+Use safe physical analogs:
+
+- small rotating platform
+- two offset fans or magnetic actuators
+- capacitor-like pulsed power source
+- IMU / gyroscope sensor
+- current sensors
+
+Do not use high-energy plasma.
+
+Success condition:
+
+paired pulses induce controlled spin and counter-spin
+Phase 3 — EM Pulse Timing Simulation
+
+Model the SCDE channels as abstract fields:
+
+plasma channel = hot mass/ion impulse approximation
+electric channel = EM pressure / field coupling approximation
+
+Success condition:
+
+phase timing changes torque intensity and direction
+Phase 4 — Capacitor Discharge Controller
+
+Model capacitor output gates.
+
+Success condition:
+
+pulse energy is limited
+thermal load is tracked
+emergency bleed-off triggers before runaway
+Phase 5 — Elohim Lattice Integration
+
+Add distributed reserve and surge absorption behavior.
+
+Success condition:
+
+transient overload is spread across multiple cells
+critical systems maintain minimum power
+
+This directly follows the Elohim Reserve Lattice’s thesis of distributed storage, surge absorption, controlled dissipation, and emergency power rerouting.
+
+12. Practical Use Cases
+
+Best use cases:
+
+- emergency evasive roll
+- rapid shield reorientation
+- braking after uncontrolled drift
+- spin-stabilized defensive posture
+- impact recovery
+- emergency course correction
+- fast alignment of a directional shield or weapon system
+
+Bad use cases:
+
+- normal cruise propulsion
+- civilian comfort travel
+- continuous rotation
+- delicate docking
+- anything where the crew enjoys having soup stay in bowls
+13. Integrated System Summary
+SCDE:
+creates counter-polarized plasma/electric torque
+
+Lazarus capacitors:
+provide high-energy pulse discharge
+
+Elohim Reserve Lattice:
+absorbs surge, diffuses overload, and reroutes emergency power
+
+Ship frame:
+must survive torsion and rotational stress
+
+Control system:
+keeps the disagreement useful instead of fatal
+14. Final PoC Statement
+
+The Spectral Divergent Lazarus Drive Array is a speculative emergency maneuvering system that uses paired counter-polarized plasma/electric divergence drives to generate controlled rotational torque around a ship’s center of mass.
+
+Its purpose is not ordinary propulsion. Its purpose is spin-state induction, rapid braking, evasive roll behavior, and field-vector reorientation.
+
+It works conceptually by arranging paired drive outputs so that linear forces cancel while rotational torque adds.
+
+It is powered by high-capacity Lazarus capacitors and stabilized by a distributed Elohim Reserve Lattice.
+
+Final doctrine:
+
+The drive splits the storm.
+The capacitor remembers the strike.
+The lattice softens the scream.
+The ship turns instead of dying.
+
+PoC classification: speculative fiction / conceptual engineering
+Physics status: plausible as a torque-control concept, not a validated propulsion system
+Best role: emergency evasive maneuvering and spin-state control
+Primary risk: torsional overload from high-energy pulse torque
