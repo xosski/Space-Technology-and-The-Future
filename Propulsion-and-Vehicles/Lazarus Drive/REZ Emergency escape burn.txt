@@ -1,0 +1,599 @@
+Proof of Concept
+REZ Lazarus Emergency Escape Burn
+Rapid Electric Zap Lazarus Same-Direction Emergency Thrust Mode
+
+System Type: High-capacity emergency thrust / escape-burn discharge system
+Short Name: REZ Escape Burn
+Architecture Family: REZ Lazarus / Prismatic Lazarus Capacitor / Elohim Reserve Lattice / SCDE / Angel Drift
+Purpose: Emergency acceleration, gravity-well escape assist, collision avoidance, hard braking, and last-resort thrust burst
+Status: Speculative GhostCore engineering PoC, physics-bounded
+
+1. Core Concept
+
+REZ Emergency Escape Burn is a thrust-mode variation of the REZ Lazarus defensive array.
+
+In normal defensive mode, the top and bottom Lazarus arrays discharge away from the ship to create a shield bloom or dispersal field.
+
+REZ Bloom:
+Top array fires upward
+Bottom array fires downward
+= defensive expansion
+= low net movement
+
+In Escape Burn mode, both arrays discharge in the same direction.
+
+REZ Escape Burn:
+Top array fires downward
+Bottom array fires downward
+= ship accelerates upward
+
+or:
+
+Top array fires rearward
+Bottom array fires rearward
+= ship accelerates forward
+
+The system turns paired defensive discharge hardware into a short-duration emergency thrust source.
+
+The Prismatic Lazarus Capacitor concept already frames Lazarus capacitors as rapid pulse reservoirs for shield recharge, propulsion-assist pulse, emergency power dump, and short-duration surge use.
+
+GhostCore version:
+
+Bloom says: survive.
+Snap says: dodge.
+Escape Burn says: leave now.
+2. Primary Hypothesis
+
+If top and bottom REZ Lazarus capacitor arrays discharge in the same vector direction, then their energy output can produce a net thrust impulse instead of a balanced defensive bloom.
+
+The goal is:
+
+same-direction discharge
++ synchronized phase
++ controlled plume shaping
+= emergency net acceleration
+
+This could support:
+
+- emergency takeoff assist
+- gravity-well escape support
+- collision avoidance
+- atmospheric skip maneuver
+- hard braking
+- main-drive restart assist
+- Angel Drift translation burst
+- rapid departure from unstable orbital paths
+
+This is not normal cruise propulsion. It is a high-power, short-duration “get us out of the teeth” system.
+
+3. Diagram Logic
+Defensive mode
+        ↑ discharge
+   [Top REZ Array]
+
+      [Ship Core]
+
+ [Bottom REZ Array]
+        ↓ discharge
+
+Result:
+field expansion high
+net thrust low
+Emergency Escape Burn mode
+        ↓ discharge
+   [Top REZ Array]
+
+      [Ship Core]
+
+ [Bottom REZ Array]
+        ↓ discharge
+
+Result:
+net upward thrust
+defensive field secondary
+
+For forward thrust:
+
+        ← or → discharge from both arrays
+        depending on desired acceleration vector
+
+The key rule:
+
+Opposed discharge = shield bloom.
+Same-direction discharge = thrust impulse.
+Offset discharge = torque / snap roll.
+4. System Components
+A. REZ Lazarus Capacitor Arrays
+
+These are the top and bottom high-capacity pulse banks.
+
+Their job in Escape Burn mode:
+
+- store emergency pulse energy
+- discharge rapidly into thrust channels
+- provide short-duration acceleration
+- support main-drive recovery or escape assist
+
+They are not ordinary batteries. The Prismatic Lazarus Capacitor is framed as a multi-layer pulse reservoir using electric, magnetic, plasma, rotational, and resonant storage behaviors, with discharge gates controlling useful output.
+
+B. Thrust Discharge Gates
+
+The discharge gates redirect REZ output into a same-direction vector.
+
+Their job:
+
+- align top and bottom discharge direction
+- prevent inward arcing
+- prevent top/bottom phase mismatch
+- shape the output into a thrust plume or EM impulse
+- abort discharge if structural limits are exceeded
+
+The gate is the difference between thrust and catastrophe with branding.
+
+C. Aegis / Field-Shaping Surface
+
+In defensive mode, the field surface blooms energy outward.
+In Escape Burn mode, it acts like a shaped vector channel.
+
+Its job:
+
+- prevent discharge from coupling into the hull
+- shape exhaust/field output into the chosen vector
+- reduce field splashback
+- protect internal systems from pulse rebound
+D. Elohim Reserve Lattice
+
+The Elohim Reserve Lattice supports the Escape Burn by feeding, absorbing, and stabilizing the pulse system.
+
+Its roles:
+
+- feed reserve power into REZ banks
+- absorb discharge backlash
+- diffuse overload across the vessel
+- preserve critical power after the burn
+- prevent central reserve collapse
+
+This matches the Elohim Reserve Lattice doctrine: distributed storage, surge absorption, controlled dissipation, and emergency power rerouting.
+
+E. SCDE / Spectral Divergent Drive Coupler
+
+The SCDE can help shape the burn into torque, braking, or translation.
+
+The SCDE document frames counter-polarized plasma-electric divergence as a spin-state induction and torque-generation system, where field tension realignment creates controllable spin/torque behavior.
+
+For REZ Escape Burn:
+
+SCDE handles fine vectoring.
+REZ provides brute pulse power.
+Elohim keeps the ship alive afterward.
+5. Operating Modes
+Mode 1 — Vertical Escape Burn
+
+Used when leaving a planet, moon, or high-gravity hazard.
+
+Top array fires downward.
+Bottom array fires downward.
+Ship receives upward thrust impulse.
+
+Best used as:
+
+- launch assist
+- emergency gravity-well kick
+- final escape supplement
+- main engine failure recovery
+Mode 2 — Rearward Escape Burn
+
+Used for forward acceleration.
+
+Top array fires rearward.
+Bottom array fires rearward.
+Ship accelerates forward.
+
+Best used for:
+
+- debris-field escape
+- hostile intercept avoidance
+- rapid departure from orbital decay
+- emergency acceleration into safe trajectory
+Mode 3 — Forward Hard Brake
+
+Used to slow the ship.
+
+Top array fires forward.
+Bottom array fires forward.
+Ship decelerates.
+
+Best used for:
+
+- collision avoidance
+- failed docking approach
+- emergency orbital insertion correction
+- stopping uncontrolled drift
+Mode 4 — Angled Escape Vector
+
+Both arrays fire in the same angled vector.
+
+Top array fires down/rearward.
+Bottom array fires down/rearward.
+Ship accelerates up/forward.
+
+Best used for:
+
+- atmospheric skip
+- terrain avoidance
+- lateral emergency escape
+- leaving a decaying orbit with horizontal velocity correction
+Mode 5 — REZ Ascension Burst
+
+Maximum-output burn.
+
+high capacitor discharge
+high thermal load
+short duration
+strict safety cutoff
+
+Use only when:
+
+- impact is imminent
+- gravity capture is unavoidable without boost
+- main propulsion is offline
+- survival probability improves despite hull stress
+
+Translation: this is not a button. This is a prayer with a circuit breaker.
+
+6. Operating Sequence
+Stage 1 — Threat Detection
+
+The ship identifies an emergency:
+
+- insufficient thrust margin
+- falling below safe orbital velocity
+- main drive failure
+- incoming collision
+- gravity well capture
+- atmospheric descent instability
+Stage 2 — Reserve Check
+
+The control system checks:
+
+- REZ capacitor charge
+- Elohim lattice reserve margin
+- thermal capacity
+- structural stress margin
+- crew acceleration tolerance
+- thrust vector clearance
+- main-drive handoff readiness
+
+If the ship cannot absorb backlash, it does not fire.
+
+Or at least, it should not. Ships that ignore this become myths with debris fields.
+
+Stage 3 — Vector Lock
+
+The top and bottom arrays align to the same discharge vector.
+
+Top vector = target burn direction
+Bottom vector = target burn direction
+Phase offset = near zero unless correction requested
+Stage 4 — Pulse Burn
+
+The REZ arrays discharge.
+
+capacitor banks
+→ discharge gates
+→ field-shaping channels
+→ same-direction thrust impulse
+Stage 5 — Backlash Absorption
+
+The Elohim Reserve Lattice absorbs rebound energy and redistributes surge load.
+
+thermal spike → radiator / sink network
+electrical spike → reserve lattice
+field echo → Aegis skin / dissipation paths
+Stage 6 — Handoff
+
+Once the burn has altered trajectory, the main propulsion system takes over.
+
+REZ burn ends
+main engines stabilize
+capacitors enter recharge lockout
+lattice restores critical systems
+7. Control Logic
+def rez_escape_burn_step(ship, rez_top, rez_bottom, lattice, command):
+    """
+    Speculative control step for REZ Lazarus Emergency Escape Burn.
+    """
+
+    # 1. Read ship state
+    velocity = ship.velocity_vector
+    altitude = ship.altitude
+    gravity = ship.local_gravity
+    hull_stress = ship.hull_stress
+    crew_g_load = ship.crew_g_load
+
+    # 2. Read energy state
+    top_charge = rez_top.available_energy
+    bottom_charge = rez_bottom.available_energy
+    lattice_margin = lattice.available_absorption
+    thermal_margin = min(rez_top.thermal_margin, rez_bottom.thermal_margin)
+
+    # 3. Validate emergency burn conditions
+    if not command.emergency_authorized:
+        return hold_fire(reason="escape_burn_requires_emergency_authorization")
+
+    if abs(top_charge - bottom_charge) > command.max_charge_imbalance:
+        return hold_fire(reason="top_bottom_charge_imbalance")
+
+    if lattice_margin < command.minimum_lattice_absorption:
+        return hold_fire(reason="insufficient_lattice_backlash_capacity")
+
+    if thermal_margin < command.minimum_thermal_margin:
+        return hold_fire(reason="thermal_margin_low")
+
+    if hull_stress > ship.max_hull_stress * 0.80:
+        return hold_fire(reason="hull_stress_too_high")
+
+    if crew_g_load > ship.max_crew_g_load:
+        return hold_fire(reason="crew_acceleration_limit")
+
+    # 4. Calculate burn vector
+    burn_vector = calculate_escape_vector(
+        current_velocity=velocity,
+        gravity=gravity,
+        target_trajectory=command.target_trajectory,
+        obstacle_map=ship.local_obstacles,
+    )
+
+    # 5. Set both arrays to same-direction discharge
+    rez_top.align_discharge_vector(burn_vector)
+    rez_bottom.align_discharge_vector(burn_vector)
+
+    # 6. Calculate permitted pulse energy
+    permitted_energy = min(
+        command.requested_pulse_energy,
+        top_charge,
+        bottom_charge,
+        command.max_energy_per_burn,
+    )
+
+    # 7. Fire synchronized pulse
+    pulse_plan = synchronized_escape_pulse(
+        vector=burn_vector,
+        energy=permitted_energy,
+        duration_ms=command.duration_ms,
+        phase_offset_ms=0,
+    )
+
+    rez_top.discharge(pulse_plan.top)
+    rez_bottom.discharge(pulse_plan.bottom)
+
+    # 8. Estimate impulse and update trajectory model
+    impulse = estimate_escape_impulse(pulse_plan, ship.mass)
+    ship.velocity_vector += impulse / ship.mass
+
+    # 9. Absorb backlash
+    lattice.absorb_transient_load(
+        electrical_spike=pulse_plan.estimated_backlash,
+        thermal_spike=pulse_plan.estimated_heat,
+        field_echo=pulse_plan.estimated_field_echo,
+    )
+
+    # 10. Enter cooldown/recharge lockout
+    rez_top.lockout_until_safe()
+    rez_bottom.lockout_until_safe()
+
+    return {
+        "mode": "REZ_ESCAPE_BURN",
+        "burn_vector": burn_vector,
+        "impulse": impulse,
+        "new_velocity": ship.velocity_vector,
+        "lattice_margin": lattice.available_absorption,
+        "status": "burn_executed",
+    }
+8. Math Sketch
+Required impulse
+J = Δp = m Δv
+
+Where:
+
+J = impulse
+m = ship mass
+Δv = desired velocity change
+Average thrust
+F = J / Δt
+
+Where:
+
+F = average thrust
+Δt = burn duration
+Kinetic energy change
+ΔE ≈ 1/2 m(v₂² - v₁²)
+
+For emergency boosts, energy requirements become brutal fast.
+
+This is why REZ Escape Burn is best as a short assist, not a full launch engine.
+
+9. Escape Velocity Reality Check
+
+Escape velocity from a body is:
+
+v_escape = sqrt(2GM / r)
+
+Where:
+
+G = gravitational constant
+M = mass of the planet/body
+r = distance from center of mass
+
+But in practical ship terms, the burn does not need to instantly reach escape velocity if:
+
+- main engines are also operating
+- the ship already has orbital velocity
+- the burn only prevents atmospheric loss
+- the burn raises periapsis
+- the burn buys time for reactor restart
+
+So REZ Escape Burn should be framed as:
+
+emergency delta-v injection
+gravity-well assist
+trajectory rescue pulse
+
+Not “single-handedly launches battleship from planet forever.”
+
+Unless the ship is tiny or the capacitors are absurd. And when capacitors are absurd, funerals become architectural.
+
+10. Safety Requirements
+1. Never fire without same-vector lock.
+2. Never fire without top/bottom capacitor balance.
+3. Never fire without Elohim lattice absorption margin.
+4. Never fire if crew acceleration exceeds survivable limits.
+5. Never fire toward the ship hull or populated structures.
+6. Always preserve defensive reserve after burn unless survival requires full depletion.
+7. Always enter thermal cooldown after burn.
+8. Always hand off to main propulsion after trajectory correction.
+
+GhostCore safety doctrine:
+
+Do not spend the shield to win the sky
+unless the ground has already become death.
+11. Failure Modes
+1. Asymmetric Discharge
+
+One array fires harder than the other.
+
+Result:
+unwanted roll
+hull torque
+trajectory error
+structural stress
+2. Discharge Backwash
+
+The plume or field reflects into the hull.
+
+Result:
+bus surge
+sensor blackout
+coil damage
+crew-system disruption
+3. Capacitor Depletion
+
+The ship spends too much reserve.
+
+Result:
+escape succeeds but shields fail
+critical systems lose backup
+follow-up threats become lethal
+4. Thermal Saturation
+
+The arrays overheat.
+
+Result:
+forced shutdown
+coil quench
+insulation failure
+fire or plasma leak
+5. Over-Acceleration
+
+The burn exceeds structural or crew limits.
+
+Result:
+deck shear
+internal damage
+crew injury
+cargo/drive misalignment
+12. Bench / Simulation Path
+
+A safe PoC should start as simulation only.
+
+Phase 1 — 2D thrust simulation
+
+Model:
+
+ship mass
+two thrust sources
+same-direction vector
+impulse duration
+resulting Δv
+
+Success:
+
+trajectory changes predictably
+no unwanted torque when arrays are balanced
+Phase 2 — imbalance simulation
+
+Intentionally vary top/bottom pulse power.
+
+Success:
+
+model detects torque and aborts beyond safe limit
+Phase 3 — energy-budget simulation
+
+Model capacitor charge and thermal load.
+
+Success:
+
+burn cannot execute if it would deplete shield reserve below safety floor
+Phase 4 — low-energy physical analogy
+
+Use:
+
+small suspended platform
+two low-power fans
+battery/capacitor timing controller
+IMU sensor
+microcontroller
+
+Success:
+
+same-direction fan pulses produce translation
+opposed pulses produce bloom/cancel analogy
+offset pulses produce rotation
+
+No plasma. No dangerous capacitors. No garage ascension ritual.
+
+13. Relationship to Existing Systems
+REZ Lazarus:
+provides top/bottom discharge hardware
+
+Prismatic Lazarus Capacitor:
+provides high-energy pulse storage model
+
+Elohim Reserve Lattice:
+provides reserve feed, overload absorption, and emergency rerouting
+
+SCDE:
+provides plasma/electric vector logic and torque correction
+
+Angel Drift:
+uses Escape Burn as a translation burst or last-second vector shift
+14. Final PoC Statement
+
+REZ Lazarus Emergency Escape Burn is a speculative same-direction discharge mode for the REZ Lazarus defensive capacitor array.
+
+Instead of firing top and bottom arrays outward for a shield bloom, both arrays discharge in the same direction to create a short-duration emergency thrust impulse.
+
+It is best used for:
+
+- gravity-well escape assist
+- collision avoidance
+- main-drive failure recovery
+- hard braking
+- emergency delta-v injection
+
+It is not a normal propulsion system. It is an emergency survival burn powered by stored pulse energy and stabilized by the Elohim Reserve Lattice.
+
+Final doctrine:
+
+REZ Bloom protects the ship.
+REZ Snap moves the ship.
+REZ Escape Burn refuses the grave.
+
+When the planet pulls,
+REZ answers downward
+so the ship may rise.
+
+PoC classification: speculative fiction / conceptual engineering
+Physics status: plausible as a high-energy impulse concept, not validated propulsion hardware
+Best role: emergency delta-v / escape assist
+Primary risk: capacitor depletion, thermal saturation, and asymmetric thrust imbalance

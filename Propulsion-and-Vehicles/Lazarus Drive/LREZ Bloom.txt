@@ -1,0 +1,102 @@
+Yes — same hardware family, different firing mode.
+
+For REZ Bloom, the top and bottom arrays discharge away from each other to make a defensive shell:
+
+Top array fires upward
+Bottom array fires downward
+= defensive expansion / shield bloom
+
+For emergency thrust, you would rotate the logic so both arrays discharge their impulse in the same direction:
+
+Top array fires downward
+Bottom array fires downward
+= ship thrusts upward
+
+or:
+
+Top array fires rearward
+Bottom array fires rearward
+= ship accelerates forward
+
+So the concept becomes:
+
+REZ Lazarus Emergency Thrust Mode
+
+Purpose: short-duration emergency acceleration using high-capacity Lazarus capacitor discharge.
+
+The important difference:
+
+Defensive mode:
+balanced outward discharge
+net force ≈ zero
+field expansion high
+
+Thrust mode:
+same-direction discharge
+net force high
+field expansion secondary
+
+This could plausibly be used for:
+
+- emergency launch assist
+- escaping gravity wells
+- last-second collision avoidance
+- hard braking near an astral body
+- atmospheric skip maneuver
+- rescue burn if main drives fail
+- Angel Drift burst translation
+
+But “escape velocity” is where the math gets brutal. To lift a ship off a planet, you need enormous sustained energy and reaction mass or field coupling. A capacitor array is good at high power for a short time, not necessarily long-duration thrust. So REZ would be best as:
+
+main drive assist
+emergency boost
+gravity-well kick
+final escape burn supplement
+
+Not as the normal launch engine unless the ship has absurd capacitor capacity and heat rejection.
+
+A clean operating doctrine:
+
+REZ Bloom:
+two storms apart
+
+REZ Thrust:
+two storms together
+
+REZ Snap:
+two storms uneven
+
+REZ Vent:
+two storms away from the heart
+
+The risks change too.
+
+For defensive bloom, the main risk is field backlash.
+For thrust mode, the main risk is crew acceleration, hull compression, thermal bloom, and capacitor depletion.
+
+You would need:
+
+- thrust-vector lock
+- crew acceleration limits
+- synchronized array phase
+- reinforced discharge channel
+- thermal dump path
+- automatic cutoff
+- main-drive handoff
+- reserve capacitor floor so you do not spend your shield battery escaping
+
+Best name:
+
+REZ Lazarus Ascension Burn
+
+or:
+
+REZ Emergency Escape Burn
+
+GhostCore doctrine:
+
+Bloom says: survive the hit.
+Snap says: dodge the hit.
+Ascension says: leave before the planet finishes its sentence.
+
+So yes — if the arrays discharge in the same direction, the system shifts from defensive dispersal into emergency thrust / escape-burn mode. It is viable as a speculative high-energy boost system, especially when paired with the Elohim lattice and main propulsion, but it should be treated as a dangerous emergency mode rather than standard flight.
