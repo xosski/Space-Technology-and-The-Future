@@ -1,0 +1,630 @@
+VeilPiercer Targeting / Navigation Fusion
+
+The green box is the radar/minimap layer. It already knows relative positions in a simplified coordinate space.
+
+The black main screen is the visual field layer. It shows real objects, but without immediate coordinates unless the system interprets perspective, scale, camera angle, and motion.
+
+The secondary tracker acts as a bridge:
+
+Main view object detection
++ object motion tracking
++ own-ship motion data
++ radar/minimap contact positions
+= triangulated tactical coordinate estimate
+
+That matches your VeilPiercer Relay Mesh logic: one sensor view can be uncertain, but multiple synchronized reference views can form a useful track. Your document describes the mesh as using distributed anchor viewpoints, passive anomaly sensing, triangulation fusion, and confidence-scored contact tracking rather than relying on one perfect sensor.
+
+How the triangulation would work
+
+The ship needs four main inputs:
+
+1. Own-ship position and heading
+2. Radar/minimap contact location
+3. Visual bearing to the object on the main screen
+4. Time-based movement delta
+
+Then the system compares:
+
+Radar says: contact is at relative bearing + distance
+Visual says: object appears at this screen angle
+Motion tracker says: object moved this much over time
+Ship telemetry says: we moved/rotated this much over time
+
+From that, it can solve:
+
+estimated object position
+estimated velocity
+confidence score
+predicted next position
+
+In more GhostCore terms:
+
+The minimap gives the rumor.
+The camera gives the witness.
+The motion tracker gives the confession.
+The fusion engine decides who is lying.
+
+Why the minimap is powerful
+
+A minimap is already a processed coordinate product. It may not expose full telemetry to the player/operator, but internally it represents objects in relation to the ship. If a secondary system reads the minimap geometry and compares it to the visual field, it can infer more than either layer alone.
+
+That is basically the same principle as your Compartmented Friendly Asset Visibility paper: the system can preserve full internal tracking continuity while controlling what level of detail different viewers see. The document separates “tracking continuity” from “information resolution,” meaning the system may know exact truth underneath even if the viewer only sees protected or simplified markers.
+
+So in your spaceship case:
+
+Operator sees: simple radar dot
+Fusion system sees: contact geometry, bearing, motion, confidence, identity probability
+Proposed system name
+
+VeilPiercer Tactical Coordinate Resolver
+
+or if you want the more GhostCore blade:
+
+VeilPiercer Parallax Engine
+
+Purpose:
+
+Convert radar/minimap contacts + visual tracking into confidence-scored object coordinates.
+System layers
+L1 — Own-Ship Telemetry
+Tracks ship position, rotation, speed, acceleration, and camera orientation.
+
+L2 — Radar / Minimap Parser
+Reads contact markers, relative map positions, range rings, bearing, and icon movement.
+
+L3 — Visual Object Tracker
+Detects visible objects in the main view and tracks their screen-space motion.
+
+L4 — Parallax Fusion Engine
+Compares radar position against visual bearing and own-ship movement.
+
+L5 — Coordinate Resolver
+Outputs estimated 3D position, velocity, and uncertainty.
+
+L6 — Operator Layer
+Shows confidence-scored contacts, not absolute certainty.
+Important realism boundary
+
+This does not magically create perfect coordinates from one frame. It gets stronger over time because movement creates parallax.
+
+A single frame gives you:
+
+bearing estimate
+possible range from radar
+rough contact correlation
+
+Multiple frames give you:
+
+trajectory
+range refinement
+velocity
+confidence
+false-contact rejection
+
+That lines up with VeilPiercer’s 5D state idea: position plus time continuity plus orientation-relative observation quality. Your document defines that as tracking location, time, and observation viability rather than just plotting a dot.
+
+Safe defensive framing
+
+I’d avoid calling this a “targeting system” as the primary label. Better:
+
+defensive navigation tracker
+collision-avoidance fusion
+contact awareness resolver
+tactical coordinate mapper
+
+It can support defensive awareness, deconfliction, pursuit avoidance, docking, search-and-rescue, or stealth-contact detection. Human operators should remain responsible for escalation, which your VeilPiercer document also emphasizes by framing the output as an awareness layer rather than autonomous engagement.
+
+Clean doctrine
+
+VeilPiercer Parallax Engine
+A secondary tracking system that fuses minimap/radar contacts, visual object motion, and own-ship telemetry to triangulate confidence-scored object coordinates.
+
+Final doctrine:
+
+The radar sees the symbol.
+The camera sees the shape.
+The ship feels its own motion.
+Between the three, the ghost gets coordinates.
+VeilPiercer Parallax Engine
+Defensive Proof of Concept for Visual-Radar Coordinate Fusion
+
+Document Type: Defensive white paper proof of concept
+System Type: Multi-source coordinate resolver / parallax fusion engine
+Primary Use: Spacecraft navigation, contact tracking, collision avoidance, and defensive situational awareness
+Status: High-level architecture draft
+Doctrine Line: The radar sees the symbol. The camera sees the shape. The ship feels its own motion. Between the three, the ghost gets coordinates.
+
+1. Concept Thesis
+
+The VeilPiercer Parallax Engine is a defensive tracking system that fuses three information layers:
+
+1. Radar / minimap contact data
+2. Main-view visual object tracking
+3. Own-ship telemetry and movement history
+
+The goal is to convert a visible object or radar marker into a confidence-scored positional coordinate estimate.
+
+In a spacecraft interface, the radar/minimap may show simplified relative positions, while the main screen shows objects visually without exposing exact coordinates. A secondary tracking system can compare both views against the ship’s own motion and orientation to infer where objects are actually located.
+
+This builds naturally on the VeilPiercer Relay Mesh idea: one sensor view may be uncertain, but multiple synchronized reference views can form a stronger track through triangulation, time continuity, and confidence scoring.
+
+2. Core Hypothesis
+
+If a spacecraft can observe:
+
+- where a contact appears on radar/minimap,
+- where that same contact appears in the visual field,
+- how the contact moves over time,
+- and how the ship itself moves or rotates,
+
+then the system can estimate the contact’s real position, velocity, and uncertainty volume.
+
+The minimap gives relative tactical geometry.
+
+The visual tracker gives bearing, apparent motion, and object shape.
+
+The ship telemetry gives the reference frame.
+
+Together, they produce a resolved contact track.
+
+minimap position
++ visual bearing
++ own-ship motion
++ time-series movement
+= estimated 3D contact coordinates
+3. Why Parallax Matters
+
+A single frame can show direction, but it often cannot prove distance.
+
+Multiple frames create parallax. As the ship moves, nearby objects shift faster in the visual field than distant objects. By comparing that apparent motion against known ship movement, the system can refine range.
+
+Object appears left of center.
+Ship moves right.
+Object shifts across screen.
+Radar dot also shifts on minimap.
+Fusion engine compares both motions.
+Range and position estimate improve.
+
+This matches the 5D tracking idea in the VeilPiercer Relay Mesh: location is not enough by itself. A stronger state estimate includes position, time continuity, and orientation-relative observation quality.
+
+4. System Architecture
+Layer	Subsystem	Primary Function	Output
+L1	Own-Ship Telemetry	Tracks ship position, heading, velocity, acceleration, and camera orientation	Reference frame
+L2	Radar / Minimap Parser	Reads contact markers, relative positions, range rings, and marker movement	Radar-space contact estimate
+L3	Visual Object Tracker	Detects objects in the main view and tracks screen-space motion	Visual bearing and motion vector
+L4	Contact Correlator	Matches radar markers to visual objects	Candidate contact pair
+L5	Parallax Fusion Engine	Uses own-ship motion and object movement to refine range and position	Coordinate estimate
+L6	Confidence Model	Scores the track based on agreement and persistence	Confidence tier
+L7	Operator Layer	Displays resolved contacts with uncertainty	Defensive awareness output
+5. Input Sources
+5.1 Own-Ship Telemetry
+
+Required fields:
+
+- ship position
+- ship velocity
+- ship acceleration
+- ship heading
+- pitch / yaw / roll
+- camera field of view
+- camera orientation
+- timestamp
+
+This is the anchor. Without own-ship motion, the system cannot reliably distinguish object motion from camera motion.
+
+5.2 Radar / Minimap Layer
+
+The radar/minimap provides a compressed tactical view.
+
+Possible extracted values:
+
+- contact icon position
+- relative bearing
+- estimated range
+- contact class / icon type
+- movement across minimap
+- update frequency
+- confidence or signal strength, if available
+
+This is similar to a protected or tiered visibility layer: the operator may see only a simplified marker, while the underlying system may preserve higher-resolution tracking continuity. The Compartmented Friendly Asset Visibility paper separates “tracking continuity” from “information resolution,” which fits this minimap-versus-full-telemetry distinction.
+
+5.3 Visual Object Tracker
+
+The visual tracker observes the main screen.
+
+Possible extracted values:
+
+- object bounding box
+- screen-space center point
+- apparent size
+- object silhouette
+- visual bearing
+- frame-to-frame motion
+- occlusion state
+- visual confidence
+
+The visual tracker does not need to know the object’s identity at first. It only needs to maintain continuity: “this shape is the same thing I saw last frame.”
+
+6. Contact Correlation
+
+The system must match radar dots to visible objects.
+
+Example:
+
+Radar contact A:
+bearing: 42 degrees right
+range: medium
+movement: drifting upward-left on minimap
+
+Visual object 3:
+screen position: upper-right quadrant
+bearing estimate: 40–45 degrees right
+motion: drifting upward-left relative to camera
+
+Correlation result:
+Radar contact A likely equals visual object 3
+confidence: medium-high
+
+The correlator uses:
+
+- bearing similarity
+- movement similarity
+- timing alignment
+- expected camera field of view
+- object persistence
+- minimap/radar update rate
+
+If two radar contacts are close together, confidence drops until motion separates them.
+
+7. Parallax Fusion Logic
+
+The fusion engine compares object motion against ship motion.
+
+Known:
+ship moved from position S1 to S2
+camera rotated from angle C1 to C2
+object appeared at screen point P1, then P2
+radar marker moved from R1 to R2
+
+Solve:
+best-fit object location O
+best-fit object velocity V
+uncertainty volume U
+
+The output is not a magic perfect coordinate. It is a confidence-scored estimate.
+
+Contact ID: VPX-013
+Estimated position: x, y, z
+Estimated velocity: vx, vy, vz
+Uncertainty: 120 meters
+Confidence: High
+Last updated: T+04.2 seconds
+8. Confidence Model
+
+The system should expose uncertainty honestly.
+
+Confidence Tier	Meaning	Operator Action
+Low	Single-source or weak visual/radar match	Monitor
+Medium	Radar and visual bearing agree over multiple frames	Track
+High	Persistent radar/visual/telemetry agreement with stable parallax solution	Defensive alert / navigation use
+Critical	High-confidence track with collision or threat relevance	Human review and response
+
+This follows the VeilPiercer Relay Mesh principle: confidence improves when multiple viewpoints or sources agree over time.
+
+9. Operating Modes
+Mode 1 — Passive Correlation
+
+The system watches radar/minimap and visual field without issuing active scans.
+
+Best for:
+
+- stealth-aware monitoring
+- routine navigation
+- low-power tracking
+- avoiding unnecessary emissions
+Mode 2 — Coordinate Resolve
+
+The system attempts to calculate real coordinates for a selected contact.
+
+Best for:
+
+- unknown object tracking
+- docking path awareness
+- obstacle mapping
+- contact clarification
+Mode 3 — Parallax Sweep
+
+The ship performs a small controlled movement or camera sweep to improve range estimation.
+
+Best for:
+
+- ambiguous contacts
+- distant objects
+- cluttered visual fields
+- false radar returns
+Mode 4 — Deconfliction Assist
+
+The system prioritizes contacts that may intersect the ship’s path.
+
+Best for:
+
+- collision avoidance
+- debris fields
+- orbital traffic
+- formation flight
+Mode 5 — Protected Friendly Resolution
+
+The system keeps full safety tracking while controlling who can see identity or mission metadata.
+
+This aligns with the Compartmented Friendly Asset Visibility model, where precise tracking can remain available to safety systems while identity or mission detail is restricted by viewer role.
+
+10. Conceptual Control Logic
+def veilpiercer_parallax_step(ship, radar, vision, track_store, command):
+    """
+    High-level conceptual control loop for the VeilPiercer Parallax Engine.
+    Defensive coordinate fusion only.
+    """
+
+    # 1. Read own-ship state
+    ship_state = {
+        "position": ship.position,
+        "velocity": ship.velocity,
+        "orientation": ship.orientation,
+        "camera_fov": ship.camera.fov,
+        "camera_orientation": ship.camera.orientation,
+        "timestamp": ship.time,
+    }
+
+    # 2. Read radar/minimap contacts
+    radar_contacts = radar.get_contacts()
+
+    # 3. Read visual objects
+    visual_objects = vision.detect_and_track_objects()
+
+    # 4. Correlate radar contacts with visual objects
+    candidate_pairs = correlate_contacts(
+        radar_contacts=radar_contacts,
+        visual_objects=visual_objects,
+        ship_state=ship_state,
+    )
+
+    resolved_tracks = []
+
+    for pair in candidate_pairs:
+        radar_contact = pair.radar_contact
+        visual_object = pair.visual_object
+
+        # 5. Retrieve previous track history
+        history = track_store.get_history(pair.track_id)
+
+        # 6. Estimate coordinate using parallax and time continuity
+        estimate = solve_parallax_position(
+            ship_state=ship_state,
+            radar_contact=radar_contact,
+            visual_object=visual_object,
+            history=history,
+        )
+
+        # 7. Score confidence
+        confidence = score_track_confidence(
+            radar_agreement=pair.radar_visual_alignment,
+            visual_persistence=visual_object.persistence,
+            parallax_stability=estimate.stability,
+            history_length=len(history),
+            uncertainty=estimate.uncertainty,
+        )
+
+        # 8. Update track
+        track = {
+            "id": pair.track_id,
+            "position": estimate.position,
+            "velocity": estimate.velocity,
+            "uncertainty": estimate.uncertainty,
+            "confidence": confidence,
+            "last_seen": ship_state["timestamp"],
+            "source": "radar_visual_parallax_fusion",
+        }
+
+        track_store.update(track)
+        resolved_tracks.append(track)
+
+    # 9. Return operator-safe output
+    return render_operator_layer(
+        tracks=resolved_tracks,
+        viewer_role=command.viewer_role,
+        policy=command.visibility_policy,
+    )
+11. Mathematical Sketch
+Bearing from visual field
+bearing ≈ screen_offset × camera_field_of_view
+Radar-relative position
+x = range × cos(bearing)
+y = range × sin(bearing)
+Parallax refinement
+
+If the ship moves by a known baseline:
+
+baseline = S2 - S1
+
+and the object’s apparent angle changes:
+
+angle_delta = θ2 - θ1
+
+then range can be refined by triangulation.
+
+Simplified:
+
+range ≈ baseline / tan(angle_delta)
+
+In practice, this would use filtering rather than a single equation.
+
+Useful filters:
+
+- Kalman filter
+- particle filter
+- optical flow model
+- multi-hypothesis tracker
+- confidence-weighted sensor fusion
+12. Failure Modes
+12.1 False Correlation
+
+The system matches the wrong radar dot to the wrong visual object.
+
+Causes:
+
+- cluttered radar field
+- overlapping contacts
+- similar motion
+- poor camera angle
+
+Mitigation:
+
+- require multi-frame agreement
+- lower confidence
+- preserve alternate hypotheses
+12.2 Minimap Distortion
+
+The radar/minimap is symbolic, scaled, or intentionally simplified.
+
+Mitigation:
+
+- calibrate map scale
+- detect range rings
+- compare motion rather than trusting icon position absolutely
+12.3 Camera Motion Confusion
+
+The visual tracker mistakes ship rotation for object movement.
+
+Mitigation:
+
+- subtract own-ship rotation
+- stabilize visual frame
+- use inertial telemetry
+12.4 Low-Signature Contact
+
+The object appears intermittently or weakly.
+
+Mitigation:
+
+- use persistence ribbons
+- maintain uncertainty volume
+- do not overclaim exact coordinates
+12.5 Compartmented Data Conflict
+
+A contact exists in the safety backbone but is redacted for the current viewer.
+
+Mitigation:
+
+- preserve collision safety
+- display protected contact marker
+- restrict identity and mission metadata
+
+This follows the compartmented visibility principle: do not erase the asset from safety awareness; control how much detail different viewers can resolve.
+
+13. Safe Proof-of-Concept Build Path
+Phase 1 — 2D Simulation
+
+Build a simple simulated display:
+
+- black main screen
+- green minimap
+- moving ship
+- moving objects
+- object markers
+
+Success signal:
+
+system correlates minimap dots with visual objects
+Phase 2 — Own-Motion Compensation
+
+Add ship movement and camera rotation.
+
+Success signal:
+
+visual tracker subtracts ship motion correctly
+Phase 3 — Parallax Coordinate Solver
+
+Use multiple frames to estimate range.
+
+Success signal:
+
+coordinate estimate improves over time
+Phase 4 — Confidence Scoring
+
+Add confidence tiers based on source agreement.
+
+Success signal:
+
+uncertain contacts remain uncertain instead of becoming false certainty
+Phase 5 — Role-Based Visibility
+
+Add viewer tiers:
+
+- full operator
+- protected operations
+- general monitor
+- restricted viewer
+
+Success signal:
+
+safety tracking persists while identity and detail resolution change by role
+Phase 6 — Operator Interface
+
+Render:
+
+- contact marker
+- estimated coordinate
+- uncertainty circle/volume
+- confidence score
+- source agreement indicators
+
+Success signal:
+
+human operator can understand what is known, unknown, and inferred
+14. Defensive Use Cases
+- spacecraft collision avoidance
+- orbital traffic deconfliction
+- docking assistance
+- debris tracking
+- low-signature object monitoring
+- formation flight safety
+- search-and-rescue tracking
+- protected friendly awareness
+- navigation in sensor-cluttered environments
+
+This should remain an awareness and navigation system, not an autonomous engagement loop. VeilPiercer Relay Mesh is explicitly framed as defensive monitoring and operator awareness rather than autonomous engagement.
+
+15. Boundaries and Realism
+
+The VeilPiercer Parallax Engine does not create perfect truth from a single screen.
+
+It improves estimates by combining:
+
+- radar/minimap geometry
+- visual bearing
+- own-ship movement
+- time continuity
+- confidence scoring
+
+The output should always include uncertainty.
+
+Bad output:
+
+Target is exactly here.
+
+Better output:
+
+Contact likely here, within this uncertainty volume, with 83% confidence based on radar/visual agreement over 4.2 seconds.
+16. Final PoC Statement
+
+The VeilPiercer Parallax Engine is a defensive coordinate-fusion concept for spacecraft interfaces. It uses radar/minimap contact data, visual object tracking, and own-ship telemetry to triangulate confidence-scored positional coordinates.
+
+Its purpose is not to automate attack decisions. Its purpose is to improve awareness, navigation, collision avoidance, and defensive tracking by turning symbolic radar markers and visual observations into a richer 5D contact state.
+
+Final doctrine:
+
+The minimap gives the rumor.
+The camera gives the witness.
+The ship gives the alibi.
+Time gives the contradiction.
+VeilPiercer gives the coordinate.
