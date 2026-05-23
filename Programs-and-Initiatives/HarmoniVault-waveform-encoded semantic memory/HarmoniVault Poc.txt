@@ -1,0 +1,85 @@
+POC: HarmoniVault — Waveform-Encoded Semantic Memory
+
+Goal: prove that text/data can be compressed into a waveform-inspired representation, stored like a “song,” then retrieved by resonance/similarity.
+
+Core idea
+Document
+→ chunk text
+→ create embeddings
+→ convert embedding vectors into waveform signatures
+→ store signature + compressed chunk
+→ retrieve by resonance match
+→ reconstruct answer/context
+What the POC proves
+
+HarmoniVault can:
+
+Store text as compressed semantic chunks.
+Generate a “waveprint” for each chunk.
+Search by meaning, not exact words.
+Retrieve related information using cosine similarity + spectral similarity.
+Optionally export the memory as audio-like waveform data.
+MVP features
+harmonivault/
+  main.py
+  vault.py
+  waveprint.py
+  memory_store.py
+  demo_data/
+  outputs/
+POC workflow
+from vault import HarmoniVault
+
+vault = HarmoniVault("ghostcore_memory.db")
+
+vault.ingest_text(
+    title="GhostCore Doctrine",
+    text="The reactor does not remember the manual. It remembers the melody."
+)
+
+results = vault.search("How does resonance memory work?")
+
+for r in results:
+    print(r["title"], r["score"], r["text"])
+Waveprint concept
+
+Each text chunk becomes:
+
+{
+  "chunk_id": "abc123",
+  "embedding": [0.12, -0.44, 0.98],
+  "waveprint": {
+    "frequencies": [220, 330, 440],
+    "amplitudes": [0.7, 0.2, 0.9],
+    "phase": [0.1, 1.4, 2.7]
+  },
+  "compressed_text": "zlib/base64 payload"
+}
+Why it’s different
+
+Normal vector DB:
+
+text → embedding → similarity search
+
+HarmoniVault:
+
+text → embedding → harmonic waveprint → resonance search → semantic recall
+POC success criteria
+
+It works if:
+
+Same-topic queries retrieve the right chunks.
+Compressed storage is smaller than raw text.
+Waveprint similarity roughly matches semantic similarity.
+The system can export/import memory signatures.
+Better alternate names
+EchoVault
+PulseScript
+ResonanceDB
+Mnemonic Wave
+HymnCache
+WaveLoom
+SignalGrimoire
+ChorusMemory
+
+My pick: HarmoniVault. Clean, memorable, technically marketable, and still sounds like GhostCore wearing a lab coat.
