@@ -1,0 +1,230 @@
+POC Name: Passive Cosmic Background Vessel Detection System
+Concept
+
+A multisensor detection system that uses natural background radiation, infrared contrast, and electromagnetic-field disturbances to detect vessels without relying primarily on conventional active radar.
+
+The system does not “see” a vessel directly.
+It detects how the vessel changes the surrounding background.
+
+Core Hypothesis
+
+If a vessel moves through space, it will absorb, block, scatter, reflect, or reradiate background energy.
+
+By comparing expected background radiation against live sensor data, the system may detect:
+
+missing photons
+thermal contrast
+EM-field anomalies
+polarization changes
+Doppler-like movement
+magnetic signature disturbances
+Detection Stack
+[Cosmic / Stellar Background]
+        ↓
+[Target Vessel]
+absorbs / blocks / scatters / reradiates
+        ↓
+[Passive Sensor Array]
+IR + radiometric + EM + magnetic
+        ↓
+[Signal Fusion Processor]
+detects anomaly patterns
+        ↓
+[Optional Low-Observable Active Confirmation]
+coded IR / radar / microwave pulse
+System Components
+1. Passive Background Radiation Sensor
+
+Measures natural cosmic, stellar, and planetary radiation fields.
+
+Purpose:
+
+detect shadows or absorption
+compare background map to live readings
+identify unexplained local dimming
+2. Infrared Sensor Array
+
+Detects reradiated heat from vessels.
+
+Purpose:
+
+thermal wake detection
+exhaust detection
+hull-temperature contrast
+hidden reactor/engine leakage
+3. Ferromagnetic EM Transition Sensor
+
+Uses pulsed ferromagnetic materials to detect local electromagnetic disturbances.
+
+Purpose:
+
+detect ship power systems
+identify magnetic-field anomalies
+classify drive/reactor signatures
+confirm nearby artificial machinery
+4. Signal Fusion Processor
+
+Combines weak signals into a confidence score.
+
+Inputs:
+
+IR contrast
+background attenuation
+magnetic fluctuation
+EM noise
+motion correlation
+repeated anomaly behavior
+5. Optional Active Confirmation Mode
+
+Uses brief, directional, coded emissions only when needed.
+
+Possible emissions:
+
+infrared illumination
+millimeter wave
+microwave
+low-power radar pulse
+
+Goal:
+
+refine range
+estimate velocity
+confirm contact
+
+The active signal should be intermittent, narrow-beam, and noise-like to reduce detectability.
+
+Operational Modes
+Passive Watch Mode
+
+The system only listens.
+
+Detects:
+
+background radiation changes
+IR heat contrast
+EM leakage
+magnetic disturbances
+
+Stealth level: highest.
+
+Hybrid Confirmation Mode
+
+Passive detection triggers a short active pulse.
+
+Used for:
+
+range confirmation
+target tracking
+velocity estimation
+
+Stealth level: moderate.
+
+Close-Range Magnetic Mode
+
+Ferromagnetic sensors look for strong localized EM/magnetic anomalies.
+
+Used for:
+
+close approach warning
+docking security
+stealth vessel detection
+reactor/drive fingerprinting
+Laboratory Prototype
+
+A safe lab-scale prototype can simulate the concept without space hardware.
+
+Background Source
+
+Use:
+
+IR lamp
+blackbody-style heated panel
+LED grid
+microwave-safe test source only if properly shielded
+Target Simulator
+
+Use:
+
+small metal plate
+warm object
+cooled object
+reflective foil
+carbon-black coated object
+
+Move it between the background source and sensors.
+
+Sensors
+
+Use:
+
+thermal camera or IR thermometer array
+photodiodes
+magnetometer
+Hall sensor
+software-defined radio receiver
+microcontroller or laptop logger
+Ferromagnetic Test Cell
+
+Use:
+
+ferrite core
+copper coil
+low-voltage pulse circuit
+Hall sensor
+inductance measurement circuit
+
+Measure changes when metal or powered electronics move nearby.
+
+Test Procedure
+1. Map background source with no target.
+2. Move target object across field of view.
+3. Record radiation drop, IR contrast, and magnetic disturbance.
+4. Pulse ferromagnetic sensor at safe low voltage.
+5. Measure inductance / field response changes.
+6. Fuse readings into anomaly score.
+7. Compare against control data.
+Data to Collect
+background intensity map
+IR temperature contrast
+signal attenuation
+target crossing time
+magnetic field deviation
+inductance shift
+false-positive rate
+detection confidence
+range estimate
+velocity estimate
+Success Conditions
+
+Prototype is successful if it can:
+
+detect a passive object crossing a background source
+distinguish target movement from sensor noise
+identify thermal contrast
+detect nearby EM/magnetic disturbances
+improve confidence when multiple sensors agree
+Main Risks / Limits
+background noise
+false positives
+weak signal strength
+sensor drift
+thermal masking
+magnetic interference
+active pulse detectability
+high processing requirements
+Practical Applications
+spacecraft detection
+passive perimeter sensing
+satellite monitoring
+stealth object detection research
+industrial anomaly sensing
+reactor/drive signature monitoring
+Research Position
+
+This system is not an invisible radar.
+
+It is a passive-first detection architecture that treats the universe itself as the illumination source.
+
+The vessel is detected by the disturbance it creates.
+
+The shadow becomes the signal.
