@@ -1,0 +1,213 @@
+POC Name: Directional Magneto-Capacitive Field Sensor
+Concept
+
+A dish-shaped passive/active sensor that uses opposing charged plates and a ferromagnetic core to detect changes in local electric and magnetic fields.
+
+The sensor is designed to be directionally sensitive, with the open dish side acting as the preferred detection direction.
+
+Core Hypothesis
+
+If two conductive plates are held at opposite electrical potentials with ferromagnetic material between them, then nearby electromagnetic disturbances may alter:
+
+capacitance
+inductance
+phase response
+magnetic permeability
+hysteresis behavior
+field symmetry
+
+A dish-shaped geometry may bias those changes toward one direction, allowing the device to behave like a directional field sensor.
+
+Basic Structure
+          Open sensing direction
+                  ↓
+
+        /----------------\
+       /  Positive Plate  \
+      /--------------------\
+      | Ferromagnetic Core |
+      \--------------------/
+       \ Negative Plate   /
+        \----------------/
+
+Functional Layers
+1. Positive Conductive Plate
+
+Creates one side of the electric field.
+
+Possible materials:
+
+copper
+aluminum
+brass
+conductive graphite coating
+2. Negative Conductive Plate
+
+Creates the opposing electrical potential.
+
+Purpose:
+
+completes capacitive field structure
+allows capacitance measurement
+supports pulsed field testing
+3. Ferromagnetic Core
+
+Placed between plates.
+
+Possible materials:
+
+ferrite sheet
+soft iron powder composite
+silicon steel shim
+magnetorheological material
+ferrite-loaded epoxy
+
+Purpose:
+
+magnetic-field response
+permeability shift detection
+hysteresis measurement
+EM disturbance coupling
+4. Dish Geometry
+
+The plates and core are shaped as a shallow concave dish.
+
+Purpose:
+
+directional field bias
+increased surface exposure
+partial focusing of external disturbances
+improved angle-dependent sensitivity
+Operating Modes
+Passive Mode
+
+The device does not transmit intentionally.
+
+It measures:
+
+ambient EM changes
+nearby magnetic fields
+moving metal disturbances
+RF noise
+electrostatic field shifts
+
+Best for stealthy/local sensing.
+
+Active Low-Power Mode
+
+The device applies controlled pulses to the plates or coil.
+
+It measures response changes after each pulse.
+
+Measured values:
+
+decay time
+voltage response
+capacitance shift
+inductance shift
+phase delay
+magnetic relaxation
+Prototype Build
+Materials
+two thin copper or aluminum sheets
+ferrite sheet or ferrite powder epoxy layer
+insulating film or ceramic sheet
+spacer material
+microcontroller
+capacitance sensor module
+Hall effect sensor
+magnetometer module
+low-voltage pulse driver
+oscilloscope or data logger
+Safe Lab Version
+
+Use low voltage only.
+
+Recommended:
+
+3.3V to 12V control signals
+small pulse currents
+no high-voltage capacitor banks
+no plasma discharge
+no RF power amplifier
+Test Setup
+[Target Object] → [Open Dish Sensor] → [Data Logger]
+
+Test objects:
+
+steel plate
+aluminum plate
+copper plate
+magnet
+powered phone
+small motor
+coil with pulsed current
+
+Move each object across the dish face at known distances and angles.
+
+Measurements
+
+Collect:
+
+capacitance change
+magnetic field strength
+phase shift
+signal decay time
+noise floor
+angle response
+distance response
+material difference response
+Test Procedure
+1. Record baseline with no target nearby.
+2. Move metal object directly in front of dish.
+3. Repeat at left/right angles.
+4. Repeat with magnetic object.
+5. Pulse sensor at low voltage.
+6. Record response curve after each pulse.
+7. Compare target data against baseline.
+8. Plot signal strength vs distance and angle.
+Success Conditions
+
+The POC succeeds if it can show:
+
+measurable field change when an object approaches
+stronger response from the dish-facing direction
+different signatures for ferrous vs non-ferrous metals
+detectable changes between passive and pulsed modes
+repeatable readings above noise floor
+Expected Results
+
+Ferrous metal should produce stronger magnetic response.
+
+Conductive non-ferrous metal may produce capacitive or eddy-current effects.
+
+Powered electronics may produce unstable EM signatures.
+
+The dish should show higher sensitivity along its open axis than from the rear or side.
+
+Risks / Limitations
+short detection range
+environmental noise
+poor shielding
+sensor drift
+humidity effects on capacitance
+nearby wiring interference
+weak directionality without careful geometry
+ferromagnetic saturation
+Practical Applications
+proximity sensing
+hidden metal detection
+passive EM anomaly sensing
+robotics navigation
+structural monitoring
+low-observable field sensing
+experimental sensor fusion
+Research Position
+
+This is not a full radar system by itself.
+
+It is a directional field-anomaly sensor that may complement radar, IR, optical, or magnetic detection systems.
+
+The dish does not shout.
+
+It listens for the shape of disturbance.
