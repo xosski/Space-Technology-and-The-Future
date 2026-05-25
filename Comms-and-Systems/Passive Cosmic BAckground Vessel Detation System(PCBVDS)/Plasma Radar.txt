@@ -1,0 +1,73 @@
+Addendum B — Plasma-Burst Active Confirmation Layer
+Concept
+
+After passive detection identifies a likely vessel by background attenuation, IR contrast, or EM anomaly, the system emits a short, directed burst of low-temperature ionized gas/plasma along the suspected bearing.
+
+The burst interacts with local electromagnetic fields, charged particles, and reflected energy signatures. Sensors then measure the return disturbance to refine target location, velocity, and classification.
+
+Hypothesis
+
+If passive sensors detect an anomalous energy signature, then a controlled ionized burst directed toward that anomaly may produce measurable scattering, reflection, or field distortion that improves target confirmation.
+
+Function
+passive detection
+→ estimated bearing
+→ short plasma/ionized-gas burst
+→ burst interacts with target field/signature
+→ sensors observe scattering/phase disturbance
+→ target confidence increases
+Why Use It
+
+Possible benefits:
+
+creates a temporary active sensing medium
+may enhance weak EM reflections
+can probe charged or magnetic environments
+may reveal artificial field structures
+can be fired only after passive detection, reducing exposure time
+What It Measures
+plasma scattering
+phase shift
+recombination glow
+magnetic deflection
+charge interaction
+Doppler-like movement of disturbed plasma
+delayed return emissions
+Limits
+
+This would not be stealth-perfect. A plasma burst may be visible in IR, RF, optical, or particle sensors.
+
+Main issues:
+
+energy cost
+plume detectability
+plasma dispersion
+short useful lifetime
+beam containment
+false returns from natural charged particles
+poor performance over very long distances
+Safer Lab Prototype
+
+Use substitutes first:
+
+fog/smoke plume with laser sheet
+low-energy ionized gas tube
+plasma globe-style discharge
+UV/IR camera
+magnetometer
+photodiodes
+
+Goal: prove that a controlled “active medium” improves detection of an object already found passively.
+
+Best Use Case
+
+Not constant scanning.
+
+Use it as a confirmation ping:
+
+Listen silently.
+Detect shadow.
+Whisper plasma.
+Watch how the ghost bends.
+
+This makes the plasma system a final-stage verifier, not the primary radar.
