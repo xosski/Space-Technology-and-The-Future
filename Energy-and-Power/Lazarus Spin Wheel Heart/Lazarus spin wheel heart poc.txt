@@ -1,0 +1,241 @@
+Proof-of-Concept
+Lazarus Pulsewheel Core
+Magnetically phased flywheel-heart for shipwide pulse-power stabilization
+Core Idea
+
+The Lazarus Pulsewheel Core is a large rotating maglev flywheel system surrounded by individually controlled electromagnetic nodes. These nodes pulse in timed sequence around the ring, like a mechanical-electromagnetic heartbeat.
+
+It does not create infinite power.
+
+It stores, preserves, smooths, and releases energy using:
+
+rotational inertia
+magnetic suspension
+phased electromagnetic pulsing
+regenerative braking
+distributed reserve routing
+SCIL lattice integration
+One-Line Doctrine
+
+The reactor gives the first heartbeat; the Pulsewheel preserves the rhythm.
+
+System Architecture
+1. Central Flywheel Rotor
+
+A massive circular rotor suspended by maglev bearings.
+
+Purpose:
+
+store rotational energy
+smooth power spikes
+provide emergency burst output
+resist sudden power collapse
+2. Maglev Pulse Ring
+
+A circular array of individually controlled electromagnets around the rotor.
+
+Each node can:
+
+attract
+repel
+brake
+phase-shift
+stabilize wobble
+recover energy during deceleration
+3. Neutral Power Manifold
+
+Central orange-zone “heart chamber.”
+
+Purpose:
+
+condition output
+absorb surges
+convert pulse energy into usable electrical forms
+route power into ship systems
+4. Elohim Reserve Cells
+
+Distributed inductance cells around the ship.
+
+Purpose:
+
+absorb excess pulse energy
+stabilize local field loads
+act as reserve organs
+support emergency rerelease
+5. SCIL Integration Bus
+
+Connects the Pulsewheel to the broader Seraphim Circulatory Induction Lattice.
+
+Purpose:
+
+shipwide pulse routing
+shield recovery
+surge diffusion
+reactor duty-cycle reduction
+Operating Principle
+Stage A — Reactor Spin-Up
+
+The reactor injects power into the Pulsewheel.
+
+The maglev ring accelerates the rotor until it reaches operational speed.
+
+Stage B — Magnetic Heartbeat
+
+Electromagnetic nodes pulse in sequence around the rotor.
+
+This maintains rotation and corrects instability.
+
+Stage C — Energy Storage
+
+Energy is stored primarily as rotational kinetic energy:
+
+E=
+2
+1
+	​
+
+Iω
+2
+
+Where:
+
+E = stored energy
+I = moment of inertia
+ω = angular velocity
+Stage D — Regenerative Recovery
+
+When the ship needs power, the rotor slows slightly.
+
+Maglev nodes act like generators, converting rotational motion back into electrical output.
+
+Stage E — Lattice Distribution
+
+Recovered power flows into the neutral manifold, then into:
+
+shields
+weapons
+life support
+propulsion assist
+emergency buses
+Elohim reserve cells
+Operating Modes
+Mode 1 — Pulse Sustain
+
+Maintains steady rotor speed using timed EM pulses.
+
+Mode 2 — Burst Discharge
+
+Dumps stored flywheel energy into a high-demand system.
+
+Best for:
+
+shield recharge
+emergency thrust
+weapon ignition
+reactor restart
+black-start recovery
+Mode 3 — Regenerative Brake
+
+Slows the rotor while converting motion back into usable power.
+
+Mode 4 — Surge Sink
+
+Absorbs excess power from shields, reactors, or overload events.
+
+Mode 5 — Lazarus Recovery
+
+Emergency stabilization mode.
+
+The ring applies counter-phased magnetic braking to stop runaway spin, wobble, or resonance.
+
+Why It Works
+
+This is basically a futuristic flywheel battery with maglev control.
+
+It can plausibly:
+
+reduce reactor strain
+smooth peak loads
+store burst energy
+recover braking energy
+stabilize shipwide power flow
+buy time during reactor brownout
+
+It cannot:
+
+spin forever
+create free energy
+ignore heat losses
+replace the reactor permanently
+Primary Failure Modes
+Rotor Overspeed
+
+The flywheel exceeds material limits and tears itself apart.
+
+Magnetic Phase Slip
+
+Pulse timing desynchronizes, causing vibration or power loss.
+
+Eddy Current Heating
+
+Magnetic fields induce unwanted heat in surrounding structures.
+
+Bearing Field Collapse
+
+Maglev suspension fails, causing catastrophic rotor contact.
+
+Resonance Bloom
+
+The rotor and field lattice amplify each other destructively.
+
+Safety Systems
+
+Required safeguards:
+
+overspeed cutoff
+passive magnetic braking
+mechanical containment shell
+thermal dump channels
+phase-lock monitoring
+vibration sensors
+emergency rotor isolation
+neutral manifold surge bleed
+redundant control loops
+Development Path
+Phase 1 — Small Rotor Bench Test
+
+Build a low-energy magnetic flywheel simulator.
+
+Goal: prove stable magnetic acceleration and braking.
+
+Phase 2 — Phased Pulse Ring
+
+Test sequential electromagnet activation around the rotor.
+
+Goal: produce controlled “heartbeat” rotation.
+
+Phase 3 — Regenerative Output
+
+Use braking coils to recover energy.
+
+Goal: measure conversion efficiency.
+
+Phase 4 — Surge Absorption Demo
+
+Feed a simulated overload into the rotor system.
+
+Goal: convert surge into stored rotational energy.
+
+Phase 5 — SCIL Integration Simulation
+
+Model the Pulsewheel as a node inside the larger shipwide lattice.
+
+Goal: test duty-cycle reduction and emergency power behavior.
+
+Final Doctrine
+
+The Lazarus Pulsewheel Core is not a perpetual engine.
+
+It is a magnetic heart.
+
+It takes reactor pulses, stores them as motion, smooths them through controlled electromagnetic rhythm, and gives the ship a way to survive between heartbeats.

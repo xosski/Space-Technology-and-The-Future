@@ -1,0 +1,50 @@
+Lazarus Pulsewheel Core
+
+A rotating maglev turbine ring where individually controlled electromagnetic nodes pulse in sequence around the circumference, sustaining rotor motion, smoothing power flow, and storing/releasing energy like a mechanical-electromagnetic heartbeat.
+
+Think:
+
+central turbine/flywheel = mass/momentum storage
+circular maglev coils = “heart muscle”
+timed EM pulses = contractions
+neutral center bus = blood chamber / power manifold
+Elohim cells = reserve organs
+SCIL lattice = vascular system
+
+The strong version is:
+
+The reactor gives the first pulse.
+The Pulsewheel preserves the motion.
+The lattice catches the losses.
+The ship spends power in heartbeats, not constant bleeding.
+
+What it can plausibly do:
+
+reduce peak reactor demand
+smooth huge power spikes
+store rotational energy
+provide emergency burst power
+stabilize shipwide EM circulation
+act like a flywheel battery
+recover braking energy back into the lattice
+
+What it cannot do:
+
+self-power forever
+create net energy from magnetic attraction alone
+beat without losses
+replace the reactor entirely
+
+Best framing:
+
+A controlled electromagnetic flywheel that uses phased maglev pulses to maintain rotational energy and provide pulse-power stabilization across the SCIL reserve lattice.
+
+Cooler names:
+
+Lazarus Pulsewheel Core
+Seraphim Heartwheel
+Elohim Pulse Crown
+The Maglev Myocardium
+Crownwheel Induction Heart
+
+My pick: Lazarus Pulsewheel Core. It sounds like it belongs in the GhostCore stack without getting too anime with a welding torch.
