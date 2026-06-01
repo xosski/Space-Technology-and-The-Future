@@ -1,0 +1,40 @@
+WraithHalo Maglev Shield Ring
+
+A free-floating magnetic defensive shell that rides around the vessel without hard mechanical attachment, using synchronized maglev nodes to shape, reinforce, and redirect the ship’s active electromagnetic field.
+
+The important framing:
+
+It is not “armor bolted to the ship.”
+It is a magnetically bound field-control halo.
+
+What it would do
+Float around the hull on controlled magnetic suspension
+Modify the vessel’s EM field in real time
+Act as a movable shield-shaping layer
+Absorb or redirect incoming charged particles/plasma
+Create standoff distance before impacts reach the hull
+Serve as sacrificial external defense if overloaded
+Shift position around the ship depending on threat direction
+Why it’s useful
+
+A normal shield is generated from the hull.
+
+This gives you an outer field skeleton.
+
+That means the ship can project defense away from itself instead of waiting for energy to hit the skin. Basically: “don’t punch my face; punch the invisible helmet floating three feet away.”
+
+Core components
+Outer Maglev Ring: floating segmented ring/shell
+Field Anchor Nodes: ship-mounted magnetic bind points
+Adaptive Polarity Controllers: adjust positive/negative charge states
+WraithHalo Bus: syncs the ring with ship power systems
+Emergency Shear Release: lets the ring detach safely if overloaded
+SCIL/Ferroflow Link: feeds or absorbs energy through the ship’s reserve lattice
+Best mode names
+Halo Guard: passive defensive shaping
+Aegis Lock: strong shield reinforcement
+Shard Drift: ring shifts toward incoming threat
+Shear Bloom: emergency energy dump
+Ghost Cast: decoy EM signature projection
+
+This fits perfectly with your Lazarus Pulsewheel + SCIL + Ferroflow concepts.
