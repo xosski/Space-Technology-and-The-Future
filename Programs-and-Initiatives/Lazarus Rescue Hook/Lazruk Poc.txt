@@ -1,0 +1,159 @@
+PoC: Lazarus Rescue Hook
+
+A compact EVA recovery system that fires a smart tether hook toward a ship, station, drone, or rescue rail, then uses controlled retraction plus micro plasma-vector bursts to bring a drifting astronaut/object back safely.
+
+Purpose
+
+Recover someone drifting in space without relying only on suit gas. Think “space grappling hook,” but with braking, steering, and emergency auto-return.
+
+Core Components
+
+Smart Grapnel Head
+Magnetic clamp, mechanical claw, or hull-safe anchor.
+
+Conductive Tether Line
+High-strength cable carrying power, telemetry, and safety status.
+
+Auto-Reel Motor
+Retracts the line with controlled acceleration.
+
+Plasma Vector Collar
+Small directional micro-bursts for steering, braking, and rotation control.
+
+Deadman Recall System
+Automatically reels the user back if vitals, motion, or manual control fail.
+
+Collision Avoidance Logic
+Slows approach so the user does not become a holy orbital bowling ball.
+
+Operating Sequence
+Astronaut drifts outside safe range.
+Lazarus Hook targets nearest safe anchor.
+Grapnel fires and attaches.
+System confirms lock strength.
+Auto-reel begins low-force retrieval.
+Plasma collar fires correction bursts to stabilize spin.
+Approach speed is reduced near the ship.
+Final docking grip engages.
+Movement Modes
+
+Recall Mode — returns user to ship.
+Swing Mode — redirects around debris.
+Brake Mode — slows dangerous approach.
+Anchor Mode — holds position outside hull.
+Deadman Mode — automatic recovery.
+
+Testable Bench Version
+
+Use:
+
+small CO₂/gas thrusters instead of plasma,
+fishing-line style tether,
+magnetic clamp,
+air-bearing puck or low-friction cart,
+Arduino/Raspberry Pi controller.
+
+Success = controlled pullback, reduced spin, and safe stop near target.
+
+Main Limitation
+
+The hook must anchor to something. Without an anchor or expelled mass, it cannot move the user. Physics is rude but consistent.
+Official Designation
+
+LAZRUK
+(Lazarus Zero-G Recovery and Utility Kit)
+
+or
+
+LAZRUK
+(Lazarus Zero-G Retrieval Unit Kit)
+
+LAZRUK System Overview
+
+The LAZRUK is a compact EVA rescue and maneuver system designed for astronauts, maintenance crews, and emergency recovery teams operating outside spacecraft.
+
+Unlike conventional EVA thruster packs that rely entirely on stored propellant, the LAZRUK combines:
+
+Smart tether technology
+Autonomous retrieval logic
+Plasma-assisted vector correction
+Emergency recovery protocols
+
+into a single wearable system.
+
+Nickname
+
+Most crews simply call it:
+
+"The Lazruk"
+
+Examples:
+
+"Johnson lost attitude control near the solar array. Deploy the Lazruk."
+
+"Lazruk caught him at 400 meters."
+
+"Never leave the airlock without a Lazruk."
+
+Operating Modes
+Lazarus Recall
+
+Automatic retrieval to nearest approved anchor point.
+
+Ghostline
+
+Rapid tether deployment to a manually selected target.
+
+Shepherd
+
+Retrieves incapacitated astronauts.
+
+Halo
+
+Maintains fixed position outside a vessel.
+
+Exodus
+
+Emergency separation maneuver if tether becomes compromised.
+
+Future Variants
+LAZRUK-M
+
+Maintenance version.
+
+Additional tools:
+
+cutting laser
+inspection cameras
+utility manipulators
+LAZRUK-R
+
+Rescue model.
+
+Additional:
+
+dual tether systems
+medical telemetry
+casualty stabilization package
+LAZRUK-X
+
+Military version.
+
+Additional:
+
+high-speed grapnel launch
+debris navigation package
+autonomous drone interface
+Mission Patch Motto
+
+"No One Drifts Alone."
+
+or
+
+"Lost Is Temporary."
+
+or the one engineers would inevitably put on the side of the unit:
+
+"Death requested retrieval. Request denied."
+
+That last one feels very on-brand for a piece of equipment named Lazarus.
