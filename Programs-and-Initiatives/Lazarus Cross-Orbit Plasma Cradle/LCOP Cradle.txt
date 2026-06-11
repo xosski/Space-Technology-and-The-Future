@@ -1,0 +1,317 @@
+# Lazarus Cross-Orbit Plasma Cradle
+
+## Proof of Concept Draft
+
+### 1. Concept Summary
+
+The **Lazarus Cross-Orbit Plasma Cradle** is a speculative plasma containment and impulse-control architecture using four synchronized plasma/electromagnetic containment nodes arranged in a cross formation.
+
+Instead of relying on a static magnetic bottle, the system uses two opposing field pairs:
+
+* **X-axis pair:** left/right PTEC nodes
+* **Y-axis pair:** north/south PTEC nodes
+
+Each pair rotates or oscillates around its own axis, creating a dynamic overlapping electromagnetic containment region at the center. This center region acts as an active plasma well where ionized plasma can be compressed, stabilized, shaped, and redirected.
+
+The core idea:
+
+> Plasma is not held by a physical container.
+> It is held by field choreography.
+
+---
+
+### 2. Core Architecture
+
+The system consists of:
+
+1. **Four PTEC Nodes**
+
+   * Positioned in a cross formation.
+   * Each generates a controllable electromagnetic/plasma field.
+   * Paired across opposing axes.
+
+2. **Outer Coil Housing**
+
+   * Surrounds the four-node assembly.
+   * Provides boundary containment, charge circulation, and field reinforcement.
+
+3. **Central Plasma Well**
+
+   * The overlapping field region.
+   * Acts as the active containment pocket.
+   * Stores high-energy plasma temporarily.
+
+4. **Dual-Axis Rotation Control**
+
+   * X-axis pair rotates/orbits around the horizontal axis.
+   * Y-axis pair rotates/orbits around the vertical axis.
+   * Field motion prevents stable escape paths from forming.
+
+5. **Directional Release Gate**
+
+   * Allows plasma to be vented, pulsed, or accelerated in a chosen direction.
+   * Can be used for propulsion, maneuvering, emergency thrust, or energy redirection.
+
+---
+
+### 3. Operating Principle
+
+A static cross-field plasma cage risks creating fixed null zones where fields weaken or cancel.
+
+The Lazarus Cross-Orbit design attempts to avoid this by making the confinement region dynamic.
+
+The system cycles through:
+
+1. **Containment**
+
+   * Four PTEC nodes establish the initial magnetic cage.
+
+2. **Orbit**
+
+   * X and Y field pairs begin synchronized rotation or oscillation.
+
+3. **Compression**
+
+   * Field pressure increases toward the center, forcing plasma inward.
+
+4. **Stabilization**
+
+   * Rotating fields sweep instability paths around the chamber before plasma can exploit them.
+
+5. **Biasing**
+
+   * One axis is strengthened to create directional preference.
+
+6. **Release**
+
+   * A controlled gate opens and plasma is expelled as a directed impulse or plasmoid burst.
+
+---
+
+### 4. Functional Modes
+
+#### Mode A — Plasma Cradle Mode
+
+Purpose: hold plasma in the central well.
+
+Used for:
+
+* temporary plasma storage
+* reactor buffering
+* energy surge absorption
+* emergency power routing
+
+---
+
+#### Mode B — Pulse Maneuver Mode
+
+Purpose: release a shaped burst of plasma for directional thrust.
+
+Used for:
+
+* side-step maneuvering
+* emergency evasion
+* rotational correction
+* rapid attitude control
+
+---
+
+#### Mode C — Field Compression Mode
+
+Purpose: increase plasma density and pressure.
+
+Used for:
+
+* plasmoid formation
+* beam priming
+* high-energy discharge preparation
+* plasma lance systems
+
+---
+
+#### Mode D — Circuit Redirect Mode
+
+Purpose: treat the ship as a large energy-routing board.
+
+Used for:
+
+* diverting overloads away from damaged systems
+* feeding shields
+* rerouting reactor surges
+* stabilizing power during combat or propulsion events
+
+---
+
+### 5. Field Logic
+
+The X-axis and Y-axis PTEC pairs do not simply “stack” fields. They must be phased.
+
+Basic control model:
+
+* **X-axis pair:** lateral compression and directional bias
+* **Y-axis pair:** vertical stabilization and centering
+* **Outer coil:** boundary containment and charge circulation
+* **Central well:** active plasma storage region
+
+If the fields are poorly timed, the system fails into turbulence.
+
+If the fields are properly phased, the system may create a rotating magnetic topology capable of holding plasma briefly without wall contact.
+
+---
+
+### 6. Key Hypothesis
+
+The main hypothesis:
+
+> A dual-axis rotating electromagnetic field arrangement can reduce static magnetic null zones and improve short-duration plasma confinement compared to a fixed four-node cross-field cage.
+
+Secondary hypothesis:
+
+> By biasing one axis, the same system can transition from containment mode into directional release mode, allowing plasma to be used as a maneuvering impulse or energy-routing mechanism.
+
+---
+
+### 7. Use Cases
+
+#### Spacecraft Maneuvering
+
+The cradle stores plasma and releases it in short, high-energy bursts for emergency movement.
+
+Example:
+
+* Incoming projectile detected.
+* Ship charges lateral axis.
+* Cradle releases plasma burst portside.
+* Ship shifts trajectory without full engine burn.
+
+---
+
+#### Shield Reinforcement
+
+The cradle acts as an energy buffer, redirecting excess plasma or charge into shield systems.
+
+---
+
+#### Reactor Surge Control
+
+Instead of dumping excess energy as waste heat, the cradle temporarily holds and reroutes plasma energy.
+
+---
+
+#### Plasmoid Lance Feed System
+
+The cradle compresses plasma before feeding it into a lance/nozzle system for high-speed release.
+
+---
+
+#### Emergency Power Bus
+
+The ship uses the cradle like a plasma capacitor, redirecting stored energy to damaged or overloaded systems.
+
+---
+
+### 8. Failure Modes
+
+Potential failures include:
+
+* magnetic null collapse
+* plasma wall contact
+* field desynchronization
+* runaway turbulence
+* unwanted plasmoid ejection
+* containment inversion
+* thermal overload
+* coil quench
+* electromagnetic interference with nearby systems
+
+The most dangerous failure is field desynchronization, where the rotating cage becomes a plasma blender instead of a plasma bottle.
+
+---
+
+### 9. Safety and Control Requirements
+
+The system requires:
+
+* real-time magnetic field monitoring
+* plasma density sensors
+* thermal sensors
+* fast field shutdown
+* quench protection
+* redundant containment loops
+* emergency plasma venting
+* isolation from crew systems
+* shielding from sensitive electronics
+
+Control must be handled by a dedicated field computer capable of microsecond-scale correction.
+
+---
+
+### 10. Prototype Simulation Plan
+
+A software simulation should test:
+
+1. Static four-node field overlap
+2. Dual-axis rotating field overlap
+3. Plasma drift behavior
+4. Null-zone formation
+5. Field biasing
+6. Directional release
+7. Stability under turbulence
+8. Failure under phase mismatch
+
+Initial simulation variables:
+
+* field strength
+* phase offset
+* rotation frequency
+* plasma density
+* plasma temperature
+* chamber radius
+* outer coil strength
+* release gate angle
+
+---
+
+### 11. Minimum Viable Prototype
+
+The first MVP should not attempt full physical plasma containment.
+
+Instead, simulate the field geometry.
+
+MVP goals:
+
+* visualize field overlap
+* identify stable central well regions
+* detect null zones
+* compare static vs rotating cage stability
+* model directional bias
+* model burst release paths
+
+Success criteria:
+
+* rotating cage reduces fixed null zones
+* central confinement region remains stable longer than static cross
+* directional bias creates predictable release path
+* system fails safely when phase synchronization is lost
+
+---
+
+### 12. Conclusion
+
+The Lazarus Cross-Orbit Plasma Cradle is a speculative containment and energy-routing system based on synchronized dual-axis electromagnetic field choreography.
+
+Its value is not simply in creating strong fields, but in creating moving fields that prevent plasma from finding a stable escape path.
+
+In theory, the system could function as:
+
+* a plasma capacitor
+* a maneuvering impulse system
+* a reactor surge buffer
+* a shield-feed mechanism
+* a plasmoid lance pre-compression chamber
+
+The central design principle:
+
+> Do not trap plasma with walls.
+> Do not trap plasma with spin alone.
+> Trap plasma with controlled magnetic topology.
