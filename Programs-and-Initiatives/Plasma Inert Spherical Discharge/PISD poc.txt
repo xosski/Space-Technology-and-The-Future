@@ -1,0 +1,371 @@
+# PISD — Plasma Inert Spherical Discharge
+
+## Proof of Concept Draft
+
+### 1. Concept Summary
+
+**PISD**, short for **Plasma Inert Spherical Discharge**, is a speculative plasma control architecture that uses a spherical electromagnetic field structure to temporarily contain, redirect, and discharge plasma in controlled bursts.
+
+The system is built around the idea of forming a dynamic spherical plasma shell around a central containment region. Instead of allowing plasma to discharge randomly, PISD uses rotating field nodes to create controlled “inert pockets” where plasma can be held, compressed, redirected, or vented.
+
+Core principle:
+
+> Do not store plasma in a tank.
+> Store plasma in a moving electromagnetic geometry.
+
+---
+
+### 2. System Architecture
+
+PISD consists of five major components:
+
+1. **Spherical Field Housing**
+
+   * Outer containment boundary.
+   * Defines the active plasma shell.
+   * Prevents uncontrolled wall contact.
+
+2. **PTEC Field Nodes**
+
+   * Arranged around the sphere.
+   * Operate in opposing pairs.
+   * Rotate, oscillate, or phase-shift to move confinement zones.
+
+3. **Central Plasma Well**
+
+   * Inner region where plasma density is temporarily stabilized.
+   * Acts as the main energy reservoir.
+
+4. **Inert Discharge Pockets**
+
+   * Temporary low-instability zones formed by overlapping magnetic fields.
+   * Used for controlled release, shielding, or directional impulse.
+
+5. **Directional Vent Gates**
+
+   * Controlled discharge paths.
+   * Allow plasma to be expelled as thrust, shielding flow, or emergency heat dump.
+
+---
+
+### 3. Operating Principle
+
+The PISD system creates a moving spherical magnetic topology.
+
+Plasma is injected into the central well. The field nodes rotate around the shell, creating temporary regions where plasma pressure is balanced long enough to be redirected.
+
+The system cycle:
+
+1. **Inject**
+
+   * Plasma enters the central well.
+
+2. **Cradle**
+
+   * Spherical fields compress and stabilize the plasma.
+
+3. **Phase**
+
+   * PTEC nodes rotate or pulse to form inert pockets.
+
+4. **Bias**
+
+   * One region of the sphere is strengthened or weakened.
+
+5. **Discharge**
+
+   * Plasma exits through a controlled vent path.
+
+6. **Recover**
+
+   * Fields reset and stabilize the remaining plasma.
+
+---
+
+### 4. Functional Modes
+
+#### Mode A — Containment Mode
+
+Purpose: temporarily hold plasma in the central well.
+
+Use cases:
+
+* reactor buffering
+* energy surge absorption
+* plasma storage
+* emergency system stabilization
+
+---
+
+#### Mode B — Spherical Shield Mode
+
+Purpose: distribute plasma around the shell as an active defensive layer.
+
+Use cases:
+
+* radiation shielding
+* charged particle deflection
+* thermal dispersion
+* micrometeorite plasma erosion shielding
+
+---
+
+#### Mode C — Directional Discharge Mode
+
+Purpose: vent plasma through a selected pocket.
+
+Use cases:
+
+* thrust vectoring
+* side-step maneuvering
+* emergency attitude correction
+* evasive impulse bursts
+
+---
+
+#### Mode D — Heat Dump Mode
+
+Purpose: remove dangerous thermal load from internal systems.
+
+Use cases:
+
+* reactor overheat control
+* weapon cooling
+* emergency coolant substitute
+* thermal bloom diversion
+
+---
+
+#### Mode E — Plasmoid Formation Mode
+
+Purpose: compress plasma into a short-lived magnetized packet.
+
+Use cases:
+
+* plasma lance feed
+* directed energy discharge
+* shield disruption
+* high-energy experimental propulsion
+
+---
+
+### 5. Field Logic
+
+PISD depends on field timing rather than raw field strength alone.
+
+Basic logic:
+
+* **Outer shell field:** containment boundary
+* **Inner well field:** plasma stabilization
+* **Rotating PTEC nodes:** pocket formation
+* **Bias field:** directional release
+* **Vent gate:** discharge path
+
+Poorly phased fields create turbulence.
+
+Properly phased fields create a moving confinement geometry.
+
+The goal is not to freeze plasma in place.
+
+The goal is to keep plasma from finding a stable escape path.
+
+---
+
+### 6. Key Hypothesis
+
+Primary hypothesis:
+
+> A rotating spherical electromagnetic topology can create temporary inert plasma pockets that allow controlled storage and discharge of high-energy plasma.
+
+Secondary hypothesis:
+
+> These pockets can be biased to function as thrust ports, shield reinforcement zones, or heat discharge channels.
+
+---
+
+### 7. Use Cases
+
+#### Spacecraft Maneuvering
+
+PISD can act as a burst-maneuver system.
+
+Example:
+
+* Plasma is stored in the spherical well.
+* A right-side discharge pocket opens.
+* Plasma vents laterally.
+* The craft shifts left.
+
+---
+
+#### Defensive Shielding
+
+PISD can distribute charged plasma across an outer shell to reduce incoming charged particle exposure.
+
+This could assist with:
+
+* radiation management
+* charged debris deflection
+* thermal load spreading
+
+---
+
+#### Heat Shielding
+
+During high-heat events, PISD can move plasma and thermal energy around the shell instead of allowing one point to overload.
+
+---
+
+#### Power Rerouting
+
+PISD can behave like a plasma capacitor, temporarily absorbing excess energy and releasing it into selected systems.
+
+---
+
+#### Plasmoid Weapon Feed
+
+The system can pre-compress plasma before feeding a lance, nozzle, or discharge channel.
+
+---
+
+### 8. Failure Modes
+
+Potential failure modes include:
+
+* plasma wall contact
+* magnetic null collapse
+* field desynchronization
+* spherical pocket collapse
+* runaway discharge
+* unintended thrust event
+* thermal overload
+* coil quench
+* electromagnetic interference
+* containment inversion
+
+Critical failure:
+
+> The inert pocket becomes unstable and turns into an uncontrolled plasma discharge path.
+
+---
+
+### 9. Safety and Control Requirements
+
+PISD requires:
+
+* real-time magnetic field monitoring
+* plasma density measurement
+* temperature monitoring
+* discharge path prediction
+* emergency venting
+* quench protection
+* redundant containment loops
+* shielded control electronics
+* automatic shutdown logic
+* fast phase correction
+
+Control timing must operate at extremely high speed because plasma instability can develop faster than mechanical systems can react.
+
+---
+
+### 10. Simulation Plan
+
+The first PISD prototype should be software-only.
+
+Simulation goals:
+
+1. Model spherical field overlap.
+2. Identify stable and unstable pocket regions.
+3. Test rotating PTEC node patterns.
+4. Simulate plasma drift.
+5. Test discharge biasing.
+6. Compare static sphere vs rotating sphere stability.
+7. Model vent path behavior.
+8. Measure confinement duration.
+
+Variables:
+
+* shell radius
+* field strength
+* node count
+* node phase offset
+* rotation frequency
+* plasma temperature
+* plasma density
+* vent gate size
+* discharge angle
+* bias strength
+
+---
+
+### 11. Minimum Viable Prototype
+
+The MVP should not attempt real plasma containment.
+
+MVP should simulate:
+
+* field geometry
+* pocket formation
+* stability regions
+* discharge paths
+* node phasing
+* failure states
+
+Success criteria:
+
+* simulated field pockets form predictably
+* pockets move controllably around the sphere
+* directional discharge paths can be biased
+* rotating topology outperforms static topology
+* failure conditions are detectable before total collapse
+
+---
+
+### 12. Development Path
+
+Phase 1:
+
+* Field geometry simulation
+
+Phase 2:
+
+* Plasma drift approximation
+
+Phase 3:
+
+* Pocket stability modeling
+
+Phase 4:
+
+* Directional discharge simulation
+
+Phase 5:
+
+* Shield/heat/radiation use-case modeling
+
+Phase 6:
+
+* Integration with Lazarus Cross-Orbit Plasma Cradle concepts
+
+---
+
+### 13. Conclusion
+
+PISD proposes a spherical plasma control system that does not rely on physical containment or static magnetic fields alone.
+
+Its value comes from creating moving electromagnetic structures that form temporary inert pockets inside a plasma shell.
+
+In theory, the system could support:
+
+* burst propulsion
+* emergency maneuvering
+* radiation shielding
+* heat shielding
+* reactor surge buffering
+* plasma weapon feeding
+* defensive plasma shells
+
+Core principle:
+
+> Plasma is not controlled by force alone.
+> Plasma is controlled by timing, topology, and release geometry.

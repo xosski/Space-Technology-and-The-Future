@@ -1,0 +1,370 @@
+# MIRANDA
+
+## Multi-Inert Rotational Asynchronous Null-Directional Assembly
+
+### Proof of Concept Draft
+
+### 1. Executive Summary
+
+MIRANDA is a speculative spacecraft propulsion and maneuvering architecture designed to provide omnidirectional thrust vectoring using a single primary propulsion assembly.
+
+Instead of relying on numerous external maneuvering thrusters distributed across a spacecraft hull, MIRANDA attempts to manipulate plasma exhaust geometry through multiple rotating electromagnetic confinement systems.
+
+The objective is to transform a conventional rear-mounted propulsion system into a dynamic thrust-vectoring engine capable of:
+
+* Forward propulsion
+* Lateral translation
+* Rotational correction
+* Precision maneuvering
+* Emergency evasive displacement
+* Attitude stabilization
+
+Core principle:
+
+> Do not steer the spacecraft with separate thrusters.
+>
+> Steer the exhaust before it leaves the engine.
+
+---
+
+## 2. System Architecture
+
+MIRANDA consists of three major assemblies.
+
+### Primary Core
+
+The center assembly contains:
+
+* Plasma generation region
+* Compression chamber
+* Counter-rotating magnetic containment structures
+* Main thrust channel
+
+Purpose:
+
+Generate the primary propulsion stream.
+
+---
+
+### Outer Rotational PTEC Assemblies
+
+Two independent PTEC containment rings surround the primary core.
+
+Functions:
+
+* Field shaping
+* Directional biasing
+* Plasma steering
+* Stability correction
+
+Each assembly rotates asynchronously.
+
+Neither assembly is mechanically synchronized.
+
+The phase relationship is controlled electronically.
+
+---
+
+### Vector Control Layer
+
+The outer field layer creates directional pressure gradients within the exhaust stream.
+
+Instead of changing engine orientation, MIRANDA changes:
+
+* Exhaust density
+* Exhaust velocity
+* Exhaust direction
+
+before discharge.
+
+---
+
+## 3. Operating Principle
+
+### Phase 1 — Core Ignition
+
+The central plasma chamber generates the primary reaction mass stream.
+
+The stream is magnetically compressed.
+
+---
+
+### Phase 2 — Counter-Rotation
+
+The core field rotates in one direction.
+
+Example:
+
+Clockwise
+
+The secondary field rotates in the opposite direction.
+
+Example:
+
+Counterclockwise
+
+This creates a dynamic field interaction region.
+
+---
+
+### Phase 3 — Asynchronous Offset
+
+The outer PTEC assemblies intentionally drift out of phase.
+
+The resulting field asymmetry generates directional pressure differences.
+
+This creates controllable null regions and compression regions.
+
+---
+
+### Phase 4 — Vector Formation
+
+By changing field timing:
+
+* Left thrust bias
+* Right thrust bias
+* Upward thrust bias
+* Downward thrust bias
+
+can be created.
+
+The exhaust plume bends accordingly.
+
+---
+
+### Phase 5 — Discharge
+
+The plasma stream exits through the primary nozzle.
+
+Because the stream is already biased internally:
+
+the discharge vector differs from the physical engine axis.
+
+---
+
+## 4. Null-Directional Theory
+
+MIRANDA relies on controlled null formation.
+
+A null region is a temporary low-field area generated between overlapping electromagnetic structures.
+
+These nulls are not failures.
+
+They are intentionally created steering channels.
+
+The plasma naturally follows the path of least magnetic resistance.
+
+MIRANDA uses moving nulls as guidance rails.
+
+Conceptually:
+
+* Strong field = wall
+* Weak field = corridor
+* Moving corridor = steering mechanism
+
+---
+
+## 5. Maneuver Modes
+
+### Mode A — Cruise
+
+All fields balanced.
+
+Maximum forward thrust.
+
+Minimum steering input.
+
+---
+
+### Mode B — Vector Translation
+
+One side of the exhaust receives increased compression.
+
+Result:
+
+Lateral motion.
+
+---
+
+### Mode C — Rapid Attitude Control
+
+High-frequency phase adjustments.
+
+Used for:
+
+* Pitch
+* Roll
+* Yaw
+
+correction.
+
+---
+
+### Mode D — Evasive Pulse
+
+Stored plasma energy is discharged asymmetrically.
+
+Creates rapid trajectory correction.
+
+---
+
+### Mode E — Station Keeping
+
+Micro-adjustments maintain orientation without dedicated maneuvering jets.
+
+---
+
+## 6. Advantages
+
+Potential benefits:
+
+* Fewer external thrusters
+* Reduced system complexity
+* Reduced exposed hardware
+* Centralized propulsion management
+* Higher maneuver authority
+* Faster response time
+* Improved redundancy
+
+The spacecraft effectively turns its main engine into its steering system.
+
+---
+
+## 7. Integration with Lazarus Systems
+
+MIRANDA can interface directly with:
+
+### LCOP
+
+Lazarus Cross-Orbit Plasma Cradle
+
+Provides:
+
+* Plasma storage
+* Compression
+* Surge management
+
+---
+
+### PISD
+
+Plasma Inert Spherical Discharge
+
+Provides:
+
+* Plasma buffering
+* Shield feed
+* Emergency discharge
+
+---
+
+### Lazarus Plasmoid Lance
+
+Provides:
+
+* Directed discharge
+* High-energy release systems
+
+---
+
+## 8. Failure Modes
+
+Potential hazards:
+
+### Phase Desynchronization
+
+Field timing drifts beyond tolerance.
+
+Result:
+
+Unstable exhaust.
+
+---
+
+### Null Collapse
+
+Directional corridor disappears.
+
+Result:
+
+Turbulent discharge.
+
+---
+
+### Plasma Reattachment
+
+Plasma contacts containment surfaces.
+
+Result:
+
+Thermal damage.
+
+---
+
+### Vector Runaway
+
+Bias system locks in one direction.
+
+Result:
+
+Uncommanded acceleration.
+
+---
+
+### Coil Quench
+
+Superconducting system loses containment capability.
+
+Result:
+
+Emergency shutdown required.
+
+---
+
+## 9. Simulation Requirements
+
+Initial simulations should model:
+
+* Magnetic field topology
+* Counter-rotation effects
+* Phase drift
+* Null formation
+* Exhaust steering
+* Stability under load
+* Plasma confinement duration
+* Directional vector generation
+
+Variables:
+
+* Rotation speed
+* Phase offset
+* Field strength
+* Plasma density
+* Exhaust velocity
+* Nozzle geometry
+
+---
+
+## 10. Success Criteria
+
+MIRANDA is considered successful if:
+
+* Exhaust direction can be altered without nozzle movement.
+* Lateral force generation is measurable.
+* Stable steering corridors form consistently.
+* Null regions remain controllable.
+* Maneuver authority exceeds traditional reaction-control systems.
+
+---
+
+## Conclusion
+
+MIRANDA proposes a propulsion architecture where steering is achieved through rotating electromagnetic field topology rather than external maneuvering thrusters.
+
+The system transforms the engine itself into an active vector-control device by creating dynamic null corridors and controlled plasma biasing inside the propulsion stream.
+
+Guiding Principle:
+
+"Do not move the engine to steer the exhaust.
+
+Move the exhaust to steer the ship."
