@@ -1,0 +1,57 @@
+You could make a field-keyed power channel where power only flows cleanly if the receiver matches the channel’s active plasma geometry, frequency, phase, and magnetic routing pattern.
+
+Think of it less like a password and more like a living lock-and-key circuit.
+
+Concept
+
+Normal power line:
+
+Power source → conduit → receiver
+
+Encrypted plasma channel:
+
+Power source → shaped plasma lattice → authenticated receiver
+
+The channel could require a matching pattern:
+
+Geometry: diamond / helix / pentagon sequence
+Phase: rotating field timing
+Frequency: plasma modulation band
+Direction: bidirectional flow handshake
+Load signature: approved receiver draw pattern
+
+If someone tries to siphon it, they do not get usable power. They get unstable noise, field collapse, or a safe shutdown.
+
+How it prevents siphoning
+
+A valid device would need to match the active “field key”:
+
+Channel:  ◇ ◇ ⬟ ◇ ⬡
+Receiver: ◇ ◇ ⬟ ◇ ⬡  = power flows
+
+Wrong receiver:
+Channel:  ◇ ◇ ⬟ ◇ ⬡
+Receiver: ⬡ ⬟ ◇ ⬡ ◇  = rejected
+
+This fits beautifully with your uploaded systems:
+
+NOBELIS already treats the vehicle boundary as a programmable electromagnetic/plasma interface, with noble gas, plasma-field generation, and electromagnetic boundary control forming an active protective layer.
+
+LHPC already frames helical plasma containment as a way to buffer, discipline, and regulate high-energy plasma flow rather than letting it free-run.
+
+Name idea
+
+CIPHER Rail
+Coherent Induction Phase-Harmonic Encrypted Routing
+
+or:
+
+PRISM-Cipher Layer
+A security overlay for PRISM Rail.
+
+Best line
+
+Power is not delivered through the rail.
+Power is admitted by the rail.
+
+This is exactly the kind of thing that turns PRISM from “plasma wiring” into an authenticated shipwide nervous system.
