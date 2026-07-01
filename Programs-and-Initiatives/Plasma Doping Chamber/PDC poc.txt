@@ -1,0 +1,191 @@
+Plasma Doping Chamber
+PDC Proof of Concept v0.1
+Purpose
+
+The Plasma Doping Chamber (PDC) is an add-on subsystem for the Helical Plasma Conditioning Core (HPCC). Its purpose is to introduce controlled gases, vaporized feedstocks, or reactive species into an already-conditioned plasma stream to tune its behavior before plasmoid formation, shielding, propulsion, or matter-processing use.
+
+Core idea:
+The HPCC shapes the flow.
+The PDC changes what the flow is made of.
+
+System Flow
+PTEC Alpha + PTEC Beta
+        ↓
+HPCC Merge Chamber
+        ↓
+Helical Magnetic Vortex
+        ↓
+Plasma Doping Chamber
+        ↓
+Plasmoid Formation Nozzle
+        ↓
+Application
+Core Hypothesis
+
+By injecting carefully selected species into a plasma stream, the system may alter:
+
+ion density
+conductivity
+radiative behavior
+magnetic responsiveness
+recombination behavior
+thermal profile
+plasmoid stability
+
+This does not make plasma “malleable” like solid matter. It makes the plasma more or less responsive to fields, confinement, shaping, cooling, and recombination.
+
+Chamber Architecture
+1. Conditioned Plasma Inlet
+
+Receives plasma from HPCC after phase alignment and helical vortex conditioning.
+
+2. Doping Injection Ring
+
+A circular injector array introduces controlled additives into the plasma stream.
+
+Possible injectants:
+
+Additive	Conceptual Role
+Argon	Stabilizing buffer gas
+Neon	Optical/diagnostic plasma behavior
+Xenon	Heavy-ion mass loading
+Helium	Lightweight thermal tuning
+Nitrogen	Reactive plasma chemistry
+Oxygen	Oxidation/recombination control
+Carbon vapor	Conductive/lattice feedstock
+Polymer vapor	Carbon-rich complex feedstock
+3. Mixing / Residence Zone
+
+The doped plasma remains inside the chamber long enough for the injected species to ionize, mix, and become part of the working plasma.
+
+4. Field Shaping Coils
+
+Surrounding coils adjust the plasma after doping.
+
+They control:
+
+compression
+rotation
+expansion
+flow alignment
+outlet geometry
+5. Plasmoid Formation Nozzle
+
+The final stage pinches or shapes the plasma into a useful output form.
+
+Possible outputs:
+
+Output	Use
+Toroidal plasmoid	containment / storage
+Spherical plasmoid	compact energy pocket
+Helical flow	routing / induction
+Sheet plasma	matter processing
+Narrow stream	propulsion / transfer
+Operating Modes
+Noble Gas Stabilization Mode
+
+Uses argon, helium, neon, or xenon to tune plasma behavior.
+
+Best for:
+
+controlled tests
+diagnostics
+stability research
+plasmoid formation trials
+Reactive Chemistry Mode
+
+Uses nitrogen, oxygen, carbon vapor, or polymer vapor.
+
+Best for:
+
+material processing
+recombination studies
+waste-to-feedstock concepts
+Heavy-Ion Mode
+
+Uses xenon or other high-mass species to increase plasma mass loading.
+
+Best for:
+
+propulsion research
+momentum transfer
+dense plasmoid testing
+Diagnostic Glow Mode
+
+Uses neon/argon mixtures to make plasma behavior visually and spectroscopically easier to study.
+
+Integration With HPCC
+
+The PDC should be placed after HPCC conditioning, not before.
+
+Reason:
+
+Bad order:
+Raw plasma → additives → chaos → shaping
+
+Better order:
+Raw plasma → HPCC shaping → additives → final tuning
+
+HPCC provides stable flow.
+PDC modifies composition.
+The nozzle creates the final plasmoid.
+
+Proof-of-Concept Development Path
+Phase PDC-1 — Simulation
+
+Model how different gas species affect:
+
+plasma density
+ionization energy
+temperature distribution
+confinement behavior
+radiative loss
+Phase PDC-2 — Cold Plasma Test
+
+Use low-energy lab plasma and noble gases only.
+
+Goal:
+
+compare argon, neon, helium, xenon behavior
+measure brightness, stability, temperature, and response to magnetic fields
+Phase PDC-3 — Injection Timing Test
+
+Test whether pulsed injection produces more stable plasmoid formation than continuous injection.
+
+Phase PDC-4 — Magnetic Nozzle Test
+
+Evaluate whether doped plasma responds differently to shaped magnetic outlets.
+
+Phase PDC-5 — Reactive Feedstock Study
+
+Only after noble gas behavior is understood, test carbon-rich vapor or polymer-derived feedstock in controlled lab conditions.
+
+Safety / Reality Boundary
+
+Physical plasma testing can involve high voltage, UV radiation, toxic fumes, hot surfaces, pressure hazards, and fire risk.
+
+Polymer/resin vapor is especially risky because heating or plasma exposure can create hazardous decomposition products.
+
+So the safe development order is:
+
+Simulation
+↓
+Cold plasma
+↓
+Noble gases
+↓
+Controlled lab diagnostics
+↓
+Reactive feedstock only with proper ventilation and instrumentation
+Success Criteria
+
+PDC is promising if testing shows:
+
+additives produce measurable changes in plasma behavior
+noble gases improve stability or diagnostics
+doped plasma can be shaped more predictably
+pulsed injection improves plasmoid consistency
+magnetic nozzle response changes based on injected species
+Doctrine Line
+
+“HPCC gives plasma direction. PDC gives it temperament.”
