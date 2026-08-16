@@ -1,0 +1,58 @@
+so if the added wings were setup couldnt you use that to adjust height/pitch, wouldnt this help solve more disasters? In situations like cabin pressure dropping and everyone passing out the plane could auto-piolet glide to  areas where the air is more abundant. This would also create more drag in situations where overspeed happens and the plane is spinning out of control and could potentially usewd to prevent an inverted aircraft. 
+
+Yes — that broader version could potentially address more accident classes than a simple “engine-out glider mode.” The important shift is to think of the auxiliary wings as additional control effectors, not merely extra lifting area.
+
+For a pressurization failure, your instinct is directionally sound, but the safest response is not “glide toward denser air” so much as automatically descend to a breathable altitude while preserving controllability and avoiding terrain/traffic. FAA guidance treats depressurization as an immediate hypoxia hazard, and emergency descent is the standard response category. An autonomous mode could therefore detect cabin-altitude failure, command an emergency descent, use the auxiliary surfaces to increase stability and perhaps allow a steeper but controlled descent, then level at a safer altitude even if the crew has become incapacitated.
+
+That actually gives your concept another operating mode:
+
+INCAPACITATED CREW / DEPRESSURIZATION MODE
+Detect cabin-pressure emergency → confirm flight path is clear → establish controlled descent → use deployable surfaces for additional stability/drag as needed → level at breathable altitude → maintain course or divert/autoland.
+
+The same logic applies to overspeed. Extra deployable area or specifically designed drag surfaces could potentially increase drag and help bleed energy, but they would have to be speed-envelope protected. At very high dynamic pressure, suddenly deploying a large wing extension could overload or destroy the structure. So the computer would probably use staged deployment: small drag/flow-control first, larger auxiliary surfaces only once airspeed drops into their safe operating range.
+
+Where the concept becomes particularly strong is upset recovery. NASA has long studied stability augmentation in pitch, roll, and yaw, and demonstrated that active control systems can materially restore or supplement aircraft handling qualities. Your auxiliary wings could give the controller more places to generate corrective aerodynamic moments.
+
+For example, if the aircraft begins rolling toward inversion:
+
+ROLL RATE DETECTED
+        ↓
+IMU + air data confirm upset
+        ↓
+Flight controller computes required roll moment
+        ↓
+Left/right auxiliary surfaces deploy differently
+        ↓
+Differential lift + differential drag
+        ↓
+Roll rate arrested
+        ↓
+Aircraft returns toward wings-level
+
+That could supplement ailerons/spoilers rather than replace them.
+
+Likewise, if the aircraft is already inverted, the system might attempt a controlled roll recovery, but I would avoid claiming that DEASS could simply “prevent an inverted aircraft.” Whether recovery is possible depends on altitude, airspeed, structural integrity, angle of attack, and whether the aircraft is in a spin, spiral dive, or other upset state. ICAO defines LOC-I specifically around unrecoverable deviation from intended flight, and it remains a major fatality category, so additional control authority is precisely where a system like this would be worth investigating.
+
+The spin case is more complicated. In a developed spin, you have coupled yaw, roll, and stall. Simply adding drag can actually worsen the wrong axis if applied incorrectly. But independently controlled surfaces could theoretically create anti-spin yaw and roll moments while also helping reduce angle of attack. That is much more promising than symmetric deployment.
+
+So I’d expand your DEASS white paper from five modes to something like:
+
+Stability Assist — damp roll/yaw/pitch excursions.
+Stall / Upset Recovery — restore controllable AoA and arrest rotation.
+Engine-Out Glide — maximize usable lift-to-drag and controllability.
+Overspeed Management — staged drag deployment to reduce energy.
+Depressurization / Crew Incapacitation — automated emergency descent and stabilization.
+Degraded Flight Controls — substitute control authority using auxiliary surfaces/airflow.
+Terminal Approach — increase drag/lift as appropriate to reduce touchdown energy.
+
+NASA has even demonstrated emergency flight-control concepts where unconventional control methods compensated for major conventional-control losses, which supports the broader principle that alternative control effectors can preserve survivability after primary systems are degraded.
+
+So yes: once the auxiliary surfaces are individually actuated, sensor-driven, and integrated into autopilot, your concept starts addressing a much larger slice of accident mechanisms than propulsion loss alone.
+
+The conceptual leap is:
+
+Version 1: “Deploy extra wings so the aircraft can glide better.”
+
+Version 2: “Give the aircraft a second aerodynamic control system capable of changing lift, drag, pitch, roll, and yaw authority when normal flight is compromised.”
+
+That second version is the one worth developing.
