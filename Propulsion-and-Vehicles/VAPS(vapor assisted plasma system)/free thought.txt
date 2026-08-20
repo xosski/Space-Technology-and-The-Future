@@ -64,3 +64,267 @@ or
 SPECTRA Drive — Sequential Plasma Electromagnetic Compression and Thermal Recovery Architecture
 
 If you want, I can turn your sketch into a labeled POC cross-section diagram with the vapor feed, pre-ionizer, plasma chamber, induction rods, magnetic compression zones, exhaust channel, and electrical pickup all laid out as an engineering concept.
+With the VAPS-RIC revision, I’d move the projections somewhat upward in potential but also make them more rigorous. The RIC doesn't create extra energy; its value is that it gives you another way to recover expansion energy that would otherwise leave as exhaust/heat. The key number becomes net fuel-to-DC efficiency after plasma, levitation, cooling, pumps, and electronics.
+
+Using the same reference case as before—a vehicle effectively getting 30 mpg at 25% fuel-to-useful-output efficiency—the revised theoretical scaling is:
+
+VAPS-RIC net efficiency	Equivalent MPG*	Assessment
+25%	30 mpg	No advantage
+30%	36 mpg	Early successful POC
+35%	42 mpg	Promising
+40%	48 mpg	Strong result
+45%	54 mpg	Excellent
+50%	60 mpg	Very ambitious
+55%	66 mpg	Research-level stretch
+60%	72 mpg	Extraordinary / unlikely without major heat recovery
+
+*Simple energy-equivalent scaling, not a prediction of an actual vehicle's EPA mileage.
+
+The interesting change is where those efficiencies might come from.
+
+Revised VAPS-RIC energy picture
+
+Imagine 100 units of fuel energy entering the reactor:
+
+E
+fuel
+	​
+
+=100
+
+A hypothetical mature system might eventually look something like:
+
+100→
+⎩
+⎨
+⎧
+	​
+
+25−35
+5−10
+5−10
+45−65
+	​
+
+RIC electrical generation
+MHD/direct electrical recovery
+recoverable secondary thermal energy
+remaining heat/exhaust/losses
+	​
+
+
+Those ranges cannot simply be added and treated as demonstrated efficiency. They're engineering targets illustrating where we'd want the energy to go.
+
+The genuinely exciting target would be:
+
+η
+fuel→DC
+	​
+
+≈40−45%
+	​
+
+
+because at that point VAPS-RIC becomes interesting against ordinary gasoline powertrains rather than merely being an exotic way to burn fuel.
+
+Why the RIC improves the outlook
+
+The original VAPS asked the plasma system to do too many things. It had to ionize the mixture, manipulate it electromagnetically, effectively replace piston behavior, and extract power.
+
+VAPS-RIC separates those jobs:
+
+Combustion→
+thermodynamics
+pressure + velocity
+	​
+
+	​
+
+→
+mechanical recovery
+RIC rotation
+	​
+
+	​
+
+→
+electrical
+induction
+	​
+
+	​
+
+
+while simultaneously attempting:
+
+conductive exhaust→
+secondary recovery
+MHD extraction
+	​
+
+	​
+
+
+That's much more defensible physically.
+
+There's also an important consequence: the RIC doesn't necessarily need plasma to rotate. Hot expanding combustion gas could drive the rotor aerodynamically while plasma/MHD becomes an additional extraction mechanism.
+
+That gives the machine a graceful failure mode. If the MHD section only contributes 2% instead of the hoped-for 8%, the RIC generator could still work.
+
+What I'd project for development
+
+I'd now establish three performance milestones rather than advertise one theoretical MPG number.
+
+VAPS-RIC Alpha: target 25–30% fuel-to-DC. The purpose is proving stable combustion, rotor operation, induction generation, thermal isolation and net-positive plasma assistance. That's approximately 30–36 mpg equivalent in our hypothetical vehicle.
+
+VAPS-RIC Beta: target 30–40% fuel-to-DC through optimized rotor geometry, recuperation and reduced parasitic losses. That's roughly 36–48 mpg equivalent.
+
+Mature VAPS-RIC: target 40–50% fuel-to-DC. That corresponds to approximately 48–60 mpg equivalent before considering vehicle-level benefits.
+
+I would treat 50%+ as an aspirational research target, not something the white paper should promise.
+
+But the vehicle version gets more interesting
+
+Because VAPS-RIC generates electricity rather than mechanically driving the wheels, you can make the vehicle a series hybrid:
+
+Fuel→
+VAPS-RIC
+	​
+
+→DC→Battery↔Regenerative Braking→Motor→Wheels
+
+Now the reactor doesn't have to follow accelerator position.
+
+It could run at its single most efficient operating point:
+
+RPM
+RIC
+	​
+
+=constant
+T
+combustion
+	​
+
+≈constant
+λ≈optimal
+B≈optimal
+
+and simply turn on when the battery reaches a lower threshold and shut down at an upper threshold.
+
+That could be more valuable than chasing an extreme peak reactor efficiency.
+
+For example, a 40%-efficient generator that operates near 40% most of the time can be more useful in real driving than an engine capable of 42% peak efficiency but frequently operating far below its optimum.
+
+There's also a better RIC configuration to investigate
+
+Rather than the plasma literally spinning a solid ball, I'd make the first serious version an annular turbine-generator rotor:
+
+         COMBUSTION
+             ↓
+       HOT / IONIZED GAS
+             ↓
+       ╱             ╲
+      ╱  tangential   ╲
+     ↓      flow       ↓
+
+
+   ╔═════════════════════╗
+   ║   ↻ ↻ ↻ ↻ ↻ ↻      ║
+   ║                     ║
+   ║    MAGLEV RING      ║
+   ║       ROTOR         ║
+   ║                     ║
+   ║   ↻ ↻ ↻ ↻ ↻ ↻      ║
+   ╚═════════════════════╝
+        ║         ║
+     STATOR     STATOR
+      COILS      COILS
+        ║         ║
+        ╚════╤════╝
+             ↓
+         DC OUTPUT
+             │
+             ▼
+        MHD CHANNEL
+             │
+        SECOND OUTPUT
+             ↓
+       HEAT RECOVERY
+
+That's essentially taking the XRM-inspired maglev circulation concept and turning it into an energy converter rather than asking a free-floating sphere to survive in the center of a combustion chamber.
+
+And there's a nice engineering consequence:
+
+RIC output could partially power the plasma system.
+
+Once running:
+
+P
+RIC
+	​
+
+→P
+ionizer
+	​
+
++P
+maglev
+	​
+
++P
+controller
+	​
+
+
+with the remainder:
+
+P
+RIC
+	​
+
+−P
+internal
+	​
+
+=P
+usable
+	​
+
+
+So after startup, the reactor could electrically support its own ionization and magnetic systems.
+
+That's self-powered auxiliaries, not perpetual motion—the energy is still coming from the fuel.
+
+Revised viability
+
+I'd currently characterize the pieces approximately like this:
+
+Technology	Outlook
+Vaporized-fuel combustion	🟢 High
+Plasma-assisted ignition	🟢 High
+High-speed electrical generator	🟢 High
+Magnetic-bearing/maglev rotor	🟢/🟡 High–medium
+Annular high-temperature turbine	🟢/🟡 High–medium
+Integrated RIC generator	🟡 Medium
+Conductivity enhancement	🟡 Medium
+Useful combustion-gas MHD extraction	🟠 Difficult
+40% VAPS-RIC system	🟡 Plausible research objective
+50% system	🟠 Aggressive
+60%+	🔴 Highly speculative
+
+So my revised projection wouldn't be “VAPS gets 100 mpg.”
+
+It would be:
+
+VAPS-RIC targets 35–45% net fuel-to-electric conversion in a compact constant-speed generator, with 50% representing a long-term stretch objective.
+
+For the hypothetical vehicle we've been using, that puts the meaningful target around:
+
+42−54 mpg-equivalent
+	​
+
+
+with an electric drivetrain, regenerative braking, and optimized generator duty cycle potentially improving actual vehicle fuel economy beyond what that simple proportional calculation captures.
+
+And that gives the POC a much stronger objective: don't prove plasma looks cool—prove VAPS-RIC can get past 35% net fuel-to-DC efficiency and quantify exactly where every remaining joule went.

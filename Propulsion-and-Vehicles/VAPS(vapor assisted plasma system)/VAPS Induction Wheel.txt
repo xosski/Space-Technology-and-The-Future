@@ -1,0 +1,185 @@
+What you’re proposing is effectively a magnetically levitated induction rotor inside or adjacent to the plasma expansion path, where the plasma stream provides rotational or electromagnetic excitation and the rotor converts part of that motion/field interaction into electrical power. That borrows the useful part of your XRM drum logic: the rotor is a dynamic field-shaping layer, not the energy source by itself. In the XRM concept, the maglev rotor’s role is to circulate and reinforce field behavior rather than acting as the shield directly.
+
+For VAPS, I’d adapt that into something like this:
+
+Fuel vapor + air
+      ↓
+Pre-ionizer
+      ↓
+Plasma combustion chamber
+      ↓
+High-velocity ionized exhaust
+      ↓
+┌───────────────────────────────┐
+│   MAGLEV INDUCTION ROTOR      │
+│                               │
+│   plasma annulus →→→→→        │
+│        ⟲ rotor/orb            │
+│                               │
+│  rotating magnetic field      │
+│  + induced current pickup     │
+└───────────────────────────────┘
+      ↓
+MHD / exhaust recovery
+      ↓
+DC electrical bus
+
+The best version would not put a conventional mechanical wheel directly in the hottest plasma. That would create catastrophic erosion, thermal loading, and drag. Instead, the rotor should probably be:
+
+magnetically levitated,
+physically isolated from the hottest plasma by a ceramic or refractory sleeve,
+coupled through magnetic flux rather than direct contact,
+surrounded by pickup coils in the engine block,
+and possibly spun by a tangential plasma flow path.
+
+So the plasma would flow around the rotor in an annulus, like a plasma turbine, while the rotor’s magnetic field changes relative to fixed stator coils.
+
+That gives you two simultaneous extraction modes:
+
+P
+total
+	​
+
+=P
+induction
+	​
+
++P
+MHD
+	​
+
+
+where:
+
+P
+induction
+	​
+
+
+comes from the spinning magnetic rotor, and
+
+P
+MHD
+	​
+
+
+comes from the conductive plasma itself moving through a magnetic field.
+
+That is a much stronger concept than relying only on MHD.
+
+A simplified cross-section would look like this:
+
+        VAPS COMBUSTION CORE
+
+
+   ┌───────────────────────────┐
+   │      PLASMA CHAMBER       │
+   │                           │
+   │  ionized gas  →→→→→→      │
+   └────────────┬──────────────┘
+                │
+                ▼
+   ╔═══════════════════════════╗
+   ║   ANNULAR PLASMA CHANNEL  ║
+   ║                           ║
+   ║   →→→→→→→→→→→→→→→        ║
+   ║        ╭──────╮           ║
+   ║        │  ⟲   │           ║
+   ║        │ROTOR │           ║
+   ║        ╰──────╯           ║
+   ║                           ║
+   ║  plasma flow causes       ║
+   ║  torque / field coupling  ║
+   ╚════════════╤══════════════╝
+                │
+        ┌───────┴────────┐
+        ▼                ▼
+
+
+  STATOR COILS       MHD PICKUP
+  induced current    direct plasma
+                     extraction
+
+The rotor could use permanent magnets, electromagnets, or a superconducting field assembly depending on temperature isolation. The important thing is that the hot plasma should interact mostly with the field, not with the rotor body.
+
+The induction part follows Faraday’s law:
+
+E=−
+dt
+dΦ
+B
+	​
+
+	​
+
+
+If the rotor carries a magnetic field and spins relative to fixed coils, the magnetic flux through those coils changes continuously, producing voltage.
+
+The plasma can also impart torque if the channel is designed so the flow has a tangential component:
+
+τ=rF
+
+So VAPS becomes something like a hybrid of:
+
+combustor + plasma turbine + maglev alternator + MHD generator.
+
+That is actually a more realistic route than trying to make electromagnetic “pistons” do the entire compression cycle.
+
+There’s another useful connection to XRM. Your XRM drum concept explicitly treats the rotor as a way to avoid static hotspots and to keep the system dynamically circulating. In VAPS, the same idea could help distribute thermal and electromagnetic stress around the chamber instead of concentrating everything along one stationary axis.
+
+You could even phase the rotor field against the induction rods:
+
+R
+1
+	​
+
+→R
+2
+	​
+
+→R
+3
+	​
+
+→R
+4
+	​
+
+
+while the center rotor spins at angular velocity:
+
+ω
+
+Then the controller could synchronize the rotating field and the plasma pulse:
+
+θ(t)=ωt
+
+and trigger each induction stage at selected rotor angles.
+
+That gives you a genuinely interesting control problem:
+
+combustion phase+plasma velocity+rotor angle+magnetic phase
+
+all locked together by the controller.
+
+The biggest engineering problems would still be plasma conductivity, thermal isolation, magnetic-material survival, rotor containment, bearing/levitation control, and whether the induced electrical power exceeds the energy consumed by ionization and magnetic control.
+
+But I would rate this version of VAPS more viable than the piston-replacement version, because you are now using combustion to create pressure in a conventional thermodynamic way and using plasma/induction hardware mainly for energy extraction rather than forcing the electromagnetic system to do all the compression work.
+
+A good name for this subsystem could be:
+
+VAPS-XRM Induction Core
+
+or
+
+VAPS RIC — Rotational Induction Core
+
+or
+
+VAPS MIRAGE — Magnetically Induced Rotational Alternator and Gas-Energy Extractor
+
+The cleanest one is probably VAPS-RIC.
+
+I’d define it as:
+
+The VAPS Rotational Induction Core is a magnetically levitated plasma-coupled rotor that converts high-velocity ionized combustion flow into electrical output through simultaneous rotational induction and magnetohydrodynamic recovery.
