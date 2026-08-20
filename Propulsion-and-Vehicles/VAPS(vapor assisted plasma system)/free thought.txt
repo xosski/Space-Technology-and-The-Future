@@ -1,0 +1,66 @@
+brutal very quickly.
+
+The other issue is that electromagnetic compression of plasma is easy compared with electromagnetic compression of mostly neutral gas. If the mixture is only weakly ionized, the fields mostly act on a tiny fraction of the contents. So a likely architecture would use a pre-ionization region first, then compression/confined burn.
+
+A cleaner version of your sketch would therefore be:
+
+           Vaporized Fuel/Air
+                  │
+                  ▼
+        ┌─────────────────────┐
+        │ PRE-IONIZER         │
+        │ corona / RF / arc   │
+        └─────────┬───────────┘
+                  │
+                  ▼
+     ╔══════════════════════════╗
+     ║ PLASMA COMBUSTION CELL   ║
+     ║                          ║
+     ║   ◉ field coil           ║
+     ║   │                      ║
+     ║  [ionized mixture]       ║
+     ║   │                      ║
+     ║   ◉ field coil           ║
+     ║                          ║
+     ╚═══════════╤══════════════╝
+                 │
+                 ▼
+        expansion / MHD channel
+                 │
+                 ▼
+        electrical collection
+
+If you still wanted “rods,” I’d make them multi-function plasma electrodes. Each rod could perform one or more of these jobs: initiate ionization, sense plasma impedance, inject RF energy, shape the electric field, or act as part of the output pickup.
+
+You could even give the chamber a phased firing sequence:
+
+R
+1
+	​
+
+→R
+2
+	​
+
+→R
+3
+	​
+
+→R
+4
+	​
+
+
+where the field timing creates a traveling electromagnetic pressure wave. That would act more like a linear electromagnetic compressor/accelerator than a piston.
+
+The most interesting thing about this is that you’re effectively moving toward a hybrid of a combustion engine, plasma torch, linear alternator, and MHD generator. It would not be a “better gasoline piston engine” so much as a new plasma-electric prime mover.
+
+A good working name would be:
+
+PICE — Plasma Induction Combustion Engine
+
+or
+
+SPECTRA Drive — Sequential Plasma Electromagnetic Compression and Thermal Recovery Architecture
+
+If you want, I can turn your sketch into a labeled POC cross-section diagram with the vapor feed, pre-ionizer, plasma chamber, induction rods, magnetic compression zones, exhaust channel, and electrical pickup all laid out as an engineering concept.
