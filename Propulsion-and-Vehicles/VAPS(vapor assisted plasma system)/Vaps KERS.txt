@@ -1,0 +1,160 @@
+so if you put flywheels in the tire/brake mount area you could essnetially get movement with system/hardware failure?
+
+Yes—for a short-duration emergency limp/controlled-stop capability, not sustained propulsion.
+
+A flywheel at each wheel/brake area could store kinetic energy while the vehicle is operating. If the VAPS-RIC generator, battery bus, or part of the drivetrain failed, that stored rotational energy could be released back through the wheel drive system:
+
+E
+flywheel
+	​
+
+=
+2
+1
+	​
+
+Iω
+2
+
+So your architecture could become:
+
+VAPS-RIC→electrical drivetrain→
+wheel energy buffers
+	​
+
+
+with regenerative braking doing:
+
+Vehicle motion→flywheel acceleration
+
+and emergency operation doing the reverse:
+
+flywheel→wheel torque
+
+The particularly interesting part is four independent wheel modules. A conceptual layout would be:
+
+                    VAPS-RIC
+                       │
+                    DC BUS
+                       │
+        ┌──────────────┼──────────────┐
+        │              │              │
+      Battery      Controller     Auxiliaries
+        │
+   ┌────┼────┬────┐
+   ▼    ▼    ▼    ▼
+  FL   FR   RL   RR
+   │    │    │    │
+ Motor Motor Motor Motor
+   │    │    │    │
+FlyW  FlyW FlyW  FlyW
+   │    │    │    │
+Wheel Wheel Wheel Wheel
+
+That gives you several interesting modes. During normal driving, VAPS-RIC supplies average power while the battery and flywheels handle transients. During acceleration, stored flywheel energy could supplement the electrical system. During braking, some vehicle energy could be captured mechanically/electromechanically. During a main-power failure, the wheel modules could provide enough energy for a controlled pull-over or limited limp mode.
+
+But I would change one important thing in your idea: don't put a high-RPM flywheel directly inside the wheel itself.
+
+That increases unsprung mass, creates huge gyroscopic effects, and puts a high-energy rotor right beside something routinely subjected to pothole impacts and crashes. A failed high-speed flywheel can release a tremendous amount of energy.
+
+Instead, put a contained flywheel energy-storage module inboard of each wheel, attached to the chassis, and couple it electrically to that wheel's motor.
+
+Then:
+
+flywheel↔motor-generator↔wheel
+	​
+
+
+rather than mechanically connecting the flywheel directly to the tire.
+
+That also means the flywheel can spin at very high RPM while the road wheel remains at ordinary wheel RPM.
+
+There's another neat benefit: opposing flywheel pairs could counter-rotate:
+
+L
+FL
+	​
+
++L
+FR
+	​
+
+≈0
+L
+RL
+	​
+
++L
+RR
+	​
+
+≈0
+
+so their angular momenta largely cancel instead of making the vehicle resist steering/pitch changes.
+
+Failure operation gets interesting
+
+Suppose VAPS-RIC catastrophically shuts down:
+
+P
+VAPS
+	​
+
+=0
+
+The controller immediately isolates it from the DC bus.
+
+The four flywheel modules then become temporary generators:
+
+P
+FW
+	​
+
+→DC Bus→Wheel Motors
+
+You wouldn't necessarily continue cruising at 70 mph. The safety controller could automatically limit output to something like an emergency mode intended to maintain steering/braking electronics and provide enough propulsion to exit traffic.
+
+The available emergency duration is simply:
+
+t≈
+P
+vehicle
+	​
+
+ηE
+stored
+	​
+
+	​
+
+
+For example, if the flywheel system contained 2 kWh of usable stored energy and emergency propulsion required an average 10 kW:
+
+t=
+10 kW
+2 kWh
+	​
+
+=0.2h
+
+or about 12 minutes idealized, before conversion losses. At 20 mph that's theoretically around four miles. Those numbers are illustrative—the actual vehicle mass, drag, flywheel capacity and safety reserve determine the result.
+
+And there's an even stronger architecture:
+
+VAPS-RIC+Battery+4 Flywheel Buffers+4 Independent Motors
+	​
+
+
+Now you've created three different energy domains:
+
+Fuel: long-duration energy.
+
+Battery: medium-duration electrical storage.
+
+Flywheel: extremely fast charge/discharge and emergency reserve.
+
+The flywheels could absorb hard regenerative-braking pulses that would otherwise hammer the battery and then slowly transfer that energy back to the battery/DC bus. That could make them useful even when nothing has failed.
+
+I'd call this subsystem something like VAPS-KERS (Kinetic Energy Recovery & Survival) or, keeping your naming language, VAPS-HALO — Hardware-Agnostic Limp-Out.
+
+The engineering version I'd pursue is inboard, vacuum-contained, counter-rotating flywheel modules, though—not literal exposed flywheels in the brake rotor. Same idea, substantially less chance of turning an engineering failure into a very enthusiastic physics demonstration.
