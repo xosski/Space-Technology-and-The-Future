@@ -1,0 +1,98 @@
+PTEC-SR Proof-of-Concept White Paper - Version 0.1 Page 1
+PTEC-SR
+Superconducting Rotor - Proof-of-Concept White Paper
+Concept status: exploratory engineering architecture, Version 0.1
+Abstract
+PTEC-SR is a proposed contactless rotating energy core built around superconducting magnetic bearing support, a
+magnetically coupled rotor, stator coils, vacuum or low-conductivity isolation, and a cryogenic subsystem. The purpose of
+the proof of concept is not to claim net energy creation, but to test whether very low mechanical bearing loss, stable
+high-speed rotation, and useful bidirectional electromagnetic coupling can coexist in a compact module. The rotor can
+store rotational energy, accept externally supplied mechanical or electromagnetic energy, and return part of that stored
+energy electrically through conventional induction.
+1. Core Thesis
+The PTEC-SR replaces conventional contact bearings with a superconducting magnetic bearing (SMB) arrangement. A
+levitated rotor is surrounded by stator coils used for motor/generator coupling. Thermal isolation separates the cold
+bearing region from any warm or plasma-facing region. In a larger VAPS/PTEC architecture, the rotor would function as
+an energy buffer and conversion stage rather than as a primary energy source.
+Conservation boundary: Every electrical output term must be traceable to stored rotor energy or an external prime
+input. Magnetic levitation and superconductivity reduce losses; they do not supply continuous free energy.
+2. Proposed Architecture
+Subsystem POC function
+PTEC rotor core Stores angular momentum; carries magnetic field structure.
+Superconducting magnetic bearing Provides contactless support and passive/active stabilization.
+Stator coil array Accelerates/brakes rotor and extracts electrical energy by changing magnetic flux.
+Vacuum / low-conductivity enclosure Reduces aerodynamic drag and thermal conduction.
+Cryogenic loop Maintains the superconducting bearing below its operating temperature.
+Thermal barrier Protects the cold stage from warm engine/plasma-side heat loads.
+Power electronics Controls motor/generator operation and interfaces with a DC bus/storage.
+Sensors + controller Monitors position, speed, temperature, vibration, field strength, and quench state.
+3. Operating Principle
+1) Cool the superconducting bearing assembly below its required operating temperature. 2) Establish the magnetic field
+configuration and levitate/center the rotor. 3) Use stator coils or another external prime mover to accelerate the rotor. 4)
+Hold rotational energy with minimized bearing and windage losses. 5) When power is requested, load the stator
+electrically; the resulting electromagnetic torque slows the rotor while generating electrical output. 6) Recharge by
+reversing the power flow and operating the stator as a motor.
+PTEC-SR Proof-of-Concept White Paper - Version 0.1 Page 2
+The basic relationships are conventional: rotational energy E = 1/2 I omega^2; mechanical power P = tau omega; and
+induced EMF follows the rate of change of magnetic flux. Useful round-trip efficiency is therefore bounded below 100%
+after stator, inverter, cryogenic, magnetic, aerodynamic, and control losses.
+4. Initial POC Targets
+Parameter Exploratory target / test variable
+Rotor geometry Prismatic/tesseract-inspired geometry; mechanically balanced test article
+Bearing High-temperature-superconductor SMB or hybrid magnetic bearing
+Environment Vacuum or inert low-pressure enclosure
+Air gap Adjustable, approximately 2-5 mm starting design space
+Rotation Begin below 5,000 RPM; increase only after validated containment/balance
+Electrical interface Bidirectional inverter/rectifier connected to instrumented DC bus
+Output class Bench-scale first; characterize watts before setting kW targets
+Primary metrics Spin-down loss, bearing drag, cryogenic load, vibration, efficiency, quench margin
+PTEC-SR Proof-of-Concept White Paper - Version 0.1 Page 3
+5. Test Program
+Phase 1 - Static levitation: characterize lift, restoring force, thermal stability, and positional drift with a non-rotating
+mass.
+Phase 2 - Low-speed rotor: validate balancing, emergency touchdown bearings, sensing, vacuum enclosure, and
+controlled spin-down.
+Phase 3 - Loss mapping: measure decay rate versus pressure, temperature, RPM, and magnetic configuration to
+separate bearing, windage, eddy-current, and electrical losses.
+Phase 4 - Motor/generator coupling: measure electrical input during acceleration and recovered electrical energy
+during controlled deceleration. Report round-trip efficiency from calibrated DC-bus measurements.
+Phase 5 - Thermal integration: introduce representative external heat loads while maintaining cryogenic stability. A
+plasma-facing experiment, if pursued, should remain a separate later-stage subsystem until the rotor is independently
+validated.
+6. Instrumentation and Falsifiable Success Criteria
+Minimum instrumentation should include rotor RPM, three-axis displacement, vibration, stator voltage/current, DC-bus
+power, bearing and shield temperatures, vacuum pressure, cryocooler input power, and containment/interlock state. A
+useful POC succeeds if it demonstrates repeatable levitation, controlled acceleration/deceleration, quantified low-loss
+spin-down, stable thermal operation, and a measured energy balance that closes within instrument uncertainty.
+A particularly important figure of merit is whole-system round-trip efficiency: recovered DC energy divided by DC
+energy used to charge the rotor, with cryogenic and control-system consumption explicitly included. This prevents a
+visually impressive low-friction rotor from being mistaken for an energetically favorable complete system.
+7. Vehicle / VAPS Integration Hypothesis
+Within the broader VAPS concept, PTEC-SR can be treated as a bidirectional buffer: external energy -> power electronics
+-> stator -> rotor, and rotor -> stator -> DC bus -> traction/storage. If a plasma or vapor subsystem is investigated, its
+contribution should be measured as an input or conversion process at the same system boundary. The PTEC-SR
+architecture does not by itself make a vehicle fossil-free; that depends on the upstream energy source and total lifecycle
+energy path.
+8. Principal Engineering Risks
+Risk POC mitigation
+Rotor burst / imbalance Conservative RPM progression, precision balancing, remote operation, rated containment.
+Superconductor quench Temperature/field monitoring, automatic shutdown, energy dump path.
+Magnetic instability Active sensing/control and independent touchdown bearings.
+Cryogenic parasitic load Measure cryocooler input explicitly; optimize thermal isolation.
+Eddy-current / hysteresis lossMaterial selection and loss mapping across speed/field conditions.
+Thermal ingress Radiation shields, vacuum gap, ceramic/composite thermal breaks.
+Overstated energy claims Closed energy accounting with calibrated instruments and uncertainty bounds.
+PTEC-SR Proof-of-Concept White Paper - Version 0.1 Page 4
+9. Decision Gate
+The concept should advance only after the bench system demonstrates a favorable, reproducible loss budget and safe
+rotor dynamics. If cryogenic power plus electromagnetic losses overwhelm the bearing-loss advantage, the PTEC-SR
+may still be useful as a specialized flywheel or research platform, but not as an efficiency-improving vehicle energy
+system.
+10. Conclusion
+PTEC-SR is physically plausible as a superconducting-magnetic-bearing flywheel/generator research architecture. Its
+strongest testable proposition is not extraordinary energy production, but whether contactless support and controlled
+electromagnetic coupling can deliver sufficiently low losses to justify the added cryogenic, containment, and control
+complexity. The next rational artifact is a low-energy benchtop rotor with complete instrumentation and a closed energy
+ledger.
+Document note: This white paper formalizes the PTEC-SR concept developed in the preceding POC discussion.
+Numerical performance values are intentionally treated as experimental targets rather than established results.

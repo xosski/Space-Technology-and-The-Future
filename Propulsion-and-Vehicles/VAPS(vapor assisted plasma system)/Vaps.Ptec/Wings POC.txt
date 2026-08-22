@@ -1,0 +1,841 @@
+WING — Wheel Induction Node Generator
+Proof-of-Concept White Paper — Draft v0.1
+Distributed Wheel-Level Regenerative Generation, Braking, Energy Buffering, and Emergency Power Node
+
+Document Classification: Conceptual Engineering White Paper
+System Family: PTEC / DPICN Integrated Vehicle Architecture
+Version: Draft v0.1
+
+Executive Summary
+
+The Wheel Induction Node Generator (WING) is a distributed wheel-level motor-generator architecture intended to convert recoverable vehicle kinetic energy into electrical power while simultaneously providing regenerative braking, localized energy management, and emergency electrical generation.
+
+Rather than treating each wheel as a passive mechanical endpoint, WING turns the wheel assembly into an intelligent energy node.
+
+The basic principle is:
+
+Wheel Rotation↔Electromagnetic Machine↔DC Power Network
+	​
+
+
+During propulsion, electrical energy produces wheel torque.
+
+During regenerative braking or downhill operation, wheel rotation produces electrical energy.
+
+During a primary-system failure, residual vehicle kinetic energy can temporarily power critical electrical systems while the vehicle performs a controlled stop.
+
+WING is intended to integrate with the broader DPICN distributed-node philosophy, in which local nodes monitor their own electrical, thermal, magnetic, and neighboring-system conditions and dynamically isolate faults or redirect energy.
+
+Unlike speculative plasma-generation portions of the larger architecture, the fundamental motor-generator mechanism proposed for WING is based on conventional electromagnetic induction. Its research question is therefore primarily whether the proposed distributed wheel-level implementation provides enough efficiency, redundancy, packaging, and transient-power advantages to justify its complexity and mass.
+
+1. Core Concept
+
+A conventional vehicle separates several wheel-related functions:
+
+propulsion,
+friction braking,
+regenerative braking,
+wheel-speed sensing,
+and energy distribution.
+
+WING proposes combining several of these functions into a modular electromagnetic wheel node:
+
+Motor+Generator+Regenerative Brake+Local Controller+Energy Node
+	​
+
+
+The initial implementation should retain conventional friction brakes as an independent safety system.
+
+2. Operating Principle
+
+Electromagnetic generation follows Faraday's law:
+
+E=−N
+dt
+dΦ
+B
+	​
+
+	​
+
+
+where:
+
+E = induced voltage,
+N = winding turns,
+Φ
+B
+	​
+
+ = magnetic flux.
+
+Relative rotation between the wheel-associated magnetic rotor and stationary windings produces changing magnetic flux.
+
+The same electromagnetic machine can operate in two directions.
+
+Propulsion
+Electrical Energy→Magnetic Field→Wheel Torque
+Regeneration
+Wheel Torque→Changing Magnetic Flux→Electrical Energy
+
+Therefore:
+
+Electrical⇄Mechanical
+	​
+
+3. Proposed WING Architecture
+
+A conceptual module consists of:
+
+               WHEEL / TIRE
+                    │
+                    ▼
+        ╔══════════════════════╗
+        ║ MAGNETIC ROTOR RING  ║
+        ║      ↻ ↻ ↻ ↻         ║
+        ╚══════════╤═══════════╝
+                   │
+             AIR / MECH. GAP
+                   │
+        ╔══════════╧═══════════╗
+        ║     STATOR COILS     ║
+        ║                      ║
+        ║  A      B      C     ║
+        ╚══════════╤═══════════╝
+                   │
+             POWER ELECTRONICS
+                   │
+          ┌────────┴────────┐
+          ▼                 ▼
+     LOCAL BUFFER        DC BUS
+          │                 │
+          └────────┬────────┘
+                   ▼
+            WING CONTROLLER
+
+The rotor is mechanically associated with wheel rotation.
+
+The stator remains fixed relative to the suspension/chassis assembly.
+
+4. Why This Is Not a Transformer
+
+A transformer changes voltage/current through electromagnetic coupling between electrical windings.
+
+WING instead performs mechanical-to-electrical energy conversion.
+
+Consequently, it is more accurately described as a:
+
+wheel-integrated motor-generator
+
+rather than a wheel-mounted transformer.
+
+Transformers and DC/DC conversion may still appear downstream in the power electronics.
+
+5. Four-Node Vehicle Configuration
+
+A mature vehicle could employ four WING nodes:
+
+               FRONT
+
+
+       ┌─────────────────┐
+       │                 │
+     WING-FL           WING-FR
+       │                 │
+       └───────┬─────────┘
+               │
+            DC BUS
+               │
+       ┌───────┴─────────┐
+       │                 │
+     WING-RL           WING-RR
+       │                 │
+       └─────────────────┘
+
+
+                REAR
+
+However, an initial POC could use front-wheel WING modules only, reducing prototype complexity.
+
+6. Operating Modes
+Mode A — Propulsion
+
+WING behaves as a traction motor.
+
+P
+DC
+	​
+
+→P
+wheel
+	​
+
+
+The inverter controls wheel torque electronically.
+
+Mode B — Regenerative Braking
+
+When the driver requests deceleration, WING transitions into generator operation.
+
+E
+vehicle
+	​
+
+→E
+rotor
+	​
+
+→E
+electrical
+	​
+
+
+Recovered energy is routed toward:
+
+Battery
+
+or:
+
+KERS
+
+or another permitted energy buffer.
+
+Friction brakes provide whatever braking force regenerative operation cannot safely supply.
+
+7. Coast/Descent Recovery
+
+WING may also generate during selected downhill or deceleration conditions.
+
+In that situation:
+
+E
+gravitational
+	​
+
+→E
+kinetic
+	​
+
+→E
+electrical
+	​
+
+
+The controller must distinguish useful energy recovery from unnecessary generator drag.
+
+During normal level-road cruising, intentionally loading WING simply to recharge the same source powering propulsion would decrease vehicle range.
+
+8. Energy Conservation Requirement
+
+WING does not produce free energy.
+
+Generator torque opposes wheel rotation:
+
+P
+mechanical
+	​
+
+=τω
+
+and electrical output must satisfy approximately:
+
+P
+electrical
+	​
+
+=η
+WING
+	​
+
+P
+mechanical
+	​
+
+
+where:
+
+0<η
+WING
+	​
+
+<1
+
+Therefore:
+
+P
+electrical
+	​
+
+<P
+mechanical
+	​
+
+
+under real operating conditions.
+
+This establishes an important control rule:
+
+Generate when the vehicle needs to lose kinetic energy anyway.
+	​
+
+
+WING should not continuously generate during powered cruising merely to recharge the traction battery.
+
+9. WING + KERS
+
+WING becomes more interesting when paired with the previously proposed flywheel/KERS architecture.
+
+During hard braking:
+
+VEHICLE MOTION
+      │
+      ▼
+     WING
+      │
+      ▼
+  DC POWER
+      │
+ ┌────┴─────┐
+ ▼          ▼
+KERS      BATTERY
+
+The high-power transient can potentially be divided between storage systems.
+
+Conceptually:
+
+P
+regen
+	​
+
+=P
+battery
+	​
+
++P
+KERS
+	​
+
+
+This could allow KERS to absorb rapid power events while the battery receives energy at a rate compatible with its operating limits.
+
+10. Emergency Generation Mode
+
+WING also provides an interesting failure-management capability.
+
+Suppose the primary propulsion source becomes electrically isolated while the vehicle is moving.
+
+The vehicle still contains kinetic energy:
+
+E
+k
+	​
+
+=
+2
+1
+	​
+
+mv
+2
+
+WING can convert a portion of that remaining kinetic energy into electrical power:
+
+Vehicle Momentum→WING→Emergency DC Bus
+	​
+
+
+The emergency bus could prioritize:
+
+brake controls,
+steering controls,
+vehicle computer,
+hazard lighting,
+cooling controls,
+communication equipment,
+safety systems.
+
+The purpose is not indefinite propulsion.
+
+It is to preserve vehicle control while safely dissipating the kinetic energy the vehicle already possesses.
+
+11. WING + KERS Emergency Mode
+
+If KERS already contains stored energy when the primary system fails:
+
+E
+available
+	​
+
+=E
+KERS
+	​
+
++E
+vehiclekinetic
+	​
+
++E
+emergencybattery
+	​
+
+
+WING can operate bidirectionally.
+
+First:
+
+vehicle kinetic energy→WING→emergency bus
+
+Then, if necessary:
+
+KERS/DC reserve→WING→limited wheel torque
+
+That creates a short-duration controlled-stop / limp architecture.
+
+12. DPICN Integration
+
+WING fits naturally into the existing DPICN concept.
+
+The DPICN architecture proposes distributed nodes that monitor local field strength, voltage, magnetic orientation, plasma condition where applicable, and neighboring-node status. It specifically emphasizes fault isolation and local decision-making.
+
+A WING node could similarly monitor:
+
+ω
+w
+	​
+
+
+wheel speed,
+
+τ
+w
+	​
+
+
+wheel torque,
+
+T
+s
+	​
+
+
+stator temperature,
+
+I
+s
+	​
+
+
+stator current,
+
+V
+bus
+	​
+
+
+local bus voltage,
+
+and:
+
+a
+slip
+	​
+
+
+wheel-slip condition.
+
+13. Local Intelligence
+
+Each WING controller receives commands from the vehicle controller but maintains local protective authority.
+
+       MASTER VEHICLE CONTROLLER
+                  │
+        ┌─────────┼─────────┐
+        │         │         │
+        ▼         ▼         ▼
+      WING      DPICN      KERS
+        │
+        ▼
+  Local measurements
+        │
+        ▼
+ Torque / Regen Decision
+
+For example, if one wheel begins losing traction, that WING node can reduce regenerative torque without requiring the entire vehicle's regenerative system to shut down.
+
+14. Fault Isolation
+
+A distributed four-WING configuration provides additional redundancy.
+
+If:
+
+WING
+FL
+	​
+
+=FAULT
+
+then:
+
+WING
+FR
+	​
+
+,WING
+RL
+	​
+
+,WING
+RR
+	​
+
+
+may remain operational.
+
+The controller must compensate for asymmetric torque.
+
+A failed node is electrically isolated:
+
+FL       FR
+X        O
+         │
+         ▼
+      ACTIVE
+
+
+RL       RR
+O        O
+
+This aligns directly with DPICN's distributed fault-tolerance philosophy.
+
+15. Integration with PTEC Vehicle Architecture
+
+Within the larger architecture:
+
+            PRIMARY ENERGY
+                  │
+                  ▼
+               DC BUS
+                  │
+        ┌─────────┼─────────┐
+        ▼         ▼         ▼
+      PTEC      KERS      AUX
+        │         │
+        └────┬────┘
+             │
+     ┌───────┼────────┐
+     ▼       ▼        ▼
+   WING    WING     WING...
+     │       │
+     ▼       ▼
+   WHEEL   WHEEL
+
+The important architectural distinction is that WING operates directly on the electrical/mechanical energy network.
+
+It does not require plasma to function.
+
+That gives the overall experimental vehicle another conventional-physics fallback layer.
+
+16. Thermal Management
+
+Wheel-area electronics experience difficult conditions:
+
+brake heat,
+road debris,
+vibration,
+water,
+salt,
+suspension shock,
+rapid temperature changes.
+
+Consequently, thermal management is a central WING requirement.
+
+Sensors should monitor:
+
+T
+rotor
+	​
+
+T
+stator
+	​
+
+T
+inverter
+	​
+
+
+If temperatures exceed defined limits, regenerative power should be reduced automatically.
+
+17. Unsprung-Mass Problem
+
+Putting substantial generator hardware directly into the wheel increases unsprung mass.
+
+That can negatively affect:
+
+ride quality,
+tire contact,
+suspension response,
+handling,
+durability.
+
+Therefore, the POC should compare two architectures.
+
+Architecture A — Hub WING
+
+Motor-generator integrated directly into the wheel.
+
+Advantages:
+
+direct coupling,
+compact drivetrain,
+independent wheel control.
+
+Disadvantage:
+
+increased unsprung mass.
+Architecture B — Inboard WING
+
+Motor-generator mounted to the sprung chassis with a short mechanical connection to the wheel.
+
+Advantages:
+
+lower unsprung mass,
+easier cooling,
+easier servicing,
+better environmental protection.
+
+The inboard architecture may ultimately be preferable.
+
+18. Relationship to Friction Brakes
+
+WING should not eliminate mechanical brakes in the first-generation design.
+
+Instead:
+
+F
+brake
+	​
+
+=F
+regen
+	​
+
++F
+friction
+	​
+
+
+The controller uses regeneration whenever appropriate and blends conventional braking when:
+
+battery/KERS cannot accept additional energy,
+vehicle speed becomes too low for useful regeneration,
+emergency braking is required,
+WING overheats,
+electrical failure occurs,
+traction conditions demand it.
+
+Thus the mechanical brake becomes the independent safety layer.
+
+19. POC Test Platform
+
+The first WING prototype does not require a complete vehicle.
+
+A bench system could contain:
+
+VARIABLE-SPEED DRIVE MOTOR
+          │
+          ▼
+      TEST SHAFT
+          │
+          ▼
+     WING ROTOR
+          │
+     STATOR COILS
+          │
+          ▼
+      INVERTER
+          │
+          ▼
+     DC ELECTRONIC LOAD
+
+Instrumentation would measure:
+
+shaft RPM,
+input torque,
+electrical voltage,
+current,
+winding temperature,
+rotor temperature,
+vibration.
+20. Primary Experimental Equations
+
+Mechanical input:
+
+P
+mech
+	​
+
+=τω
+
+Electrical output:
+
+P
+elec
+	​
+
+=VI
+
+Generator efficiency:
+
+η
+WING
+	​
+
+=
+P
+mech
+	​
+
+P
+elec
+	​
+
+	​
+
+	​
+
+
+Thermal/mechanical loss:
+
+P
+loss
+	​
+
+=P
+mech
+	​
+
+−P
+elec
+	​
+
+
+These three measurements determine whether subsequent optimization is meaningful.
+
+21. Development Program
+WING-1 — Bench Generator
+
+Demonstrate wheel-speed electrical generation.
+
+WING-2 — Bidirectional Motor/Generator
+
+Demonstrate:
+
+Motor⇄Generator
+
+using the same electromagnetic assembly.
+
+WING-3 — Regenerative Brake
+
+Measure braking torque versus recovered electrical power.
+
+WING-4 — KERS Integration
+
+Route rapid regenerative events between WING, battery, and KERS.
+
+WING-5 — Dual-Wheel Test
+
+Install two front WING modules and demonstrate independent torque control.
+
+WING-6 — Failure Mode
+
+Disconnect the primary energy source during a controlled test and determine whether residual wheel energy maintains the emergency bus during deceleration.
+
+WING-7 — Four-Wheel Demonstrator
+
+Integrate four independently controlled WING nodes into the larger vehicle architecture.
+
+22. Success Criteria
+
+WING would be considered promising if the POC demonstrates:
+
+efficient bidirectional motor-generator operation,
+useful regenerative braking,
+controllable brake blending,
+acceptable thermal behavior,
+acceptable unsprung mass or successful inboard mounting,
+independent wheel torque control,
+effective fault isolation,
+KERS compatibility,
+emergency DC generation during primary-power isolation.
+23. Primary Failure Modes
+
+Engineering analysis should specifically investigate:
+
+rotor overspeed,
+winding overheating,
+inverter failure,
+magnet degradation,
+bearing failure,
+short circuits,
+wheel-speed sensor failure,
+asymmetric regenerative torque,
+water/debris ingress,
+mechanical impact damage,
+DC bus overvoltage,
+uncontrolled regenerative braking.
+
+A WING failure must default toward removing electromagnetic torque, allowing the independent mechanical brake system to retain control.
+
+24. Energy Doctrine
+
+The governing rule is:
+
+WING recovers energy that already exists.
+	​
+
+
+It does not generate additional vehicle energy during powered cruising.
+
+Its advantage comes from capturing energy that would otherwise become brake heat, improving transient energy management, distributing propulsion/control across independent nodes, and maintaining limited electrical functionality during failures.
+
+25. Working Definition
+
+WING — Wheel Induction Node Generator — is a distributed bidirectional wheel-level electromagnetic machine that provides propulsion, regenerative generation, braking-energy recovery, local energy management, and emergency electrical generation while operating as an intelligent node within the vehicle's wider DC and distributed-control architecture.
+
+26. Integrated System Position
+
+With WING added, the larger architecture becomes:
+
+PTEC+HPCC+DPICN+RIC+LHPC+KERS+WING
+	​
+
+
+But WING occupies a particularly important position because its basic operating principle doesn't depend upon the speculative plasma subsystems.
+
+The hierarchy can therefore degrade gracefully:
+
+FULL SYSTEM
+PTEC / HPCC / DPICN / RIC / LHPC
+              ↓
+             KERS
+              ↓
+             WING
+              ↓
+         FRICTION BRAKES
+
+Each layer can fail without requiring the next layer to fail with it.
+
+That gives WING two jobs:
+
+When everything works, recover the motion.
+
+When something doesn't, preserve control.
+
+WING v0.1
+
+Wheel Induction Node Generator
+
+The wheel doesn't merely consume energy.
+
+It remembers where the energy went.
