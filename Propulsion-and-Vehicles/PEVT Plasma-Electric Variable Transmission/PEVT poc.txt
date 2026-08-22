@@ -1,0 +1,591 @@
+PEVT: Plasma-Electric Variable Transmission
+
+Concept Classification: Experimental Electromechanical / Plasma-Electric Energy Conversion System
+Development Stage: Concept / TRL 1–2
+Architecture Family: TCPPE / PTEC / PPCM
+Date: August 2026
+
+I. Abstract
+
+The Plasma-Electric Variable Transmission (PEVT) is a proposed experimental energy-conversion architecture combining conventional mechanical power transmission with electrically excited plasma and electromagnetic conditioning stages.
+
+The central concept is analogous to a mechanical transmission, but instead of using gears alone to modify the relationship between input speed and output torque, PEVT investigates whether a controlled sequence of:
+
+mechanical rotation → electrical generation → plasma/electromagnetic conditioning → electrical or mechanical recovery
+
+can provide useful variable energy-transfer characteristics.
+
+The proposed proof of concept consists of mechanically coupled rotating stages, electrically driven plasma or discharge modules, a Plasma/Electric Conditioning stage (PTEC), and instrumentation capable of independently measuring mechanical, electrical, plasma, magnetic, and thermal energy flows.
+
+PEVT does not assume creation of energy, reactionless propulsion, or greater-than-unity operation.
+
+Its primary research question is considerably narrower:
+
+Can an actively conditioned plasma/electromagnetic intermediate stage measurably alter the efficiency, torque-speed behavior, transient response, controllability, or recoverable electrical energy of a mechanically coupled electromechanical transmission?
+
+The POC is designed so that this hypothesis can be experimentally falsified.
+
+II. Conceptual Architecture
+
+The proposed PEVT architecture contains three primary conversion stages connected through mechanical and electrical pathways.
+
+                 ┌─────────────────┐
+                 │      PTEC       │
+                 │ Plasma/Electric │
+                 │  Conditioning   │
+                 └────────┬────────┘
+                          │
+                    CONTROLLED BUS
+                    ↙            ↘
+
+
+             ┌─────────┐      ┌─────────┐
+ INPUT ─────▶│ STAGE A │      │ STAGE C │─────▶ OUTPUT
+             │ E / P   │      │ P / E/M │
+             └────┬────┘      └────┬────┘
+                  │                 │
+                  O=================O
+                     DRIVE SYSTEM
+                         ↻
+
+Where:
+
+E = Electrical energy
+P = Plasma state
+M = Mechanical energy
+
+The mechanical coupling may initially be implemented using a chain, belt, or common shaft.
+
+The plasma is not proposed to travel through the mechanical chain.
+
+Instead, the mechanical coupling transfers rotational energy while the electrical/plasma subsystem modifies or controls energy conversion occurring between mechanically coupled stages.
+
+This separation is fundamental to the PEVT hypothesis.
+
+III. Relationship to TCPPE
+
+The existing Tesla Coil Plasma-Polarity Engine (TCPPE) proposes dual electrical excitation, plasma-lined channels, polarity inversion, and bidirectional energy regulation.
+
+The associated TCPPE architecture also describes dual coils, plasma channels, bipolar modulators, and feedback between plasma/electrical subsystems.
+
+PEVT introduces an additional subsystem:
+
+mechanical transmission and rotational synchronization between plasma-electric conversion stages.
+
+The resulting conceptual hierarchy is:
+
+TCPPE
+Electrical/plasma excitation
+       │
+       ▼
+PTEC
+Plasma/electromagnetic conditioning
+       │
+       ▼
+PEVT
+Mechanical/electrical transmission
+       │
+       ▼
+PPCM
+Higher-level plasma conditioning/distribution
+
+Each component can therefore be investigated independently before attempting full system integration.
+
+IV. Core Hypothesis
+
+The PEVT proof of concept tests the hypothesis that an electrically controlled plasma or ionized-gas region inserted into an electromechanical energy-conversion architecture may modify measurable system behavior.
+
+Possible measurable effects include changes in:
+
+electrical impedance;
+inductive coupling;
+electromagnetic phase relationships;
+generator loading;
+motor loading;
+torque versus rotational velocity;
+transient response;
+electrical energy recovery;
+plasma stability;
+thermal losses;
+conversion efficiency.
+
+No particular effect is assumed in advance.
+
+The null hypothesis is:
+
+H
+0
+	​
+
+:PTEC/plasma activation produces no useful improvement over the control system.
+
+The experimental hypothesis is:
+
+H
+1
+	​
+
+:PTEC/plasma activation produces a reproducible measurable change in one or more system parameters.
+
+The distinction is intentional: PEVT succeeds as an experiment even if the proposed effect is disproven.
+
+V. Proposed PEVT Modules
+5.1 Stage A — Primary Electromechanical Converter
+
+Stage A provides the initial coupling between rotational and electrical energy.
+
+A laboratory implementation could use an instrumented motor-generator assembly.
+
+Its purpose is to establish known:
+
+ω
+A
+	​
+
+
+rotational velocity,
+
+T
+A
+	​
+
+
+shaft torque, and
+
+P
+A
+	​
+
+=T
+A
+	​
+
+ω
+A
+	​
+
+
+mechanical power.
+
+Electrical output is simultaneously measured using:
+
+P
+E
+	​
+
+(t)=V(t)I(t)
+
+with appropriate treatment of phase and waveform shape for non-DC operation.
+
+Stage A therefore provides a calibrated reference against which later PEVT configurations can be compared.
+
+VI. Plasma/Electric Interaction Stage
+
+The first experimental plasma stage consists of two or more independently controlled electrodes or field-generating elements surrounding a controlled gas/discharge region.
+
+The original conceptual drawing can therefore be interpreted as:
+
+      Electrode / field element A
+                  │
+                  │
+             ┌─────────┐
+             │ PLASMA  │
+             │ REGION  │
+             └─────────┘
+                  │
+                  │
+      Electrode / field element B
+
+Rather than permanently assigning the two elements positive and negative polarity, the POC should permit multiple excitation modes.
+
+These could include opposite-polarity excitation, alternating excitation, phase-offset AC excitation, pulsed excitation, and reference-electrode operation.
+
+This allows the experiment to investigate whether different electrical boundary conditions produce significantly different transmission behavior.
+
+VII. PTEC Conditioning Stage
+
+PTEC acts as the control layer between electrical generation and the plasma interaction region.
+
+For purposes of the PEVT experiment, PTEC does not need to demonstrate exotic energy amplification.
+
+Its initial purpose is simply to control measurable electrical parameters.
+
+These include voltage, current, frequency, phase, pulse timing, polarity, duty cycle, and discharge operating conditions.
+
+This converts the conceptual "super-conditioning" stage into something experimentally definable:
+
+PTEC controls the state of the plasma-electric interface while PEVT measures its consequences.
+
+VIII. Stage C — Secondary Conversion Stage
+
+The secondary stage attempts to recover useful electrical or mechanical energy from the coupled system.
+
+Possible implementations could eventually investigate induction-based conversion, conventional motor-generator conversion, or plasma/electromagnetic interaction.
+
+For the earliest POC, conventional hardware should be preferred wherever possible.
+
+This is important because conventional equipment provides known efficiency curves and therefore gives the plasma stage a meaningful baseline.
+
+The experiment is not:
+
+"Can this apparatus rotate?"
+
+The relevant question is:
+
+"Does activation and conditioning of the plasma stage change the measured behavior of an otherwise characterized transmission?"
+
+IX. Mechanical Coupling
+
+The mechanical transmission loop is the defining addition introduced by PEVT.
+
+A chain, belt, geared coupling, or common shaft mechanically links the rotating conversion stages.
+
+Instrumentation should measure rotational velocity and torque on both sides of the system.
+
+Mechanical power can then be calculated:
+
+P
+m
+	​
+
+=Tω
+
+This allows researchers to determine whether changes observed electrically correspond to genuine mechanical changes rather than measurement artifacts elsewhere in the circuit.
+
+The drive mechanism also provides rotational synchronization between conversion stages.
+
+Thus the mechanical transmission acts simultaneously as a power-transfer mechanism and experimental timing reference.
+
+X. Variable Transmission Concept
+
+The "variable" portion of PEVT does not initially imply a conventional continuously variable transmission ratio.
+
+Instead, PEVT proposes an electronically adjustable energy-transfer characteristic.
+
+Changing PTEC parameters could theoretically alter the operating point of the coupled system.
+
+Define a control vector:
+
+C=[V, I, f, ϕ, D, B, p]
+
+where approximately:
+
+V=voltage
+I=current
+f=excitation frequency
+ϕ=phase offset
+D=pulse duty cycle
+B=magnetic field
+p=gas pressure
+
+PEVT then asks whether changing C changes the measurable transmission state:
+
+C→{T,ω,P,η,thermal loss}
+
+in a reproducible manner.
+
+That relationship would constitute the PEVT "transmission map."
+
+XI. Experimental Configuration
+
+The initial apparatus should be intentionally modest.
+
+ Electrical
+  Supply
+    │
+    ▼
+┌─────────┐
+│ Motor A │
+└────┬────┘
+     │
+ torque/RPM
+     │
+     O════════════════════════O
+            drive loop
+     │                        │
+┌────▼─────┐             ┌────▼─────┐
+│Generator │             │Converter │
+│ Stage A  │             │ Stage C  │
+└────┬─────┘             └────┬─────┘
+     │                        │
+     └───────┐       ┌────────┘
+             ▼       ▼
+            ┌───────────┐
+            │   PTEC    │
+            └─────┬─────┘
+                  │
+             ┌────▼────┐
+             │ Plasma  │
+             │ Chamber │
+             └─────────┘
+
+The exact configuration can change as the underlying coupling mechanism becomes better defined.
+
+The critical requirement is that every energy input and output be independently measurable.
+
+XII. Three-State Proof-of-Concept Test
+
+The most useful first experiment consists of three configurations.
+
+Configuration A — Baseline
+
+Mechanical transmission operating normally.
+
+Plasma disabled.
+
+PTEC disabled.
+
+Measure:
+
+P
+in,A
+	​
+
+,P
+out,A
+	​
+
+,T
+A
+	​
+
+,ω
+A
+	​
+
+
+and thermal losses.
+
+Configuration B — Plasma Active
+
+Mechanical configuration remains unchanged.
+
+Plasma subsystem is activated without optimized conditioning.
+
+Measure the same quantities.
+
+Configuration C — PTEC Conditioned
+
+Mechanical configuration again remains unchanged.
+
+Plasma is activated while PTEC systematically varies the excitation parameters.
+
+Measure:
+
+P
+in,C
+	​
+
+,P
+out,C
+	​
+
+,T
+C
+	​
+
+,ω
+C
+	​
+
+
+along with plasma and electromagnetic parameters.
+
+The resulting transmission efficiency is:
+
+η=
+P
+total external input
+	​
+
+P
+useful output
+	​
+
+	​
+
+
+with all plasma power supplies, control electronics, cooling systems, magnets, motors, and auxiliary equipment included in the denominator.
+
+That last requirement is essential.
+
+XIII. Instrumentation
+
+A meaningful PEVT test requires synchronized measurements across several domains.
+
+Domain	Measurements
+Mechanical	RPM, torque, vibration, chain/belt tension
+Electrical	voltage, current, real power, reactive power, phase
+Plasma	optical spectrum, discharge current, stability
+Magnetic	field magnitude and temporal variation
+Thermal	component/chamber temperature and rejected heat
+Environmental	gas pressure, composition and flow
+Timing	synchronized high-speed acquisition
+
+For an experimental claim to be meaningful, uncertainty and calibration data should accompany every important measurement.
+
+XIV. Primary Performance Metrics
+
+PEVT should initially focus on four metrics.
+
+Transmission efficiency
+η
+PEVT
+	​
+
+=
+P
+in
+	​
+
+P
+out
+	​
+
+	​
+
+Conditioning advantage
+Δη
+PTEC
+	​
+
+=η
+conditioned
+	​
+
+−η
+plasma-only
+	​
+
+Plasma-stage penalty/advantage
+Δη
+plasma
+	​
+
+=η
+plasma
+	​
+
+−η
+baseline
+	​
+
+Torque-speed modification
+ΔT(ω)=T
+conditioned
+	​
+
+(ω)−T
+baseline
+	​
+
+(ω)
+
+These quantities transform the idea into something a laboratory can actually evaluate.
+
+XV. Success Criteria
+
+PEVT should not define success as merely producing plasma, rotating a shaft, or producing voltage.
+
+Those phenomena are already expected.
+
+A successful POC would instead demonstrate a statistically meaningful and repeatable alteration of transmission behavior attributable specifically to the conditioned plasma/electromagnetic stage.
+
+Evidence should survive:
+
+repeated runs;
+randomized activation/deactivation;
+matched control experiments;
+sensor calibration;
+complete input/output power accounting;
+uncertainty analysis.
+
+Ideally, an independent laboratory should be capable of reproducing the result.
+
+XVI. Failure Criteria
+
+The PEVT hypothesis should be considered unsupported under tested conditions if:
+
+∣Δη∣≤measurement uncertainty
+
+or if observed changes can be explained by ordinary heating, friction, electromagnetic interference with instrumentation, altered mechanical loading, power-supply behavior, or other uncontrolled variables.
+
+A negative result would still constrain future TCPPE/PTEC development.
+
+XVII. Engineering Risks
+
+The principal near-term risks are not speculative physics but conventional engineering problems.
+
+High-voltage discharge introduces arcing and insulation challenges.
+
+Plasma systems introduce thermal loading and material erosion.
+
+Rapidly changing electromagnetic fields can contaminate sensor measurements.
+
+Mechanical rotating assemblies introduce vibration and failure hazards.
+
+The interaction of high voltage, plasma, rotating machinery, and stored electrical energy means the initial prototype belongs in a properly equipped laboratory environment rather than an improvised high-power setup.
+
+XVIII. Development Roadmap
+
+Phase I — Simulation and analytical model
+
+Develop a complete energy-flow model and determine expected baseline losses.
+
+Phase II — Mechanical reference transmission
+
+Build and characterize the motor/generator transmission without plasma.
+
+Phase III — Static plasma experiment
+
+Characterize the proposed PTEC/plasma subsystem independently of rotating machinery.
+
+Phase IV — Low-power integration
+
+Couple PTEC/plasma operation to the instrumented transmission.
+
+Phase V — Parameter sweep
+
+Generate the first experimental:
+
+T(ω,C)
+
+and
+
+η(ω,C)
+
+maps.
+
+Phase VI — Independent replication
+
+Provide apparatus geometry, operating parameters, calibration procedures, raw measurements, and analysis code to an external laboratory.
+
+Only after reproducible results should higher-power aerospace applications be considered.
+
+XIX. Potential Research Relevance
+
+If a measurable effect exists, PEVT could potentially warrant further investigation for electromechanical energy management, electrically variable transmission behavior, plasma-assisted power conversion, regenerative systems, high-power aerospace powertrains, or integrated plasma/electromagnetic systems.
+
+These are potential research directions rather than demonstrated applications.
+
+The immediate value of PEVT is therefore not a claim that it replaces an automotive or spacecraft transmission.
+
+Its value is that it creates a controlled experimental platform for answering whether the proposed coupling mechanism does anything useful at all.
+
+XX. Conclusion
+
+The Plasma-Electric Variable Transmission (PEVT) converts a broader speculative plasma-power concept into a bounded experimental question.
+
+The architecture combines a conventional mechanical transmission with electrical generation, controlled plasma excitation, electromagnetic conditioning, and energy recovery.
+
+Rather than presuming extraordinary performance, PEVT is designed around comparative measurement:
+
+Baseline→Plasma→Conditioned Plasma
+	​
+
+
+If conditioning produces no measurable benefit, the hypothesis can be rejected or revised.
+
+If a reproducible difference appears, its magnitude, mechanism, efficiency, and scaling behavior can then be investigated independently.
+
+That makes PEVT particularly useful inside the larger GhostCore architecture: it converts the idea from "a plasma transmission should work" into "here is the apparatus capable of proving whether it works."
