@@ -1,0 +1,335 @@
+Your sketch reads like three repeating cylinders where the green blocks are magnetic piston/translator assemblies, the orange rings are induction coils, the blue shapes are the upper magnetic/field structures, and the red arrows are plasma/pressure drive from below.
+
+The clean version is:
+
+plasma pressure→magnetic piston motion→changing magnetic flux→electrical generation
+	​
+
+
+So the magnet is effectively the piston.
+
+What the engine cycle would look like
+
+Instead of:
+
+fuel-air → spark → combustion → piston → crankshaft
+
+you'd have something closer to:
+
+working gas/plasma → pressure pulse → magnetic translator → induction coils → electricity
+
+Conceptually:
+
+          UPPER RETURN / FIELD STAGE
+             magnetic control
+                  ║
+            ┌──────────┐
+            │  COILS   │
+            │ )))))))) │
+            └────┬─────┘
+                 │
+             [ MAGNET ]
+             [ PISTON ]
+                 ↑
+                 │
+           plasma pressure
+                 ↑
+         ┌───────────────┐
+         │ PLASMA CHAMBER│
+         └───────────────┘
+
+When the magnetic piston moves through the coil stack, Faraday's law gives:
+
+E=−N
+dt
+dΦ
+	​
+
+
+So faster motion and stronger magnetic flux generally increase the induced voltage.
+
+That means your “transformer above the cylinder” is better described as a linear alternator/stator.
+
+And you don't necessarily need a crankshaft
+
+That's probably the most interesting part.
+
+A normal piston engine converts linear motion into rotation through:
+
+piston→connecting rod→crankshaft
+
+Your architecture could instead go:
+
+plasma→linear magnet→electricity
+
+and then:
+
+electricity→traction motor
+
+So mechanically, the engine can become much simpler.
+
+It's similar in overall philosophy to a free-piston linear generator, except your proposed working-fluid and field-control stages are different.
+
+The upper field could also return the piston
+
+You could potentially use the upper coil assembly in two modes.
+
+During the power stroke:
+
+moving magnet→coil→electric generation
+
+Then afterward, the power electronics reverse the stator behavior:
+
+coil current→magnetic force→return piston
+
+So the same coil assembly becomes both:
+
+generator + electromagnetic return spring
+
+That gives you an electronically controlled stroke.
+
+No crankshaft required.
+
+Three cylinders could be phase shifted
+
+Your three-cylinder drawing makes sense if they operate out of phase:
+
+Cylinder A   ↑ power
+Cylinder B   ↓ return
+Cylinder C   ↕ compression/charge
+
+
+      120° phase relationship
+
+Then:
+
+A(t)+B(t)+C(t)
+
+can produce a smoother combined electrical output.
+
+Instead of balancing crankshaft torque, you're balancing electrical generation pulses.
+
+That might feed very naturally into your PEVT architecture.
+
+Where PEVT comes in
+
+This could actually become the prime mover upstream of PEVT:
+
+        PLASMA GENERATOR
+               │
+               ▼
+   LINEAR MAGNETIC PISTON ENGINE
+        │       │       │
+       Cyl A   Cyl B   Cyl C
+        │       │       │
+        └───────┼───────┘
+                ▼
+          HIGH-VOLTAGE BUS
+                │
+               PTEC
+                │
+               PEVT
+                │
+          TRACTION MOTORS
+
+So the vehicle doesn't need a mechanical gearbox between the engine and wheels.
+
+PEVT becomes the electrical/plasma energy-management transmission.
+
+One important change I'd make
+
+I would not put permanent magnets directly in the hottest part of the plasma chamber.
+
+Strong permanent magnets can lose performance when overheated, and some permanently demagnetize above their operating range.
+
+Instead:
+
+PLASMA CHAMBER
+     │
+ ceramic / thermal barrier
+     │
+ nonmagnetic piston face
+     │
+ magnetic translator
+     │
+ induction coils
+
+So plasma pushes a high-temperature piston face, while the magnet sits farther away in a cooler translator section.
+
+Or even better, use a ferromagnetic/soft-magnetic translator and keep the strongest permanent magnets or electromagnets in the stationary stator.
+
+That lowers the moving mass and improves thermal survival.
+
+Another possibility: no combustion at all
+
+You also don't necessarily need “combustible plasma.”
+
+A cleaner research version is:
+
+external energy→heat/ionize working gas→pressure pulse→linear generator
+
+The working fluid could be repeatedly heated, expanded and recovered.
+
+That lets you test the mechanical/electrical architecture separately from whatever future VAPS plasma-generation mechanism you ultimately want.
+
+What matters experimentally
+
+For one cylinder, measure:
+
+P
+plasma/in
+	​
+
+F(t)
+x(t)
+v(t)
+V(t),I(t)
+
+and rejected heat.
+
+Mechanical work on the translator is:
+
+W=∫Fdx
+
+while generated electrical energy is:
+
+E
+elec
+	​
+
+=∫VIdt
+
+Then:
+
+η
+linear generator
+	​
+
+=
+E
+working-fluid/input
+	​
+
+E
+electric,out
+	​
+
+	​
+
+
+That's the number that tells us whether this architecture is useful.
+
+I'd give this engine its own subsystem name
+
+A few possibilities:
+
+PLME — Plasma Linear Magnetic Engine
+
+PLIG — Plasma Linear Induction Generator
+
+or my favorite for the research version:
+
+PLP-GEN
+
+Plasma Linear Piston Generator
+
+Then your hypothetical vehicle architecture becomes:
+
+VAPS→PLP-GEN→PTEC→PEVT→traction
+	​
+
+
+And that is actually a cleaner evolution of your idea because each subsystem now has one job:
+
+VAPS creates/conditions the energetic working fluid.
+
+PLP-GEN converts pressure into electricity.
+
+PTEC conditions the electrical/plasma state.
+
+PEVT manages distribution and transmission behavior.
+In your drawing, I read it as:
+
+Top bank: plasma chamber/driver → magnetic translator moving downward/upward through an induction region.
+Bottom bank: geometrically mirrored version → magnetic translator operating in the opposite direction.
+The red arrows represent the two translators reciprocating toward and away from the shared central plane.
+Electrically, the lower coils can be wound or connected with reversed polarity so that the induced voltages add constructively rather than cancel.
+
+The important distinction is that physically flipping the second engine does not automatically give useful “reverse polarity.” Faraday's law cares about both magnetic-flux direction and coil orientation:
+
+V=−N
+dt
+dΦ
+	​
+
+
+So if you mirror the magnet motion, magnet orientation, and/or coil winding, you can deliberately choose whether the two generator banks produce:
+
+V
+top
+	​
+
++V
+bottom
+	​
+
+
+or oppose each other:
+
+V
+top
+	​
+
+−V
+bottom
+	​
+
+.
+
+That's actually more interesting than simply putting another engine underneath it.
+
+What your architecture could become
+
+Think of each vertical pair as one double-ended electromagnetic cylinder:
+
+        TOP PLASMA / FIELD DRIVER
+                 ↓ ↑
+          ┌─────────────┐
+          │ Upper coils │
+          │     ║       │
+          │  MAGNET A   │
+          └──────┬──────┘
+                 ↕
+       ═══ CENTRAL FIELD PLANE ═══
+                 ↕
+          ┌──────┴──────┐
+          │  MAGNET B   │
+          │     ║       │
+          │ Lower coils │
+          └─────────────┘
+                 ↑ ↓
+       BOTTOM PLASMA / FIELD DRIVER
+
+Now phase three of these assemblies by roughly 120°. Instead of a crankshaft mechanically synchronizing pistons, electromagnetic control becomes the synchronization mechanism.
+
+There are also several operating modes worth putting into the POC. In generator mode, both plasma/pressure events accelerate the translators and the coils extract electrical energy. In regenerative braking, the coils deliberately oppose translator motion and recover energy. In electromagnetic return mode, stored electrical energy reverses coil current to help return the translators. And in a differential mode, the controller intentionally changes the top/bottom field strengths to alter stroke timing or force.
+
+The particularly elegant version would not have the two magnets collide in the center. Give each translator a bounded stroke and put the central region under active electromagnetic control. The machine then resembles two linear alternators facing each other.
+
+There is a potentially useful mechanical consequence too: if
+
+F
+top
+	​
+
+≈−F
+bottom
+	​
+
+,
+
+a substantial portion of the reciprocating reaction forces can cancel internally. That could mean less vibration than an equivalent one-sided linear generator, although the actual cancellation would depend heavily on timing and moving masses.
+
+I'd call this variant something like PEVT-OPG — Plasma-Electric Variable Transmission, Opposed-Polarity Generator.
+
+And your new drawing is much closer to the architecture than my previous rendering: two mirrored banks facing one another, not merely three ordinary plasma pistons. The next useful drawing would be a cutaway of exactly this six-cylinder mirrored arrangement, with the top/bottom magnet polarity, coil winding direction, plasma chambers, center plane, and electrical combining bus explicitly marked.
