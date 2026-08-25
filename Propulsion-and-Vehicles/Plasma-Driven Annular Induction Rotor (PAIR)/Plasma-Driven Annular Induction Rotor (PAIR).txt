@@ -1,0 +1,48 @@
+Imagine each yellow element in your sketch not as a flat ring, but as an annular rotor whose inner surface contains cupped or helical vanes. Plasma moving through the center produces tangential force on those vanes:
+
+plasma flow→vane force→rotor torque→ω
+
+Then the rotating portion carries permanent magnets or another magnetic structure, while stationary induction coils sit outside the plasma boundary. Rotation changes magnetic flux through those coils:
+
+V=−N
+dt
+dΦ
+	​
+
+
+So the complete energy path becomes:
+
+plasma kinetic/pressure energy → rotor → magnetic flux variation → electrical output.
+
+I'd call the component a Plasma-Driven Annular Induction Rotor (PAIR), or, if we keep it within your conditioning-manifold naming system, Rotary Plasma Energy Recovery Stage (R-PERS).
+
+The cupping you've drawn is important. A completely symmetrical ring wouldn't extract much directional torque. Instead, each rotor would need something analogous to turbine blades: plasma hits a curved surface, changes momentum/direction, and the reaction produces torque. The blade geometry could simultaneously introduce controlled swirl into the downstream plasma.
+
+There is also an interesting reason to use multiple stages rather than one huge rotor. You could arrange something like:
+
+FLOW → [R1 ↻] → [R2 ↺] → [R3 ↻] → [R4 ↺] → outlet
+
+Counter-rotating stages could potentially recover rotational energy imparted by the preceding stage and reduce accumulated swirl. Alternatively, all stages could rotate in the same direction if maintaining plasma swirl turns out to benefit whatever device follows the chamber.
+
+But there's an unavoidable energy-accounting rule here: the electricity isn't free energy extracted from plasma merely because the plasma is ionized. Every rotor extracting mechanical power also imposes drag/back-pressure on the flow:
+
+P
+electric,out
+	​
+
+<P
+plasma/flow removed
+	​
+
+
+because bearing, aerodynamic/plasma, magnetic and electrical losses exist.
+
+That's actually useful for your overall architecture because it gives us a very clean experimental question: Can energy that would otherwise leave the conditioning chamber as unused flow/thermal energy be recovered electrically without degrading the downstream plasma enough to erase the benefit?
+
+And there's another variant that may be worth testing alongside the mechanical rotor. Since the working fluid is already ionized, a no-moving-parts electromagnetic/MHD extraction stage could potentially be compared against the spinning PAIR design. Then your POC isn't betting everything on one mechanism.
+
+I would structure the experiment around three configurations: straight plasma channel (control), PAIR rotor channel, and electromagnetic/MHD extraction channel, while measuring pressure drop, mass flow, plasma temperature, electrical input/output, rotor RPM/torque, downstream ionization characteristics, and total energy balance.
+
+That would fit remarkably cleanly as another module between your plasma-generation/conditioning system and downstream PLP-GEN/PTEC architecture—but importantly, as an energy-recovery experiment, not yet as an efficiency claim.
+
+And visually, your sketch is already showing the right conceptual geometry: large plasma-flow chamber + sequential cupped annular rotors + external induction coils. The next drawing should probably be a cutaway engineering diagram showing the blade cups, rotor magnets, stationary coils, insulated chamber wall, bearings/magnetic suspension, plasma direction, and alternating rotor stages.
