@@ -1,0 +1,1196 @@
+PEVT-LKR
+Linear Kinetic Recovery
+Proof-of-Concept White Paper — Revision 0.1
+
+Concept Classification: Experimental electromechanical kinetic-energy recovery and transient-power system
+Parent Architecture: PEVT — Plasma-Electric Variable Transmission
+Related Architecture: PLP-GEN / VAPS-KERS
+Development Stage: Conceptual / pre-experimental, approximately TRL 1–2
+Date: August 2026
+
+Abstract
+
+PEVT-LKR (Plasma-Electric Variable Transmission — Linear Kinetic Recovery) is a proposed electromechanical energy-recovery architecture in which mechanical energy from a rotating drivetrain is periodically transferred into a guided linear magnetic translator, temporarily stored as translator kinetic energy, and subsequently recovered as electrical energy through stationary induction windings.
+
+The concept introduces a controllable mechanical coupling between the PEVT drive system and a free-moving linear translator.
+
+Rather than maintaining permanent mechanical engagement, the translator operates through distinct charge, coast, recovery, and reset/re-engagement states.
+
+The proposed energy pathway is:
+
+Rotational Mechanical Energy→Linear Kinetic Energy→Electromagnetic Induction→Conditioned Electrical Energy
+
+PEVT-LKR does not propose creation or amplification of energy.
+
+Instead, it investigates whether kinetic energy can be temporarily shifted out of the primary drivetrain, stored mechanically in linear motion, and subsequently recovered in a controlled manner to provide transient electrical power, regenerative-energy capture, load smoothing, or other useful transmission behavior.
+
+The central proof-of-concept question is:
+
+Can a mechanically charged, subsequently decoupled magnetic translator deliver repeatable and controllable electrical energy to a load with sufficient round-trip efficiency, response speed, and power density to provide a useful transient-energy function within PEVT?
+
+The proposed POC deliberately separates this question from plasma operation.
+
+1. Concept Origin and Relationship to PEVT
+
+The existing PEVT architecture proposes mechanically coupled rotating conversion stages connected by a chain, belt, geared coupling, or common shaft. Its mechanical transmission acts both as a power-transfer mechanism and a synchronization reference.
+
+PEVT-LKR adds a branch to that mechanical pathway:
+
+              PRIMARY PEVT DRIVE
+
+INPUT
+  │
+  ▼
+┌─────────┐
+│ STAGE A │
+└────┬────┘
+     │
+     O══════════════════════O────► OUTPUT
+             DRIVE LOOP
+                 │
+                 │
+          SWITCHABLE COUPLING
+                 │
+                 ▼
+        ┌───────────────────┐
+        │       LKR         │
+        │ LINEAR KINETIC    │
+        │ RECOVERY MODULE   │
+        └─────────┬─────────┘
+                  │
+                  ▼
+             POWER BUS
+
+The LKR module does not need to remain mechanically connected throughout its operating cycle.
+
+Instead:
+
+ENGAGE→ACCELERATE→DECOUPLE→COAST→RECOVER→RESET
+
+This creates a mechanically charged linear kinetic-energy buffer.
+
+2. Core Hypothesis
+
+PEVT-LKR tests two related hypotheses.
+
+H1 — Energy Recovery
+
+A mechanical drivetrain can transfer measurable energy into a guided magnetic translator, after which the translator can be mechanically decoupled and its remaining kinetic energy converted into measurable electrical energy through electromagnetic induction.
+
+H2 — System-Level Utility
+
+Controlling when this stored energy is recovered may provide useful transient electrical power or drivetrain load management compared with an otherwise identical PEVT configuration without LKR.
+
+The corresponding null hypotheses are:
+
+H
+0,1
+	​
+
+:E
+recovered
+	​
+
+
+is too small relative to charging energy and losses to provide a useful recovery mechanism.
+
+And:
+
+H
+0,2
+	​
+
+:
+
+LKR provides no measurable system-level benefit once coupling losses, friction, electrical losses, control energy, mass, and thermal effects are included.
+
+A negative result remains scientifically useful because it establishes the operating limits of the architecture.
+
+3. Functional Architecture
+
+The proposed first-generation LKR consists of six primary subsystems.
+
+Subsystem	Function	Primary measurement
+Mechanical input	Supplies rotational energy	RPM, torque
+Coupler/converter	Converts rotational motion into translator acceleration	Force, displacement, coupling loss
+Magnetic translator	Stores kinetic energy	Position, velocity, acceleration
+Linear guide	Constrains translator motion	Friction, vibration, alignment
+Induction stator	Extracts electrical energy	Voltage, current, temperature
+Power electronics	Conditions recovered electricity	DC energy, conversion loss
+
+Conceptually:
+
+         ROTATING PEVT DRIVE
+                │
+                ▼
+       ┌─────────────────┐
+       │ CONTROLLED      │
+       │ COUPLING        │
+       └────────┬────────┘
+                │
+       rotational → linear
+                │
+                ▼
+
+        ╔═════════════════╗
+        ║ INDUCTION       ║
+        ║ STATOR / COILS  ║
+        ║                 ║
+        ║    ┌───────┐    ║
+        ║    │MAGNETIC│   ║
+        ║    │TRANS- │    ║
+        ║    │LATOR  │    ║
+        ║    └───────┘    ║
+        ║        ↕        ║
+        ╚════════╤════════╝
+                 │
+                 ▼
+             RECTIFIER
+                 │
+                 ▼
+             DC/DC STAGE
+                 │
+                 ▼
+              DC BUS
+
+This induction portion deliberately resembles the independently testable translator/stator architecture already established for PLP-GEN. PLP-GEN likewise separates the magnetic translator, stationary induction coil, mechanical guide, power electronics, and synchronized diagnostics.
+
+4. Operating Cycle
+4.1 State A — Charge
+
+The LKR coupling is mechanically engaged.
+
+The PEVT drivetrain supplies mechanical energy to accelerate the translator.
+
+For translator mass m and velocity v:
+
+E
+k
+	​
+
+=
+2
+1
+	​
+
+mv
+2
+
+The drivetrain therefore experiences an additional load while LKR is being charged.
+
+Measurements should determine:
+
+E
+drive,in
+	​
+
+
+and the actual kinetic energy obtained by the translator.
+
+Define charging efficiency:
+
+η
+charge
+	​
+
+=
+E
+mechanical,in
+	​
+
+E
+k,translator
+	​
+
+	​
+
+5. State B — Mechanical Decoupling
+
+At a predetermined translator velocity, drivetrain condition, or control command, the coupling opens.
+
+The translator is now mechanically isolated from the primary drivetrain.
+
+Ideally:
+
+DRIVE ─────────────► vehicle/load
+
+             X
+             │
+         OPEN COUPLER
+             │
+
+             ▼
+        [ TRANSLATOR ]
+             ↕
+          free motion
+
+The translator continues moving because of its existing momentum.
+
+No additional energy is created during this state.
+
+Instead, the purpose of decoupling is to allow the controller to determine when and how strongly the stored kinetic energy is extracted.
+
+6. State C — Coast
+
+During coast, generator loading is intentionally minimized.
+
+The translator's energy decreases according to mechanical, aerodynamic, magnetic, and electrical losses.
+
+Approximately:
+
+E
+k
+	​
+
+(t+Δt)=E
+k
+	​
+
+(t)−E
+friction
+	​
+
+−E
+drag
+	​
+
+−E
+eddy
+	​
+
+−E
+other
+	​
+
+
+This mode is important experimentally because it directly measures parasitic losses.
+
+A coast-down test can determine whether the translator is capable of retaining meaningful kinetic energy long enough for the proposed buffering function.
+
+7. State D — Electromagnetic Recovery
+
+When electrical power is requested, the induction stator is connected to a controlled electrical load.
+
+The moving magnetic translator produces changing magnetic flux through the stationary windings.
+
+Faraday induction gives:
+
+V=−N
+dt
+dΦ
+	​
+
+
+where:
+
+V = induced voltage,
+N = number of coil turns,
+Φ = magnetic flux linkage.
+
+Electrical energy delivered to the conditioned load is measured as:
+
+E
+elec,out
+	​
+
+=∫V(t)I(t)dt
+
+As electrical energy is extracted, electromagnetic reaction force opposes translator motion.
+
+This behavior is already represented in the PLP-GEN dynamics model:
+
+m
+x
+¨
+=F
+drive
+	​
+
+−F
+em
+	​
+
+−F
+friction
+	​
+
+−F
+other
+	​
+
+
+Therefore generator loading becomes a controllable form of electromagnetic braking.
+
+8. Variable Recovery
+
+This is potentially the defining characteristic of LKR.
+
+Instead of connecting the induction stator to a fixed load, power electronics could alter generator loading dynamically.
+
+Define generator control state:
+
+G(t)
+
+such that:
+
+Low G
+
+Low electromagnetic loading:
+
+F
+em
+	​
+
+↓
+
+Translator coasts longer.
+
+High G
+
+Higher electromagnetic loading:
+
+F
+em
+	​
+
+↑
+
+Electrical output increases temporarily while translator velocity decreases more rapidly.
+
+Consequently:
+
+G(t)→{P
+out
+	​
+
+,F
+em
+	​
+
+,v,t
+coast
+	​
+
+}
+
+The experiment can therefore produce an LKR recovery map rather than a single efficiency number.
+
+9. "Boost" Definition
+
+The term boost should have a precise meaning within PEVT-LKR.
+
+It does not mean energy amplification.
+
+For this project:
+
+LKR boost is the controlled release of previously stored translator kinetic energy as short-duration electrical power to the PEVT electrical bus.
+
+Thus:
+
+P
+bus
+	​
+
+=P
+primary
+	​
+
++P
+LKR
+	​
+
+
+for the duration of recovery.
+
+The instantaneous bus power can therefore exceed the instantaneous primary-generator output without violating energy conservation because LKR is simultaneously losing previously stored energy.
+
+This is analogous in principle to the transient-energy role proposed for the flywheel modules in VAPS-KERS.
+
+10. Complete Energy Accounting
+
+The most important PEVT-LKR metric is round-trip efficiency.
+
+Define:
+
+E
+charge
+	​
+
+=mechanical energy removed from drivetrain
+
+and:
+
+E
+recovered
+	​
+
+=electrical energy delivered to calibrated output
+
+Then:
+
+η
+LKR
+	​
+
+=
+E
+charge
+	​
+
+E
+recovered
+	​
+
+	​
+
+	​
+
+
+The energy balance should approximately satisfy:
+
+E
+charge
+	​
+
+=E
+recovered
+	​
+
++E
+coupling loss
+	​
+
++E
+friction
+	​
+
++E
+eddy
+	​
+
++E
+coil loss
+	​
+
++E
+electronics loss
+	​
+
++E
+thermal
+	​
+
++E
+residual
+	​
+
+
+The same evidence standard used in PLP-GEN should apply here: peak voltage or unloaded output is insufficient evidence of useful energy conversion; input/output energy, calibration, uncertainty, and losses need to be reported.
+
+11. Mechanical Coupling Problem
+
+The coupling mechanism is one of the most important unresolved parts of the architecture.
+
+Its required functions are:
+
+ROTATING INPUT
+     │
+     ▼
+[COUPLER]
+     │
+     ├── ENGAGE
+     │      ↓
+     │ rotational → linear acceleration
+     │
+     └── RELEASE
+            ↓
+       translator free
+
+Candidate mechanisms should be evaluated experimentally rather than selected prematurely.
+
+The POC needs to determine:
+
+engagement energy loss;
+release time;
+mechanical shock;
+maximum coupling force;
+repeatability;
+wear;
+synchronization accuracy;
+effect on the main drivetrain.
+
+A poor coupling system could consume enough energy to eliminate any practical LKR benefit.
+
+12. Translator Architecture
+
+The translator is the temporary kinetic-energy storage element.
+
+A simplified arrangement is:
+
+           LINEAR GUIDE
+                │
+      ╔═══════════════════╗
+      ║    STATOR COIL    ║
+      ║                   ║
+      ║     ┌──────┐      ║
+      ║     │ N  S │      ║
+      ║     │MAGNET│      ║
+      ║     └──────┘      ║
+      ║        ↕          ║
+      ║     translator    ║
+      ╚═══════════════════╝
+
+Relevant design variables include:
+
+m,v,x,B,N,L
+
+representing translator mass, velocity, stroke position, magnetic field, coil turns, and inductance.
+
+Increasing translator mass or velocity increases kinetic-energy storage:
+
+E
+k
+	​
+
+=
+2
+1
+	​
+
+mv
+2
+
+but increasing velocity also increases containment requirements and mechanical consequences of failure.
+
+The POC should therefore begin at low stored energy.
+
+13. Bidirectional / Reciprocating Architecture
+
+A later version could recover energy during both directions of translator motion.
+
+        TOP RECOVERY REGION
+
+        ╔══════════════╗
+        ║    COILS     ║
+        ╚══════╤═══════╝
+               │
+               ↕
+          [TRANSLATOR]
+               ↕
+               │
+        ╔══════╧═══════╗
+        ║    COILS     ║
+        ╚══════════════╝
+
+       BOTTOM RECOVERY REGION
+
+This begins to converge architecturally with the mirrored PLP-GEN arrangement, which proposes opposed translator/stator channels and synchronized electrical combining.
+
+However, the first LKR experiment should use one translator and one controlled recovery region.
+
+14. Relationship to PLP-GEN
+
+PLP-GEN and LKR use related electromagnetic hardware but investigate different energy sources and operating objectives.
+
+PLP-GEN
+controlled impulse
+       ↓
+magnetic translator
+       ↓
+induction
+       ↓
+electricity
+PEVT-LKR
+rotating drivetrain
+       ↓
+mechanical coupling
+       ↓
+translator acceleration
+       ↓
+mechanical decoupling
+       ↓
+stored kinetic motion
+       ↓
+controlled induction
+       ↓
+transient electricity
+
+PLP-GEN explicitly recommends characterizing the translator/coil conversion stage using a controlled non-plasma actuator before introducing a plasma impulse source.
+
+That experimental work could directly inform LKR.
+
+15. Relationship to VAPS-KERS
+
+VAPS-KERS proposes storing kinetic energy in flywheels and subsequently returning that energy through motor-generator hardware for transient or emergency operation.
+
+PEVT-LKR applies a related principle in a different mechanical geometry:
+
+VAPS-KERS=rotational kinetic storage
+
+while:
+
+PEVT-LKR=linear kinetic storage
+
+This creates an experimentally interesting comparison.
+
+A conventional flywheel may ultimately prove superior. If so, that is a legitimate result.
+
+The relevant question is whether linear storage provides some compensating advantage in integration, response, electromagnetic extraction, packaging, synchronization, or PEVT operation.
+
+16. Proof-of-Concept Development Program
+
+The first prototype should contain no plasma system.
+
+POC-1 — Translator Characterization
+
+Move the magnetic translator through the induction stator using an external laboratory actuator.
+
+Measure:
+
+position;
+velocity;
+acceleration;
+induced voltage;
+current;
+temperature.
+
+Goal:
+
+Verify predictable electromagnetic conversion.
+
+POC-2 — Coast-Down Experiment
+
+Accelerate the translator and release it with minimal generator loading.
+
+Measure:
+
+x(t),v(t),a(t)
+
+Determine the mechanical loss function.
+
+Goal:
+
+Quantify how rapidly stored kinetic energy disappears without intentional extraction.
+
+POC-3 — Loaded Recovery
+
+Repeat the experiment with calibrated electrical loads.
+
+Measure:
+
+E
+elec,out
+	​
+
+=∫VIdt
+
+while simultaneously measuring translator deceleration.
+
+Goal:
+
+Demonstrate that increased electrical extraction corresponds to the expected reduction in translator kinetic energy.
+
+POC-4 — Variable Electromagnetic Loading
+
+Apply multiple electrical loads or electronically controlled loading profiles.
+
+Generate:
+
+P
+out
+	​
+
+(v,G)
+
+and:
+
+F
+em
+	​
+
+(v,G)
+
+Goal:
+
+Establish whether recovery rate can be meaningfully controlled.
+
+POC-5 — Mechanical Charge Coupling
+
+Connect the LKR module to a low-power rotating test stand.
+
+Measure mechanical energy entering through the coupling.
+
+Goal:
+
+Establish:
+
+η
+charge
+	​
+
+
+and coupling durability.
+
+POC-6 — Complete LKR Cycle
+
+Run:
+
+Engage → Accelerate → Release → Coast → Recover → Reset
+
+Measure every significant energy transfer.
+
+Goal:
+
+Determine:
+
+η
+LKR
+	​
+
+POC-7 — PEVT Integration
+
+Only after independent LKR characterization should the module be attached to the larger PEVT test apparatus.
+
+Compare:
+
+PEVT baseline
+
+versus
+
+PEVT + LKR
+
+under identical transient-load conditions.
+
+17. Experimental Test Matrix
+Test	Independent variable	Primary response	Failure/limitation criterion
+T1	Translator velocity	Electrical energy/stroke	Output not reproducible
+T2	Translator mass	Stored/recovered energy	Added mass produces unacceptable losses
+T3	Electrical load	Power/deceleration	Extraction dominated by losses
+T4	Coast duration	Remaining kinetic energy	Storage decays too rapidly
+T5	Coupling speed	Charge efficiency	Coupler losses dominate
+T6	Engagement timing	Shock/vibration	Mechanical instability
+T7	Recovery command	Transient bus power	Response too slow
+T8	Cycle frequency	Temperature	Thermal limits reached
+T9	Repeated cycling	Efficiency/wear	Rapid degradation
+T10	PEVT integration	System response	No benefit over baseline
+18. Instrumentation
+
+The POC should use synchronized acquisition for:
+
+Mechanical: shaft torque, RPM, coupling force, translator position, velocity, acceleration, vibration.
+
+Electrical: stator voltage/current, load voltage/current, real energy delivered, DC-bus voltage/current.
+
+Magnetic: field magnitude where practical and translator/stator characterization.
+
+Thermal: coil temperature, translator temperature, bearing/guide temperature, power-electronics temperature.
+
+Timing: coupling engagement, release command, translator position, load activation and electrical waveform.
+
+The data package should preserve raw time-series measurements rather than only summary values.
+
+That follows the PLP-GEN recommendation to retain synchronized motion, electrical, thermal, calibration, geometry, winding, magnet, and uncertainty information.
+
+19. Primary Performance Metrics
+Charge efficiency
+η
+charge
+	​
+
+=
+E
+mechanical,in
+	​
+
+E
+k,stored
+	​
+
+	​
+
+Recovery efficiency
+η
+recovery
+	​
+
+=
+E
+k,available
+	​
+
+E
+electrical,out
+	​
+
+	​
+
+Round-trip efficiency
+η
+round-trip
+	​
+
+=
+E
+mechanical,in
+	​
+
+E
+electrical,out
+	​
+
+	​
+
+	​
+
+Specific energy
+e
+m
+	​
+
+=
+m
+LKR
+	​
+
+E
+usable
+	​
+
+	​
+
+Specific power
+p
+m
+	​
+
+=
+m
+LKR
+	​
+
+P
+peak
+	​
+
+	​
+
+Response time
+t
+response
+	​
+
+=t
+electrical output
+	​
+
+−t
+recovery command
+	​
+
+
+These metrics permit direct comparison against simpler alternatives.
+
+20. Critical Control Experiment
+
+A PEVT-LKR prototype should always be compared against an equivalent system without LKR.
+
+The meaningful comparison is:
+
+PEVT baselinevs.PEVT + LKR
+	​
+
+
+under identical load profiles.
+
+Possible advantages to test include:
+
+improved transient response;
+temporary peak-power assistance;
+regenerative-energy recovery;
+reduced primary-generator transient loading;
+torque/load smoothing;
+electrical-bus stabilization.
+
+No advantage should be assumed before measurement.
+
+21. Engineering Risks
+
+Mechanical containment: A rapidly moving translator contains substantial kinetic energy and requires positive containment and controlled end-of-travel behavior.
+
+Coupling shock: Rapid engagement with a moving drivetrain could produce damaging impulse loads.
+
+Electromagnetic braking: High electrical extraction produces reaction force and may decelerate the translator much faster than expected.
+
+Thermal loading: Coil resistance, eddy currents, power electronics and repeated cycling produce heat.
+
+Magnetic degradation: Permanent magnets can lose performance through excessive temperature or unfavorable field conditions.
+
+Guide wear: Linear bearing friction or misalignment may dominate coast-down losses.
+
+Control failure: Mistimed engagement or extraction could introduce drivetrain shock.
+
+Efficiency: Multiple conversions—
+
+rotation→linear motion→electricity
+
+—may make the architecture less efficient than direct electrical storage or a conventional rotary flywheel.
+
+That possibility should be treated as a central experimental question rather than an afterthought.
+
+22. Safety Architecture
+
+The first POC should operate at deliberately low stored kinetic energy.
+
+The translator requires:
+
+physical containment;
+redundant position sensing;
+mechanical end stops;
+controlled electromagnetic braking;
+overspeed/overtravel detection;
+emergency energy-dump load;
+electrical isolation;
+thermal shutdown;
+guarded rotating coupling hardware.
+
+A high-energy implementation should only follow successful low-energy characterization and formal mechanical safety analysis.
+
+23. Success Criteria
+
+PEVT-LKR should not be considered successful merely because the translator moves or the coil produces voltage.
+
+A successful first POC requires:
+
+repeatable mechanical charging;
+controlled mechanical release;
+measurable free-coast behavior;
+predictable electromagnetic deceleration;
+calibrated electrical energy delivered to a known load;
+closed input/output energy accounting;
+repeatable charge/recovery cycles;
+quantified round-trip efficiency;
+stable operation within declared mechanical and thermal limits.
+
+A system-level PEVT-LKR demonstration additionally requires a measurable benefit relative to PEVT without LKR.
+
+24. Failure Criteria
+
+The architecture should be considered unsupported for its intended application if testing shows that:
+
+η
+round-trip
+	​
+
+
+is prohibitively low;
+
+or if coupling losses, friction, heat, vibration, mass, wear or control complexity overwhelm the transient-power benefit.
+
+Likewise, if a conventional flywheel, capacitor, battery, or direct motor-generator architecture provides equivalent functionality with substantially better performance, the linear architecture would require another measurable advantage to justify further development.
+
+This comparison is essential to making the POC scientifically meaningful.
+
+25. Future PEVT Integration
+
+If the independent LKR experiment succeeds, the larger architecture becomes:
+
+                        PTEC
+                         │
+                         ▼
+                   ELECTRICAL BUS
+                    ▲    │    ▲
+                    │    │    │
+                    │    ▼    │
+              ┌──────────────────┐
+              │       PEVT       │
+              └────────┬─────────┘
+                       │
+       INPUT ───O======O======O───► OUTPUT
+                       │
+                       │
+                 LKR COUPLER
+                       │
+                       ▼
+               ╔═══════════════╗
+               ║ LINEAR        ║
+               ║ TRANSLATOR    ║
+               ║      ↕        ║
+               ║ INDUCTION     ║
+               ║ STATOR        ║
+               ╚═══════╤═══════╝
+                       │
+                       ▼
+                POWER CONDITIONER
+                       │
+                       └──────────► DC BUS
+
+This produces two simultaneously controllable energy paths:
+
+Primary mechanical path
+
+and
+
+temporary kinetic-storage/recovery path.
+
+PEVT could then decide electronically when to charge LKR and when to request recovered energy.
+
+26. Potential Operating Strategy
+
+A future controller could use a simple energy-management hierarchy:
+
+LOW LOAD
+   ↓
+LKR CHARGE
+   ↓
+TRANSLATOR ACCELERATES
+   ↓
+DECOUPLE
+   ↓
+COAST / STANDBY
+
+
+TRANSIENT DEMAND
+   ↓
+ENABLE GENERATOR LOAD
+   ↓
+TRANSLATOR DECELERATES
+   ↓
+ELECTRICAL POWER GENERATED
+   ↓
+DC BUS
+   ↓
+PEVT / TRACTION LOAD
+
+
+ENERGY DEPLETED
+   ↓
+RESET
+   ↓
+RE-ENGAGE
+   ↓
+RECHARGE
+
+Eventually PTEC could coordinate that state with the broader PEVT control vector. The existing PEVT paper already defines electronically adjustable voltage, current, frequency, phase, duty cycle, magnetic field and operating conditions as part of its transmission-state concept.
+
+27. Recommended Near-Term Deliverables
+
+Before attempting a complete PEVT-LKR assembly, the research package should produce:
+
+dimensioned translator/stator schematic;
+translator mass and target stroke;
+magnet specification;
+coil geometry and winding specification;
+mechanical coupling concept;
+expected translator velocity range;
+electromagnetic model;
+coast-down loss model;
+containment design;
+instrumentation diagram;
+complete energy-flow model;
+test matrix;
+uncertainty budget;
+raw-data format;
+comparison methodology against rotary flywheel/electrical storage.
+
+The most important deliverable is not a rendering.
+
+It is an experimentally closed energy budget.
+
+28. Research Questions for External Review
+
+The first external engineering review should concentrate on the following questions:
+
+1. What rotary-to-linear coupling architecture can transfer energy with the lowest shock and loss?
+
+2. What translator mass/velocity combination provides useful transient energy without creating unreasonable containment requirements?
+
+3. What magnet/coil geometry provides the best electrical recovery while minimizing eddy-current and thermal losses?
+
+4. Can generator loading provide sufficiently fast and stable control of translator deceleration?
+
+5. How quickly does the translator lose energy during coast?
+
+6. Does linear kinetic storage provide any measurable advantage over rotary flywheel storage?
+
+7. Can multiple LKR modules be phase-offset to provide smoother continuous output?
+
+8. Does integrating LKR actually improve PEVT transient behavior once every charging and recovery loss is included?
+
+29. Revised PEVT Architecture Family
+
+The concepts can now be separated cleanly:
+
+                 GHOSTCORE
+                     │
+                     ▼
+                    PTEC
+         Plasma / Electrical Conditioning
+                     │
+                     ▼
+                    PEVT
+        Variable Energy Transmission
+             ┌───────┴────────┐
+             │                │
+             ▼                ▼
+         PLP-GEN          PEVT-LKR
+      Linear Energy      Linear Kinetic
+       Generation          Recovery
+             │                │
+             └───────┬────────┘
+                     ▼
+                  DC BUS
+                     │
+                     ▼
+              TRACTION / LOAD
+
+PLP-GEN asks:
+
+Can an externally driven magnetic translator produce useful electrical energy through the proposed linear generator geometry?
+
+PEVT-LKR asks:
+
+Can that linear conversion architecture also function as an intentionally charged and released kinetic-energy buffer?
+
+PEVT asks the larger question:
+
+Can these controllable mechanical, electrical, and potentially plasma-conditioned subsystems produce useful variable energy-transfer behavior?
+
+That separation prevents one unproven mechanism from being used to justify another.
+
+30. Conclusion
+
+PEVT-LKR — Linear Kinetic Recovery converts the proposed free-moving piston concept into a bounded electromechanical experiment.
+
+Its operating doctrine is:
+
+Engage→Accelerate→Decouple→Coast→Recover→Reset
+	​
+
+
+Mechanical energy from the PEVT drivetrain accelerates a magnetic translator. The translator is subsequently decoupled, allowing it to continue moving under its stored kinetic energy. Controlled electromagnetic loading then converts part of that kinetic energy into electrical output.
+
+The architecture does not depend upon plasma, extraordinary electromagnetic effects, or energy amplification for its initial validation.
+
+Its first experiment can therefore be performed entirely as a conventional electromechanical system.
+
+The decisive measurement is:
+
+η
+LKR
+	​
+
+=
+measured mechanical energy supplied during charging
+calibrated electrical energy recovered
+	​
+
+	​
+
+
+If the resulting efficiency, response time, power density, controllability, and lifetime are poor, the architecture can be rejected or redesigned.
+
+If they are favorable, PEVT-LKR becomes a separately validated energy-buffer subsystem that can subsequently be integrated with PEVT, PLP-GEN, PTEC, or other parts of the larger architecture.
+
+PEVT-LKR Rev. 0.1 — Proof-of-Concept Architecture
+
+Drive → Store → Release → Induce → Recover.
