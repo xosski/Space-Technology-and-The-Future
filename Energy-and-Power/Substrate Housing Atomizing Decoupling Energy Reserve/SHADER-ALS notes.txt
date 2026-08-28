@@ -1,0 +1,104 @@
+SHADER-ALS — Atmospheric Life-Support Module.
+
+Conceptually:
+
+              SHADER / EFRS CORE
+        ┌───────────────────────────┐
+        │ Plasma / radiative cavity│
+        │                           │
+        │       EFRS RODS           │
+        └────────────┬──────────────┘
+                     │
+             usable energy/heat
+                     │
+        ┌────────────▼──────────────┐
+        │   ATMOSPHERIC MODULE      │
+        │                           │
+Cabin ─►│ Particulate filtration   │
+air     │        ↓                  │
+        │ CO₂ removal / separation │
+        │        ↓                  │
+        │ O₂ generation stage      │
+        │        ↓                  │
+        │ Gas cleanup / separation │
+        │        ↓                  │
+        │ O₂ sensor + buffer tank  │
+        │        ↓                  │
+        │ Cabin return             │
+        └───────────────────────────┘
+
+There is a valuable spacecraft idea here: make the energy-storage enclosure provide redundant life-support infrastructure, rather than expecting the battery chemistry itself to manufacture oxygen. That aligns especially well with EFRS's aerospace proposition, where redundancy and independent isolation are already identified as more important than easy cartridge replacement.
+
+The plasma needs careful framing, though. Plasma doesn't inherently create oxygen. It can supply energy that drives chemical reactions, but the oxygen atoms have to come from an oxygen-containing feedstock. For spacecraft, CO₂ is much more interesting than carbon monoxide as the starting waste stream, because crew respiration continuously produces CO₂. A conceptual research reaction is:
+
+$$ CO_2 + E \rightarrow CO+\frac12O_2 $$
+
+That is energetically uphill, so the plasma/electrochemical system has to supply the required energy. The difficult engineering problem then becomes separating the resulting O₂ from CO and residual CO₂ safely and efficiently.
+
+There is an even more mature architecture:
+
+$$ H_2O + E \rightarrow H_2+\frac12O_2. $$
+
+So SHADER-ALS could compare water electrolysis against experimental plasma-assisted CO₂ conversion rather than assuming plasma is automatically superior.
+
+I would not use chlorine dioxide as a bulk breathing-air processing medium. It's a strong oxidizer and inhalation hazard. In a spacecraft, introducing chlorine-containing reactive chemistry next to oxygen generation, batteries, plasma/high-temperature components, and a closed cabin creates failure modes that are difficult to justify. If investigated at all, it belongs in an isolated materials/decontamination experiment—not the primary breathing-air loop.
+
+The cleaner architecture is therefore:
+
+$$ \boxed{ \text{Cabin CO}_2 \rightarrow \text{CO}_2\text{ capture} \rightarrow \text{conversion} \rightarrow \text{O}_2\text{ separation} \rightarrow \text{purification} \rightarrow \text{O}_2\text{ buffer} } $$
+
+with SHADER/EFRS supplying power and potentially useful thermal energy.
+
+Where it becomes particularly interesting
+
+EFRS already proposes individually monitored cartridges, fault isolation, common thermal management, and a common power bus. The TPV addendum then adds an auxiliary pathway that converts high-temperature/plasma-associated radiation into conditioned electrical power.
+
+Combine those ideas and your spacecraft system becomes:
+
+                         SPACECRAFT
+                            │
+                ┌───────────┴───────────┐
+                │                       │
+             SHADER                  EFRS
+                │                       │
+       ┌────────┴────────┐       ENERGY RESERVE
+       │                 │              │
+   TPV RECOVERY      THERMAL            │
+       │             RECOVERY           │
+       └────────┬────────┘              │
+                │                       │
+                └──────────┬────────────┘
+                           ▼
+                       COMMON BUS
+                           │
+          ┌────────────────┼────────────────┐
+          ▼                ▼                ▼
+      PROPULSION      SPACECRAFT       LIFE SUPPORT
+                       SYSTEMS               │
+                                      ┌──────┴──────┐
+                                      │             │
+                                   CO₂ SCRUB      O₂ GEN
+                                      │             │
+                                      └──────┬──────┘
+                                             ▼
+                                        CABIN LOOP
+
+That produces a much stronger claim than "the battery makes oxygen":
+
+The SHADER/EFRS assembly acts as a redundant energy-and-life-support node capable of powering an independently isolated atmospheric regeneration module during degradation or failure of the spacecraft's primary environmental-control system.
+
+And your sketch's bottom orange compartment is actually a sensible conceptual location for it because it visually establishes a serviceable atmospheric cassette beneath the energy core. I would keep the actual gas-processing hardware physically isolated from the battery/plasma chamber, though, with separate pressure boundaries.
+
+One particularly useful operating mode would be Emergency Atmospheric Sustainment. If the main spacecraft life-support bus fails, EFRS isolates nonessential loads, SHADER recovery continues where an external energy source remains available, and the atmospheric cassette receives priority power. The system would monitor \(pO_2\), \(pCO_2\), CO, pressure, humidity, temperature, and contamination, with automatic shutdown rather than allowing an abnormal conversion stream into the cabin.
+
+That makes this a legitimate A-03 extension of the documents you've uploaded:
+
+EFRS Addendum A-03 — SHADER-ALS: Integrated Atmospheric Regeneration and Emergency Life-Support Architecture.
+
+Its POC should initially use bottled simulated cabin gas and a non-plasma oxygen source or conventional electrolysis baseline, then compare the experimental conversion approach against it. That way the project has a hard benchmark for energy per gram of recovered O₂, CO₂ removal rate, contaminant breakthrough, thermal load, mass, and reserve runtime.
+
+The core metric could be beautifully simple:
+
+$$ \boxed{ t_{\text{ALS}} = \frac{E_{\text{available reserve}}} {P_{\text{atmospheric module}}} } $$
+
+giving hours of emergency breathable-atmosphere support per usable EFRS reserve.
