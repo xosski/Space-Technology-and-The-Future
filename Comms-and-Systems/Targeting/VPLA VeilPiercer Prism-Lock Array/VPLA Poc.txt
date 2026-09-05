@@ -1,0 +1,956 @@
+VPLA — VeilPiercer Prism-Lock Array
+Defensive Proof of Concept for Multi-Angle Optical Ranging and Confidence-Scored Contact Tracking
+
+Document Type: Defensive tracking and navigation white-paper proof of concept
+System Type: Multi-beam optical/IR triangulation and trajectory-estimation array
+Primary Use: Spacecraft navigation, collision avoidance, docking support, debris tracking, and persistent contact awareness
+Status: High-level architecture draft
+Doctrine Line: One beam gives a line. Several beams give a location.
+
+1. Executive Summary
+
+The VeilPiercer Prism-Lock Array (VPLA) is a defensive sensing architecture that uses multiple optical or infrared emitters, distributed across a spacecraft or sensor frame, to observe the same contact from different known geometries.
+
+Rather than relying on one optical line of sight, VPLA combines multiple beam directions, known emitter positions, range measurements where available, ship motion, and repeated observations over time to estimate:
+
+$$ \text{position} $$ $$ \text{velocity} $$ $$ \text{trajectory} $$ $$ \text{uncertainty} $$ $$ \text{confidence} $$
+
+The concept extends the existing VeilPiercer Parallax Engine, which already fuses visual bearing, own-ship motion, radar/minimap information, and time continuity to estimate contact coordinates.
+
+It also follows the existing VeilPiercer Relay Mesh principle that several synchronized viewpoints can produce a stronger track than one uncertain observation.
+
+2. Concept Thesis
+
+A single laser or infrared beam primarily provides a line of sight.
+
+Several spatially separated emitters provide multiple lines of sight.
+
+If those emitter locations and orientations are known, their observations can be fused geometrically to estimate the contact's three-dimensional position.
+
+Conceptually:
+
+EMITTER A  ●
+             \
+              \
+               \
+                ● CONTACT
+               /
+              /
+             /
+EMITTER B  ●
+
+Adding a third observation provides another independent constraint:
+
+           EMITTER C ●
+                    \
+                     \
+                      ● CONTACT
+                     /
+                    /
+EMITTER A ●--------/
+          \
+           \
+            ● EMITTER B
+
+The system therefore converts:
+
+$$ \text{multiple bearings} $$
+
+into:
+
+$$ \text{one best-fit contact state} $$
+
+rather than treating any single sensor as perfect.
+
+3. Core Hypothesis
+
+If the spacecraft knows:
+
+the position of each emitter,
+the pointing direction of each beam,
+the exact observation time,
+its own orientation and motion,
+and optionally the measured optical range,
+
+then multiple observations can be fused into a more precise track than a single observation.
+
+Mathematically, an emitter at:
+
+$$ E_i $$
+
+with measured direction:
+
+$$ \hat d_i $$
+
+defines an observation ray:
+
+$$ L_i(t)=E_i+t\hat d_i $$
+
+For ideal measurements, the rays intersect.
+
+Real measurements contain error, so VPLA instead estimates the point:
+
+$$ P^* = \arg\min_P \sum_i d(P,L_i)^2 $$
+
+where:
+
+$$ d(P,L_i) $$
+
+is the distance between candidate point \(P\) and observation ray \(L_i\).
+
+The resulting solution is therefore a best-fit estimate, not claimed absolute truth.
+
+4. Why Multiple Angles Matter
+
+The primary advantage is baseline geometry.
+
+Consider two sensors separated by:
+
+$$ b $$
+A ●-------------------------● B
+       known baseline
+
+       \                   /
+        \                 /
+         \               /
+          \             /
+             ● CONTACT
+
+If the apparent angular difference is:
+
+$$ \Delta\theta $$
+
+then a simplified range relationship is:
+
+$$ R\approx\frac{b}{\tan(\Delta\theta)} $$
+
+The exact implementation would use full three-dimensional geometry and filtering, but the important concept remains:
+
+Angular separation plus a known baseline constrains distance.
+
+This is complementary to the existing VeilPiercer Parallax Engine, which improves range estimates as the ship itself moves and creates parallax over time.
+
+VPLA creates several such baselines simultaneously.
+
+5. System Architecture
+                    VPLA CONTROL CORE
+                           │
+                 ┌─────────┴─────────┐
+                 │                   │
+           SHIP TELEMETRY       TRACK DATABASE
+                 │                   │
+                 └─────────┬─────────┘
+                           ▼
+                 ┌──────────────────┐
+                 │ SENSOR SCHEDULER │
+                 └───────┬──────────┘
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+      EMITTER A       EMITTER B      EMITTER C
+       / RX A          / RX B         / RX C
+          │              │              │
+          └──────────────┼──────────────┘
+                         ▼
+                 ANGLE/RANGE FUSION
+                         │
+                         ▼
+                 TRAJECTORY FILTER
+                         │
+                         ▼
+                 CONFIDENCE MODEL
+                         │
+                         ▼
+                    OPERATOR LAYER
+6. Layered Architecture
+L1 — Own-Ship Reference State
+
+The spacecraft supplies the reference frame.
+
+Required data includes:
+
+position,
+velocity,
+acceleration,
+heading,
+pitch,
+yaw,
+roll,
+sensor mounting geometry,
+timestamp.
+
+The existing Parallax Engine already identifies own-ship telemetry as the anchor required to distinguish contact motion from platform or camera motion.
+
+L2 — Optical/IR Emitter Array
+
+Several emitters are mounted at known locations.
+
+Example:
+
+Port emitter
+Starboard emitter
+Dorsal emitter
+Ventral emitter
+Forward emitter
+
+Each unit maintains:
+
+position relative to ship center
+orientation
+beam direction
+wavelength/channel
+timestamp
+health state
+
+Spatial separation between emitters creates the triangulation baseline.
+
+L3 — Optical Return / Observation Layer
+
+Each channel records available measurements such as:
+
+azimuth,
+elevation,
+return timing,
+optical intensity,
+signal quality,
+apparent target centroid,
+channel confidence.
+
+No one channel is assumed authoritative.
+
+L4 — Contact Correlator
+
+The system determines whether different beam returns correspond to the same observed object.
+
+Correlation factors can include:
+
+observation time,
+angular proximity,
+range consistency,
+motion consistency,
+optical signature similarity,
+previously established track history.
+
+The existing Parallax Engine uses comparable bearing, timing, persistence, and motion agreement to correlate radar and visual contacts.
+
+L5 — Prism-Lock Geometry Solver
+
+This layer fuses the observations.
+
+Input:
+
+Emitter A position + bearing
+Emitter B position + bearing
+Emitter C position + bearing
+
+Output:
+
+Estimated X
+Estimated Y
+Estimated Z
+Geometric residual
+Uncertainty volume
+
+The more consistently the observation rays converge, the stronger the geometry score becomes.
+
+L6 — Range Resolver
+
+Where round-trip optical timing is available:
+
+$$ R=\frac{c\Delta t}{2} $$
+
+where:
+
+\(R\) = range,
+\(c\) = propagation speed,
+\(\Delta t\) = measured round-trip travel time.
+
+That range becomes an additional constraint rather than replacing angular triangulation.
+
+This gives:
+
+$$ \text{bearing} + \text{range} + \text{baseline geometry} $$
+
+instead of only one of those variables.
+
+L7 — Trajectory Estimator
+
+Repeated measurements generate a state over time.
+
+A basic track state could be:
+
+$$ X= [x,y,z,v_x,v_y,v_z] $$
+
+where:
+
+\(x,y,z\) = position,
+\(v_x,v_y,v_z\) = velocity.
+
+Repeated solutions yield:
+
+T0 → P0
+T1 → P1
+T2 → P2
+T3 → P3
+
+which produces:
+
+position
+velocity
+direction
+trajectory estimate
+
+This mirrors the Relay Mesh's existing concept of maintaining a contact through spatial position, time continuity, and observation quality rather than representing it as a static dot.
+
+7. Multi-Wavelength Operation
+
+VPLA can support several optical channels.
+
+Conceptually:
+
+CHANNEL A
+near-IR
+
+CHANNEL B
+alternate IR band
+
+CHANNEL C
+visible / optical reference
+
+The purpose of multiple wavelengths is not that each inherently gives a different coordinate.
+
+Instead, different channels can provide different return quality.
+
+Example:
+
+Channel A
+strong return
+confidence = 0.92
+
+Channel B
+partial attenuation
+confidence = 0.56
+
+Channel C
+weak return
+confidence = 0.31
+
+The fusion engine can weight them accordingly.
+
+8. Weighted Sensor Fusion
+
+Suppose each channel estimates a contact location:
+
+$$ P_A,P_B,P_C $$
+
+with corresponding confidence:
+
+$$ w_A,w_B,w_C $$
+
+A simplified fused estimate is:
+
+$$ P_f= \frac{ w_AP_A+w_BP_B+w_CP_C }{ w_A+w_B+w_C } $$
+
+The actual implementation should also consider covariance and geometry, but the principle is:
+
+A weak observation contributes less than a strong one.
+
+9. Geometry Diversity
+
+VPLA becomes stronger when its observations are geometrically diverse.
+
+Poor geometry:
+
+A ●
+B ●
+C ●
+ \|
+  |
+  |
+ TARGET
+
+All three observations are nearly identical.
+
+Better geometry:
+
+A ●──────────────● B
+     \          /
+      \        /
+       \      /
+        TARGET
+          |
+          |
+          ● C
+
+The second arrangement gives the fusion engine significantly more geometric leverage.
+
+10. Simultaneous Prism Lock
+
+In normal operation:
+
+              CONTACT
+                 ●
+               / | \
+             /   |   \
+           /     |     \
+         ●       ●       ●
+         A       B       C
+
+Each channel obtains a measurement during the same synchronized observation window.
+
+The system then creates:
+
+LOCK A
+LOCK B
+LOCK C
+   │
+   └──────────────┐
+                  ▼
+           PRISM-LOCK SOLUTION
+
+Hence the term:
+
+Prism-Lock
+
+The contact becomes "locked" geometrically through the agreement of several optical lines rather than through one beam alone.
+
+11. Sequential Prism Lock
+
+The system may also operate sequentially:
+
+T0 → Beam A
+T1 → Beam B
+T2 → Beam C
+
+This reduces instantaneous power requirements but requires compensation for:
+
+ship motion,
+contact motion,
+platform rotation,
+time offset.
+
+The own-ship telemetry layer handles these transformations.
+
+12. Hybrid Operation with VeilPiercer Parallax
+
+VPLA is strongest when it supplements rather than replaces existing sensors.
+
+RADAR / MINIMAP ─────┐
+                     │
+VISUAL TRACKER ──────┤
+                     │
+VPLA OPTICAL ARRAY ──┤
+                     ▼
+             VEILPIERCER FUSION
+                     │
+                     ▼
+                CONTACT TRACK
+
+The Parallax Engine currently combines radar/minimap geometry, visual bearing, ship motion, and time continuity into a confidence-scored coordinate estimate.
+
+VPLA adds:
+
+independent optical baseline
++
+active range possibility
++
+multi-angle geometric constraint
+13. Hybrid Operation with Relay Mesh
+
+The Relay Mesh can provide additional remote viewpoints:
+
+SHIP VPLA
+   │
+   ├────────── Local optical geometry
+   │
+RELAY A
+   │
+RELAY B
+   │
+RELAY C
+   │
+   ▼
+GLOBAL FUSION
+
+The Relay Mesh already proposes synchronized anchors and triangulation fusion across multiple viewpoints.
+
+VPLA essentially provides a local miniature relay geometry aboard the ship itself.
+
+14. Confidence Model
+
+VPLA should never output a naked coordinate without uncertainty.
+
+Example:
+
+Contact: VPLA-027
+
+Position:
+X = 12.1 km
+Y = -3.8 km
+Z = 0.9 km
+
+Velocity:
+VX = -82 m/s
+VY = 17 m/s
+VZ = 5 m/s
+
+Uncertainty radius:
+± 24 m
+
+Optical agreement:
+3 / 3 channels
+
+Confidence:
+HIGH
+
+Possible tiers:
+
+Tier	Meaning
+Low	One weak channel or poor geometry
+Medium	Two coherent observations
+High	Stable multi-angle agreement
+Very High	Multi-angle + range + persistent time-series agreement
+
+This follows the Relay Mesh principle of exposing uncertainty and raising confidence only as multiple sources remain coherent.
+
+15. Contact State Ribbon
+
+Rather than storing only the current point:
+
+●
+
+VPLA maintains:
+
+●──●──●──●──●
+
+representing the historical trajectory.
+
+Future projection can then be displayed as:
+
+past              now           predicted
+
+●──●──●──●──●─────◎··········>
+
+The predicted section remains explicitly uncertain.
+
+16. Operating Modes
+Mode 1 — Passive Assist
+
+VPLA remains inactive while passive VeilPiercer sensors establish potential contacts.
+
+Purpose:
+
+low-emission navigation
+routine awareness
+initial contact classification
+Mode 2 — Prism Resolve
+
+Selected optical channels briefly measure an ambiguous contact.
+
+Purpose:
+
+range refinement
+position refinement
+contact confirmation
+Mode 3 — Precision Navigation
+
+Used for:
+
+docking
+formation flight
+close-proximity operations
+debris avoidance
+
+Multiple optical lines refine relative geometry.
+
+Mode 4 — Persistent Track
+
+The system periodically updates a contact state.
+
+Purpose:
+
+trajectory continuity
+collision prediction
+contact monitoring
+Mode 5 — Relay-Assisted Resolve
+
+VPLA combines local measurements with distributed VeilPiercer Relay Mesh observations.
+
+Purpose:
+
+wider baseline
+reduced uncertainty
+persistent tracking when one viewpoint is weak
+17. Defensive Navigation Use Case
+
+Suppose an unknown object appears ahead of a ship.
+
+Initial passive state:
+
+Visual:
+bearing known
+
+Radar:
+weak range estimate
+
+Confidence:
+LOW
+
+VPLA performs three-angle resolve:
+
+A → contact
+B → contact
+C → contact
+
+Results:
+
+A/B geometry consistent
+B/C geometry consistent
+range timing agrees
+
+Track becomes:
+
+Position estimate
+Velocity estimate
+Uncertainty volume
+Collision probability
+
+The result feeds navigation.
+
+No autonomous engagement decision is implied.
+
+18. Collision-Avoidance Integration
+
+If the predicted paths of ship and contact are:
+
+$$ P_s(t) $$
+
+and:
+
+$$ P_c(t) $$
+
+then the navigation layer can calculate closest approach:
+
+$$ D_{min} = \min_t \left| P_s(t)-P_c(t) \right| $$
+
+If:
+
+$$ D_{min}<D_{safe} $$
+
+the operator receives a deconfliction warning.
+
+That aligns directly with the defensive awareness and collision-avoidance purpose already established in the VeilPiercer Parallax architecture.
+
+19. Role-Based Track Visibility
+
+The existing Compartmented Friendly Asset Visibility concept separates tracking continuity from information resolution, preserving exact safety tracking while restricting identity and mission detail by role.
+
+VPLA can use the same architecture.
+
+For example:
+
+Flight Safety
+exact coordinates + trajectory
+
+Protected Operations
+exact track + restricted identity
+
+General Monitoring
+protected contact marker
+
+Restricted Viewer
+collision-safe abstraction only
+
+That means VPLA can improve physical tracking without automatically exposing every detail to every operator.
+
+20. Control Logic
+
+Conceptually:
+
+def vpla_step(ship, emitters, receivers, track_store):
+
+    ship_state = read_ship_state(ship)
+
+    observations = []
+
+    for emitter in emitters:
+
+        measurement = emitter.observe()
+
+        if measurement.valid:
+
+            observations.append({
+                "sensor_position": emitter.position,
+                "sensor_orientation": emitter.orientation,
+                "bearing": measurement.bearing,
+                "elevation": measurement.elevation,
+                "range": measurement.range,
+                "signal_quality": measurement.quality,
+                "timestamp": measurement.timestamp,
+            })
+
+    correlated = correlate_observations(
+        observations,
+        track_store
+    )
+
+    solution = solve_multibaseline_geometry(
+        correlated,
+        ship_state
+    )
+
+    trajectory = update_track_filter(
+        previous=track_store,
+        measurement=solution
+    )
+
+    confidence = score_confidence(
+        geometry=solution.geometry_quality,
+        source_count=len(correlated),
+        persistence=trajectory.persistence,
+        uncertainty=trajectory.uncertainty
+    )
+
+    return {
+        "position": trajectory.position,
+        "velocity": trajectory.velocity,
+        "uncertainty": trajectory.uncertainty,
+        "confidence": confidence
+    }
+
+This remains a conceptual defensive sensing loop.
+
+21. Proof-of-Concept Build Path
+
+A first PoC does not require a spacecraft.
+
+Phase 1 — 2D Optical Geometry Simulation
+
+Create:
+
+3 virtual emitters
+1 moving contact
+known coordinates
+
+Success signal:
+
+The estimated position converges toward ground truth.
+
+Phase 2 — Measurement Noise
+
+Introduce:
+
+bearing noise
+timing error
+sensor offset
+
+Success signal:
+
+The system reports increasing uncertainty rather than false precision.
+
+Phase 3 — Moving Contact
+
+Add:
+
+target velocity
+target acceleration
+
+Success signal:
+
+VPLA maintains a persistent trajectory estimate.
+
+Phase 4 — Moving Sensor Platform
+
+Move and rotate the simulated ship.
+
+Success signal:
+
+Own-platform motion is correctly removed from the contact solution.
+
+Phase 5 — Multi-Wavelength Confidence
+
+Give channels different quality values.
+
+Success signal:
+
+Weak channels contribute less heavily than strong channels.
+
+Phase 6 — VeilPiercer Integration
+
+Feed:
+
+VPLA
++
+visual tracker
++
+radar/minimap
+
+into one track store.
+
+Success signal:
+
+Combined fusion produces lower positional uncertainty than any single layer.
+
+22. Measurements
+
+The PoC should measure:
+
+position error,
+range error,
+velocity error,
+angular error,
+uncertainty volume,
+convergence time,
+sensor disagreement,
+contact persistence,
+false correlation rate,
+effect of emitter spacing,
+effect of geometry,
+performance after loss of one channel.
+
+The Relay Mesh already identifies triangulation uncertainty, persistence, false-alarm reduction, and continuity after sensor degradation as central measurements.
+
+Those are equally appropriate here.
+
+23. Failure Modes
+Poor Baseline Geometry
+
+Emitters are too close together or nearly collinear.
+
+Effect:
+
+weak depth resolution
+
+Mitigation:
+
+use wider physical baseline
+combine observations over ship motion
+Low Optical Return
+
+One channel receives weak data.
+
+Mitigation:
+
+reduce channel weight
+maintain previous track
+use other sensors
+False Correlation
+
+Different emitters are accidentally assigned to different contacts.
+
+Mitigation:
+
+time alignment
+motion consistency
+range agreement
+multi-frame persistence
+
+The Parallax Engine already treats false correlation and multi-contact ambiguity as a central problem and recommends maintaining competing hypotheses until the track separates.
+
+Platform Motion Error
+
+Ship motion is measured incorrectly.
+
+Effect:
+
+false target motion
+
+Mitigation:
+
+high-quality inertial state
+time synchronization
+sensor calibration
+Optical Obstruction
+
+One or more channels lose line of sight.
+
+Mitigation:
+
+continue track with surviving channels
+increase uncertainty
+fuse radar/relay observations
+24. Realism Boundary
+
+VPLA does not create perfect location data simply because three beams are present.
+
+Precision remains limited by:
+
+baseline length,
+pointing accuracy,
+timing accuracy,
+target range,
+target motion,
+optical return quality,
+ship vibration,
+calibration,
+atmospheric or environmental effects,
+synchronization accuracy.
+
+The correct output is therefore:
+
+Contact estimated here, within this uncertainty volume, with this confidence.
+
+not:
+
+Contact is exactly here.
+
+That matches the existing VeilPiercer philosophy of preserving uncertainty rather than presenting uncertain tracks as absolute coordinates.
+
+25. VeilPiercer Family Integration
+
+The completed sensing family becomes:
+
+                     VEILPIERCER
+
+                          │
+       ┌──────────────────┼──────────────────┐
+       │                  │                  │
+       ▼                  ▼                  ▼
+
+ PARALLAX ENGINE       PRISM-LOCK         RELAY MESH
+                       ARRAY
+
+ ship-motion          multi-angle        distributed
+ visual/radar         optical geometry   remote geometry
+
+       │                  │                  │
+       └──────────────────┼──────────────────┘
+                          ▼
+                    TRACK FUSION
+                          │
+                          ▼
+                5D CONTACT STATE
+                          │
+                          ▼
+                  OPERATOR AWARENESS
+
+Each solves a slightly different observability problem.
+
+Parallax Engine:
+Uses movement over time.
+
+Prism-Lock Array:
+Uses simultaneous or staggered local baselines.
+
+Relay Mesh:
+Uses geographically or spatially distributed external baselines.
+
+Together they form a much more coherent sensing architecture.
+
+26. Final PoC Statement
+
+The VeilPiercer Prism-Lock Array (VPLA) is a defensive multi-angle optical sensing concept designed to improve relative position, range, velocity, and trajectory estimates for spacecraft contacts.
+
+Multiple optical or infrared observations are produced from known locations and orientations. Their geometry is fused with own-ship telemetry and time-series tracking to produce a confidence-scored three-dimensional contact state.
+
+Its core principle is:
+
+$$ \boxed{ \text{Known baselines} + \text{multiple optical bearings} + \text{time continuity} = \text{better constrained contact geometry} } $$
+
+Its purpose is not autonomous engagement.
+
+Its purpose is navigation, deconfliction, docking, collision avoidance, debris monitoring, and persistent defensive awareness.
+
+Working doctrine
+
+One beam sees direction. Two beams discover depth. Three beams make the geometry argue with itself until only the most probable location remains.
