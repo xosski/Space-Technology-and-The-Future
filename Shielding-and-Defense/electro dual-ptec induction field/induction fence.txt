@@ -1,0 +1,110 @@
+Yes — that idea becomes much more physically coherent if you frame the glass as a dielectric buffer layer, not as something the plasma itself passes through.
+
+Two panes of ordinary glass placed on either side of a plasma channel can create a kind of dielectric-barrier / capacitive coupling zone. The plasma remains in the gap or channel, while the glass changes how the electric field couples into surrounding conductors.
+
+Conceptually:
+
+electrode / PTEC side
+        │
+     [glass]
+        │
+   plasma region
+        │
+     [glass]
+        │
+outer conductor / field lattice
+
+The panes can do several useful jobs at once:
+
+Electrical isolation: they prevent direct conductive contact between the plasma and the outer field hardware.
+
+Capacitive coupling: the glass and adjacent conductors behave like part of a capacitor, so changing electric fields can couple across the dielectric.
+
+Charge buffering: surface charge can accumulate on the glass interfaces and locally oppose or reshape the field.
+
+Arc suppression: a dielectric barrier can prevent a discharge from turning immediately into a hard conductive arc.
+
+Field shaping: thickness, spacing, dielectric constant, and electrode geometry affect where the electric field is strongest.
+
+So rather than:
+
+“run the plasma through the glass,”
+
+the more accurate architecture is:
+
+confine plasma between dielectric panes and couple its changing electric field through those panes into surrounding induction structures.
+
+A basic model is similar to a capacitor:
+
+$$ C=\frac{\varepsilon A}{d} $$
+
+where \(A\) is effective area, \(d\) is dielectric thickness, and \(\varepsilon\) is the permittivity of the glass.
+
+Then, if the plasma/electrode voltage changes:
+
+$$ I=C\frac{dV}{dt} $$
+
+which means the outer conductive layer can see displacement current even though there is no direct electrical path through the glass.
+
+That gives you a plausible buffer/induction zone:
+
+PTEC / driver
+    ↓
+inner electric field
+    ↓
+glass dielectric
+    ↓
+plasma interaction zone
+    ↓
+glass dielectric
+    ↓
+outer induced charge / field layer
+    ↓
+mesh / XRM field lattice
+
+The double-pane version is especially interesting because it gives you two separate surface-charge interfaces:
+
+outer layer
+   │
+[ glass ]
+   │
+surface charge A
+   │
+PLASMA
+   │
+surface charge B
+   │
+[ glass ]
+   │
+outer layer
+
+Those two surfaces can respond differently in time, so the system can act less like one raw discharge and more like a layered field-conditioning device.
+
+That connects very naturally to your earlier PTEC concept:
+
+PTEC A ─────┐
+            ├─ inner field / plasma zone
+PTEC B ─────┘
+                 │
+            glass barriers
+                 │
+         induced outer layer
+                 │
+          shield mesh / bus
+
+The thing worth testing would be whether the glass-buffered plasma structure gives you better:
+
+field uniformity,
+arc suppression,
+induced outer-surface voltage,
+transient storage,
+thermal isolation,
+or field persistence
+
+than the same plasma/electrode setup without the dielectric panes.
+
+The key measurements would be \(V\), \(I\), surface charge, electric-field strength, plasma stability, pane temperature, and induced voltage on the outer mesh.
+
+So yes — what you're describing can be turned into a real low-scale PoC as a dual-dielectric plasma induction buffer.
+
+And that is a stronger formulation than simply saying “plasma between glass.” It gives the glass an explicit job: separate, store, shape, and transfer the field without direct conduction.
